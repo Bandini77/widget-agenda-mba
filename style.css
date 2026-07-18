@@ -240,4 +240,11 @@ body{
 
 .event-card button:hover{
   opacity:.85;
+}#fermer-detail {
+  float: right;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
 }

@@ -144,25 +144,34 @@ buttons.forEach((button, index) => {
     detail.style.display = "block";
 
     detail.innerHTML = `
-  <h2>${events[index].title}</h2>
 
-  <p>${events[index].meta}</p>
+<button id="fermer-detail">✕</button>
 
-  <p>${events[index].date}</p>
+<h2>${events[index].title}</h2>
 
-  <p><strong>Type :</strong> ${events[index].type}</p>
+<p>${events[index].meta}</p>
 
-  <p>${events[index].description}</p>
+<p>${events[index].date}</p>
 
-  <p><strong>Tarif :</strong> ${events[index].tarif}</p>
+<p><strong>Type :</strong> ${events[index].type}</p>
 
-  <p><strong>Téléphone :</strong> ${events[index].telephone}</p>
+<p>${events[index].description}</p>
 
-  <p><strong>Email :</strong> ${events[index].email}</p>
+<p><strong>Tarif :</strong> ${events[index].tarif}</p>
 
-  <p><strong>Réservation :</strong> ${events[index].reservation}</p>
+<p><strong>Téléphone :</strong> ${events[index].telephone}</p>
 
-`;
+<p><strong>Email :</strong> ${events[index].email}</p>
+
+<p><strong>Réservation :</strong> ${events[index].reservation}</p>
+
+`;document
+  .getElementById("fermer-detail")
+  .addEventListener("click", () => {
+
+    detail.style.display = "none";
+
+  });
     
   });
 
