@@ -1,4 +1,14 @@
 const app = document.getElementById("app");
+const recherche = document.createElement("input");
+
+recherche.type = "text";
+recherche.placeholder = "Recherche...";
+
+recherche.style.width = "100%";
+recherche.style.padding = "12px";
+recherche.style.marginBottom = "20px";
+
+app.appendChild(recherche);
 const filtreBarre = document.createElement("div");
 
 filtreBarre.style.marginBottom = "20px";
@@ -139,7 +149,7 @@ buttons.forEach((button, index) => {
   <p>${events[index].date}</p>
 
   <p><strong>Type :</strong> ${events[index].type}</p>
-  
+
   <p>${events[index].description}</p>
 
   <p><strong>Tarif :</strong> ${events[index].tarif}</p>
@@ -218,3 +228,33 @@ document
 document
   .getElementById("filtre-jeune")
   .addEventListener("change", mettreAJourFiltres);
+  recherche.addEventListener("input", () => {
+
+  const texte =
+    recherche.value.toLowerCase();
+
+  const cartes =
+    document.querySelectorAll(".event-card");
+
+  cartes.forEach((carte, index) => {
+
+    const contenu =
+      (
+        events[index].title +
+        " " +
+        events[index].type +
+        " " +
+        events[index].categorie +
+        " " +
+        events[index].description
+      ).toLowerCase();
+
+    if (contenu.includes(texte)) {
+      carte.style.display = "";
+    } else {
+      carte.style.display = "none";
+    }
+
+  });
+
+});
