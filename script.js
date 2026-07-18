@@ -9,6 +9,11 @@ recherche.style.padding = "12px";
 recherche.style.marginBottom = "20px";
 
 app.appendChild(recherche);
+const boutonPourQui = document.createElement("button");
+
+boutonPourQui.textContent = "👥 Pour qui ▼";
+
+boutonPourQui.style.marginBottom = "10px";
 const filtreBarre = document.createElement("div");
 
 filtreBarre.style.marginBottom = "20px";
@@ -36,6 +41,23 @@ filtreBarre.innerHTML = `
 `;
 
 app.appendChild(filtreBarre);
+filtreBarre.style.display = "none";
+boutonPourQui.addEventListener("click", () => {
+
+  if (filtreBarre.style.display === "none") {
+
+    filtreBarre.style.display = "block";
+    boutonPourQui.textContent = "👥 Pour qui ▲";
+
+  } else {
+
+    filtreBarre.style.display = "none";
+    boutonPourQui.textContent = "👥 Pour qui ▼";
+
+  }
+
+});
+app.insertBefore(boutonPourQui, filtreBarre);
 
 const filtreType = document.createElement("div");
 
