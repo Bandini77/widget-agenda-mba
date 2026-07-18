@@ -87,8 +87,34 @@ filtreType.innerHTML = `
   L'heure du conte
 </label>
 `;
+const boutonType = document.createElement("button");
 
+boutonType.textContent =
+  "🏷️ Type d'activité ▼";
+
+boutonType.style.marginBottom = "10px";
+app.appendChild(boutonType);
 app.appendChild(filtreType);
+filtreType.style.display = "none";
+boutonType.addEventListener("click", () => {
+
+  if (filtreType.style.display === "none") {
+
+    filtreType.style.display = "block";
+
+    boutonType.textContent =
+      "🏷️ Type d'activité ▲";
+
+  } else {
+
+    filtreType.style.display = "none";
+
+    boutonType.textContent =
+      "🏷️ Type d'activité ▼";
+
+  }
+
+});
 
 
 
