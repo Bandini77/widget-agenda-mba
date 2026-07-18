@@ -147,67 +147,93 @@ buttons.forEach((button, index) => {
     
   });
 
-});
-function mettreAJourFiltres() {
+});document
+  .getElementById("filtre-adulte")
+  .addEventListener("click", () => {
 
-  const publicCoche =
-    document.getElementById("filtre-public").checked;
+    const cartes =
+      document.querySelectorAll(".event-card");
 
-  const adulteCoche =
-    document.getElementById("filtre-adulte").checked;
+    cartes.forEach((carte, index) => {
 
-  const familleCoche =
-    document.getElementById("filtre-famille").checked;
+      if (events[index].categorie === "Adulte") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
 
-  const jeuneCoche =
-    document.getElementById("filtre-jeune").checked;
+    });
 
-  const cartes =
-    document.querySelectorAll(".event-card");
+  });document
+  .getElementById("filtre-famille")
+  .addEventListener("click", () => {
 
-  const aucunFiltre =
-    !publicCoche &&
-    !adulteCoche &&
-    !familleCoche &&
-    !jeuneCoche;
+    const cartes =
+      document.querySelectorAll(".event-card");
 
-  cartes.forEach((carte, index) => {
+    cartes.forEach((carte, index) => {
 
-    if (aucunFiltre) {
-      carte.style.display = "";
-      return;
-    }
+      if (events[index].categorie === "Famille") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
 
-    const categorie =
-      events[index].categorie;
+    });
 
-    if (
-      (publicCoche && categorie === "Tout public") ||
-      (adulteCoche && categorie === "Adulte") ||
-      (familleCoche && categorie === "Famille") ||
-      (jeuneCoche && categorie === "Jeune public")
-    ) {
-      carte.style.display = "";
-    } else {
-      carte.style.display = "none";
-    }
+  });
+document
+  .getElementById("filtre-public")
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte, index) => {
+
+      if (events[index].categorie === "Tout public") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
+
+    });
 
   });
 
-}
-
-document
-  .getElementById("filtre-public")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("filtre-adulte")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("filtre-famille")
-  .addEventListener("change", mettreAJourFiltres);
-
 document
   .getElementById("filtre-jeune")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte, index) => {
+
+      if (events[index].categorie === "Jeune public") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
+
+    });
+
+  });
+    document
+  .getElementById("filtre-jeune")
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte, index) => {
+
+      if (events[index].categorie === "Jeune public") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
+
+    });
+
+  });
