@@ -37,6 +37,38 @@ filtreBarre.innerHTML = `
 
 app.appendChild(filtreBarre);
 
+const filtreType = document.createElement("div");
+
+filtreType.style.marginTop = "20px";
+filtreType.style.marginBottom = "20px";
+
+filtreType.innerHTML = `
+<strong>Type d'activité</strong><br>
+
+<label>
+  <input type="checkbox" id="type-exposition">
+  Exposition
+</label>
+
+<label>
+  <input type="checkbox" id="type-conference">
+  Conférence
+</label>
+
+<label>
+  <input type="checkbox" id="type-visite">
+  Visite Atelier
+</label>
+
+<label>
+  <input type="checkbox" id="type-conte">
+  L'heure du conte
+</label>
+`;
+
+app.appendChild(filtreType);
+
+
 
 const events = [
   {
@@ -195,15 +227,30 @@ function mettreAJourFiltres() {
 
   const jeuneCoche =
     document.getElementById("filtre-jeune").checked;
+    const expositionCoche =
+  document.getElementById("type-exposition").checked;
+
+const conferenceCoche =
+  document.getElementById("type-conference").checked;
+
+const visiteCoche =
+  document.getElementById("type-visite").checked;
+
+const conteCoche =
+  document.getElementById("type-conte").checked;
 
   const cartes =
     document.querySelectorAll(".event-card");
 
   const aucunFiltre =
-    !publicCoche &&
-    !adulteCoche &&
-    !familleCoche &&
-    !jeuneCoche;
+  !publicCoche &&
+  !adulteCoche &&
+  !familleCoche &&
+  !jeuneCoche &&
+  !expositionCoche &&
+  !conferenceCoche &&
+  !visiteCoche &&
+  !conteCoche;
 
   cartes.forEach((carte, index) => {
 
@@ -213,13 +260,20 @@ function mettreAJourFiltres() {
     }
 
     const categorie =
-      events[index].categorie;
+  events[index].categorie;
+
+const type =
+  events[index].type;
 
     if (
       (publicCoche && categorie === "Tout public") ||
       (adulteCoche && categorie === "Adulte") ||
       (familleCoche && categorie === "Famille") ||
-      (jeuneCoche && categorie === "Jeune public")
+      (jeuneCoche && categorie === "Jeune public") ||
+      (expositionCoche && type === "Exposition") ||
+(conferenceCoche && type === "Conférence") ||
+(visiteCoche && type === "Visite atelier") ||
+(conteCoche && type === "L'heure du conte")
     ) {
       carte.style.display = "";
     } else {
@@ -274,4 +328,18 @@ document
 
   });
 
-});
+});document
+  .getElementById("type-exposition")
+  .addEventListener("change", mettreAJourFiltres);
+
+document
+  .getElementById("type-conference")
+  .addEventListener("change", mettreAJourFiltres);
+
+document
+  .getElementById("type-visite")
+  .addEventListener("change", mettreAJourFiltres);
+
+document
+  .getElementById("type-conte")
+  .addEventListener("change", mettreAJourFiltres);
