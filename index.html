@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Agenda culturel MBA
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- COLONNE GAUCHE -->
+
+        <main class="agenda">
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Recherche..."
+                >
+
+                <button class="search-btn">
+                    🔍
+                </button>
+
+            </div>
+
+            <div class="quick-filters">
+
+                <button class="filter-btn">
+                    Quand
+                </button>
+
+                <button class="filter-btn">
+                    Pour qui
+                </button>
+
+                <button class="filter-btn">
+                    Type d'activité
+                </button>
+
+            </div>
+
+            <section id="events-list">
+
+                <!-- injecté par script.js -->
+
+            </section>
+
+            <div class="more-events">
+
+                <button id="moreEventsBtn">
+                    Voir plus d'événements
+                </button>
+
+            </div>
+
+        </main>
+
+        <!-- COLONNE DROITE -->
+
+        <aside class="sidebar">
+
+            <h2>Filtres</h2>
+
+            <div class="filter-panel">
+
+                <h3>Quand</h3>
+
+                <label>
+                    <input type="radio" name="date">
+                    Aujourd'hui
+                </label>
+
+                <label>
+                    <input type="radio" name="date">
+                    Demain
+                </label>
+
+                <label>
+                    <input type="radio" name="date">
+                    Ce week-end
+                </label>
+
+                <label>
+                    <input type="radio" name="date">
+                    Choisir une date
+                </label>
+
+            </div>
+
+            <div class="filter-panel">
+
+                <h3>Pour qui</h3>
+
+                <label>
+                    <input type="checkbox">
+                    Tout public
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Adultes
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Famille
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Jeune public
+                </label>
+
+            </div>
+
+            <div class="filter-panel">
+
+                <h3>Type d'activité</h3>
+
+                <label>
+                    <input type="checkbox">
+                    Exposition temporaire
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Visite commentée
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Conférence
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Concert
+                </label>
+
+                <label>
+                    <input type="checkbox">
+                    Projection
+                </label>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+    <section
+        id="event-detail"
+        class="event-detail"
+    >
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
