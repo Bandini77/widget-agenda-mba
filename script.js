@@ -133,13 +133,15 @@ detail.style.padding = "20px";
 detail.style.background = "white";
 detail.style.borderRadius = "16px";
 
-detail.textContent = "Sélectionnez un événement.";
+detail.style.display = "none";
 
 app.appendChild(detail);const buttons = document.querySelectorAll(".event-card button");
 
 buttons.forEach((button, index) => {
 
   button.addEventListener("click", () => {
+    
+    detail.style.display = "block";
 
     detail.innerHTML = `
   <h2>${events[index].title}</h2>
