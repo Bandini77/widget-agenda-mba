@@ -4,10 +4,10 @@ const filtreBarre = document.createElement("div");
 filtreBarre.style.marginBottom = "20px";
 
 filtreBarre.innerHTML = `
-<button id="filtre-tous">Tous</button>
 <button id="filtre-public">Tout public</button>
-<button id="filtre-adultes">Adultes</button>
+<button id="filtre-adulte">Adulte</button>
 <button id="filtre-famille">Famille</button>
+<button id="filtre-jeune">Jeune public</button>
 `;
 
 app.appendChild(filtreBarre);
@@ -28,15 +28,15 @@ const events = [
   {
     date: "22 SEPT. 2026",
     title: "L'histoire du portrait",
-    meta: "Adultes • 16h00",
-    categorie: "Adultes",
+    meta: "Adulte • 16h00",
+    categorie: "Adulte",
     tarif: "5 €",
     telephone: "05 59 27 33 03",
     email: "portrait@musee.fr",
     reservation: "Places limitées",
     description: "Conférence autour de l'histoire du portrait."
   },
-  {
+{
     date: "25 SEPT. 2026",
     title: "Les couleurs du musée",
     meta: "Famille • 10h00",
@@ -46,6 +46,17 @@ const events = [
     email: "atelier@musee.fr",
     reservation: "Sur inscription",
     description: "Découverte créative des collections."
+  },
+  {
+    date: "29 SEPT. 2026",
+    title: "Les petits explorateurs",
+    meta: "Jeune public • 15h00",
+    categorie: "Jeune public",
+    tarif: "2 €",
+    telephone: "05 59 27 33 05",
+    email: "jeunepublic@musee.fr",
+    reservation: "Sur inscription",
+    description: "Visite ludique conçue spécialement pour les enfants."
   }
 ];
 
@@ -122,7 +133,7 @@ buttons.forEach((button, index) => {
   });
 
 });document
-  .getElementById("filtre-adultes")
+  .getElementById("filtre-adulte")
   .addEventListener("click", () => {
 
     const cartes =
@@ -130,7 +141,7 @@ buttons.forEach((button, index) => {
 
     cartes.forEach((carte, index) => {
 
-      if (events[index].categorie === "Adultes") {
+      if (events[index].categorie === "Adulte") {
         carte.style.display = "";
       } else {
         carte.style.display = "none";
@@ -173,16 +184,40 @@ document
 
     });
 
-  });document
-  .getElementById("filtre-tous")
+  });
+
+document
+  .getElementById("filtre-jeune")
   .addEventListener("click", () => {
 
     const cartes =
       document.querySelectorAll(".event-card");
 
-    cartes.forEach((carte) => {
+    cartes.forEach((carte, index) => {
 
-      carte.style.display = "";
+      if (events[index].categorie === "Jeune public") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
+
+    });
+
+  });
+    document
+  .getElementById("filtre-jeune")
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte, index) => {
+
+      if (events[index].categorie === "Jeune public") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
 
     });
 
