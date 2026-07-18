@@ -44,7 +44,7 @@ const events = [
     title: "Les Impressionnistes",
     meta: "Tout public • 14h30",
     categorie: "Tout public",
-    type: "Exposition temporaire",
+    type: "Exposition",
     description: "Découvrez les chefs-d'œuvre impressionnistes du musée.",
     tarif: "Gratuit",
     telephone: "05 59 27 33 02",
@@ -80,7 +80,7 @@ const events = [
     title: "Les petits explorateurs",
     meta: "Jeune public • 15h00",
     categorie: "Jeune public",
-    type: "Atelier jeune public",
+    type: "L'heure du conte",
     description: "Visite ludique conçue spécialement pour les enfants.",
     tarif: "2 €",
     telephone: "05 59 27 33 05",
@@ -105,14 +105,20 @@ events.forEach(event => {
   const content = document.createElement("div");
   content.className = "event-content";
 
+  const type = document.createElement("p");
+
+type.className = "event-type";
+type.textContent = event.type;
+
   const title = document.createElement("h2");
   title.textContent = event.title;
 
   const meta = document.createElement("p");
   meta.textContent = event.meta;
 
-  content.appendChild(title);
-  content.appendChild(meta);
+  content.appendChild(type);
+content.appendChild(title);
+content.appendChild(meta);
 
   const more = document.createElement("button");
   more.textContent = "+";
