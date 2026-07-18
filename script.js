@@ -4,10 +4,25 @@ const filtreBarre = document.createElement("div");
 filtreBarre.style.marginBottom = "20px";
 
 filtreBarre.innerHTML = `
-<button id="filtre-public">Tout public</button>
-<button id="filtre-adulte">Adulte</button>
-<button id="filtre-famille">Famille</button>
-<button id="filtre-jeune">Jeune public</button>
+<label>
+  <input type="checkbox" id="filtre-public">
+  Tout public
+</label>
+
+<label>
+  <input type="checkbox" id="filtre-adulte">
+  Adulte
+</label>
+
+<label>
+  <input type="checkbox" id="filtre-famille">
+  Famille
+</label>
+
+<label>
+  <input type="checkbox" id="filtre-jeune">
+  Jeune public
+</label>
 `;
 
 app.appendChild(filtreBarre);
