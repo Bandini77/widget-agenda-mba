@@ -34,44 +34,48 @@ const events = [
     title: "Les Impressionnistes",
     meta: "Tout public • 14h30",
     categorie: "Tout public",
+    type: "Exposition temporaire",
+    description: "Découvrez les chefs-d'œuvre impressionnistes du musée.",
     tarif: "Gratuit",
     telephone: "05 59 27 33 02",
     email: "impressionnistes@musee.fr",
-    reservation: "Réserver en ligne",
-    description: "Découvrez les chefs-d'œuvre impressionnistes du musée."
+    reservation: "Réserver en ligne"
   },
   {
     date: "22 SEPT. 2026",
     title: "L'histoire du portrait",
     meta: "Adulte • 16h00",
     categorie: "Adulte",
+    type: "Conférence",
+    description: "Conférence autour de l'histoire du portrait.",
     tarif: "5 €",
     telephone: "05 59 27 33 03",
     email: "portrait@musee.fr",
-    reservation: "Places limitées",
-    description: "Conférence autour de l'histoire du portrait."
+    reservation: "Places limitées"
   },
 {
     date: "25 SEPT. 2026",
     title: "Les couleurs du musée",
     meta: "Famille • 10h00",
     categorie: "Famille",
+    type: "Visite atelier",
+    description: "Découverte créative des collections.",
     tarif: "3 €",
     telephone: "05 59 27 33 04",
     email: "atelier@musee.fr",
-    reservation: "Sur inscription",
-    description: "Découverte créative des collections."
-  },
+    reservation: "Sur inscription"
+},
   {
     date: "29 SEPT. 2026",
     title: "Les petits explorateurs",
     meta: "Jeune public • 15h00",
     categorie: "Jeune public",
+    type: "Atelier jeune public",
+    description: "Visite ludique conçue spécialement pour les enfants.",
     tarif: "2 €",
     telephone: "05 59 27 33 05",
     email: "jeunepublic@musee.fr",
-    reservation: "Sur inscription",
-    description: "Visite ludique conçue spécialement pour les enfants."
+    reservation: "Sur inscription"
   }
 ];
 
@@ -134,6 +138,10 @@ buttons.forEach((button, index) => {
 
   <p>${events[index].date}</p>
 
+  <p><strong>Type :</strong> ${events[index].type}</p>
+  
+  <p>${events[index].description}</p>
+
   <p><strong>Tarif :</strong> ${events[index].tarif}</p>
 
   <p><strong>Téléphone :</strong> ${events[index].telephone}</p>
@@ -142,7 +150,6 @@ buttons.forEach((button, index) => {
 
   <p><strong>Réservation :</strong> ${events[index].reservation}</p>
 
-  <p>${events[index].description}</p>
 `;
     
   });
