@@ -70,78 +70,17 @@ buttons.forEach((button, index) => {
 
   button.addEventListener("click", () => {
 
-    detail.innerHTML = "";
+    detail.innerHTML = `
+      <h2>${events[index].title}</h2>
 
-const image = document.createElement("img");
-image.src = "images/event1.jpg";
-image.style.maxWidth = "600px";
-image.style.width = "100%";
+      <p>
+        ${events[index].meta}
+      </p>
 
-const title = document.createElement("h2");
-title.textContent = events[index].title;
-
-const meta = document.createElement("p");
-meta.textContent = events[index].meta;
-
-const date = document.createElement("p");
-date.textContent = events[index].date;
-
-const tarif = document.createElement("p");
-tarif.textContent = "Tarif : Gratuit";
-const telephone = document.createElement("p");
-telephone.textContent = "Téléphone : 05 59 27 33 02";
-
-const email = document.createElement("p");
-email.textContent = "Email : contact@museebap.fr";
-
-const reservation = document.createElement("p");
-reservation.textContent = "Réserver en ligne";
-
-const closeButton = document.createElement("button");
-closeButton.textContent = "Fermer";
-
-closeButton.addEventListener("click", () => {
-  detail.textContent = "Sélectionnez un événement.";
-});
-
-detail.appendChild(closeButton);
-detail.appendChild(image);
-detail.appendChild(title);
-detail.appendChild(meta);
-detail.appendChild(date);
-detail.appendChild(tarif);const sectionTitle = document.createElement("h3");
-sectionTitle.textContent = "Informations";
-
-detail.appendChild(sectionTitle);const reservationTitle =
-document.createElement("h3");
-
-reservationTitle.textContent =
-"Réservation";
-
-detail.appendChild(reservationTitle);
-detail.appendChild(telephone);
-detail.appendChild(email);
-detail.appendChild(reservation);const partageTitle =
-document.createElement("h3");
-
-partageTitle.textContent =
-"Partager";
-
-detail.appendChild(partageTitle);
-
-const partager =
-document.createElement("p");
-
-partager.textContent =
-"Copier le lien";
-
-detail.appendChild(partager);const calendrier =
-document.createElement("button");
-
-calendrier.textContent =
-"Ajouter à mon calendrier";
-
-detail.appendChild(calendrier);
+      <p>
+        ${events[index].date}
+      </p>
+    `;
     
   });
 

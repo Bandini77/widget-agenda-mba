@@ -187,4 +187,31 @@ body{
   border-radius:50%;
 
   cursor:pointer;
+}.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:30px;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+}
+
+.info-grid h3{
+  color:#876d45;
+  font-size:14px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.info-grid p{
+  margin-bottom:8px;
+}
+
+.calendar-button{
+  margin-top:20px;
+  padding:12px 20px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  background:white;
+  cursor:pointer;
 }
