@@ -109,10 +109,39 @@ detail.appendChild(image);
 detail.appendChild(title);
 detail.appendChild(meta);
 detail.appendChild(date);
-detail.appendChild(tarif);
+detail.appendChild(tarif);const sectionTitle = document.createElement("h3");
+sectionTitle.textContent = "Informations";
+
+detail.appendChild(sectionTitle);const reservationTitle =
+document.createElement("h3");
+
+reservationTitle.textContent =
+"Réservation";
+
+detail.appendChild(reservationTitle);
 detail.appendChild(telephone);
 detail.appendChild(email);
-detail.appendChild(reservation);
+detail.appendChild(reservation);const partageTitle =
+document.createElement("h3");
+
+partageTitle.textContent =
+"Partager";
+
+detail.appendChild(partageTitle);
+
+const partager =
+document.createElement("p");
+
+partager.textContent =
+"Copier le lien";
+
+detail.appendChild(partager);const calendrier =
+document.createElement("button");
+
+calendrier.textContent =
+"Ajouter à mon calendrier";
+
+detail.appendChild(calendrier);
     
   });
 
