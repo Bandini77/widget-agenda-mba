@@ -1,10 +1,24 @@
 const app = document.getElementById("app");
+const filtreBarre = document.createElement("div");
+
+filtreBarre.style.marginBottom = "20px";
+
+filtreBarre.innerHTML = `
+<button id="filtre-tous">Tous</button>
+<button id="filtre-public">Tout public</button>
+<button id="filtre-adultes">Adultes</button>
+<button id="filtre-famille">Famille</button>
+`;
+
+app.appendChild(filtreBarre);
+
 
 const events = [
   {
     date: "18 SEPT. 2026",
     title: "Les Impressionnistes",
     meta: "Tout public • 14h30",
+    categorie: "Tout public",
     tarif: "Gratuit",
     telephone: "05 59 27 33 02",
     email: "impressionnistes@musee.fr",
@@ -15,6 +29,7 @@ const events = [
     date: "22 SEPT. 2026",
     title: "L'histoire du portrait",
     meta: "Adultes • 16h00",
+    categorie: "Adultes",
     tarif: "5 €",
     telephone: "05 59 27 33 03",
     email: "portrait@musee.fr",
@@ -25,6 +40,7 @@ const events = [
     date: "25 SEPT. 2026",
     title: "Les couleurs du musée",
     meta: "Famille • 10h00",
+    categorie: "Famille",
     tarif: "3 €",
     telephone: "05 59 27 33 04",
     email: "atelier@musee.fr",
@@ -105,4 +121,69 @@ buttons.forEach((button, index) => {
     
   });
 
-});
+});document
+  .getElementById("filtre-adultes")
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte, index) => {
+
+      if (events[index].categorie === "Adultes") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
+
+    });
+
+  });document
+  .getElementById("filtre-famille")
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte, index) => {
+
+      if (events[index].categorie === "Famille") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
+
+    });
+
+  });
+document
+  .getElementById("filtre-public")
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte, index) => {
+
+      if (events[index].categorie === "Tout public") {
+        carte.style.display = "";
+      } else {
+        carte.style.display = "none";
+      }
+
+    });
+
+  });document
+  .getElementById("filtre-tous")
+  .addEventListener("click", () => {
+
+    const cartes =
+      document.querySelectorAll(".event-card");
+
+    cartes.forEach((carte) => {
+
+      carte.style.display = "";
+
+    });
+
+  });
