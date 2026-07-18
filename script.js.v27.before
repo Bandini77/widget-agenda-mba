@@ -4,32 +4,17 @@ const events = [
   {
     date: "18 SEPT. 2026",
     title: "Les Impressionnistes",
-    meta: "Tout public • 14h30",
-    tarif: "Gratuit",
-    telephone: "05 59 27 33 02",
-    email: "impressionnistes@musee.fr",
-    reservation: "Réserver en ligne",
-    description: "Découvrez les chefs-d'œuvre impressionnistes du musée."
+    meta: "Tout public • 14h30"
   },
   {
     date: "22 SEPT. 2026",
     title: "L'histoire du portrait",
-    meta: "Adultes • 16h00",
-    tarif: "5 €",
-    telephone: "05 59 27 33 03",
-    email: "portrait@musee.fr",
-    reservation: "Places limitées",
-    description: "Conférence autour de l'histoire du portrait."
+    meta: "Adultes • 16h00"
   },
   {
     date: "25 SEPT. 2026",
     title: "Les couleurs du musée",
-    meta: "Famille • 10h00",
-    tarif: "3 €",
-    telephone: "05 59 27 33 04",
-    email: "atelier@musee.fr",
-    reservation: "Sur inscription",
-    description: "Découverte créative des collections."
+    meta: "Famille • 10h00"
   }
 ];
 
@@ -86,22 +71,16 @@ buttons.forEach((button, index) => {
   button.addEventListener("click", () => {
 
     detail.innerHTML = `
-  <h2>${events[index].title}</h2>
+      <h2>${events[index].title}</h2>
 
-  <p>${events[index].meta}</p>
+      <p>
+        ${events[index].meta}
+      </p>
 
-  <p>${events[index].date}</p>
-
-  <p><strong>Tarif :</strong> ${events[index].tarif}</p>
-
-  <p><strong>Téléphone :</strong> ${events[index].telephone}</p>
-
-  <p><strong>Email :</strong> ${events[index].email}</p>
-
-  <p><strong>Réservation :</strong> ${events[index].reservation}</p>
-
-  <p>${events[index].description}</p>
-`;
+      <p>
+        ${events[index].date}
+      </p>
+    `;
     
   });
 
