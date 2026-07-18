@@ -88,6 +88,14 @@ date.textContent = events[index].date;
 
 const tarif = document.createElement("p");
 tarif.textContent = "Tarif : Gratuit";
+const telephone = document.createElement("p");
+telephone.textContent = "Téléphone : 05 59 27 33 02";
+
+const email = document.createElement("p");
+email.textContent = "Email : contact@museebap.fr";
+
+const reservation = document.createElement("p");
+reservation.textContent = "Réserver en ligne";
 
 const closeButton = document.createElement("button");
 closeButton.textContent = "Fermer";
@@ -102,6 +110,9 @@ detail.appendChild(title);
 detail.appendChild(meta);
 detail.appendChild(date);
 detail.appendChild(tarif);
+detail.appendChild(telephone);
+detail.appendChild(email);
+detail.appendChild(reservation);
     
   });
 
