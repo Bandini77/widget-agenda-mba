@@ -626,7 +626,7 @@ const type =
       (expositionCoche && type === "Exposition") ||
 (conferenceCoche && type === "Conférence") ||
 (visiteCoche && type === "Visite atelier") ||
-(conteCoche && type === "L'heure du conte")
+(conteCoche && type === "L'heure du conte") ||
 (arretOeuvreCoche && type === "Arrêt sur œuvre") ||
 
 (concertCoche && type === "Concert") ||

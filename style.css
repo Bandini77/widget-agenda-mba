@@ -422,4 +422,13 @@ body{
 
 .calendar-btn:hover{
   background:#f5f5f5;
+}.menu-filtre label{
+  display:block;
+  margin-bottom:8px;
+}#type-activites label{
+  display:block;
+  margin-bottom:8px;
+}.menu-filtre{
+  max-height:400px;
+  overflow-y:auto;
 }
