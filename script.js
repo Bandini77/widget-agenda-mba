@@ -32,7 +32,9 @@ filtreQuand.innerHTML = `
 </label>
 
 <label>
-  <input type="checkbox">
+  
+<input type="checkbox" id="quand-demain">
+
   Demain
 </label>
 
@@ -203,7 +205,7 @@ const events = [
   },
   {
     date: "22 SEPT. 2026",
-    dateISO: "2026-09-22",
+    dateISO: "2026-07-20",
     title: "L'histoire du portrait",
     meta: "Adulte • 16h00",
     categorie: "Adulte",
@@ -553,3 +555,43 @@ document
   document
   .getElementById("quand-aujourdhui")
   .addEventListener("change", filtrerAujourdHui);
+  function filtrerDemain() {
+
+  const coche =
+    document.getElementById("quand-demain").checked;
+
+  const cartes =
+    document.querySelectorAll(".event-card");
+
+  const demain = new Date();
+
+  demain.setDate(demain.getDate() + 1);
+
+  const dateDemain =
+    demain.toISOString().slice(0, 10);
+
+  cartes.forEach((carte, index) => {
+
+    if (!coche) {
+
+      carte.style.display = "";
+      return;
+
+    }
+
+    if (events[index].dateISO === dateDemain) {
+
+      carte.style.display = "";
+
+    } else {
+
+      carte.style.display = "none";
+
+    }
+
+  });
+
+}
+  document
+  .getElementById("quand-demain")
+  .addEventListener("change", filtrerDemain);
