@@ -48,6 +48,15 @@ filtreQuand.innerHTML = `
 <br><br>
 
 <input type="date" id="quand-date">
+<br><br>
+
+Du :
+<input type="date" id="date-debut">
+
+<br><br>
+
+Au :
+<input type="date" id="date-fin">
 `; 
 barreFiltres.appendChild(boutonQuand);
 
@@ -636,3 +645,42 @@ document
   document
   .getElementById("quand-weekend")
   .addEventListener("change", filtrerWeekend);
+  function filtrerPeriode() {
+
+  const dateDebut =
+    document.getElementById("date-debut").value;
+
+  const dateFin =
+    document.getElementById("date-fin").value;
+
+  const cartes =
+    document.querySelectorAll(".event-card");
+
+  cartes.forEach((carte, index) => {
+
+    const dateEvenement =
+      events[index].dateISO;
+
+    if (
+      (dateDebut === "" || dateEvenement >= dateDebut) &&
+      (dateFin === "" || dateEvenement <= dateFin)
+    ) {
+
+      carte.style.display = "";
+
+    } else {
+
+      carte.style.display = "none";
+
+    }
+
+  });
+
+}
+  document
+  .getElementById("date-debut")
+  .addEventListener("change", filtrerPeriode);
+
+document
+  .getElementById("date-fin")
+  .addEventListener("change", filtrerPeriode);
