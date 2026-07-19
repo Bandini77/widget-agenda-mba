@@ -287,11 +287,11 @@ body{
   left:50%;
   transform:translate(-50%, -50%);
 
-  width:80%;
+  width:70%;
   max-width:1000px;
   max-height:90vh;
 
-  overflow-y:auto;
+  overflow-x:hidden;
 
   background:white;
 
@@ -307,6 +307,7 @@ body{
 
 .detail-image{
   width:40%;
+  min-height:400px;
 }
 
 .detail-image img{
@@ -327,12 +328,15 @@ body{
 }
 
 .detail-title{
+  font-size:32px;
   margin-top:10px;
   margin-bottom:15px;
 }
 
 .detail-description{
-  line-height:1.6;
+  line-height:1.7;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 .detail-footer{
@@ -344,4 +348,45 @@ body{
 .detail-footer h4{
   margin-bottom:8px;
   color:#8c7448;
+}.detail-type{
+  display:inline-block;
+  padding:6px 12px;
+  background:#8c7448;
+  color:white;
+  border-radius:20px;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.detail-public{
+  display:inline-block;
+  padding:6px 12px;
+  background:#f3f3f3;
+  border-radius:20px;
+  font-size:14px;
+  margin-bottom:20px;
+}.detail-footer{
+  display:flex;
+  margin-top:30px;
+}
+
+.detail-footer > div{
+  flex:1;
+  padding:0 30px;
+}
+
+.detail-footer > div:not(:last-child){
+  border-right:1px solid #d8d8d8;
+}.detail-calendar{
+  margin-top:25px;
+  text-align:right;
+}
+
+.calendar-btn{
+  padding:12px 20px;
+  border:1px solid #d8d8d8;
+  background:white;
+  border-radius:10px;
+  cursor:pointer;
 }

@@ -371,17 +371,17 @@ buttons.forEach((button, index) => {
 
   <div class="detail-infos">
 
-    <p class="detail-type">
-      ${events[index].type}
-    </p>
+    <div class="detail-type">
+  ${events[index].type}
+</div>
 
     <h2 class="detail-title">
       ${events[index].title}
     </h2>
 
-    <p class="detail-meta">
-      ${events[index].meta}
-    </p>
+    <div class="detail-public">
+  ${events[index].meta}
+</div>
 
     <p class="detail-date">
 
@@ -406,26 +406,36 @@ buttons.forEach((button, index) => {
         <h4>Tarif</h4>
 
         <p>${events[index].tarif}</p>
+        </div>
 
-      </div>
-
-      <div>
-
-        <h4>Contact</h4>
-
-        <p>${events[index].telephone}</p>
-
-        <p>${events[index].email}</p>
-
-      </div>
 
       <div>
 
-        <h4>Réservation</h4>
+  <h4>Réservation</h4>
 
-        <p>${events[index].reservation}</p>
+  <p>${events[index].telephone}</p>
 
-      </div>
+  <p>${events[index].email}</p>
+
+  <p>${events[index].reservation}</p>
+
+</div>
+<div>
+
+  <h4>Partager</h4>
+
+  <p>🔗 Copier le lien</p>
+
+</div>
+</div>
+
+<div class="detail-calendar">
+
+  <button class="calendar-btn">
+    📅 Ajouter à mon calendrier
+  </button>
+
+</div>
 
     </div>
 
