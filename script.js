@@ -235,8 +235,13 @@ const events = [
     reservation: "Sur inscription"
   }
 ];
+let nombreVisible = 6;
 
-events.forEach(event => {
+events.forEach((event, index) => {
+
+  if (index >= nombreVisible) {
+  return;
+}
 
   const card = document.createElement("div");
   card.className = "event-card";
@@ -279,6 +284,12 @@ content.appendChild(meta);
 
 });
 const detail = document.createElement("div");
+const voirPlus = document.createElement("button");
+
+voirPlus.textContent = "VOIR PLUS D'ÉVÉNEMENTS";
+
+voirPlus.style.marginTop = "20px";
+voirPlus.style.padding = "12px 24px";
 detail.id = "event-detail";
 
 detail.style.marginTop = "20px";
@@ -288,6 +299,7 @@ detail.style.borderRadius = "16px";
 
 detail.style.display = "none";
 
+app.appendChild(voirPlus);
 app.appendChild(detail);const buttons = document.querySelectorAll(".event-card button");
 
 buttons.forEach((button, index) => {
