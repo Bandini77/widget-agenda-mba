@@ -9,6 +9,53 @@ recherche.style.padding = "12px";
 recherche.style.marginBottom = "20px";
 
 app.appendChild(recherche);
+const boutonQuand = document.createElement("button");
+
+boutonQuand.textContent = "📅 Quand ▼";
+
+boutonQuand.style.marginBottom = "10px";
+
+const filtreQuand = document.createElement("div");
+
+filtreQuand.innerHTML = `
+<label>
+  <input type="checkbox">
+  Aujourd'hui
+</label>
+
+<label>
+  <input type="checkbox">
+  Demain
+</label>
+
+<label>
+  <input type="checkbox">
+  Ce week-end
+</label>
+
+<br><br>
+
+<input type="date">
+`;
+app.appendChild(boutonQuand);
+app.appendChild(filtreQuand);
+
+filtreQuand.style.display = "none";
+boutonQuand.addEventListener("click", () => {
+
+  if (filtreQuand.style.display === "none") {
+
+    filtreQuand.style.display = "block";
+    boutonQuand.textContent = "📅 Quand ▲";
+
+  } else {
+
+    filtreQuand.style.display = "none";
+    boutonQuand.textContent = "📅 Quand ▼";
+
+  }
+
+});
 const boutonPourQui = document.createElement("button");
 
 boutonPourQui.textContent = "👥 Pour qui ▼";
