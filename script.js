@@ -383,13 +383,17 @@ buttons.forEach((button, index) => {
   ${events[index].meta}
 </div>
 
-    <p class="detail-date">
+   <div class="detail-datetime">
 
-  ${events[index].date}
-  •
-  ${events[index].heure}
+  <span>
+    📅 ${events[index].date}
+  </span>
 
-</p>
+  <span>
+    🕒 ${events[index].heure}
+  </span>
+
+</div>
 
     <hr>
 
@@ -424,8 +428,8 @@ buttons.forEach((button, index) => {
 
   <h4>Partager</h4>
 
-  <p>🔗 Copier le lien</p>
-
+<p>🔗 Copier le lien</p>
+<p>✉️ Email</p>
 </div>
 </div>
 

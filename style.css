@@ -305,9 +305,11 @@ body{
   gap:30px;
 }
 
-.detail-image{
-  width:40%;
-  min-height:400px;
+.detail-image{.detail500px;
+}
+  width:35%;
+.detail-infos{
+  width:65%;
 }
 
 .detail-image img{
@@ -327,11 +329,12 @@ body{
   color:#8c7448;
 }
 
-.detail-title{
-  font-size:32px;
-  margin-top:10px;
-  margin-bottom:15px;
+.detail-title{.detailheight:1.1;
+  margin-top:15px;
+  margin-bottom:20px;
 }
+  font-size:48px;
+
 
 .detail-description{
   line-height:1.7;
@@ -384,9 +387,33 @@ body{
 }
 
 .calendar-btn{
-  padding:12px 20px;
+  padding:12px 18px;
   border:1px solid #d8d8d8;
   background:white;
   border-radius:10px;
+   font-size:14px;
   cursor:pointer;
+}#fermer-detail{#fermer:25px;
+  right:25px;
+
+  width:44px;
+  height:44px;
+
+  border:none;
+  border-radius:50%;
+
+  background:white;
+  cursor:pointer;
+
+  font-size:32px;
+  line-height:1;
+
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+  position:absolute;
+  .detail-datetime{
+  display:flex;
+  gap:40px;
+  margin-bottom:20px;
+  font-weight:600;
 }
