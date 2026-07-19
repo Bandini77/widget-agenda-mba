@@ -137,8 +137,8 @@ filtreType.innerHTML = `
 <strong>Type d'activité</strong><br>
 
 <label>
-  <input type="checkbox" id="type-arret-oeuvre">
-  Arrêt sur œuvre
+  <input type="checkbox" id="type-exposition">
+  Exposition
 </label>
 
 <label>
@@ -147,73 +147,13 @@ filtreType.innerHTML = `
 </label>
 
 <label>
-  <input type="checkbox" id="type-concert">
-  Concert
-</label>
-
-<label>
-  <input type="checkbox" id="type-evenement-national">
-  Événement national
-</label>
-
-<label>
-  <input type="checkbox" id="type-exposition">
-  Exposition
-</label>
-
-<label>
-  <input type="checkbox" id="type-jeu-oie">
-  Jeu de l'oie
-</label>
-
-<label>
-  <input type="checkbox" id="type-conte">
-  L'heure du conte
-</label>
-
-<label>
-  <input type="checkbox" id="type-memory">
-  Memory
-</label>
-
-<label>
-  <input type="checkbox" id="type-projection">
-  Projection
-</label>
-
-<label>
-  <input type="checkbox" id="type-rencontre">
-  Rencontre
-</label>
-
-<label>
-  <input type="checkbox" id="type-spectacle">
-  Spectacle
-</label>
-
-<label>
-  <input type="checkbox" id="type-vernissage">
-  Vernissage
-</label>
-
-<label>
   <input type="checkbox" id="type-visite">
   Visite Atelier
 </label>
 
 <label>
-  <input type="checkbox" id="type-visite-commentee">
-  Visite commentée
-</label>
-
-<label>
-  <input type="checkbox" id="type-visite-contee">
-  Visite contée
-</label>
-
-<label>
-  <input type="checkbox" id="type-visite-flash">
-  Visite Flash
+  <input type="checkbox" id="type-conte">
+  L'heure du conte
 </label>
 `;
 filtreQuand.className = "menu-filtre";
@@ -544,42 +484,6 @@ const visiteCoche =
 const conteCoche =
   document.getElementById("type-conte").checked;
 
-  const arretOeuvreCoche =
-  document.getElementById("type-arret-oeuvre").checked;
-
-const concertCoche =
-  document.getElementById("type-concert").checked;
-
-const evenementNationalCoche =
-  document.getElementById("type-evenement-national").checked;
-
-const jeuOieCoche =
-  document.getElementById("type-jeu-oie").checked;
-
-const memoryCoche =
-  document.getElementById("type-memory").checked;
-
-const projectionCoche =
-  document.getElementById("type-projection").checked;
-
-const rencontreCoche =
-  document.getElementById("type-rencontre").checked;
-
-const spectacleCoche =
-  document.getElementById("type-spectacle").checked;
-
-const vernissageCoche =
-  document.getElementById("type-vernissage").checked;
-
-const visiteCommenteeCoche =
-  document.getElementById("type-visite-commentee").checked;
-
-const visiteConteeCoche =
-  document.getElementById("type-visite-contee").checked;
-
-const visiteFlashCoche =
-  document.getElementById("type-visite-flash").checked;
-
   const cartes =
     document.querySelectorAll(".event-card");
 
@@ -592,18 +496,6 @@ const visiteFlashCoche =
   !conferenceCoche &&
   !visiteCoche &&
   !conteCoche;
-  !arretOeuvreCoche &&
-!concertCoche &&
-!evenementNationalCoche &&
-!jeuOieCoche &&
-!memoryCoche &&
-!projectionCoche &&
-!rencontreCoche &&
-!spectacleCoche &&
-!vernissageCoche &&
-!visiteCommenteeCoche &&
-!visiteConteeCoche &&
-!visiteFlashCoche
 
   cartes.forEach((carte, index) => {
 
@@ -627,29 +519,6 @@ const type =
 (conferenceCoche && type === "Conférence") ||
 (visiteCoche && type === "Visite atelier") ||
 (conteCoche && type === "L'heure du conte")
-(arretOeuvreCoche && type === "Arrêt sur œuvre") ||
-
-(concertCoche && type === "Concert") ||
-
-(evenementNationalCoche && type === "Événement national") ||
-
-(jeuOieCoche && type === "Jeu de l'oie") ||
-
-(memoryCoche && type === "Memory") ||
-
-(projectionCoche && type === "Projection") ||
-
-(rencontreCoche && type === "Rencontre") ||
-
-(spectacleCoche && type === "Spectacle") ||
-
-(vernissageCoche && type === "Vernissage") ||
-
-(visiteCommenteeCoche && type === "Visite commentée") ||
-
-(visiteConteeCoche && type === "Visite contée") ||
-
-(visiteFlashCoche && type === "Visite Flash")
     ) {
       carte.style.display = "";
     } else {
@@ -903,50 +772,3 @@ document
 document
   .getElementById("date-fin")
   .addEventListener("change", filtrerPeriode);
-  document
-  .getElementById("type-arret-oeuvre")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-concert")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-evenement-national")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-jeu-oie")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-memory")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-projection")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-rencontre")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-spectacle")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-vernissage")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-visite-commentee")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-visite-contee")
-  .addEventListener("change", mettreAJourFiltres);
-
-document
-  .getElementById("type-visite-flash")
-  .addEventListener("change", mettreAJourFiltres);
