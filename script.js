@@ -41,7 +41,7 @@ filtreQuand.innerHTML = `
 
 <br><br>
 
-<input type="date">
+<input type="date" id="quand-date">
 `; 
 barreFiltres.appendChild(boutonQuand);
 
@@ -188,6 +188,7 @@ app.appendChild(barreFiltres);
 const events = [
   {
     date: "18 SEPT. 2026",
+    dateISO: "2026-09-18",
     title: "Les Impressionnistes",
     meta: "Tout public • 14h30",
     categorie: "Tout public",
@@ -200,6 +201,7 @@ const events = [
   },
   {
     date: "22 SEPT. 2026",
+    dateISO: "2026-09-22",
     title: "L'histoire du portrait",
     meta: "Adulte • 16h00",
     categorie: "Adulte",
@@ -212,6 +214,7 @@ const events = [
   },
 {
     date: "25 SEPT. 2026",
+    dateISO: "2026-09-25",
     title: "Les couleurs du musée",
     meta: "Famille • 10h00",
     categorie: "Famille",
@@ -224,6 +227,7 @@ const events = [
 },
   {
     date: "29 SEPT. 2026",
+    dateISO: "2026-09-29",
     title: "Les petits explorateurs",
     meta: "Jeune public • 15h00",
     categorie: "Jeune public",
@@ -481,3 +485,33 @@ document
 document
   .getElementById("type-conte")
   .addEventListener("change", mettreAJourFiltres);
+  
+  function filtrerDate() {
+
+  const dateChoisie =
+    document.getElementById("quand-date").value;
+
+  const cartes =
+    document.querySelectorAll(".event-card");
+
+  cartes.forEach((carte, index) => {
+
+    if (
+      dateChoisie === "" ||
+      events[index].dateISO === dateChoisie
+    ) {
+
+      carte.style.display = "";
+
+    } else {
+
+      carte.style.display = "none";
+
+    }
+
+  });
+
+}
+  document
+  .getElementById("quand-date")
+  .addEventListener("change", filtrerDate);
