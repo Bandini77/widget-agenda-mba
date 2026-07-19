@@ -203,9 +203,10 @@ app.appendChild(barreFiltres);
 const events = [
   {
     date: "18 SEPT. 2026",
+    heure: "14h30",
     dateISO: "2026-07-19",
     title: "Les Impressionnistes",
-    meta: "Tout public • 14h30",
+    meta: "Tout public",
     categorie: "Tout public",
     type: "Exposition",
     description: "Découvrez les chefs-d'œuvre impressionnistes du musée.",
@@ -216,9 +217,10 @@ const events = [
   },
   {
     date: "22 SEPT. 2026",
+    heure: "14h30",
     dateISO: "2026-09-19",
     title: "L'histoire du portrait",
-    meta: "Adulte • 16h00",
+    meta: "Adulte",
     categorie: "Adulte",
     type: "Conférence",
     description: "Conférence autour de l'histoire du portrait.",
@@ -229,9 +231,10 @@ const events = [
   },
 {
     date: "25 SEPT. 2026",
+    heure: "14h30",
     dateISO: "2026-09-25",
     title: "Les couleurs du musée",
-    meta: "Famille • 10h00",
+    meta: "Famille",
     categorie: "Famille",
     type: "Visite atelier",
     description: "Découverte créative des collections.",
@@ -242,9 +245,10 @@ const events = [
 },
   {
     date: "29 SEPT. 2026",
+    heure: "14h30",
     dateISO: "2026-09-29",
     title: "Les petits explorateurs",
-    meta: "Jeune public • 15h00",
+    meta: "Jeune public",
     categorie: "Jeune public",
     type: "L'heure du conte",
     description: "Visite ludique conçue spécialement pour les enfants.",
@@ -310,12 +314,7 @@ overlay.id = "overlay";
 overlay.style.display = "none";
 
 app.appendChild(overlay);
-overlay.addEventListener("click", () => {
 
-  overlay.style.display = "none";
-  detail.style.display = "none";
-
-});
 const detail = document.createElement("div");
 const voirPlus = document.createElement("button");
 voirPlus.addEventListener("click", () => {
@@ -356,23 +355,83 @@ buttons.forEach((button, index) => {
 
 <button id="fermer-detail">✕</button>
 
-<h2>${events[index].title}</h2>
+<div class="detail-layout">
 
-<p>${events[index].meta}</p>
 
-<p>${events[index].date}</p>
+  <div class="detail-image">
 
-<p><strong>Type :</strong> ${events[index].type}</p>
+    <img
+      src="images/event1.jpg"
+      alt="${events[index].title}"
+    >
 
-<p>${events[index].description}</p>
+  </div>
 
-<p><strong>Tarif :</strong> ${events[index].tarif}</p>
 
-<p><strong>Téléphone :</strong> ${events[index].telephone}</p>
 
-<p><strong>Email :</strong> ${events[index].email}</p>
+  <div class="detail-infos">
 
-<p><strong>Réservation :</strong> ${events[index].reservation}</p>
+    <p class="detail-type">
+      ${events[index].type}
+    </p>
+
+    <h2 class="detail-title">
+      ${events[index].title}
+    </h2>
+
+    <p class="detail-meta">
+      ${events[index].meta}
+    </p>
+
+    <p class="detail-date">
+
+  ${events[index].date}
+  •
+  ${events[index].heure}
+
+</p>
+
+    <hr>
+
+    <p class="detail-description">
+      ${events[index].description}
+    </p>
+
+    <hr>
+
+    <div class="detail-footer">
+
+      <div>
+
+        <h4>Tarif</h4>
+
+        <p>${events[index].tarif}</p>
+
+      </div>
+
+      <div>
+
+        <h4>Contact</h4>
+
+        <p>${events[index].telephone}</p>
+
+        <p>${events[index].email}</p>
+
+      </div>
+
+      <div>
+
+        <h4>Réservation</h4>
+
+        <p>${events[index].reservation}</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 `;document
   .getElementById("fermer-detail")

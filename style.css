@@ -300,4 +300,48 @@ body{
   border-radius:20px;
 
   box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}.detail-layout{
+  display:flex;
+  gap:30px;
+}
+
+.detail-image{
+  width:40%;
+}
+
+.detail-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+.detail-infos{
+  width:60%;
+}
+
+.detail-type{
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#8c7448;
+}
+
+.detail-title{
+  margin-top:10px;
+  margin-bottom:15px;
+}
+
+.detail-description{
+  line-height:1.6;
+}
+
+.detail-footer{
+  display:flex;
+  gap:40px;
+  margin-top:20px;
+}
+
+.detail-footer h4{
+  margin-bottom:8px;
+  color:#8c7448;
 }
