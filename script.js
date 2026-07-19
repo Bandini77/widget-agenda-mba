@@ -257,7 +257,68 @@ boutonType.addEventListener("click", () => {
 
 });
 app.appendChild(barreFiltres);
+function fermerFiltresSecondaires() {
+console.log("je ferme");
 
+  filtreBarre.style.display = "none";
+  filtreType.style.display = "none";
+
+  boutonPourQui.textContent =
+    "👥 Pour qui ▼";
+
+  boutonType.textContent =
+    "🏷️ Type d'activité ▼";
+
+}
+const resetFiltres = document.createElement("button");
+
+resetFiltres.textContent =
+  "↺ Réinitialiser les filtres";
+
+resetFiltres.style.marginBottom = "20px";
+
+barreFiltres.appendChild(resetFiltres);
+resetFiltres.addEventListener("click", () => {
+
+  document
+    .querySelectorAll('input[type="checkbox"]')
+    .forEach(caseACocher => {
+
+      caseACocher.checked = false;
+      filtreQuand.style.display = "none";
+
+filtreBarre.style.display = "none";
+
+filtreType.style.display = "none";
+
+boutonQuand.textContent = "📅 Quand ▼";
+
+boutonPourQui.textContent = "👥 Pour qui ▼";
+
+boutonType.textContent = "🏷️ Type d'activité ▼";
+
+    });
+
+  document
+    .getElementById("quand-date").value = "";
+
+  document
+    .getElementById("date-debut").value = "";
+
+  document
+    .getElementById("date-fin").value = "";
+
+  recherche.value = "";
+
+  document
+    .querySelectorAll(".event-card")
+    .forEach(carte => {
+
+      carte.style.display = "";
+
+    });
+
+});
 
 
 const events = [
@@ -377,7 +438,6 @@ app.appendChild(overlay);
 
 const detail = document.createElement("div");
 
-app.appendChild(aucunResultat);
 const voirPlus = document.createElement("button");
 voirPlus.addEventListener("click", () => {
 
@@ -668,20 +728,39 @@ carte.style.display = "";
 
 document
   .getElementById("filtre-public")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("filtre-adulte")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("filtre-famille")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("filtre-jeune")
-  .addEventListener("change", mettreAJourFiltres);
-  recherche.addEventListener("input", () => {
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
   const texte =
     recherche.value.toLowerCase();
@@ -710,21 +789,49 @@ document
 
   });
 
-});document
+
+document
   .getElementById("type-exposition")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
+
+
 
 document
   .getElementById("type-conference")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
+
+
 
 document
   .getElementById("type-visite")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
+
+
 
 document
   .getElementById("type-conte")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
+
   
   function filtrerDate() {
 
@@ -911,48 +1018,108 @@ document
   .addEventListener("change", filtrerPeriode);
   document
   .getElementById("type-arret-oeuvre")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-concert")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-evenement-national")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-jeu-oie")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-memory")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-projection")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-rencontre")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-spectacle")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-vernissage")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-visite-commentee")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-visite-contee")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
 
 document
   .getElementById("type-visite-flash")
-  .addEventListener("change", mettreAJourFiltres);
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+    fermerFiltresSecondaires();
+
+  });
