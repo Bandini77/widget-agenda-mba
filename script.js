@@ -39,7 +39,9 @@ filtreQuand.innerHTML = `
 </label>
 
 <label>
-  <input type="checkbox">
+  
+<input type="checkbox" id="quand-weekend">
+
   Ce week-end
 </label>
 
@@ -205,7 +207,7 @@ const events = [
   },
   {
     date: "22 SEPT. 2026",
-    dateISO: "2026-07-20",
+    dateISO: "2026-09-19",
     title: "L'histoire du portrait",
     meta: "Adulte • 16h00",
     categorie: "Adulte",
@@ -595,3 +597,42 @@ document
   document
   .getElementById("quand-demain")
   .addEventListener("change", filtrerDemain);
+  function filtrerWeekend() {
+
+  const coche =
+    document.getElementById("quand-weekend").checked;
+
+  const cartes =
+    document.querySelectorAll(".event-card");
+
+  cartes.forEach((carte, index) => {
+
+    if (!coche) {
+
+      carte.style.display = "";
+      return;
+
+    }
+
+    const dateEvenement =
+      new Date(events[index].dateISO);
+
+    const jour =
+      dateEvenement.getDay();
+
+    if (jour === 0 || jour === 6) {
+
+      carte.style.display = "";
+
+    } else {
+
+      carte.style.display = "none";
+
+    }
+
+  });
+
+}
+  document
+  .getElementById("quand-weekend")
+  .addEventListener("change", filtrerWeekend);
