@@ -9,6 +9,12 @@ recherche.style.padding = "12px";
 recherche.style.marginBottom = "20px";
 
 app.appendChild(recherche);
+const barreFiltres = document.createElement("div");
+barreFiltres.className = "barre-filtres";
+
+barreFiltres.style.display = "flex";
+barreFiltres.style.gap = "10px";
+barreFiltres.style.marginBottom = "20px";
 const boutonQuand = document.createElement("button");
 
 boutonQuand.textContent = "📅 Quand ▼";
@@ -36,7 +42,7 @@ filtreQuand.innerHTML = `
 <br><br>
 
 <input type="date">
-`;
+`; 
 app.appendChild(boutonQuand);
 app.appendChild(filtreQuand);
 
@@ -134,6 +140,9 @@ filtreType.innerHTML = `
   L'heure du conte
 </label>
 `;
+filtreQuand.className = "menu-filtre";
+filtreBarre.className = "menu-filtre";
+filtreType.className = "menu-filtre";
 const boutonType = document.createElement("button");
 
 boutonType.textContent =
