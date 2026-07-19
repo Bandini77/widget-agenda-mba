@@ -432,3 +432,10 @@ body{
   max-height:400px;
   overflow-y:auto;
 }
+#aucun-resultat{
+  text-align:center;
+  padding:40px;
+  margin-top:30px;
+  font-size:20px;
+  color:#8c7448;
+}

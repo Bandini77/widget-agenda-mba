@@ -376,6 +376,8 @@ overlay.style.display = "none";
 app.appendChild(overlay);
 
 const detail = document.createElement("div");
+
+app.appendChild(aucunResultat);
 const voirPlus = document.createElement("button");
 voirPlus.addEventListener("click", () => {
 
@@ -521,6 +523,7 @@ overlay.style.display = "none";
 });
 function mettreAJourFiltres() {
 
+
   const publicCoche =
     document.getElementById("filtre-public").checked;
 
@@ -591,24 +594,25 @@ const visiteFlashCoche =
   !expositionCoche &&
   !conferenceCoche &&
   !visiteCoche &&
-  !conteCoche;
+  !conteCoche &&
   !arretOeuvreCoche &&
-!concertCoche &&
-!evenementNationalCoche &&
-!jeuOieCoche &&
-!memoryCoche &&
-!projectionCoche &&
-!rencontreCoche &&
-!spectacleCoche &&
-!vernissageCoche &&
-!visiteCommenteeCoche &&
-!visiteConteeCoche &&
-!visiteFlashCoche
+  !concertCoche &&
+  !evenementNationalCoche &&
+  !jeuOieCoche &&
+  !memoryCoche &&
+  !projectionCoche &&
+  !rencontreCoche &&
+  !spectacleCoche &&
+  !vernissageCoche &&
+  !visiteCommenteeCoche &&
+  !visiteConteeCoche &&
+  !visiteFlashCoche;
 
   cartes.forEach((carte, index) => {
 
     if (aucunFiltre) {
-      carte.style.display = "";
+      
+carte.style.display = "";
       return;
     }
 
@@ -651,7 +655,9 @@ const type =
 
 (visiteFlashCoche && type === "Visite Flash")
     ) {
-      carte.style.display = "";
+      
+carte.style.display = "";
+
     } else {
       carte.style.display = "none";
     }
