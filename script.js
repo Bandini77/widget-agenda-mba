@@ -303,6 +303,19 @@ content.appendChild(meta);
   app.appendChild(card);
 
 });
+const overlay = document.createElement("div");
+
+overlay.id = "overlay";
+
+overlay.style.display = "none";
+
+app.appendChild(overlay);
+overlay.addEventListener("click", () => {
+
+  overlay.style.display = "none";
+  detail.style.display = "none";
+
+});
 const detail = document.createElement("div");
 const voirPlus = document.createElement("button");
 voirPlus.addEventListener("click", () => {
@@ -336,6 +349,7 @@ buttons.forEach((button, index) => {
 
   button.addEventListener("click", () => {
     
+    overlay.style.display = "block";
     detail.style.display = "block";
 
     detail.innerHTML = `
@@ -365,6 +379,7 @@ buttons.forEach((button, index) => {
   .addEventListener("click", () => {
 
     detail.style.display = "none";
+overlay.style.display = "none";
 
   });
     
