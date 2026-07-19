@@ -235,7 +235,8 @@ const events = [
     reservation: "Sur inscription"
   }
 ];
-let nombreVisible = 6;
+let nombreVisible =
+  Number(localStorage.getItem("nombreVisible")) || 2;
 
 events.forEach((event, index) => {
 
@@ -285,6 +286,16 @@ content.appendChild(meta);
 });
 const detail = document.createElement("div");
 const voirPlus = document.createElement("button");
+voirPlus.addEventListener("click", () => {
+
+  localStorage.setItem(
+    "nombreVisible",
+    nombreVisible + 2
+  );
+
+  location.reload();
+
+});
 
 voirPlus.textContent = "VOIR PLUS D'ÉVÉNEMENTS";
 
