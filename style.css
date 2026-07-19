@@ -46,7 +46,7 @@ body{
   align-items:center;
   border:1px solid #ddd;
   border-radius:16px;
-  overflow:hidden;
+  overflow:visible;
 }
 
 .event-image{
@@ -247,32 +247,29 @@ body{
   font-size: 24px;
   cursor: pointer;
   font-weight: bold;
-}.event-type{
-  font-size:18px;
-  font-weight:700;
-  text-transform:uppercase;
-  color:#8c7448;
-  letter-spacing:1px;
-  margin-bottom:6px;
-}.barre-filtres {
+}.event-type {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8c7448;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.barre-filtres {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
   position: relative;
+  z-index: 1000;
 }
 
 .menu-filtre {
   position: absolute;
+  z-index: 9999;
   background: white;
   border: 1px solid #ddd;
   border-radius: 12px;
-  padding: 12px;
+  padding: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 100;
-}.barre-filtres {
-  position: relative;
-}
-
-.menu-filtre {
-  position: absolute;
 }

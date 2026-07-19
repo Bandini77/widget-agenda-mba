@@ -43,8 +43,7 @@ filtreQuand.innerHTML = `
 
 <input type="date">
 `; 
-barreFiltres.appendChild(boutonQuand);
-
+app.appendChild(boutonQuand);
 app.appendChild(filtreQuand);
 
 filtreQuand.style.display = "none";
@@ -111,7 +110,7 @@ boutonPourQui.addEventListener("click", () => {
   }
 
 });
-barreFiltres.appendChild(boutonPourQui);
+app.insertBefore(boutonPourQui, filtreBarre);
 
 const filtreType = document.createElement("div");
 
@@ -144,22 +143,13 @@ filtreType.innerHTML = `
 filtreQuand.className = "menu-filtre";
 filtreBarre.className = "menu-filtre";
 filtreType.className = "menu-filtre";
-filtreQuand.style.top = "50px";
-filtreQuand.style.left = "0px";
-
-filtreBarre.style.top = "50px";
-filtreBarre.style.left = "150px";
-
-filtreType.style.top = "50px";
-filtreType.style.left = "320px";
 const boutonType = document.createElement("button");
 
 boutonType.textContent =
   "🏷️ Type d'activité ▼";
 
 boutonType.style.marginBottom = "10px";
-barreFiltres.appendChild(boutonType);
-
+app.appendChild(boutonType);
 app.appendChild(filtreType);
 filtreType.style.display = "none";
 boutonType.addEventListener("click", () => {
@@ -181,7 +171,6 @@ boutonType.addEventListener("click", () => {
   }
 
 });
-app.appendChild(barreFiltres);
 
 
 
