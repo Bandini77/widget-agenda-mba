@@ -25,7 +25,9 @@ const filtreQuand = document.createElement("div");
 
 filtreQuand.innerHTML = `
 <label>
-  <input type="checkbox">
+  
+<input type="checkbox" id="quand-aujourdhui">
+
   Aujourd'hui
 </label>
 
@@ -188,7 +190,7 @@ app.appendChild(barreFiltres);
 const events = [
   {
     date: "18 SEPT. 2026",
-    dateISO: "2026-09-18",
+    dateISO: "2026-07-19",
     title: "Les Impressionnistes",
     meta: "Tout public • 14h30",
     categorie: "Tout public",
@@ -515,3 +517,39 @@ document
   document
   .getElementById("quand-date")
   .addEventListener("change", filtrerDate);
+  function filtrerAujourdHui() {
+
+  const coche =
+    document.getElementById("quand-aujourdhui").checked;
+
+  const cartes =
+    document.querySelectorAll(".event-card");
+
+  const aujourdHui =
+    new Date().toISOString().slice(0, 10);
+
+  cartes.forEach((carte, index) => {
+
+    if (!coche) {
+
+      carte.style.display = "";
+      return;
+
+    }
+
+    if (events[index].dateISO === aujourdHui) {
+
+      carte.style.display = "";
+
+    } else {
+
+      carte.style.display = "none";
+
+    }
+
+  });
+
+}
+  document
+  .getElementById("quand-aujourdhui")
+  .addEventListener("change", filtrerAujourdHui);
