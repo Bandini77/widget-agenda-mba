@@ -65,19 +65,20 @@ app.appendChild(filtreQuand);
 filtreQuand.style.display = "none";
 boutonQuand.addEventListener("click", () => {
 
-  if (filtreQuand.style.display === "none") {
+  const ouvert =
+    filtreQuand.style.display === "block";
+
+  fermerTousLesFiltres();
+
+  if (!ouvert) {
 
     filtreQuand.style.display = "block";
     boutonQuand.textContent = "📅 Quand ▲";
 
-  } else {
-
-    filtreQuand.style.display = "none";
-    boutonQuand.textContent = "📅 Quand ▼";
-
   }
 
 });
+
 const boutonPourQui = document.createElement("button");
 
 boutonPourQui.textContent = "👥 Pour qui ▼";
@@ -113,19 +114,20 @@ app.appendChild(filtreBarre);
 filtreBarre.style.display = "none";
 boutonPourQui.addEventListener("click", () => {
 
-  if (filtreBarre.style.display === "none") {
+  const ouvert =
+    filtreBarre.style.display === "block";
+
+  fermerTousLesFiltres();
+
+  if (!ouvert) {
 
     filtreBarre.style.display = "block";
     boutonPourQui.textContent = "👥 Pour qui ▲";
 
-  } else {
-
-    filtreBarre.style.display = "none";
-    boutonPourQui.textContent = "👥 Pour qui ▼";
-
   }
 
 });
+
 barreFiltres.appendChild(boutonPourQui);
 
 const filtreType = document.createElement("div");
@@ -227,6 +229,17 @@ filtreBarre.style.left = "150px";
 
 filtreType.style.top = "50px";
 filtreType.style.left = "320px";
+function fermerTousLesFiltres() {
+
+  filtreQuand.style.display = "none";
+  filtreBarre.style.display = "none";
+  filtreType.style.display = "none";
+
+  boutonQuand.textContent = "📅 Quand ▼";
+  boutonPourQui.textContent = "👥 Pour qui ▼";
+  boutonType.textContent = "🏷️ Type d'activité ▼";
+
+}
 const boutonType = document.createElement("button");
 
 boutonType.textContent =
@@ -239,23 +252,21 @@ app.appendChild(filtreType);
 filtreType.style.display = "none";
 boutonType.addEventListener("click", () => {
 
-  if (filtreType.style.display === "none") {
+  const ouvert =
+    filtreType.style.display === "block";
+
+  fermerTousLesFiltres();
+
+  if (!ouvert) {
 
     filtreType.style.display = "block";
-
     boutonType.textContent =
       "🏷️ Type d'activité ▲";
-
-  } else {
-
-    filtreType.style.display = "none";
-
-    boutonType.textContent =
-      "🏷️ Type d'activité ▼";
 
   }
 
 });
+
 app.appendChild(barreFiltres);
 function fermerFiltresSecondaires() {
 console.log("je ferme");
