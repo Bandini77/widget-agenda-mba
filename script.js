@@ -118,22 +118,26 @@ filtreBarre.style.marginBottom = "20px";
 
 filtreBarre.innerHTML = `
 
-<div class="filtre-header">
-
-  <span>Pour qui</span>
-
-  <button id="fermer-pourqui">
-    ✕
-  </button>
-
-</div>
-
 <label>
   <input type="checkbox" id="filtre-public">
   Tout public
 </label>
 
-...
+<label>
+  <input type="checkbox" id="filtre-adulte">
+  Adulte
+</label>
+
+<label>
+  <input type="checkbox" id="filtre-famille">
+  Famille
+</label>
+
+<label>
+  <input type="checkbox" id="filtre-jeune">
+  Jeune public
+</label>
+
 `;`
 
 <label>
@@ -400,6 +404,8 @@ boutonType.textContent = "🏷️ Type d'activité ▼";
 
 });
 
+/*
+
 document
   .getElementById("fermer-quand")
   .addEventListener("click", () => {
@@ -409,7 +415,10 @@ document
     boutonQuand.textContent =
       "📅 Quand ▼";
 
-  });
+  });*/
+
+/*
+
   document
   .getElementById("fermer-pourqui")
   .addEventListener("click", () => {
@@ -419,7 +428,10 @@ document
     boutonPourQui.textContent =
       "👥 Pour qui ▼";
 
-  });
+  });*/
+
+/*
+
 document
   .getElementById("fermer-type")
   .addEventListener("click", () => {
@@ -429,7 +441,7 @@ document
     boutonType.textContent =
       "🏷️ Type d'activité ▼";
 
-  });
+  });*/
   
   /*
   
