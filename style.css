@@ -506,3 +506,23 @@ background:#876d45;
 #voir-plus:hover{
   opacity:0.7;
 }
+.filtre-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.filtre-footer{
+  margin-top:20px;
+  text-align:right;
+}
+
+.filtre-footer button{
+  background:#876d45;
+  color:white;
+  border:none;
+  border-radius:8px;
+  padding:10px 16px;
+  cursor:pointer;
+}

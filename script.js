@@ -24,6 +24,34 @@ boutonQuand.style.marginBottom = "10px";
 const filtreQuand = document.createElement("div");
 
 filtreQuand.innerHTML = `
+
+<div class="filtre-header">
+
+  <span>Quand</span>
+
+  <button id="fermer-quand">
+    ✕
+  </button>
+
+</div>
+
+<label>
+
+<input type="checkbox" id="quand-aujourdhui">
+
+Aujourd'hui
+
+</label>
+
+...
+<div class="filtre-footer">
+
+  <button id="appliquer-quand">
+    APPLIQUER
+  </button>
+
+</div>`;`
+
 <label>
   
 <input type="checkbox" id="quand-aujourdhui">
@@ -89,6 +117,25 @@ const filtreBarre = document.createElement("div");
 filtreBarre.style.marginBottom = "20px";
 
 filtreBarre.innerHTML = `
+
+<div class="filtre-header">
+
+  <span>Pour qui</span>
+
+  <button id="fermer-pourqui">
+    ✕
+  </button>
+
+</div>
+
+<label>
+  <input type="checkbox" id="filtre-public">
+  Tout public
+</label>
+
+...
+`;`
+
 <label>
   <input type="checkbox" id="filtre-public">
   Tout public
@@ -108,7 +155,13 @@ filtreBarre.innerHTML = `
   <input type="checkbox" id="filtre-jeune">
   Jeune public
 </label>
-`;
+<div class="filtre-footer">
+
+  <button id="appliquer-pourqui">
+    APPLIQUER
+  </button>
+
+</div>`;
 
 app.appendChild(filtreBarre);
 filtreBarre.style.display = "none";
@@ -136,6 +189,16 @@ filtreType.style.marginTop = "20px";
 filtreType.style.marginBottom = "20px";
 
 filtreType.innerHTML = `
+<div class="filtre-header">
+
+  <span>Type d'activité</span>
+
+  <button id="fermer-type">
+    ✕
+  </button>
+
+</div>
+
 <strong>Type d'activité</strong><br>
 
 <label>
@@ -217,7 +280,13 @@ filtreType.innerHTML = `
   <input type="checkbox" id="type-visite-flash">
   Visite Flash
 </label>
-`;
+<div class="filtre-footer">
+
+  <button id="appliquer-type">
+    APPLIQUER
+  </button>
+
+</div>`;
 filtreQuand.className = "menu-filtre";
 filtreBarre.className = "menu-filtre";
 filtreType.className = "menu-filtre";
@@ -331,6 +400,83 @@ boutonType.textContent = "🏷️ Type d'activité ▼";
 
 });
 
+document
+  .getElementById("fermer-quand")
+  .addEventListener("click", () => {
+
+    filtreQuand.style.display = "none";
+
+    boutonQuand.textContent =
+      "📅 Quand ▼";
+
+  });
+  document
+  .getElementById("fermer-pourqui")
+  .addEventListener("click", () => {
+
+    filtreBarre.style.display = "none";
+
+    boutonPourQui.textContent =
+      "👥 Pour qui ▼";
+
+  });
+document
+  .getElementById("fermer-type")
+  .addEventListener("click", () => {
+
+    filtreType.style.display = "none";
+
+    boutonType.textContent =
+      "🏷️ Type d'activité ▼";
+
+  });
+  
+  /*
+  
+  document
+  .getElementById("appliquer-quand")
+  .addEventListener("click", () => {
+
+    filtrerDate();
+    filtrerPeriode();
+
+    filtreQuand.style.display = "none";
+
+    boutonQuand.textContent =
+      "📅 Quand ▼";
+
+  });
+  */
+/*
+document
+  .getElementById("appliquer-pourqui")
+  .addEventListener("click", () => {
+
+    mettreAJourFiltres();
+
+    filtreBarre.style.display = "none";
+
+    boutonPourQui.textContent =
+      "👥 Pour qui ▼";
+
+  });
+
+  */
+
+  /*
+document
+  .getElementById("appliquer-type")
+  .addEventListener("click", () => {
+
+    mettreAJourFiltres();
+
+    filtreType.style.display = "none";
+
+    boutonType.textContent =
+      "🏷️ Type d'activité ▼";
+
+  });
+  */
 
 const events = [
   {
@@ -767,7 +913,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -776,7 +921,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -785,7 +929,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -794,7 +937,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -831,7 +973,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -842,7 +983,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -853,7 +993,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -864,7 +1003,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1057,7 +1195,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1066,7 +1203,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1075,7 +1211,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1084,7 +1219,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1093,7 +1227,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1102,7 +1235,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1111,7 +1243,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1120,7 +1251,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1129,7 +1259,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1138,7 +1267,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1147,7 +1275,6 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
 
@@ -1156,6 +1283,5 @@ document
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
-    fermerFiltresSecondaires();
 
   });
