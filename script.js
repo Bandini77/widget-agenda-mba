@@ -25,16 +25,6 @@ const filtreQuand = document.createElement("div");
 
 filtreQuand.innerHTML = `
 
-<div class="filtre-header">
-
-  <span>Quand</span>
-
-  <button id="fermer-quand">
-    ✕
-  </button>
-
-</div>
-
 <label>
 
 <input type="checkbox" id="quand-aujourdhui">
@@ -43,39 +33,26 @@ Aujourd'hui
 
 </label>
 
-...
-<div class="filtre-footer">
-
-  <button id="appliquer-quand">
-    APPLIQUER
-  </button>
-
-</div>`;`
-
 <label>
-  
-<input type="checkbox" id="quand-aujourdhui">
 
-  Aujourd'hui
-</label>
-
-<label>
-  
 <input type="checkbox" id="quand-demain">
 
-  Demain
+Demain
+
 </label>
 
 <label>
-  
+
 <input type="checkbox" id="quand-weekend">
 
-  Ce week-end
+Ce week-end
+
 </label>
 
 <br><br>
 
 <input type="date" id="quand-date">
+
 <br><br>
 
 Du :
@@ -85,7 +62,9 @@ Du :
 
 Au :
 <input type="date" id="date-fin">
-`; 
+
+`;
+
 barreFiltres.appendChild(boutonQuand);
 
 app.appendChild(filtreQuand);
@@ -138,34 +117,7 @@ filtreBarre.innerHTML = `
   Jeune public
 </label>
 
-`;`
-
-<label>
-  <input type="checkbox" id="filtre-public">
-  Tout public
-</label>
-
-<label>
-  <input type="checkbox" id="filtre-adulte">
-  Adulte
-</label>
-
-<label>
-  <input type="checkbox" id="filtre-famille">
-  Famille
-</label>
-
-<label>
-  <input type="checkbox" id="filtre-jeune">
-  Jeune public
-</label>
-<div class="filtre-footer">
-
-  <button id="appliquer-pourqui">
-    APPLIQUER
-  </button>
-
-</div>`;
+`;
 
 app.appendChild(filtreBarre);
 filtreBarre.style.display = "none";
