@@ -1,3 +1,37 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/AvenirNextLTPro-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+body{
+  font-family:"Avenir Next", sans-serif;
+}
+body,
+button,
+input,
+select,
+textarea,
+div{
+  font-family:"Avenir Next", sans-serif;
+}
 body{
   margin:0;
   padding:30px;
