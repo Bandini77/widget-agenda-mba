@@ -104,7 +104,10 @@ lucide.createIcons();
 
 const boutonPourQui = document.createElement("button");
 
-boutonPourQui.textContent = "👥 Pour qui ▼";
+boutonPourQui.innerHTML =
+  '<i data-lucide="users"></i><span>Pour qui</span><i data-lucide="chevron-down"></i>';
+
+lucide.createIcons();
 
 boutonPourQui.style.marginBottom = "10px";
 const filtreBarre = document.createElement("div");
@@ -147,7 +150,10 @@ boutonPourQui.addEventListener("click", () => {
   if (!ouvert) {
 
     filtreBarre.style.display = "block";
-    boutonPourQui.textContent = "👥 Pour qui ▲";
+    boutonPourQui.innerHTML =
+  '<i data-lucide="users"></i><span>Pour qui</span><i data-lucide="chevron-up"></i>';
+
+lucide.createIcons();
 
   }
 
@@ -281,14 +287,23 @@ function fermerTousLesFiltres() {
 
 
 lucide.createIcons();
-  boutonPourQui.textContent = "👥 Pour qui ▼";
-  boutonType.textContent = "🏷️ Type d'activité ▼";
+  boutonPourQui.innerHTML =
+  '<i data-lucide="users"></i><span>Pour qui</span><i data-lucide="chevron-down"></i>';
+
+lucide.createIcons();
+  boutonType.innerHTML =
+  '<i data-lucide="tag"></i><span>Type d’activité</span><i data-lucide="chevron-down"></i>';
+
+lucide.createIcons();
 
 }
 const boutonType = document.createElement("button");
 
-boutonType.textContent =
-  "🏷️ Type d'activité ▼";
+
+  boutonType.innerHTML =
+  '<i data-lucide="tag"></i><span>Type d’activité</span><i data-lucide="chevron-down"></i>';
+
+lucide.createIcons();
 
 boutonType.style.marginBottom = "10px";
 barreFiltres.appendChild(boutonType);
@@ -305,8 +320,11 @@ boutonType.addEventListener("click", () => {
   if (!ouvert) {
 
     filtreType.style.display = "block";
-    boutonType.textContent =
-      "🏷️ Type d'activité ▲";
+
+      boutonType.innerHTML =
+  '<i data-lucide="tag"></i><span>Type d’activité</span><i data-lucide="chevron-up"></i>';
+
+lucide.createIcons();
 
   }
 
@@ -325,16 +343,24 @@ console.log("je ferme");
   filtreType.style.display = "none";
 
   boutonPourQui.textContent =
-    "👥 Pour qui ▼";
+    boutonPourQui.innerHTML =
+  '<i data-lucide="users"></i><span>Pour qui</span><i data-lucide="chevron-down"></i>';
 
-  boutonType.textContent =
-    "🏷️ Type d'activité ▼";
+lucide.createIcons();
+
+    boutonType.innerHTML =
+  '<i data-lucide="tag"></i><span>Type d’activité</span><i data-lucide="chevron-down"></i>';
+
+lucide.createIcons();
 
 }
 const resetFiltres = document.createElement("button");
 
-resetFiltres.textContent =
-  "↺ Réinitialiser les filtres";
+
+  resetFiltres.innerHTML =
+  '<i data-lucide="rotate-ccw"></i><span>Réinitialiser les filtres</span>';
+  
+  lucide.createIcons();
 
 resetFiltres.style.marginBottom = "20px";
 
@@ -360,9 +386,15 @@ boutonQuand.innerHTML =
 lucide.createIcons();
 
 
-boutonPourQui.textContent = "👥 Pour qui ▼";
+boutonPourQui.innerHTML =
+  '<i data-lucide="users"></i><span>Pour qui</span><i data-lucide="chevron-down"></i>';
 
-boutonType.textContent = "🏷️ Type d'activité ▼";
+lucide.createIcons();
+
+boutonType.textContent = boutonType.innerHTML =
+  '<i data-lucide="tag"></i><span>Type d’activité</span><i data-lucide="chevron-down"></i>';
+
+lucide.createIcons();
 
     });
 

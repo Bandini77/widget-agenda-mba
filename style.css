@@ -663,3 +663,8 @@ background:#876d45;
   font-size:16px;
 
 }
+#reset-filtres,
+.reset-filtres{
+  border-radius:12px;
+  background:white;
+}
