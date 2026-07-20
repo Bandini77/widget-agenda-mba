@@ -450,6 +450,7 @@ const events = [
     annee: "2026",
     heure: "14h30",
     dateISO: "2026-07-19",
+    image: "images/impressionnistes.jpeg",
     title: "Les Impressionnistes",
     meta: "Tout public",
     categorie: "Tout public",
@@ -467,6 +468,7 @@ const events = [
     annee: "2026",
     heure: "14h30",
     dateISO: "2026-09-19",
+    image: "images/portrait.jpeg",
     title: "L'histoire du portrait",
     meta: "Adulte",
     categorie: "Adulte",
@@ -484,6 +486,7 @@ const events = [
     annee: "2026",
     heure: "14h30",
     dateISO: "2026-09-25",
+    image: "images/atelier.jpg",
     title: "Les couleurs du musée",
     meta: "Famille",
     categorie: "Famille",
@@ -501,6 +504,7 @@ const events = [
     annee: "2026",
     heure: "14h30",
     dateISO: "2026-09-29",
+    image: "images/conte.jpg",
     title: "Les petits explorateurs",
     meta: "Jeune public",
     categorie: "Jeune public",
@@ -526,7 +530,7 @@ events.forEach((event, index) => {
 
   const image = document.createElement("img");
   image.className = "event-image";
-  image.src = "images/event1.jpg";
+  image.src = event.image;
 
   const date = document.createElement("div");
 
@@ -629,7 +633,7 @@ buttons.forEach((button, index) => {
   <div class="detail-image">
 
     <img
-      src="images/event1.jpg"
+      src="${events[index].image}"
       alt="${events[index].title}"
     >
 
@@ -695,13 +699,10 @@ buttons.forEach((button, index) => {
 <div>
 
   <h4>Partager</h4>
+<div class="share-actions">
 
 <p>🔗 Copier le lien</p>
 <p>✉️ Email</p>
-</div>
-</div>
-
-<div class="detail-calendar">
 
   <button class="calendar-btn">
     📅 Ajouter à mon calendrier
