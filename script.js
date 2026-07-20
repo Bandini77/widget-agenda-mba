@@ -335,6 +335,9 @@ boutonType.textContent = "🏷️ Type d'activité ▼";
 const events = [
   {
     date: "18 SEPT. 2026",
+    jour: "18",
+    mois: "SEPT.",
+    annee: "2026",
     heure: "14h30",
     dateISO: "2026-07-19",
     title: "Les Impressionnistes",
@@ -348,7 +351,10 @@ const events = [
     reservation: "Réserver en ligne"
   },
   {
-    date: "22 SEPT. 2026",
+    date: "19 SEPT. 2026",
+    jour: "19",
+    mois: "SEPT.",
+    annee: "2026",
     heure: "14h30",
     dateISO: "2026-09-19",
     title: "L'histoire du portrait",
@@ -363,6 +369,9 @@ const events = [
   },
 {
     date: "25 SEPT. 2026",
+    jour: "25",
+    mois: "SEPT.",
+    annee: "2026",
     heure: "14h30",
     dateISO: "2026-09-25",
     title: "Les couleurs du musée",
@@ -377,6 +386,9 @@ const events = [
 },
   {
     date: "29 SEPT. 2026",
+    jour: "29",
+    mois: "SEPT.",
+    annee: "2026",
     heure: "14h30",
     dateISO: "2026-09-29",
     title: "Les petits explorateurs",
@@ -407,8 +419,18 @@ events.forEach((event, index) => {
   image.src = "images/event1.jpg";
 
   const date = document.createElement("div");
-  date.className = "event-date";
-  date.textContent = event.date;
+
+date.className = "event-date";
+
+date.innerHTML = `
+  <div class="event-day">${event.jour}</div>
+
+  <div class="event-month">${event.mois}</div>
+
+  <div class="event-year">${event.annee}</div>
+
+  <div class="event-hour">${event.heure}</div>
+`;
 
   const content = document.createElement("div");
   content.className = "event-content";
@@ -422,7 +444,9 @@ type.textContent = event.type;
   title.textContent = event.title;
 
   const meta = document.createElement("p");
-  meta.textContent = event.meta;
+  meta.innerHTML = `
+👤 ${event.meta}
+`;
 
   content.appendChild(type);
 content.appendChild(title);
@@ -449,7 +473,8 @@ app.appendChild(overlay);
 
 const detail = document.createElement("div");
 
-const voirPlus = document.createElement("button");
+const voirPlus = document.createElement("div");
+voirPlus.id = "voir-plus";
 voirPlus.addEventListener("click", () => {
 
   localStorage.setItem(
@@ -461,10 +486,10 @@ voirPlus.addEventListener("click", () => {
 
 });
 
-voirPlus.textContent = "VOIR PLUS D'ÉVÉNEMENTS";
+voirPlus.textContent =
+  "VOIR PLUS D'ÉVÉNEMENTS ⌄";
 
 voirPlus.style.marginTop = "20px";
-voirPlus.style.padding = "12px 24px";
 detail.id = "event-detail";
 
 detail.style.marginTop = "20px";

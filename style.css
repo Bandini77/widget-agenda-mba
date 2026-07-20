@@ -64,8 +64,8 @@ body{
   font-weight:bold;
 }
 
-.event-content{
-  padding:20px;
+.event-date{
+  flex-shrink:0;
 }
 
 .event-title{
@@ -124,10 +124,6 @@ body{
 .day{
   font-size:42px;
   font-weight:bold;
-}
-
-.event-content{
-  padding:20px;
 }
 
 .event-title{
@@ -231,15 +227,16 @@ body{
   cursor:pointer;
   border:none;
   border-radius:50%;
-  width:44px;
-  height:44px;
-  background:#876d45;
+  width:48px;
+  height:48px;
+  background:#9b8054;
   color:white;
-  font-size:20px;
+  font-size:24px;
+  font-weight:300;
 }
 
 .event-card button:hover{
-  opacity:.85;
+background:#876d45;
 }#fermer-detail {
   float: right;
   border: none;
@@ -444,4 +441,68 @@ body{
 
 #reset-filtres{
   margin-bottom:20px;
+}
+.event-date{
+  text-align:center;
+  width:70px;
+  padding:0 20px;
+}
+
+.event-day{
+  font-size:48px;
+  font-weight:700;
+  color:#876d45;
+  line-height:1;
+}
+
+.event-month{
+  color:#876d45;
+  font-size:16px;
+  font-weight:600;
+  text-transform:uppercase;
+}
+
+.event-year{
+  color:#876d45;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.event-hour{
+  font-size:16px;
+  font-weight:500;
+  margin-top:8px;
+}
+
+.event-type{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:#876d45;
+  letter-spacing:1px;
+  margin-bottom:6px;
+}
+.event-content{
+  padding:20px 30px;
+  margin-left:30px;
+  border-left:1px solid #d8d8d8;
+  min-width:0;
+}
+#voir-plus{
+  text-align:center;
+
+  margin:30px 0;
+
+  color:#876d45;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  cursor:pointer;
+}
+#voir-plus:hover{
+  opacity:0.7;
 }
