@@ -602,6 +602,16 @@ background:#876d45;
   text-transform:uppercase;
 
   cursor:pointer;
+  
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+}
+#voir-plus svg{
+  width:16px;
+  height:16px;
 }
 #voir-plus:hover{
   opacity:0.7;

@@ -663,8 +663,12 @@ voirPlus.addEventListener("click", () => {
 
 });
 
-voirPlus.textContent =
-  "VOIR PLUS D'ÉVÉNEMENTS ⌄";
+
+voirPlus.innerHTML =
+  '<span>VOIR PLUS D\'ÉVÉNEMENTS</span><i data-lucide="chevron-down"></i>';
+
+lucide.createIcons();
+
 
 voirPlus.style.marginTop = "20px";
 detail.id = "event-detail";
