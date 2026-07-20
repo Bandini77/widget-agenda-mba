@@ -905,6 +905,8 @@ document
 
   });
 
+  recherche.addEventListener("input", () => {
+
   const texte =
     recherche.value.toLowerCase();
 
@@ -925,12 +927,18 @@ document
       ).toLowerCase();
 
     if (contenu.includes(texte)) {
+
       carte.style.display = "";
+
     } else {
+
       carte.style.display = "none";
+
     }
 
   });
+
+});
 
 
 document
