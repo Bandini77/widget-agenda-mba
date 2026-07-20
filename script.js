@@ -7,6 +7,14 @@ recherche.placeholder = "Recherche...";
 recherche.style.width = "100%";
 recherche.style.padding = "12px";
 recherche.style.marginBottom = "20px";
+recherche.style.border =
+  "1px solid #d8d8d8";
+
+recherche.style.borderRadius =
+  "10px";
+
+recherche.style.fontSize =
+  "16px";
 
 app.appendChild(recherche);
 const barreFiltres = document.createElement("div");
@@ -652,8 +660,9 @@ buttons.forEach((button, index) => {
     </h2>
 
     <div class="detail-public">
-  ${events[index].meta}
+  👤 ${events[index].meta}
 </div>
+
 
    <div class="detail-datetime">
 

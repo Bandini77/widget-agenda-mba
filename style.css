@@ -79,9 +79,28 @@ body{
 }
 
 .event-more button{
-  width:44px;
-  height:44px;
+  width:42px;
+  height:42px;
+
+  border:none;
+
   border-radius:50%;
+
+  background:#8c7448;
+
+  color:white;
+
+  font-size:22px;
+
+  font-weight:300;
+
+  cursor:pointer;
+
+  transition:0.2s;
+}
+
+.event-more button:hover{
+  background:#745f3b;
 }
 
 @media(max-width:1000px){
