@@ -25,7 +25,10 @@ barreFiltres.style.gap = "10px";
 barreFiltres.style.marginBottom = "20px";
 const boutonQuand = document.createElement("button");
 
-boutonQuand.textContent = "📅 Quand ▼";
+boutonQuand.innerHTML =
+  '<i data-lucide="calendar"></i><span>Quand</span><i data-lucide="chevron-down"></i>';
+
+  lucide.createIcons();
 
 boutonQuand.style.marginBottom = "10px";
 
@@ -88,7 +91,12 @@ boutonQuand.addEventListener("click", () => {
   if (!ouvert) {
 
     filtreQuand.style.display = "block";
-    boutonQuand.textContent = "📅 Quand ▲";
+    
+    boutonQuand.innerHTML =
+  '<i data-lucide="calendar"></i><span>Quand</span><i data-lucide="chevron-down"></i>';
+
+
+lucide.createIcons();
 
   }
 
@@ -268,7 +276,11 @@ function fermerTousLesFiltres() {
   filtreBarre.style.display = "none";
   filtreType.style.display = "none";
 
-  boutonQuand.textContent = "📅 Quand ▼";
+  boutonQuand.innerHTML =
+  '<i data-lucide="calendar"></i><span>Quand</span><i data-lucide="chevron-down"></i>';
+
+
+lucide.createIcons();
   boutonPourQui.textContent = "👥 Pour qui ▼";
   boutonType.textContent = "🏷️ Type d'activité ▼";
 
@@ -301,6 +313,11 @@ boutonType.addEventListener("click", () => {
 });
 
 app.appendChild(barreFiltres);
+
+setTimeout(() => {
+  lucide.createIcons();
+}, 0);
+
 function fermerFiltresSecondaires() {
 console.log("je ferme");
 
@@ -335,7 +352,13 @@ filtreBarre.style.display = "none";
 
 filtreType.style.display = "none";
 
-boutonQuand.textContent = "📅 Quand ▼";
+
+boutonQuand.innerHTML =
+  '<i data-lucide="calendar"></i><span>Quand</span><i data-lucide="chevron-down"></i>';
+
+
+lucide.createIcons();
+
 
 boutonPourQui.textContent = "👥 Pour qui ▼";
 
