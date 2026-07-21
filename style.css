@@ -768,7 +768,7 @@ background:#876d45;
    ========================== */
 
 .menu-filtre{
-  width:260px;
+  width:220px;
 
   background:white;
 
@@ -804,12 +804,23 @@ background:#876d45;
 .menu-filtre label{
   display:flex;
   align-items:center;
+  gap:12px;
 
-  gap:10px;
+  padding:8px 0;
 
-  padding:7px 0;
+  line-height:1;
+}
 
-  cursor:pointer;
+.menu-filtre input[type="checkbox"]{
+  width:18px;
+  height:18px;
+
+  margin:0;
+
+  accent-color:#876d45;
+
+  flex:none;
+
 }
 
 .menu-filtre input[type="checkbox"]{
@@ -817,4 +828,22 @@ background:#876d45;
   height:18px;
 
   accent-color:#876d45;
+}
+.filtre-wrapper{
+  position:relative;
+}
+
+.filtre-wrapper .menu-filtre{
+  position:absolute;
+
+  top:calc(100% + 6px);
+  left:0;
+
+  z-index:9999;
+}
+.menu-filtre input[type="date"]{
+  width:130px;
+}
+.menu-filtre{
+  width:200px;
 }

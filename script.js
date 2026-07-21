@@ -23,6 +23,14 @@ barreFiltres.className = "barre-filtres";
 barreFiltres.style.display = "flex";
 barreFiltres.style.gap = "10px";
 barreFiltres.style.marginBottom = "20px";
+const wrapperQuand = document.createElement("div");
+wrapperQuand.className = "filtre-wrapper";
+
+const wrapperPourQui = document.createElement("div");
+wrapperPourQui.className = "filtre-wrapper";
+
+const wrapperType = document.createElement("div");
+wrapperType.className = "filtre-wrapper";
 const boutonQuand = document.createElement("button");
 
 boutonQuand.innerHTML =
@@ -36,29 +44,13 @@ const filtreQuand = document.createElement("div");
 
 filtreQuand.innerHTML = `
 
-<label>
+<label><input type="checkbox" id="quand-aujourdhui
 
-<input type="checkbox" id="quand-aujourdhui">
+<label><input type="checkbox" id="quand-aujourdhui">Aujourd'hui</label>
 
-Aujourd'hui
+<label><input type="checkbox" id="quand-demain">Demain</label>
 
-</label>
-
-<label>
-
-<input type="checkbox" id="quand-demain">
-
-Demain
-
-</label>
-
-<label>
-
-<input type="checkbox" id="quand-weekend">
-
-Ce week-end
-
-</label>
+<label><input type="checkbox" id="quand-weekend">Ce week-end</label>
 
 <br><br>
 
@@ -76,9 +68,10 @@ Au :
 
 `;
 
-barreFiltres.appendChild(boutonQuand);
+wrapperQuand.appendChild(boutonQuand);
+wrapperQuand.appendChild(filtreQuand);
 
-app.appendChild(filtreQuand);
+barreFiltres.appendChild(wrapperQuand);
 
 filtreQuand.style.display = "none";
 boutonQuand.addEventListener("click", () => {
@@ -116,29 +109,20 @@ filtreBarre.style.marginBottom = "20px";
 
 filtreBarre.innerHTML = `
 
-<label>
-  <input type="checkbox" id="filtre-public">
-  Tout public
-</label>
+<label><input type="checkbox" id="filtre-public">Tout public</label>
 
-<label>
-  <input type="checkbox" id="filtre-adulte">
-  Adulte
-</label>
+<label><input type="checkbox" id="filtre-adulte">Adulte</label>
 
-<label>
-  <input type="checkbox" id="filtre-famille">
-  Famille
-</label>
+<label><input type="checkbox" id="filtre-famille">Famille</label>
 
-<label>
-  <input type="checkbox" id="filtre-jeune">
-  Jeune public
-</label>
+<label><input type="checkbox" id="filtre-jeune">Jeune public</label>
 
 `;
 
-app.appendChild(filtreBarre);
+wrapperPourQui.appendChild(boutonPourQui);
+wrapperPourQui.appendChild(filtreBarre);
+
+barreFiltres.appendChild(wrapperPourQui);
 filtreBarre.style.display = "none";
 boutonPourQui.addEventListener("click", () => {
 
@@ -159,7 +143,6 @@ lucide.createIcons();
 
 });
 
-barreFiltres.appendChild(boutonPourQui);
 
 const filtreType = document.createElement("div");
 
@@ -171,13 +154,9 @@ filtreType.innerHTML = `
 
   <span>Type d'activité</span>
 
-  <button id="fermer-type">
-    ✕
-  </button>
 
 </div>
 
-<strong>Type d'activité</strong><br>
 
 <label>
   <input type="checkbox" id="type-arret-oeuvre">
@@ -268,15 +247,6 @@ filtreType.innerHTML = `
 filtreQuand.className = "menu-filtre";
 filtreBarre.className = "menu-filtre";
 filtreType.className = "menu-filtre";
-filtreQuand.style.top = "50px";
-
-filtreQuand.style.left = "0px";
-filtreBarre.style.left = "240px";
-filtreType.style.left = "480px";
-
-filtreBarre.style.top = "50px";
-
-filtreType.style.top = "50px";
 
 function fermerTousLesFiltres() {
 
@@ -308,9 +278,10 @@ const boutonType = document.createElement("button");
 lucide.createIcons();
 
 boutonType.style.marginBottom = "10px";
-barreFiltres.appendChild(boutonType);
+wrapperType.appendChild(boutonType);
+wrapperType.appendChild(filtreType);
 
-app.appendChild(filtreType);
+barreFiltres.appendChild(wrapperType);
 filtreType.style.display = "none";
 boutonType.addEventListener("click", () => {
 

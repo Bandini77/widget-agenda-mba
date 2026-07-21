@@ -42,10 +42,14 @@
 
 
 ### V2.20.8
-- Lucide dans toute la modale
-- Partage
-- Public
-- Calendrier
+
+- Intégration de Lucide dans toute la modale
+- Refonte du cartouche type d'activité
+- Harmonisation du bloc public
+- Alignement du bloc tarif
+- Harmonisation réservation
+- Harmonisation partage
+- Ajustement du cadrage des images
 
 ### V2.21
 - Responsive tablette
