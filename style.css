@@ -528,7 +528,7 @@ background:#876d45;
   display:block;
   margin-bottom:8px;
 }.menu-filtre{
-  max-height:400px;
+  max-height:320px;
   overflow-y:auto;
 }
 #aucun-resultat{
