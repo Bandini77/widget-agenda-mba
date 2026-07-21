@@ -269,13 +269,15 @@ filtreQuand.className = "menu-filtre";
 filtreBarre.className = "menu-filtre";
 filtreType.className = "menu-filtre";
 filtreQuand.style.top = "50px";
+
 filtreQuand.style.left = "0px";
+filtreBarre.style.left = "240px";
+filtreType.style.left = "480px";
 
 filtreBarre.style.top = "50px";
-filtreBarre.style.left = "150px";
 
 filtreType.style.top = "50px";
-filtreType.style.left = "320px";
+
 function fermerTousLesFiltres() {
 
   filtreQuand.style.display = "none";

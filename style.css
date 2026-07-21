@@ -762,3 +762,59 @@ background:#876d45;
   position:relative;
   top:-2px;
 }
+/* ==========================
+   V2.20.7 - Filtres
+   Étape 1 : harmonisation
+   ========================== */
+
+.menu-filtre{
+  width:260px;
+
+  background:white;
+
+  border:1px solid #e6e6e6;
+  border-radius:16px;
+
+  padding:20px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.08);
+
+  max-height:450px;
+  overflow-y:auto;
+
+  margin-top:8px;
+
+}
+
+.menu-filtre strong{
+  display:block;
+
+  margin-bottom:16px;
+
+  color:#876d45;
+
+  font-size:14px;
+  font-weight:700;
+
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.menu-filtre label{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  padding:7px 0;
+
+  cursor:pointer;
+}
+
+.menu-filtre input[type="checkbox"]{
+  width:18px;
+  height:18px;
+
+  accent-color:#876d45;
+}
