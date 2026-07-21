@@ -925,37 +925,14 @@ document
   .getElementById("filtre-public")
   .addEventListener("change", () => {
 
-    const coche =
-      document.getElementById("filtre-public").checked;
-
-    document.getElementById("filtre-adulte").checked = coche;
-    document.getElementById("filtre-famille").checked = coche;
-    document.getElementById("filtre-jeune").checked = coche;
-
     mettreAJourFiltres();
 
   });
-  function mettreAJourToutPublic() {
-
-  const adulte =
-    document.getElementById("filtre-adulte").checked;
-
-  const famille =
-    document.getElementById("filtre-famille").checked;
-
-  const jeune =
-    document.getElementById("filtre-jeune").checked;
-
-  document.getElementById("filtre-public").checked =
-    adulte && famille && jeune;
-
-}
 
 document
   .getElementById("filtre-adulte")
   .addEventListener("change", () => {
 
-    mettreAJourToutPublic();
     mettreAJourFiltres();
 
   });
@@ -964,7 +941,6 @@ document
   .getElementById("filtre-famille")
   .addEventListener("change", () => {
 
-    mettreAJourToutPublic();
     mettreAJourFiltres();
 
   });
@@ -973,7 +949,6 @@ document
   .getElementById("filtre-jeune")
   .addEventListener("change", () => {
 
-    mettreAJourToutPublic();
     mettreAJourFiltres();
 
   });
