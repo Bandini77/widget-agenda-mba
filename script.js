@@ -622,22 +622,33 @@ type.textContent = event.type;
 
   const meta = document.createElement("p");
   meta.innerHTML = `
-👤 ${event.meta}
+<i data-lucide="users"></i> ${event.meta}
 `;
+lucide.createIcons();
 
   content.appendChild(type);
 content.appendChild(title);
 content.appendChild(meta);
 
   const more = document.createElement("button");
-  more.textContent = "+";
+more.textContent = "+";
 
-  card.appendChild(image);
-  card.appendChild(date);
-  card.appendChild(content);
-  card.appendChild(more);
+const left = document.createElement("div");
+left.className = "event-left";
 
-  app.appendChild(card);
+left.appendChild(image);
+left.appendChild(date);
+
+const right = document.createElement("div");
+right.className = "event-right";
+
+right.appendChild(content);
+right.appendChild(more);
+
+card.appendChild(left);
+card.appendChild(right);
+
+app.appendChild(card);
 
 });
 const overlay = document.createElement("div");
