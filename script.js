@@ -150,13 +150,6 @@ filtreType.style.marginTop = "20px";
 filtreType.style.marginBottom = "20px";
 
 filtreType.innerHTML = `
-<div class="filtre-header">
-
-  <span>Type d'activité</span>
-
-
-</div>
-
 
 <label>
   <input type="checkbox" id="type-arret-oeuvre">
@@ -237,13 +230,7 @@ filtreType.innerHTML = `
   <input type="checkbox" id="type-visite-flash">
   Visite Flash
 </label>
-<div class="filtre-footer">
-
-  <button id="appliquer-type">
-    APPLIQUER
-  </button>
-
-</div>`;
+`;
 filtreQuand.className = "menu-filtre";
 filtreBarre.className = "menu-filtre";
 filtreType.className = "menu-filtre";
