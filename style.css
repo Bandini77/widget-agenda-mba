@@ -847,3 +847,11 @@ background:#876d45;
 .menu-filtre{
   width:200px;
 }
+#zone-periode{
+  display:none;
+  margin-top:15px;
+}
+
+#zone-periode input[type="date"]{
+  width:130px;
+}

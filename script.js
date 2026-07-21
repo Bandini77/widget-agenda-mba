@@ -44,19 +44,15 @@ const filtreQuand = document.createElement("div");
 
 filtreQuand.innerHTML = `
 
-<label><input type="checkbox" id="quand-aujourdhui
-
 <label><input type="checkbox" id="quand-aujourdhui">Aujourd'hui</label>
 
 <label><input type="checkbox" id="quand-demain">Demain</label>
 
 <label><input type="checkbox" id="quand-weekend">Ce week-end</label>
 
-<br><br>
+<label><input type="checkbox" id="quand-personnalise">Période personnalisée</label>
 
-<input type="date" id="quand-date">
-
-<br><br>
+<div id="zone-periode">
 
 Du :
 <input type="date" id="date-debut">
@@ -66,7 +62,10 @@ Du :
 Au :
 <input type="date" id="date-fin">
 
+</div>
+
 `;
+
 
 wrapperQuand.appendChild(boutonQuand);
 wrapperQuand.appendChild(filtreQuand);
@@ -291,6 +290,16 @@ lucide.createIcons();
 });
 
 app.appendChild(barreFiltres);
+document.addEventListener("change", (e) => {
+
+  if (e.target.id === "quand-personnalise") {
+
+    document.getElementById("zone-periode").style.display =
+      e.target.checked ? "block" : "none";
+
+  }
+
+});
 
 setTimeout(() => {
   lucide.createIcons();
