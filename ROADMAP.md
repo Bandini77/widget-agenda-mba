@@ -99,6 +99,41 @@
 - Gestion du positionnement vertical
 
 ---
+## 📋 V2.21 - Recherche et navigation
+
+### Recherche globale
+
+✅ Sans filtre :
+- Afficher uniquement les prochains événements
+
+✅ Avec filtre ou recherche :
+- Rechercher dans toute la programmation
+- Afficher tous les résultats correspondants
+- Ne plus limiter aux événements visibles sur la page d'accueil
+
+### Accès à l'agenda complet
+
+- Création d'une page "Agenda complet"
+- Affichage de tous les événements à venir
+- Réutilisation du moteur de recherche actuel
+- Réutilisation des filtres actuels
+
+### Navigation
+
+- Remplacement de "Voir plus d'événements"
+- Nouveau lien :
+  - "Consulter tout l'agenda →"
+  ou
+  - "Voir la programmation complète →"
+
+### Objectif UX
+
+Permettre à un visiteur de trouver immédiatement un événement :
+
+- depuis la recherche
+- depuis les filtres
+- sans changer de page
+- sans avoir à comprendre le fonctionnement du widget
 
 ## 📋 V2.21 - Version tablette
 
