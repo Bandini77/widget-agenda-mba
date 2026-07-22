@@ -600,7 +600,12 @@ content.appendChild(title);
 content.appendChild(meta);
 
   const more = document.createElement("button");
+
+more.className = "event-more";
+
 more.textContent = "+";
+
+lucide.createIcons();
 
 const left = document.createElement("div");
 left.className = "event-left";
@@ -671,7 +676,6 @@ buttons.forEach((button, index) => {
     detail.style.display = "block";
 
     detail.innerHTML = `
-
 <button id="fermer-detail">✕</button>
 
 <div class="detail-layout">
@@ -699,23 +703,24 @@ buttons.forEach((button, index) => {
     </h2>
 
     <div class="detail-public">
-  👤 ${events[index].meta}
+  <i data-lucide="users"></i>
+  ${events[index].meta}
 </div>
 
 
    <div class="detail-datetime">
 
   <span>
-    📅 ${events[index].date}
+    <i data-lucide="calendar"></i>
+    ${events[index].date}
   </span>
 
   <span>
-    🕒 ${events[index].heure}
+    <i data-lucide="clock-3"></i>
+    ${events[index].heure}
   </span>
 
 </div>
-
-    <hr>
 
     <p class="detail-description">
       ${events[index].description}
@@ -749,12 +754,20 @@ buttons.forEach((button, index) => {
   <h4>Partager</h4>
 <div class="share-actions">
 
-<p>🔗 Copier le lien</p>
-<p>✉️ Email</p>
+<p>
+  <i data-lucide="link"></i>
+  Copier le lien
+</p>
 
-  <button class="calendar-btn">
-    📅 Ajouter à mon calendrier
-  </button>
+<p>
+  <i data-lucide="mail"></i>
+  Email
+</p>
+
+<button class="calendar-btn">
+  <i data-lucide="calendar-plus"></i>
+  Ajouter à mon calendrier
+</button>
 
 </div>
 
@@ -764,7 +777,9 @@ buttons.forEach((button, index) => {
 
 </div>
 
-`;document
+`;
+lucide.createIcons();
+document
   .getElementById("fermer-detail")
   .addEventListener("click", () => {
 

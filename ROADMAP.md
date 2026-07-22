@@ -1,73 +1,196 @@
-# Widget Agenda MBA
+# Widget Agenda MBA - Roadmap
 
-## Versions réalisées
+## ✅ V2.20.5 - Stabilisation générale
 
-### V2.19
-- Refonte des cartes
-- Bloc date / heure
-- Bouton Voir plus
+- Intégration des icônes Lucide
+- Harmonisation de la barre de filtres
+- Optimisation des boutons
+- Documentation du projet
 
-### V2.20
-- Images personnalisées
-- Refonte de la modale
+---
 
-### V2.20.2
-- Correction de la recherche
+## ✅ V2.20.6 - Rééquilibrage des cartes événements
 
-### V2.20.4
-- Intégration de la police Avenir Next
+### Cartes
 
-### V2.20.5
-- Intégration de Lucide dans la barre de filtres
-- Harmonisation du bouton Voir plus d'événements
+- Réorganisation de la structure image/date | informations
+- Réduction des espaces inutiles
+- Repositionnement du bouton "+"
+- Rééquilibrage visuel des cartes
+- Ajustement de la largeur globale
 
-### V2.20.6
-✅ Rééquilibrage des cartes événements
-✅ Répartition visuelle des blocs
-✅ Réduction du vide entre les informations et le bouton +
-✅ Harmonisation du bloc public
-✅ Remplacement du pictogramme public par Lucide
-✅ Ajustement du séparateur central
-✅ Fidélisation à la maquette
+### Informations
 
-### V2.20.7
-🔄 En cours
+- Harmonisation du public
+- Intégration de Lucide pour le public
+- Amélioration de la hiérarchie visuelle
 
-- Refonte visuelle des panneaux de filtres
-- Positionnement sous les boutons
-- Coins arrondis
-- Cases à cocher harmonisées
-- Calendrier de sélection
-- Sélection de période
+### Design
 
+- Ajustement du séparateur central
+- Fidélité renforcée à la maquette
 
-### V2.20.8
+---
 
-- Intégration de Lucide dans toute la modale
-- Refonte du cartouche type d'activité
-- Harmonisation du bloc public
-- Alignement du bloc tarif
-- Harmonisation réservation
-- Harmonisation partage
-- Ajustement du cadrage des images
+## ✅ V2.20.7 - Refonte des filtres
 
-### V2.21
-- Responsive tablette
+### Structure
 
-### V2.22
-- Responsive mobile
+- Panneaux rattachés aux boutons correspondants
+- Suppression des positions fixes
+- Création des wrappers de filtres
 
-## V3
+### Filtre "Pour qui"
 
-### Données
-- Liste SharePoint
+- Harmonisation visuelle
+- Alignement des cases à cocher
+- Transformation de "Tout public" en raccourci de sélection
+
+#### Logique métier
+
+- "Tout public" = Adulte + Famille + Jeune public
+- Cocher "Tout public" coche automatiquement les trois catégories
+- Cocher les trois catégories coche automatiquement "Tout public"
+- Décocher une catégorie décoche "Tout public"
+
+### Filtre "Type d'activité"
+
+- Suppression du doublon de titre
+- Suppression du bouton Fermer
+- Suppression du bouton Appliquer
+- Nettoyage visuel
+
+### Filtre "Quand"
+
+- Refonte complète
+- Ajout de "Période personnalisée"
+- Affichage conditionnel des dates
+- Réduction de l'encombrement visuel
+
+### Reste à faire
+
+- Nettoyage final du CSS
+- Harmonisation des largeurs
+- Vérifications responsive
+
+---
+
+## 🔄 V2.20.8 - Refonte de la modale événement
+
+### Icônes
+
+- Remplacement des derniers emojis par Lucide
+
+### Type d'activité
+
+- Refonte du cartouche
+- Harmonisation graphique
+
+### Informations
+
+- Alignement du bloc Tarif
+- Harmonisation du bloc Public
+- Harmonisation du bloc Réservation
+- Harmonisation du bloc Partager
 
 ### Images
-- Teams / SharePoint
 
-### Réservations
-- Réservation conditionnelle
-- Réservation en ligne
+- Optimisation du cadrage
+- Gestion du positionnement vertical
 
-### Déploiement
-- OpacWeb
+---
+
+## 📋 V2.21 - Version tablette
+
+- Réorganisation des cartes
+- Adaptation des filtres
+- Adaptation de la modale
+- Tests multi-résolutions
+
+---
+
+## 📋 V2.22 - Version mobile
+
+- Réorganisation verticale du widget
+- Optimisation tactile
+- Adaptation des cartes
+- Adaptation des filtres
+- Adaptation de la modale
+
+---
+
+# 🚀 V3 - Connexion SharePoint
+
+## V3.0 - Source de données SharePoint
+
+### Liste SharePoint "Agenda MBA"
+
+- Titre
+- Type d'activité
+- Publics concernés
+- Date début
+- Date fin
+- Horaire
+- Tarif
+- Description
+- Réservation
+- Image
+
+### Fonctionnalités
+
+- Synchronisation automatique du widget
+- Fin du fichier JSON
+- Mise à jour sans modification du code
+
+### Gestion automatique
+
+- Affichage uniquement des événements futurs
+- Masquage automatique des événements passés
+- Conservation de l'historique dans SharePoint
+
+---
+
+## V3.1 - Gestion des événements
+
+- Création d'événements depuis SharePoint
+- Modification d'événements depuis SharePoint
+- Suppression de la dépendance au code
+
+---
+
+## V3.2 - Interface d'administration MBA
+
+### Objectif
+
+Permettre à tout agent du musée de gérer l'agenda sans toucher au code.
+
+### Fonctionnalités
+
+- Ajouter un événement
+- Modifier un événement
+- Dupliquer un événement
+- Archiver un événement
+- Prévisualiser un événement
+
+---
+
+# 🎯 Vision finale
+
+Administrateur Agenda MBA
+
+↓
+
+Interface MBA
+
+↓
+
+Liste SharePoint
+
+↓
+
+Widget Agenda MBA
+
+### Objectif
+
+Ne plus modifier le JavaScript ou le CSS pour ajouter, modifier ou archiver un événement.
+Toute la gestion se fait depuis SharePoint ou l'interface d'administration MBA.
