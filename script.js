@@ -4,7 +4,7 @@ const recherche = document.createElement("input");
 recherche.type = "text";
 recherche.placeholder = "Recherche...";
 
-recherche.style.width = "100%";
+recherche.style.width = "98%";
 recherche.style.padding = "12px";
 recherche.style.marginBottom = "20px";
 recherche.style.border =
@@ -85,7 +85,7 @@ boutonQuand.addEventListener("click", () => {
     filtreQuand.style.display = "block";
     
     boutonQuand.innerHTML =
-  '<i data-lucide="calendar"></i><span>Quand</span><i data-lucide="chevron-down"></i>';
+  '<i data-lucide="calendar"></i><span>Quand</span><i data-lucide="chevron-up"></i>';
 
 
 lucide.createIcons();
@@ -360,7 +360,8 @@ boutonPourQui.innerHTML =
 
 lucide.createIcons();
 
-boutonType.textContent = boutonType.innerHTML =
+
+boutonType.innerHTML =
   '<i data-lucide="tag"></i><span>Type d’activité</span><i data-lucide="chevron-down"></i>';
 
 lucide.createIcons();
