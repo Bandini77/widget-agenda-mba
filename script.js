@@ -829,8 +829,7 @@ ${
 
 
       ${
-  events[index].reservationObligatoire
-
+events[index].reservationObligatoire !== false
   ? `
 
   <div>
