@@ -482,6 +482,9 @@ const events = [
     mois: "SEPT.",
     annee: "2026",
     heure: "14h30",
+    jourFin: "15",
+    moisFin: "JANV.",
+    anneeFin: "2027",
     dateFin: "15 JANV. 2027",
     reservationObligatoire: false,
     lienComplementaire: "https://musee.pau.fr/fr/l-art-au-service-des-travailleurs",
@@ -575,14 +578,50 @@ events.forEach((event, index) => {
 
 date.className = "event-date";
 
-date.innerHTML = `
-  <div class="event-day">${event.jour}</div>
+date.innerHTML = event.type === "Exposition"
 
-  <div class="event-month">${event.mois}</div>
+? `
 
-  <div class="event-year">${event.annee}</div>
+<div class="event-period-day">
+  ${event.jour}
+</div>
 
-  <div class="event-hour">${event.heure}</div>
+<div class="event-period-month">
+  ${event.mois}
+</div>
+
+<div class="event-period-year">
+  ${event.annee}
+</div>
+
+<div class="event-period-separator">
+  —
+</div>
+
+<div class="event-period-end-day">
+  ${event.jourFin}
+</div>
+
+<div class="event-period-end-month">
+  ${event.moisFin}
+</div>
+
+<div class="event-period-end-year">
+  ${event.anneeFin}
+</div>
+
+`
+
+: `
+
+<div class="event-day">${event.jour}</div>
+
+<div class="event-month">${event.mois}</div>
+
+<div class="event-year">${event.annee}</div>
+
+<div class="event-hour">${event.heure}</div>
+
 `;
 
   const content = document.createElement("div");

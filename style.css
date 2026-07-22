@@ -573,7 +573,7 @@ background:#876d45;
 }
 
 .event-day{
-  font-size:48px;
+  font-size:40px;
   font-weight:700;
   color:#876d45;
   line-height:1;
@@ -967,4 +967,33 @@ top:-2px;
 
 .detail-link:hover{
   opacity:.8;
+}
+.event-period-day,
+.event-period-end-day{
+  font-size:40px;
+  font-weight:700;
+  line-height:0,9;
+  color:#876d45;
+}
+
+.event-period-month,
+.event-period-end-month{
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:#876d45;
+}
+
+.event-period-year,
+.event-period-end-year{
+  font-size:14px;
+  color:#876d45;
+}
+
+.event-period-separator{
+  margin:0px 0;
+
+  font-size:16px;
+
+  color:#b59a6b;
 }
