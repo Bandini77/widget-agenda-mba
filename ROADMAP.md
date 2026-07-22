@@ -1,205 +1,378 @@
+
 # Widget Agenda MBA - Roadmap
-
-## ✅ V2.20.5 - Stabilisation générale
-
-- Intégration des icônes Lucide
-- Harmonisation de la barre de filtres
-- Optimisation des boutons
-- Documentation du projet
 
 ---
 
-## ✅ V2.20.6 - Rééquilibrage des cartes événements
+# ✅ V2.20.6 - Rééquilibrage des cartes événements
 
-### Cartes
+## Cartes
 
-- Réorganisation de la structure image/date | informations
+- Réorganisation de la structure des cartes
+- Séparation Image / Date / Informations
 - Réduction des espaces inutiles
 - Repositionnement du bouton "+"
-- Rééquilibrage visuel des cartes
-- Ajustement de la largeur globale
+- Rééquilibrage global de la carte
+- Harmonisation avec la maquette MBA
 
-### Informations
+## Informations
 
+- Harmonisation du type d'activité
 - Harmonisation du public
-- Intégration de Lucide pour le public
-- Amélioration de la hiérarchie visuelle
+- Intégration des icônes Lucide
 
-### Design
+## Design
 
 - Ajustement du séparateur central
+- Optimisation de la lisibilité
 - Fidélité renforcée à la maquette
 
 ---
 
-## ✅ V2.20.7 - Refonte des filtres
+# ✅ V2.20.7 - Refonte des filtres
 
-### Structure
+## Structure
 
 - Panneaux rattachés aux boutons correspondants
 - Suppression des positions fixes
-- Création des wrappers de filtres
+- Création de wrappers de filtres
 
-### Filtre "Pour qui"
+## Filtre "Pour qui"
 
 - Harmonisation visuelle
 - Alignement des cases à cocher
 - Transformation de "Tout public" en raccourci de sélection
 
-#### Logique métier
+### Logique métier
 
-- "Tout public" = Adulte + Famille + Jeune public
-- Cocher "Tout public" coche automatiquement les trois catégories
-- Cocher les trois catégories coche automatiquement "Tout public"
-- Décocher une catégorie décoche "Tout public"
+- Tout public = Adulte + Famille + Jeune public
+- Cocher Tout public coche automatiquement les trois catégories
+- Cocher les trois catégories active automatiquement Tout public
+- Décocher une catégorie désactive Tout public
 
-### Filtre "Type d'activité"
+## Filtre "Type d'activité"
 
 - Suppression du doublon de titre
 - Suppression du bouton Fermer
 - Suppression du bouton Appliquer
-- Nettoyage visuel
+- Nettoyage visuel général
 
-### Filtre "Quand"
+## Filtre "Quand"
 
 - Refonte complète
 - Ajout de "Période personnalisée"
 - Affichage conditionnel des dates
-- Réduction de l'encombrement visuel
+- Harmonisation des comportements
+- Correction de l'icône d'ouverture / fermeture
 
-### Reste à faire
+## Correctifs
 
-- Nettoyage final du CSS
-- Harmonisation des largeurs
-- Vérifications responsive
+- Correction du bouton Réinitialiser les filtres
+- Harmonisation du comportement des icônes Lucide
 
 ---
 
-## 🔄 V2.20.8 - Refonte de la modale événement
+# ✅ V2.20.8 - Refonte de la modale événement
 
-### Icônes
+## Design
 
 - Remplacement des derniers emojis par Lucide
+- Harmonisation des espacements
+- Harmonisation du footer
+- Harmonisation du bouton de fermeture
 
-### Type d'activité
+## Type d'activité
 
-- Refonte du cartouche
-- Harmonisation graphique
+- Suppression du cartouche
+- Affichage éditorial du type :
 
-### Informations
+Exemple :
 
-- Alignement du bloc Tarif
-- Harmonisation du bloc Public
-- Harmonisation du bloc Réservation
-- Harmonisation du bloc Partager
+EXPOSITION
 
-### Images
+CONFÉRENCE
 
-- Optimisation du cadrage
-- Gestion du positionnement vertical
+VISITE ATELIER
+
+## Public
+
+- Suppression du cartouche gris
+- Affichage simplifié du public
+
+Exemple :
+
+👥 Tout public
+
+👥 Jeune public • À partir de 6 ans
+
+## Âge minimum
+
+Ajout de la notion :
+
+- À partir de 6 ans
+- Dès 8 ans
+- Dès 12 ans
+
+Selon l'activité concernée.
+
+## Expositions
+
+Création d'une logique spécifique :
+
+### Carte
+
+Affichage :
+
+18
+SEPT.
+2026
+
+—
+
+15
+JANV.
+2027
+
+### Modale
+
+Affichage :
+
+Du 18 septembre 2026
+au 15 janvier 2027
+
+## Réservation conditionnelle
+
+Si :
+
+Réservation obligatoire = Non
+
+Alors :
+
+- le bloc Réservation disparaît
+
+## Lien complémentaire
+
+Si :
+
+Lien complémentaire renseigné
+
+Alors :
+
+- affichage de "En savoir plus →"
+
+renvoyant vers le site du musée.
+
+## Footer
+
+- Tarif
+- Réservation
+- Partager
+
+adaptatifs selon les données disponibles.
 
 ---
-## 📋 V2.21 - Recherche et navigation
 
-### Recherche globale
+# 📋 V2.21 - Recherche et navigation
 
-✅ Sans filtre :
-- Afficher uniquement les prochains événements
+## Recherche globale
 
-✅ Avec filtre ou recherche :
-- Rechercher dans toute la programmation
-- Afficher tous les résultats correspondants
-- Ne plus limiter aux événements visibles sur la page d'accueil
+### Sans filtre
 
-### Accès à l'agenda complet
+Afficher uniquement les prochains événements.
 
-- Création d'une page "Agenda complet"
-- Affichage de tous les événements à venir
-- Réutilisation du moteur de recherche actuel
-- Réutilisation des filtres actuels
+### Avec filtre ou recherche
 
-### Navigation
+Rechercher dans toute la programmation.
 
-- Remplacement de "Voir plus d'événements"
-- Nouveau lien :
-  - "Consulter tout l'agenda →"
-  ou
-  - "Voir la programmation complète →"
-
-### Objectif UX
-
-Permettre à un visiteur de trouver immédiatement un événement :
-
-- depuis la recherche
-- depuis les filtres
-- sans changer de page
-- sans avoir à comprendre le fonctionnement du widget
-
-## 📋 V2.21 - Version tablette
-
-- Réorganisation des cartes
-- Adaptation des filtres
-- Adaptation de la modale
-- Tests multi-résolutions
-
----
-
-## 📋 V2.22 - Version mobile
-
-- Réorganisation verticale du widget
-- Optimisation tactile
-- Adaptation des cartes
-- Adaptation des filtres
-- Adaptation de la modale
-
----
-
-# 🚀 V3 - Connexion SharePoint
-
-## V3.0 - Source de données SharePoint
-
-### Liste SharePoint "Agenda MBA"
+Le moteur de recherche doit rechercher dans :
 
 - Titre
-- Type d'activité
-- Publics concernés
-- Date début
-- Date fin
-- Horaire
-- Tarif
 - Description
-- Réservation
-- Image
+- Type d'activité
+- Public
 
-### Fonctionnalités
+Afficher tous les résultats correspondants.
 
-- Synchronisation automatique du widget
-- Fin du fichier JSON
-- Mise à jour sans modification du code
+## Objectif UX
 
-### Gestion automatique
+Un visiteur doit pouvoir :
 
-- Affichage uniquement des événements futurs
-- Masquage automatique des événements passés
-- Conservation de l'historique dans SharePoint
+- trouver un événement immédiatement
+- depuis la page d'accueil
+- sans changer de page
+- sans connaître le fonctionnement du widget
+
+## Navigation
+
+Remplacer progressivement :
+
+Voir plus d'événements
+
+par :
+
+Consulter tout l'agenda →
+
+ou
+
+Voir la programmation complète →
+
+## Agenda complet
+
+Création future d'une page :
+
+Agenda
+
+reprenant :
+
+- recherche
+- filtres
+- programmation complète
 
 ---
 
-## V3.1 - Gestion des événements
+# 📋 V2.22 - Responsive
 
-- Création d'événements depuis SharePoint
-- Modification d'événements depuis SharePoint
-- Suppression de la dépendance au code
+## Tablette
+
+- Vérification des cartes
+- Vérification des filtres
+- Vérification de la modale
+
+## Mobile
+
+- Réorganisation verticale
+- Optimisation tactile
+- Adaptation des filtres
+- Adaptation des modales
 
 ---
 
-## V3.2 - Interface d'administration MBA
+# 🚀 V3 - SharePoint
 
-### Objectif
+## V3.0 - Liste SharePoint Agenda MBA
 
-Permettre à tout agent du musée de gérer l'agenda sans toucher au code.
+### Principe
 
-### Fonctionnalités
+1 ligne = 1 événement
+
+### Colonnes
+
+Titre
+
+Type d'activité
+
+Publics concernés
+
+Âge minimum
+
+Date début
+
+Heure début
+
+Date fin
+
+Heure fin
+
+Tarif
+
+Lieu (facultatif)
+
+Réservation obligatoire
+
+Téléphone
+
+Email
+
+Description
+
+Lien complémentaire
+
+Image
+
+Statut
+
+## Types d'activité
+
+- Exposition
+- Conférence
+- Visite atelier
+- Visite commentée
+- Visite flash
+- Visite contée
+- Arrêt sur œuvre
+- Concert
+- Projection
+- Rencontre
+- Spectacle
+- Vernissage
+- Jeu de l'oie
+- Memory
+
+## Public
+
+Valeurs :
+
+- Adulte
+- Famille
+- Jeune public
+
+Le widget calcule automatiquement :
+
+Tout public
+
+si les trois catégories sont sélectionnées.
+
+## Lieu
+
+Facultatif.
+
+Par défaut :
+
+aucun lieu affiché.
+
+Le lieu n'est affiché que lorsqu'une valeur est renseignée.
+
+Exemples :
+
+- Hors les murs
+- Château de Pau
+- Auditorium
+- Médiathèque
+
+## Statut
+
+- Brouillon
+- Publié
+- Archivé
+
+## Images
+
+Format recommandé :
+
+- JPG
+- Paysage
+- 1200 x 900 px
+- < 2 Mo
+
+## Archivage automatique
+
+Si :
+
+Date et heure de fin dépassées
+
+Alors :
+
+- événement masqué automatiquement
+- événement conservé dans SharePoint
+
+---
+
+# 🚀 V3.1 - Administration simplifiée
+
+Objectif :
+
+Permettre à toute l'équipe du MBA de gérer l'agenda sans toucher au code.
+
+Fonctionnalités :
 
 - Ajouter un événement
 - Modifier un événement
@@ -211,21 +384,21 @@ Permettre à tout agent du musée de gérer l'agenda sans toucher au code.
 
 # 🎯 Vision finale
 
-Administrateur Agenda MBA
+Médiateur culturel
 
 ↓
 
-Interface MBA
-
-↓
-
-Liste SharePoint
+SharePoint Agenda MBA
 
 ↓
 
 Widget Agenda MBA
 
-### Objectif
+↓
 
-Ne plus modifier le JavaScript ou le CSS pour ajouter, modifier ou archiver un événement.
-Toute la gestion se fait depuis SharePoint ou l'interface d'administration MBA.
+Site du musée
+
+Objectif :
+
+Ne plus modifier le JavaScript ou le CSS pour créer, modifier ou archiver un événement.
+Toute la gestion se fait depuis SharePoint.
