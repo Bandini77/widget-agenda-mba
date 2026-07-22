@@ -481,11 +481,15 @@ const events = [
     mois: "SEPT.",
     annee: "2026",
     heure: "14h30",
+    dateFin: "15 JANV. 2027",
+    reservationObligatoire: false,
+    lienComplementaire: "https://musee.pau.fr/fr/l-art-au-service-des-travailleurs",
     dateISO: "2026-07-19",
     image: "images/impressionnistes.jpeg",
     title: "Les Impressionnistes",
     meta: "Tout public",
     categorie: "Tout public",
+    ageMinimum: "",
     type: "Exposition",
     description: "Découvrez les chefs-d'œuvre impressionnistes du musée.",
     tarif: "Gratuit",
@@ -522,6 +526,7 @@ const events = [
     title: "Les couleurs du musée",
     meta: "Famille",
     categorie: "Famille",
+    ageMinimum: "5",
     type: "Visite atelier",
     description: "Découverte créative des collections.",
     tarif: "3 €",
@@ -540,6 +545,7 @@ const events = [
     title: "Les petits explorateurs",
     meta: "Jeune public",
     categorie: "Jeune public",
+    ageMinimum: "6",
     type: "L'heure du conte",
     description: "Visite ludique conçue spécialement pour les enfants.",
     tarif: "2 €",
@@ -704,11 +710,34 @@ buttons.forEach((button, index) => {
 
     <div class="detail-public">
   <i data-lucide="users"></i>
+
   ${events[index].meta}
+
+  ${
+    events[index].ageMinimum
+      ? ` • À partir de ${events[index].ageMinimum} ans`
+      : ""
+  }
+
 </div>
 
 
    <div class="detail-datetime">
+
+${
+  events[index].type === "Exposition"
+
+  ? `
+
+  <span>
+    <i data-lucide="calendar"></i>
+    Du ${events[index].date}
+    au ${events[index].dateFin}
+  </span>
+
+  `
+
+  : `
 
   <span>
     <i data-lucide="calendar"></i>
@@ -720,12 +749,33 @@ buttons.forEach((button, index) => {
     ${events[index].heure}
   </span>
 
+  `
+}
+
 </div>
 
     <p class="detail-description">
-      ${events[index].description}
-    </p>
+  ${events[index].description}
+</p>
 
+${
+  events[index].lienComplementaire
+
+  ? `
+
+  <a
+    href="${events[index].lienComplementaire}"
+    target="_blank"
+    class="detail-link"
+  >
+    En savoir plus →
+  </a>
+
+  `
+
+  : ""
+
+}
     <hr>
 
     <div class="detail-footer">
@@ -738,17 +788,28 @@ buttons.forEach((button, index) => {
         </div>
 
 
-      <div>
+      ${
+  events[index].reservationObligatoire
 
-  <h4>Réservation</h4>
+  ? `
 
-  <p>${events[index].telephone}</p>
+  <div>
 
-  <p>${events[index].email}</p>
+    <h4>Réservation</h4>
 
-  <p>${events[index].reservation}</p>
+    <p>${events[index].telephone}</p>
 
-</div>
+    <p>${events[index].email}</p>
+
+    <p>${events[index].reservation}</p>
+
+  </div>
+
+  `
+
+  : ""
+
+}
 <div>
 
   <h4>Partager</h4>

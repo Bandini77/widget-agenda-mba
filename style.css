@@ -427,8 +427,8 @@ background:#876d45;
   gap:8px;
 
   font-size:18px;
-
-  margin-bottom:30px;
+  margin-top:15px;
+  margin-bottom:15px;
 }
 
 .detail-title{
@@ -442,7 +442,7 @@ background:#876d45;
   display:flex;
   gap:50px;
 
-  margin-top:10px;
+  margin-top:5px;
   margin-bottom:40px;
 
   font-weight:600;
@@ -893,6 +893,8 @@ background:#876d45;
   width:18px;
   height:18px;
   flex-shrink:0;
+  position:relative;
+top:-2px;
 }
 .event-more{
   width:42px;
@@ -947,4 +949,22 @@ background:#876d45;
 }
 .event-more:hover svg{
   transform:translateX(3px);
+}
+.detail-link{
+  display:inline-block;
+
+  margin-top:8px;
+  margin-bottom:0;
+
+  color:#8c7448;
+
+  font-weight:600;
+
+  text-decoration:none;
+
+  transition:.2s;
+}
+
+.detail-link:hover{
+  opacity:.8;
 }
