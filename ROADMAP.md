@@ -2,153 +2,153 @@
 2
  
 3
----
+## ✅ V2.20.6 — Refonte des cartes
 4
  
 5
-# ✅ V2.20.6 - Rééquilibrage des cartes
+### Cartes événement
 6
  
 7
-## Cartes
+- Rééquilibrage global de la carte
 8
- 
+- Harmonisation image / date / contenu
 9
-- Réorganisation Image / Date / Contenu
-10
-- Harmonisation avec la maquette MBA
-11
 - Réduction des espaces inutiles
-12
-- Rééquilibrage du bouton "+"
-13
+10
+- Optimisation du bouton "+"
+11
 - Hiérarchisation visuelle améliorée
+12
+ 
+13
+### Informations
 14
  
 15
-## Informations
+- Type d'activité
 16
- 
+- Public
 17
-- Harmonisation du type d'activité
+- Icônes Lucide
 18
-- Harmonisation des publics
+ 
 19
-- Intégration des icônes Lucide
+---
 20
  
 21
----
+## ✅ V2.20.7 — Refonte des filtres
 22
  
 23
-# ✅ V2.20.7 - Refonte des filtres
+### Public
 24
  
 25
-## Structure
+- Tout public
 26
- 
-27
-- Panneaux rattachés aux boutons
-28
-- Suppression des positions fixes
-29
-- Réorganisation des filtres
-30
- 
-31
-## Public
-32
- 
-33
-### Logique métier
-34
- 
-35
-Tout public =
-36
- 
-37
 - Adulte
-38
+27
 - Famille
-39
+28
 - Jeune public
+29
+ 
+30
+### Règle métier
+31
+ 
+32
+Tout public =
+33
+ 
+34
+- Adulte
+35
+- Famille
+36
+- Jeune public
+37
+ 
+38
+### Types
+39
+ 
 40
- 
+- Conférence
 41
-### Comportement
+- Exposition
 42
- 
+- Arrêt sur œuvre
 43
-- Cocher Tout public sélectionne les trois catégories
+- Concert
 44
-- Cocher les trois catégories active Tout public
+- Événement national
 45
-- Décocher une catégorie désactive Tout public
+- Jeu de l'oie
 46
- 
+- Memory
 47
-## Type d'activité
+- Rencontre
 48
- 
+- Sieste musicale
 49
-- Nettoyage visuel
+- Spectacle
 50
-- Suppression des boutons inutiles
+- Vernissage
 51
-- Harmonisation des comportements
+- Visite atelier
 52
- 
+- Visite commentée
 53
-## Quand
+- Visite contée
 54
- 
+- Visite flash
 55
-- Refonte complète
+ 
 56
-- Période personnalisée
+### Quand
 57
-- Affichage conditionnel des dates
+ 
 58
-- Harmonisation des icônes
+- Aujourd'hui
 59
- 
+- Demain
 60
-## Correctifs
+- Cette semaine
 61
- 
+- Ce week-end
 62
-- Réinitialisation des filtres
+- Ce mois-ci
 63
-- Icônes Lucide
+- Période personnalisée
 64
-- Flèches d'ouverture / fermeture
+ 
 65
- 
-66
 ---
+66
+ 
 67
- 
+## ✅ V2.20.8 — Modales détaillées
 68
-# ✅ V2.20.8 - Modale événement
+ 
 69
- 
+### Expositions
 70
-## Design
-71
  
+71
+Gestion :
 72
-- Suppression des derniers emojis
+ 
 73
-- Harmonisation des espacements
+- date début
 74
-- Harmonisation du footer
+- date fin
 75
  
 76
-## Public
+### Âge minimum
 77
  
 78
@@ -156,267 +156,267 @@ Exemples :
 79
  
 80
-👥 Tout public
-81
- 
-82
-👥 Jeune public • À partir de 6 ans
-83
- 
-84
-## Âge minimum
-85
- 
-86
-Champ :
-87
- 
-88
-ageMinimum
-89
- 
-90
-Affichage :
-91
- 
-92
 - À partir de 5 ans
-93
+81
 - À partir de 6 ans
-94
+82
 - À partir de 8 ans
-95
+83
 - À partir de 12 ans
+84
+ 
+85
+### Réservation conditionnelle
+86
+ 
+87
+Si :
+88
+ 
+89
+reservationObligatoire = false
+90
+ 
+91
+→ bloc réservation masqué
+92
+ 
+93
+### Lien complémentaire
+94
+ 
+95
+En savoir plus →
 96
  
 97
-## Expositions
+---
 98
  
 99
-### Carte
+## ✅ V2.21-beta1
 100
  
 101
-18
+### Recherche globale
 102
-SEPT.
+ 
 103
-2026
+Recherche dans :
 104
  
 105
-—
+- Titre
 106
- 
+- Description
 107
-15
+- Type
 108
-JANV.
+- Public
 109
-2027
+ 
 110
- 
+### Filtres
 111
-### Modale
-112
  
+112
+Recherche sur l'ensemble de la programmation.
 113
-Du 18 septembre 2026
+ 
 114
-au 15 janvier 2027
+### Correctifs
 115
  
 116
-## Réservation conditionnelle
+- Suppression des références obsolètes à quand-date
 117
- 
+- Nettoyage console
 118
-Si :
+- Suppression erreurs JS
 119
  
 120
-reservationObligatoire = false
+---
 121
  
 122
-Alors :
+## ✅ V2.21-beta2
 123
  
 124
-bloc Réservation masqué
+### Accueil
 125
  
 126
-## Lien complémentaire
+Affichage :
 127
  
 128
-Affichage :
+4 événements
 129
  
 130
-En savoir plus →
+### Recherche
 131
  
 132
-si lienComplementaire est renseigné.
+Recherche sur toute la programmation.
 133
  
 134
----
+### Filtres
 135
  
 136
-# ✅ V2.21 - Recherche globale (validée)
+Filtres sur toute la programmation.
 137
  
 138
-## Accueil
+### Réinitialisation
 139
  
 140
-Afficher uniquement :
+Retour à l'accueil.
 141
  
 142
-4 événements
+---
 143
  
 144
-## Recherche
+## ✅ V2.21-beta3
 145
  
 146
-Recherche dans :
+### Limitation intelligente
 147
  
 148
-- Titre
+#### Accueil
 149
-- Description
+ 
 150
-- Type
+4 événements au chargement.
 151
-- Public
+ 
 152
- 
+#### Recherche ou filtres
 153
-## Filtres
+ 
 154
- 
+Maximum :
 155
-Les filtres recherchent dans toute la programmation.
+ 
 156
- 
+8 événements affichés
 157
-## Réinitialisation
+ 
 158
- 
+#### Message
 159
-Retour automatique à :
+ 
 160
- 
+Exemple :
 161
-4 événements visibles
+ 
 162
- 
+8 résultats affichés sur 12 trouvés
 163
-## Navigation
+ 
 164
- 
+### Navigation
 165
-Bouton :
+ 
 166
- 
-167
 CONSULTER TOUT L’AGENDA →
+167
+ 
 168
- 
+Toujours visible.
 169
-toujours visible.
+ 
 170
- 
+---
 171
-## Correctifs
-172
  
+172
+## ✅ V2.22-beta1
 173
-- Suppression des anciennes références "quand-date"
+ 
 174
-- Nettoyage des erreurs JavaScript
+### Nouvelle page
 175
-- Console propre
+ 
 176
-- Recherche combinée avec filtres validée
+agenda.html
 177
  
 178
----
+### Agenda complet
 179
  
 180
-# 🚧 V2.21-beta3
+Affichage de toute la programmation.
 181
  
 182
-## Limitation des résultats
+### Comportement
 183
  
 184
-### Accueil
+Accueil :
 185
  
 186
-Sans filtre :
+- 4 événements
 187
  
 188
-4 événements
+Agenda :
 189
  
 190
-### Recherche ou filtres
+- tous les événements
 191
  
 192
-Afficher :
+### Recherche
 193
  
 194
-Maximum 8 résultats
+Accueil :
 195
  
 196
-## Résultats
+- 8 résultats maximum
 197
  
 198
-Si plus de 8 résultats existent :
+Agenda :
 199
  
 200
-Exemple :
+- tous les résultats
 201
  
 202
-25 résultats trouvés
+### Filtres
 203
  
 204
-CONSULTER TOUT L’AGENDA →
+Accueil :
 205
  
 206
-## Objectif
+- limités à 8 résultats
 207
  
 208
-- Préserver la lisibilité de la page d'accueil
+Agenda :
 209
-- Éviter les listes interminables
+ 
 210
-- Donner accès à toute la programmation
+- tous les résultats
 211
  
 212
@@ -424,526 +424,376 @@ CONSULTER TOUT L’AGENDA →
 213
  
 214
-# 🚧 V2.21-beta4
+## 🚧 V2.22-beta2
 215
  
 216
-## UX des filtres
+### Habillage éditorial
 217
  
 218
-### Fermeture automatique
+#### Titre
 219
  
 220
-Fermer les panneaux :
+PROGRAMMATION CULTURELLE
 221
  
 222
-- Type d’activité
+#### Introduction
 223
-- Pour qui
+ 
 224
-- Quand
+Texte éditorial sobre et institutionnel.
 225
  
 226
-lors d'un clic en dehors du panneau.
+#### Compteur
 227
  
 228
-### Objectif
+Exemple :
 229
  
 230
-Comportement conforme aux standards actuels.
+12 événements actuellement programmés
 231
  
 232
----
+#### Recherche
 233
  
 234
-# 🚧 V2.22 - Page Agenda complète
+Exemple :
 235
  
 236
-## Nouvelle page
+3 résultats trouvés
 237
  
 238
-agenda.html
+#### Cohérence graphique
 239
  
 240
-## Comportement
+Alignement avec l'univers visuel du site du musée :
 241
  
 242
-Affichage :
+- sobriété
 243
- 
+- lisibilité
 244
-- Toute la programmation
+- espaces blancs
 245
-- Recherche
+- absence d'effets superflus
 246
-- Filtres
+ 
 247
- 
+---
 248
-## Objectif
+ 
 249
- 
+## 🚧 V2.22-beta3
 250
-Donner une destination réelle au bouton :
+ 
 251
- 
+### Navigation
 252
-CONSULTER TOUT L’AGENDA →
+ 
 253
- 
+Transformer
 254
-## Réutilisation
+ 
 255
- 
+CONSULTER TOUT L’AGENDA →
 256
-Même moteur que l'accueil :
-257
  
+257
+en véritable lien entre :
 258
-- cartes
+ 
 259
-- modales
+index.html
 260
-- filtres
+ 
 261
-- recherche
+et
 262
  
 263
----
+agenda.html
 264
  
 265
-# 🚧 V2.23 - Responsive
+---
 266
  
 267
-## Tablette
+## 🚧 V2.22-beta4
 268
  
 269
-- Cartes
+### Confort utilisateur
 270
-- Filtres
+ 
 271
-- Modales
+Fermeture automatique des filtres :
 272
  
 273
-## Mobile
+- clic extérieur
 274
- 
+- touche Échap
 275
-- Réorganisation verticale
+ 
 276
-- Optimisation tactile
+---
 277
-- Tests utilisateurs
+ 
 278
- 
+## 🚧 V2.23
 279
----
+ 
 280
- 
+### Responsive
 281
-# 🚀 V3 - SharePoint
+ 
 282
- 
+#### Tablette
 283
-## Liste SharePoint
+ 
 284
- 
+Optimisation des cartes
 285
-Nom :
+ 
 286
- 
+#### Mobile
 287
-Agenda MBA
+ 
 288
- 
+Réorganisation :
 289
-## Principe
+ 
 290
- 
+- filtres
 291
-1 ligne = 1 événement
+- recherche
 292
- 
+- modales
 293
-## Colonnes
+ 
 294
- 
-295
-Titre
-296
- 
-297
-Type d’activité
-298
- 
-299
-Publics concernés
-300
- 
-301
-Âge minimum
-302
- 
-303
-Date début
-304
- 
-305
-Heure début
-306
- 
-307
-Date fin
-308
- 
-309
-Heure fin
-310
- 
-311
-Lieu
-312
- 
-313
-Tarif
-314
- 
-315
-Réservation obligatoire
-316
- 
-317
-Téléphone
-318
- 
-319
-Email
-320
- 
-321
-Description
-322
- 
-323
-Lien complémentaire
-324
- 
-325
-Image
-326
- 
-327
-Statut
-328
- 
-329
 ---
+295
+ 
+296
+# 🚀 V3 — SharePoint
+297
+ 
+298
+## Source de données
+299
+ 
+300
+Liste SharePoint :
+301
+ 
+302
+Agenda MBA
+303
+ 
+304
+### Un événement = une ligne
+305
+ 
+306
+Colonnes :
+307
+ 
+308
+- Titre
+309
+- Type
+310
+- Public
+311
+- Âge minimum
+312
+- Date début
+313
+- Heure début
+314
+- Date fin
+315
+- Heure fin
+316
+- Lieu
+317
+- Tarif
+318
+- Réservation obligatoire
+319
+- Téléphone
+320
+- Email
+321
+- Description
+322
+- Lien complémentaire
+323
+- Image
+324
+- Statut
+325
+ 
+326
+---
+327
+ 
+328
+## Statut
+329
+ 
 330
- 
+- Brouillon
 331
-## Publics
+- Publié
 332
- 
+- Archivé
 333
-Valeurs :
+ 
 334
- 
+---
 335
-- Adulte
+ 
 336
-- Famille
+## Archivage
 337
-- Jeune public
+ 
 338
- 
+Événements passés :
 339
-Le widget calcule automatiquement :
-340
  
+340
+- masqués
 341
-Tout public
+- conservés
 342
  
 343
-si les trois catégories sont sélectionnées.
+---
 344
  
 345
----
+## Administration
 346
  
 347
-## Lieu
+Sans modification du code.
 348
  
 349
-Champ facultatif.
+### Actions
 350
  
 351
-Le lieu n'est affiché que lorsqu'il est renseigné.
+- Ajouter
 352
- 
+- Modifier
 353
-Exemples :
+- Archiver
 354
- 
+- Dupliquer
 355
-- Hors les murs
+ 
 356
-- Château de Pau
+---
 357
-- Auditorium
+ 
 358
-- Médiathèque
+## Évolutivité
 359
  
 360
-Si vide :
+Nouveaux types possibles :
 361
  
 362
-aucun affichage.
+- Sieste musicale
 363
- 
+- Activité bien-être
 364
----
+- futurs formats
 365
  
 366
-## Statuts
+Sans impact majeur sur le widget.
 367
  
 368
-- Brouillon
+---
 369
-- Publié
+ 
 370
-- Archivé
+# 🎯 Vision cible
 371
  
 372
----
+Accueil
 373
  
 374
-## Archivage
+↓
 375
  
 376
-Si date dépassée :
+4 événements
 377
  
 378
-- événement masqué
+↓
 379
-- événement conservé
+ 
 380
- 
+Recherche rapide
 381
----
+ 
 382
- 
+↓
 383
-## Images
+ 
 384
- 
+Filtres
 385
-Format recommandé :
-386
  
+386
+↓
 387
-- JPG
+ 
 388
-- Paysage
+CONSULTER TOUT L’AGENDA →
 389
-- 1200 x 900 px
+ 
 390
-- < 2 Mo
+↓
 391
  
 392
----
+Agenda complet
 393
  
 394
-# 🚀 V3.1 - Administration
+↓
 395
  
 396
-## Objectif
+SharePoint
 397
  
 398
-Administration sans toucher au code.
+↓
 399
  
 400
-## Actions
-401
- 
-402
-- Ajouter
-403
-- Modifier
-404
-- Archiver
-405
-- Dupliquer
-406
- 
-407
-un événement.
-408
- 
-409
----
-410
- 
-411
-## Nouveaux types d'activité
-412
- 
-413
-Le widget doit accepter automatiquement :
-414
- 
-415
-- Sieste musicale
-416
-- Activité bien-être
-417
-- Tout nouveau type créé dans SharePoint
-418
- 
-419
-Sans développement spécifique.
-420
- 
-421
-Un filtre dédié n'est créé que lorsque l'activité devient récurrente dans la programmation du MBA.
-422
- 
-423
----
-424
- 
-425
-# ✅ Types d'activité actuels
-426
- 
-427
-- Arrêt sur œuvre
-428
-- Concert
-429
-- Conférence
-430
-- Événement national
-431
-- Exposition
-432
-- Jeu de l'oie
-433
-- Memory
-434
-- Rencontre
-435
-- Sieste musicale
-436
-- Spectacle
-437
-- Vernissage
-438
-- Visite atelier
-439
-- Visite commentée
-440
-- Visite contée
-441
-- Visite flash
-442
- 
-443
----
-444
- 
-445
-# 🎯 Vision finale
-446
- 
-447
-Accueil MBA
-448
- 
-449
-↓
-450
- 
-451
-4 événements
-452
- 
-453
-↓
-454
- 
-455
-Recherche rapide
-456
- 
-457
-↓
-458
- 
-459
-Filtres
-460
- 
-461
-↓
-462
- 
-463
-CONSULTER TOUT L’AGENDA →
-464
- 
-465
-↓
-466
- 
-467
-Page Agenda complète
-468
- 
-469
-↓
-470
- 
-471
-SharePoint Agenda MBA
-472
- 
-473
-↓
-474
- 
-475
-Administration autonome par l'équipe du musée
+Administration autonome du MBA
