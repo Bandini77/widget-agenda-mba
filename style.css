@@ -997,3 +997,26 @@ top:-2px;
 
   color:#b59a6b;
 }
+.agenda-page {
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+}
+
+.agenda-page h1 {
+
+  margin-bottom: 10px;
+
+}
+
+.agenda-intro {
+
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 40px;
+
+}

@@ -377,7 +377,23 @@ lucide.createIcons();
 
   recherche.value = "";
 
+if (!modeAgenda) {
+
   afficherAccueil();
+
+} else {
+
+  document
+    .querySelectorAll(".event-card")
+    .forEach((carte) => {
+
+      carte.style.display = "";
+
+    });
+
+  resultatInfo.style.display = "none";
+
+}
 ``
 
 });
@@ -1282,12 +1298,10 @@ let totalTrouves = 0;
 
   }
 
-  resultatInfo.style.display = "block";
+  resultatInfo.style.display = "none";
 
-  resultatInfo.textContent =
-    `${events.length} événements actuellement programmés`;
+return;
 
-  return;
 
 }
 
@@ -1350,7 +1364,10 @@ if (compteur < MAX_RESULTATS_ACCUEIL) {
 
   });
   
-  if (totalTrouves > MAX_RESULTATS_ACCUEIL) {
+  if (
+  (modeAgenda && totalTrouves > 0) ||
+  (!modeAgenda && totalTrouves > MAX_RESULTATS_ACCUEIL)
+) {
 
   resultatInfo.style.display = "block";
 
@@ -1481,7 +1498,10 @@ let totalTrouves = 0;
 
   });
 
-  if (totalTrouves > MAX_RESULTATS_ACCUEIL) {
+  if (
+  (modeAgenda && totalTrouves > 0) ||
+  (!modeAgenda && totalTrouves > MAX_RESULTATS_ACCUEIL)
+) {
 
     resultatInfo.style.display = "block";
 
@@ -1521,10 +1541,7 @@ let totalTrouves = 0;
 
       });
 
-    resultatInfo.style.display = "block";
-
-    resultatInfo.textContent =
-      `${events.length} événements actuellement programmés`;
+    resultatInfo.style.display = "none";
 
   }
 
