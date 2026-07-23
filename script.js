@@ -368,8 +368,6 @@ lucide.createIcons();
 
     });
 
-  document
-    .getElementById("quand-date").value = "";
 
   document
     .getElementById("date-debut").value = "";
@@ -379,13 +377,8 @@ lucide.createIcons();
 
   recherche.value = "";
 
-  document
-    .querySelectorAll(".event-card")
-    .forEach(carte => {
-
-      carte.style.display = "";
-
-    });
+  afficherAccueil();
+``
 
 });
 
@@ -733,6 +726,10 @@ card.appendChild(right);
 app.appendChild(card);
 
 });
+
+afficherAccueil();
+console.log("Après afficherAccueil");
+
 const overlay = document.createElement("div");
 
 overlay.id = "overlay";
@@ -953,6 +950,26 @@ overlay.style.display = "none";
   });
 
 });
+function afficherAccueil() {
+
+  const cartes =
+    document.querySelectorAll(".event-card");
+
+  cartes.forEach((carte, index) => {
+
+    if (index < 4) {
+
+      carte.style.display = "";
+
+    } else {
+
+      carte.style.display = "none";
+
+    }
+
+  });
+
+}
 function mettreAJourFiltres() {
 
 
@@ -1044,10 +1061,11 @@ const visiteFlashCoche =
   cartes.forEach((carte, index) => {
 
     if (aucunFiltre) {
-      
-carte.style.display = "";
-      return;
-    }
+
+  afficherAccueil();
+  return;
+
+}
 
     const categorie =
   events[index].categorie;
@@ -1419,6 +1437,7 @@ document
   .getElementById("type-arret-oeuvre")
   .addEventListener("change", () => {
 
+    
     mettreAJourFiltres();
 
   });
