@@ -306,7 +306,6 @@ setTimeout(() => {
 }, 0);
 
 function fermerFiltresSecondaires() {
-console.log("je ferme");
 
   filtreBarre.style.display = "none";
   filtreType.style.display = "none";
@@ -391,10 +390,9 @@ if (!modeAgenda) {
 
     });
 
-  resultatInfo.style.display = "none";
 
 }
-``
+resultatInfo.style.display = "none";
 
 });
 
@@ -803,7 +801,7 @@ const events = [
 const MAX_RESULTATS_ACCUEIL = 8;
 const modeAgenda =
   window.location.pathname.includes("agenda.html");
-  console.log("modeAgenda =", modeAgenda);
+  
 let nombreVisible =
   modeAgenda
     ? events.length
@@ -1347,7 +1345,10 @@ const type =
       
 totalTrouves++;
 
-if (compteur < MAX_RESULTATS_ACCUEIL) {
+if (
+  modeAgenda ||
+  compteur < MAX_RESULTATS_ACCUEIL
+) {
 
   carte.style.display = "";
   compteur++;
@@ -1469,10 +1470,30 @@ let totalTrouves = 0;
         " " +
         events[index].categorie +
         " " +
+        events[index].meta +
+        " " +
         events[index].description
       ).toLowerCase();
+const rechercheToutPublic =
+  texte === "tout public" ||
+  texte === "tout-public" ||
+  texte === "public";
+if (texte === "tout public") {
 
-    if (contenu.includes(texte)) {
+
+}
+    if (
+  contenu.includes(texte) ||
+  (
+    rechercheToutPublic &&
+    (
+      events[index].categorie === "Tout public" ||
+      events[index].categorie === "Adulte" ||
+      events[index].categorie === "Famille" ||
+      events[index].categorie === "Jeune public"
+    )
+  )
+) {
 
       totalTrouves++;
 

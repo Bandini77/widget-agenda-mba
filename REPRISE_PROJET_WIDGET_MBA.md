@@ -6,484 +6,480 @@
 4
  
 5
-Le projet dispose désormais de deux pages :
+Le projet comporte désormais :
 6
  
 7
-### index.html
+- index.html
 8
- 
+- agenda.html
 9
-Page d'accueil du widget.
+- script.js
 10
- 
+- style.css
 11
-### agenda.html
+ 
 12
- 
+---
 13
-Page Agenda complète.
+ 
 14
- 
+# Pages
 15
----
+ 
 16
- 
+## index.html
 17
-# Fonctionnement actuel
+ 
 18
- 
+Page d'accueil.
 19
-## Accueil
+ 
 20
- 
+### Chargement
 21
-Affiche :
+ 
 22
- 
+4 événements visibles.
 23
-4 événements
+ 
 24
- 
+### Recherche
 25
-### Recherche
+ 
 26
- 
-27
 Recherche sur toute la programmation.
+27
+ 
 28
- 
-29
 ### Limite
+29
+ 
 30
- 
+8 événements maximum affichés.
 31
-8 résultats maximum affichés.
+ 
 32
- 
-33
 ### Message
+33
+ 
 34
- 
+Exemple :
 35
-Exemple :
+ 
 36
- 
-37
 8 résultats affichés sur 12 trouvés
+37
+ 
 38
- 
-39
 ### Navigation
+39
+ 
 40
- 
-41
 CONSULTER TOUT L’AGENDA →
+41
+ 
 42
- 
-43
 toujours visible.
+43
+ 
 44
- 
+---
 45
----
+ 
 46
- 
+## agenda.html
 47
-## Agenda complet
+ 
 48
- 
+Page Agenda complète.
 49
-Affiche :
+ 
 50
- 
+### Titre
 51
-toute la programmation.
+ 
 52
- 
+Agenda
 53
-### Recherche
+ 
 54
- 
+### Introduction
 55
-Recherche sur tous les événements.
+ 
 56
- 
+Retrouvez toute la programmation culturelle du Musée des Beaux-Arts de Pau.
 57
-### Filtres
+ 
 58
- 
+### Chargement
 59
-Filtres sur tous les événements.
+ 
 60
- 
+Tous les événements affichés.
 61
-### Compteur
+ 
 62
- 
+### Recherche
 63
-Exemple :
+ 
 64
- 
+Tous les résultats affichés.
 65
-12 événements actuellement programmés
+ 
 66
- 
+### Filtres
 67
-ou
+ 
 68
- 
+Tous les résultats affichés.
 69
-3 résultats trouvés
+ 
 70
- 
+### Compteur
 71
----
+ 
 72
- 
+Visible uniquement :
 73
-# Événements actuellement utilisés
-74
  
+74
+- lors d'une recherche
 75
-Exemples :
+- lors d'un filtre
 76
  
 77
-- Les Impressionnistes
+Exemple :
 78
-- L'histoire du portrait
+ 
 79
-- Les couleurs du musée
+3 résultats trouvés
 80
-- Les petits explorateurs
+ 
 81
-- Cézanne et la modernité
+### Réinitialisation
 82
-- Sieste musicale au musée
+ 
 83
-- Sieste musicale au musée #2
+Retour à l'état neutre.
 84
-- Sieste musicale au musée #3
+ 
 85
-- Bien-être au musée
+Aucun compteur.
 86
-- Concert au musée
+ 
 87
-- Visite flash : les chefs-d'œuvre
-88
-- Vernissage d'automne
-89
- 
-90
 ---
+88
+ 
+89
+# Données actuelles
+90
+ 
 91
- 
+12 événements de test.
 92
-# Types d'activité actuels
-93
  
+93
+Exemples :
 94
-- Arrêt sur œuvre
+ 
 95
-- Concert
+- Les Impressionnistes
 96
-- Conférence
+- L'histoire du portrait
 97
-- Événement national
+- Les couleurs du musée
 98
-- Exposition
+- Les petits explorateurs
 99
-- Jeu de l'oie
+- Cézanne et la modernité
 100
-- Memory
+- Sieste musicale au musée
 101
-- Rencontre
+- Sieste musicale au musée #2
 102
-- Sieste musicale
+- Sieste musicale au musée #3
 103
-- Spectacle
+- Bien-être au musée
 104
-- Vernissage
+- Concert au musée
 105
-- Visite atelier
+- Visite flash : les chefs-d'œuvre
 106
-- Visite commentée
+- Vernissage d'automne
 107
-- Visite contée
+ 
 108
-- Visite flash
+---
 109
  
 110
----
+# Types d'activités
 111
  
 112
-# Architecture technique
+- Arrêt sur œuvre
 113
- 
+- Concert
 114
-## Fichier principal
+- Conférence
 115
- 
+- Événement national
 116
-script.js
+- Exposition
 117
- 
+- Jeu de l'oie
 118
-Contient :
+- Memory
 119
- 
+- Rencontre
 120
-- événements
+- Sieste musicale
 121
-- filtres
+- Spectacle
 122
-- recherche
+- Vernissage
 123
-- modales
+- Visite atelier
 124
-- logique Agenda / Accueil
+- Visite commentée
 125
- 
+- Visite contée
 126
-## Style
+- Visite flash
 127
  
 128
-style.css
+---
 129
  
 130
-## Pages
+# Variables importantes
 131
  
 132
-index.html
+## Mode Agenda
 133
  
 134
-agenda.html
-135
- 
-136
----
-137
- 
-138
-# Variables importantes
-139
- 
-140
-## Mode Agenda
-141
- 
-142
 ```js
-143
+135
 const modeAgenda =
-144
+136
 window.location.pathname.includes("agenda.html");
-145
+137
 ```
-146
+138
  
-147
-Permet de distinguer :
-148
- 
-149
+139
 ### Accueil
-150
+140
  
-151
+141
 modeAgenda = false
-152
+142
  
-153
+143
 ### Agenda
-154
+144
  
-155
+145
 modeAgenda = true
-156
+146
 ```
+147
+ 
+148
+## Limite accueil
+149
+ 
+150
+```js
+151
+const MAX_RESULTATS_ACCUEIL = 8;
+152
+```
+153
+ 
+154
+---
+155
+ 
+156
+# Fonctionnalités validées
 157
  
 158
-## Limite accueil
+✅ cartes événement
 159
  
 160
-```js
+✅ modales détaillées
 161
-const MAX_RESULTATS_ACCUEIL = 8;
+ 
 162
-```
+✅ gestion des expositions longues
 163
  
 164
----
+✅ âge minimum
 165
  
 166
-# Fonctionnalités validées
+✅ réservation conditionnelle
 167
  
 168
-✅ recherche
+✅ lien complémentaire
 169
  
 170
-✅ filtres
+✅ recherche globale
 171
  
 172
-✅ filtre Tout public
+✅ filtres
 173
  
 174
-✅ expositions longues
+✅ logique Tout public
 175
  
 176
-✅ âge minimum
+✅ sieste musicale
 177
  
 178
-✅ réservations conditionnelles
+✅ agenda complet
 179
  
 180
-✅ lien complémentaire
+✅ compteur contextuel
 181
  
 182
-✅ sieste musicale
+✅ réinitialisation
 183
  
 184
-✅ réinitialisation
+✅ recherche "tout public"
 185
  
 186
-✅ agenda complet
+---
 187
  
 188
-✅ compteur de résultats
+# Images à prévoir
 189
  
 190
----
+- sieste-musicale.jpg
 191
- 
+- bien-etre.jpg
 192
-# Points de vigilance
+- concert.jpg
 193
- 
+- visite-flash.jpg
 194
-## Images manquantes
+- vernissage.jpg
 195
  
 196
-À prévoir :
+---
 197
  
 198
-- sieste-musicale.jpg
+# Sujet mis en attente
 199
-- bien-etre.jpg
+ 
 200
-- concert.jpg
+## Fermeture automatique des filtres
 201
-- visite-flash.jpg
+ 
 202
-- vernissage.jpg
+Objectif :
 203
  
 204
-## Filtres
+- clic extérieur
 205
- 
+- touche Échap
 206
-La fermeture automatique au clic extérieur n'est pas encore implémentée.
+ 
 207
- 
+À reprendre après stabilisation.
 208
----
+ 
 209
- 
+---
 210
-# Priorité immédiate
+ 
 211
- 
+# Prochaine étape
 212
-## V2.22-beta2
+ 
 213
- 
+## V2.22-beta3
 214
-Améliorer la présentation éditoriale de la page Agenda.
+ 
 215
- 
+Relier définitivement :
 216
-Objectif :
+ 
 217
- 
+CONSULTER TOUT L’AGENDA →
 218
-S'approcher visuellement du site institutionnel du Musée des Beaux-Arts de Pau :
-219
  
+219
+à
 220
-- sobre
+ 
 221
-- élégant
+agenda.html
 222
-- aéré
+ 
 223
-- orienté contenu
+---
 224
  
 225
----
+# Prochaine grande étape
 226
  
 227
-# Prochaine grande étape
+## V3
 228
  
 229
-V3
+Connexion SharePoint.
 230
  
 231
-Connexion à SharePoint.
+Objectif :
 232
  
 233
-Objectif :
+Remplacer :
 234
  
 235
-Remplacer le tableau :
-236
- 
-237
 ```js
-238
+236
 const events = [...]
-239
+237
 ```
+238
+ 
+239
+par :
 240
  
 241
-par :
+Liste SharePoint Agenda MBA
 242
  
 243
-```txt
-244
-Liste SharePoint Agenda MBA
-245
-```
+sans modifier l'interface utilisateur.
