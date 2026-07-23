@@ -608,8 +608,183 @@ const events = [
   email: "projection@musee.fr",
 
   reservation: "Sur inscription"
+},
+{
+  date: "17 OCT. 2026",
+  jour: "17",
+  mois: "OCT.",
+  annee: "2026",
+  heure: "11h00",
+  dateISO: "2026-10-17",
+
+  image: "images/sieste-musicale.jpg",
+
+  title: "Sieste musicale au musée #2",
+
+  meta: "Adulte",
+  categorie: "Adulte",
+
+  ageMinimum: "",
+
+  type: "Sieste musicale",
+
+  description:
+    "Installez-vous confortablement au cœur des collections et laissez-vous porter par une sélection musicale immersive.",
+
+  tarif: "Gratuit",
+
+  telephone: "05 59 27 33 08",
+  email: "sieste@musee.fr",
+
+  reservation: "Sur inscription"
+},
+{
+  date: "24 OCT. 2026",
+  jour: "24",
+  mois: "OCT.",
+  annee: "2026",
+  heure: "11h00",
+  dateISO: "2026-10-24",
+
+  image: "images/sieste-musicale.jpg",
+
+  title: "Sieste musicale au musée #3",
+
+  meta: "Adulte",
+  categorie: "Adulte",
+
+  ageMinimum: "",
+
+  type: "Sieste musicale",
+
+  description:
+    "Une nouvelle parenthèse musicale et contemplative dans les salles du musée.",
+
+  tarif: "Gratuit",
+
+  telephone: "05 59 27 33 08",
+  email: "sieste@musee.fr",
+
+  reservation: "Sur inscription"
+},
+{
+  date: "31 OCT. 2026",
+  jour: "31",
+  mois: "OCT.",
+  annee: "2026",
+  heure: "10h30",
+  dateISO: "2026-10-31",
+
+  image: "images/bien-etre.jpg",
+
+  title: "Bien-être au musée",
+
+  meta: "Adulte",
+  categorie: "Adulte",
+
+  ageMinimum: "",
+
+  type: "Activité bien-être",
+
+  description:
+    "Une séance dédiée au bien-être et à la détente inspirée des œuvres du musée.",
+
+  tarif: "5 €",
+
+  telephone: "05 59 27 33 09",
+  email: "bienetre@musee.fr",
+
+  reservation: "Sur inscription"
+},
+{
+  date: "07 NOV. 2026",
+  jour: "07",
+  mois: "NOV.",
+  annee: "2026",
+  heure: "18h30",
+  dateISO: "2026-11-07",
+
+  image: "images/concert.jpg",
+
+  title: "Concert au musée",
+
+  meta: "Tout public",
+  categorie: "Tout public",
+
+  ageMinimum: "",
+
+  type: "Concert",
+
+  description:
+    "Une soirée musicale exceptionnelle dans les espaces du musée.",
+
+  tarif: "8 €",
+
+  telephone: "05 59 27 33 10",
+  email: "concert@musee.fr",
+
+  reservation: "Réservation conseillée"
+},
+{
+  date: "14 NOV. 2026",
+  jour: "14",
+  mois: "NOV.",
+  annee: "2026",
+  heure: "15h00",
+  dateISO: "2026-11-14",
+
+  image: "images/visite-flash.jpg",
+
+  title: "Visite flash : les chefs-d'œuvre",
+
+  meta: "Famille",
+  categorie: "Famille",
+
+  ageMinimum: "8",
+
+  type: "Visite flash",
+
+  description:
+    "Une découverte rapide et accessible des œuvres incontournables du MBA.",
+
+  tarif: "Gratuit",
+
+  telephone: "05 59 27 33 11",
+  email: "visite@musee.fr",
+
+  reservation: "Sans réservation"
+},
+{
+  date: "21 NOV. 2026",
+  jour: "21",
+  mois: "NOV.",
+  annee: "2026",
+  heure: "18h00",
+  dateISO: "2026-11-21",
+
+  image: "images/vernissage.jpg",
+
+  title: "Vernissage d'automne",
+
+  meta: "Tout public",
+  categorie: "Tout public",
+
+  ageMinimum: "",
+
+  type: "Vernissage",
+
+  description:
+    "Présentation officielle de la nouvelle exposition temporaire et rencontre avec les équipes du musée.",
+
+  tarif: "Gratuit",
+
+  telephone: "05 59 27 33 12",
+  email: "vernissage@musee.fr",
+
+  reservation: "Entrée libre"
 }
 ];
+const MAX_RESULTATS_ACCUEIL = 8;
 let nombreVisible =
   Number(localStorage.getItem("nombreVisible")) || 2;
 
@@ -729,7 +904,7 @@ app.appendChild(card);
 });
 
 afficherAccueil();
-console.log("Après afficherAccueil");
+
 
 const overlay = document.createElement("div");
 
@@ -741,6 +916,17 @@ app.appendChild(overlay);
 
 const detail = document.createElement("div");
 
+const resultatInfo = document.createElement("div");
+resultatInfo.style.color = "#555";
+resultatInfo.style.fontSize = "14px";
+resultatInfo.style.marginBottom = "20px";
+resultatInfo.id = "resultat-info";
+
+resultatInfo.style.display = "none";
+
+resultatInfo.style.marginTop = "20px";
+resultatInfo.style.textAlign = "center";
+resultatInfo.style.fontWeight = "600";
 const voirPlus = document.createElement("div");
 voirPlus.id = "voir-plus";
 voirPlus.addEventListener("click", () => {
@@ -771,6 +957,10 @@ detail.style.borderRadius = "16px";
 
 detail.style.display = "none";
 
+app.appendChild(resultatInfo);
+resultatInfo.style.display = "block";
+resultatInfo.textContent =
+  "12 résultats trouvés";
 app.appendChild(voirPlus);
 app.appendChild(detail);const buttons = document.querySelectorAll(".event-card button");
 
@@ -956,6 +1146,8 @@ function afficherAccueil() {
   const cartes =
     document.querySelectorAll(".event-card");
 
+    let compteur = 0;
+let totalTrouves = 0;
   cartes.forEach((carte, index) => {
 
     if (index < 4) {
@@ -1035,6 +1227,8 @@ const visiteFlashCoche =
 
   const cartes =
     document.querySelectorAll(".event-card");
+let compteur = 0;
+let totalTrouves = 0;
 
   const aucunFiltre =
   !publicCoche &&
@@ -1108,13 +1302,37 @@ const type =
 (visiteFlashCoche && type === "Visite Flash")
     ) {
       
-carte.style.display = "";
+totalTrouves++;
+
+if (compteur < MAX_RESULTATS_ACCUEIL) {
+
+  carte.style.display = "";
+  compteur++;
+
+} else {
+
+  carte.style.display = "none";
+
+}
 
     } else {
       carte.style.display = "none";
     }
 
   });
+  
+  if (totalTrouves > MAX_RESULTATS_ACCUEIL) {
+
+  resultatInfo.style.display = "block";
+
+  resultatInfo.textContent =
+    `${totalTrouves} résultats trouvés`;
+
+} else {
+
+  resultatInfo.style.display = "none";
+
+}
 
 }
 
@@ -1183,6 +1401,7 @@ document
   const cartes =
     document.querySelectorAll(".event-card");
 
+
   cartes.forEach((carte, index) => {
 
     const contenu =
@@ -1198,7 +1417,18 @@ document
 
     if (contenu.includes(texte)) {
 
-      carte.style.display = "";
+      totalTrouves++;
+
+      if (compteur < MAX_RESULTATS_ACCUEIL) {
+
+        carte.style.display = "";
+        compteur++;
+
+      } else {
+
+        carte.style.display = "none";
+
+      }
 
     } else {
 
@@ -1207,6 +1437,26 @@ document
     }
 
   });
+
+  if (totalTrouves > MAX_RESULTATS_ACCUEIL) {
+
+    resultatInfo.style.display = "block";
+
+    resultatInfo.textContent =
+      `${totalTrouves} résultats trouvés`;
+
+  } else {
+
+    resultatInfo.style.display = "none";
+
+  }
+
+  if (texte === "") {
+
+    resultatInfo.style.display = "none";
+    afficherAccueil();
+
+  }
 
 });
 
