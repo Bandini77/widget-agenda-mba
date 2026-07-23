@@ -1326,7 +1326,7 @@ if (compteur < MAX_RESULTATS_ACCUEIL) {
   resultatInfo.style.display = "block";
 
   resultatInfo.textContent =
-    `${totalTrouves} résultats trouvés`;
+  `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
 
 } else {
 
@@ -1443,7 +1443,7 @@ document
     resultatInfo.style.display = "block";
 
     resultatInfo.textContent =
-      `${totalTrouves} résultats trouvés`;
+  `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
 
   } else {
 
