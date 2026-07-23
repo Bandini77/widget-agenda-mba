@@ -191,13 +191,13 @@ filtreType.innerHTML = `
 </label>
 
 <label>
-  <input type="checkbox" id="type-projection">
-  Projection
+  <input type="checkbox" id="type-rencontre">
+  Rencontre
 </label>
 
 <label>
-  <input type="checkbox" id="type-rencontre">
-  Rencontre
+  <input type="checkbox" id="type-sieste">
+Sieste musicale
 </label>
 
 <label>
@@ -589,17 +589,18 @@ const events = [
 
   image: "images/projection.jpg",
 
-  title: "Projection : Le mystère des ateliers",
+  title: "Sieste musicale au musée",
+
 
   meta: "Famille",
   categorie: "Famille",
 
   ageMinimum: "8",
 
-  type: "Projection",
+  type: "Sieste musicale",
 
   description:
-    "Projection commentée autour des coulisses de la création artistique et des ateliers de peinture.",
+  "Une parenthèse sonore et contemplative au cœur des collections du musée. Installez-vous confortablement et laissez-vous porter par la musique.",
 
   tarif: "Gratuit",
 
@@ -1011,8 +1012,8 @@ const jeuOieCoche =
 const memoryCoche =
   document.getElementById("type-memory").checked;
 
-const projectionCoche =
-  document.getElementById("type-projection").checked;
+const siesteCoche =
+  document.getElementById("type-sieste").checked;
 
 const rencontreCoche =
   document.getElementById("type-rencontre").checked;
@@ -1049,8 +1050,8 @@ const visiteFlashCoche =
   !evenementNationalCoche &&
   !jeuOieCoche &&
   !memoryCoche &&
-  !projectionCoche &&
   !rencontreCoche &&
+  !siesteCoche &&
   !spectacleCoche &&
   !vernissageCoche &&
   !visiteCommenteeCoche &&
@@ -1092,7 +1093,7 @@ const type =
 
 (memoryCoche && type === "Memory") ||
 
-(projectionCoche && type === "Projection") ||
+(siesteCoche && type === "Sieste musicale") ||
 
 (rencontreCoche && type === "Rencontre") ||
 
@@ -1475,7 +1476,7 @@ document
   });
 
 document
-  .getElementById("type-projection")
+  .getElementById("type-sieste")
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
