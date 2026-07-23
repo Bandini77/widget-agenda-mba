@@ -556,19 +556,81 @@ const events = [
     telephone: "05 59 27 33 05",
     email: "jeunepublic@musee.fr",
     reservation: "Sur inscription"
-  }
+  },
+  {
+  date: "03 OCT. 2026",
+  jour: "03",
+  mois: "OCT.",
+  annee: "2026",
+  heure: "16h00",
+  dateISO: "2026-10-03",
+
+  image: "images/conference-cezanne.jpg",
+
+  title: "Cézanne et la modernité",
+
+  meta: "Adulte",
+  categorie: "Adulte",
+
+  ageMinimum: "",
+
+  type: "Conférence",
+
+  description:
+    "Une conférence consacrée à l'influence de Paul Cézanne sur les artistes du XXe siècle.",
+
+  tarif: "5 €",
+
+  telephone: "05 59 27 33 06",
+  email: "conference@musee.fr",
+
+  reservation: "Places limitées"
+},
+{
+  date: "10 OCT. 2026",
+  jour: "10",
+  mois: "OCT.",
+  annee: "2026",
+  heure: "15h00",
+  dateISO: "2026-10-10",
+
+  image: "images/projection.jpg",
+
+  title: "Projection : Le mystère des ateliers",
+
+  meta: "Famille",
+  categorie: "Famille",
+
+  ageMinimum: "8",
+
+  type: "Projection",
+
+  description:
+    "Projection commentée autour des coulisses de la création artistique et des ateliers de peinture.",
+
+  tarif: "Gratuit",
+
+  telephone: "05 59 27 33 07",
+  email: "projection@musee.fr",
+
+  reservation: "Sur inscription"
+}
 ];
 let nombreVisible =
   Number(localStorage.getItem("nombreVisible")) || 2;
 
+
 events.forEach((event, index) => {
 
-  if (index >= nombreVisible) {
-  return;
-}
+  const visibleAuChargement =
+    index < nombreVisible;
+
 
   const card = document.createElement("div");
   card.className = "event-card";
+  if (!visibleAuChargement) {
+  card.style.display = "none";
+}
 
   const image = document.createElement("img");
   image.className = "event-image";
@@ -696,7 +758,7 @@ voirPlus.addEventListener("click", () => {
 
 
 voirPlus.innerHTML =
-  '<span>VOIR PLUS D\'ÉVÉNEMENTS</span><i data-lucide="chevron-down"></i>';
+  '<span>CONSULTER TOUT L\'AGENDA</span><i data-lucide="chevron-down"></i>';
 
 lucide.createIcons();
 
@@ -977,6 +1039,7 @@ const visiteFlashCoche =
   !visiteCommenteeCoche &&
   !visiteConteeCoche &&
   !visiteFlashCoche;
+  
 
   cartes.forEach((carte, index) => {
 
@@ -1167,7 +1230,7 @@ document
 
   });
 
-  
+  /*
   function filtrerDate() {
 
   const dateChoisie =
@@ -1197,6 +1260,7 @@ document
   document
   .getElementById("quand-date")
   .addEventListener("change", filtrerDate);
+  */
   function filtrerAujourdHui() {
 
   const coche =
