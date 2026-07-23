@@ -785,8 +785,13 @@ const events = [
 }
 ];
 const MAX_RESULTATS_ACCUEIL = 8;
+const modeAgenda =
+  window.location.pathname.includes("agenda.html");
+  console.log("modeAgenda =", modeAgenda);
 let nombreVisible =
-  Number(localStorage.getItem("nombreVisible")) || 2;
+  modeAgenda
+    ? events.length
+    : 4;
 
 
 events.forEach((event, index) => {
@@ -903,7 +908,11 @@ app.appendChild(card);
 
 });
 
-afficherAccueil();
+if (!modeAgenda) {
+
+  afficherAccueil();
+
+}
 
 
 const overlay = document.createElement("div");
@@ -928,6 +937,11 @@ resultatInfo.style.marginTop = "20px";
 resultatInfo.style.textAlign = "center";
 resultatInfo.style.fontWeight = "600";
 const voirPlus = document.createElement("div");
+if (modeAgenda) {
+
+  voirPlus.style.display = "none";
+
+}
 voirPlus.id = "voir-plus";
 voirPlus.addEventListener("click", () => {
 
@@ -958,9 +972,6 @@ detail.style.borderRadius = "16px";
 detail.style.display = "none";
 
 app.appendChild(resultatInfo);
-resultatInfo.style.display = "block";
-resultatInfo.textContent =
-  "12 résultats trouvés";
 app.appendChild(voirPlus);
 app.appendChild(detail);const buttons = document.querySelectorAll(".event-card button");
 
@@ -1257,7 +1268,25 @@ let totalTrouves = 0;
 
     if (aucunFiltre) {
 
-  afficherAccueil();
+  if (!modeAgenda) {
+
+    afficherAccueil();
+
+  } else {
+
+    cartes.forEach((carte) => {
+
+      carte.style.display = "";
+
+    });
+
+  }
+
+  resultatInfo.style.display = "block";
+
+  resultatInfo.textContent =
+    `${events.length} événements actuellement programmés`;
+
   return;
 
 }
@@ -1325,8 +1354,17 @@ if (compteur < MAX_RESULTATS_ACCUEIL) {
 
   resultatInfo.style.display = "block";
 
+  if (modeAgenda) {
+
   resultatInfo.textContent =
-  `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+    `${totalTrouves} résultats trouvés`;
+
+} else {
+
+  resultatInfo.textContent =
+    `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+
+}
 
 } else {
 
@@ -1400,6 +1438,8 @@ document
 
   const cartes =
     document.querySelectorAll(".event-card");
+    let compteur = 0;
+let totalTrouves = 0;
 
 
   cartes.forEach((carte, index) => {
@@ -1419,7 +1459,10 @@ document
 
       totalTrouves++;
 
-      if (compteur < MAX_RESULTATS_ACCUEIL) {
+      if (
+  modeAgenda ||
+  compteur < MAX_RESULTATS_ACCUEIL
+) {
 
         carte.style.display = "";
         compteur++;
@@ -1442,8 +1485,17 @@ document
 
     resultatInfo.style.display = "block";
 
-    resultatInfo.textContent =
-  `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+    if (modeAgenda) {
+
+  resultatInfo.textContent =
+    `${totalTrouves} résultats trouvés`;
+
+} else {
+
+  resultatInfo.textContent =
+    `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+
+}
 
   } else {
 
@@ -1453,10 +1505,31 @@ document
 
   if (texte === "") {
 
+  if (!modeAgenda) {
+
     resultatInfo.style.display = "none";
+
     afficherAccueil();
 
+  } else {
+
+    document
+      .querySelectorAll(".event-card")
+      .forEach((carte) => {
+
+        carte.style.display = "";
+
+      });
+
+    resultatInfo.style.display = "block";
+
+    resultatInfo.textContent =
+      `${events.length} événements actuellement programmés`;
+
   }
+
+}
+
 
 });
 
