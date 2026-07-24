@@ -191,6 +191,11 @@ filtreType.innerHTML = `
 </label>
 
 <label>
+  <input type="checkbox" id="type-nocturne">
+  Nocturne
+</label>
+
+<label>
   <input type="checkbox" id="type-rencontre">
   Rencontre
 </label>
@@ -1256,6 +1261,9 @@ const jeuOieCoche =
 
 const memoryCoche =
   document.getElementById("type-memory").checked;
+  
+const nocturneCoche =
+  document.getElementById("type-nocturne").checked;
 
 const siesteCoche =
   document.getElementById("type-sieste").checked;
@@ -1304,6 +1312,7 @@ let totalTrouves = 0;
   !visiteCommenteeCoche &&
   !visiteConteeCoche &&
   !visiteFlashCoche;
+  !nocturneCoche &&
   
 
   cartes.forEach((carte, index) => {
@@ -1361,6 +1370,8 @@ const type =
 (rencontreCoche && type === "Rencontre") ||
 
 (spectacleCoche && type === "Spectacle") ||
+
+(nocturneCoche && type === "Nocturne") ||
 
 (vernissageCoche && type === "Vernissage") ||
 
@@ -1866,6 +1877,14 @@ document
 
 document
   .getElementById("type-sieste")
+  .addEventListener("change", () => {
+
+    mettreAJourFiltres();
+
+  });
+
+  document
+  .getElementById("type-nocturne")
   .addEventListener("change", () => {
 
     mettreAJourFiltres();
