@@ -959,12 +959,7 @@ if (modeAgenda) {
 voirPlus.id = "voir-plus";
 voirPlus.addEventListener("click", () => {
 
-  localStorage.setItem(
-    "nombreVisible",
-    nombreVisible + 2
-  );
-
-  location.reload();
+  window.location.href = "agenda.html";
 
 });
 
