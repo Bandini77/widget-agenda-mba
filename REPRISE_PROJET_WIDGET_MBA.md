@@ -6,7 +6,7 @@
 4
  
 5
-Le projet comporte désormais :
+Le projet dispose désormais :
 6
  
 7
@@ -14,241 +14,241 @@ Le projet comporte désormais :
 8
 - agenda.html
 9
-- script.js
-10
 - style.css
+10
+- script.js
 11
- 
+- ROADMAP.md
 12
----
+- REPRISE_PROJET_WIDGET_MBA.md
 13
- 
+- SHAREPOINT_MODELE_MBA.md
 14
-# Pages
+ 
 15
- 
-16
-## index.html
-17
- 
-18
-Page d'accueil.
-19
- 
-20
-### Chargement
-21
- 
-22
-4 événements visibles.
-23
- 
-24
-### Recherche
-25
- 
-26
-Recherche sur toute la programmation.
-27
- 
-28
-### Limite
-29
- 
-30
-8 événements maximum affichés.
-31
- 
-32
-### Message
-33
- 
-34
-Exemple :
-35
- 
-36
-8 résultats affichés sur 12 trouvés
-37
- 
-38
-### Navigation
-39
- 
-40
-CONSULTER TOUT L’AGENDA →
-41
- 
-42
-toujours visible.
-43
- 
-44
 ---
-45
+16
  
-46
-## agenda.html
-47
+17
+# Pages
+18
  
-48
-Page Agenda complète.
-49
+19
+## Accueil
+20
  
-50
-### Titre
-51
+21
+Page :
+22
  
-52
-Agenda
-53
+23
+index.html
+24
  
-54
-### Introduction
-55
- 
-56
-Retrouvez toute la programmation culturelle du Musée des Beaux-Arts de Pau.
-57
- 
-58
+25
 ### Chargement
-59
+26
  
-60
-Tous les événements affichés.
-61
+27
+4 événements affichés.
+28
  
-62
+29
 ### Recherche
-63
+30
  
-64
-Tous les résultats affichés.
-65
+31
+Recherche sur toute la programmation.
+32
  
-66
-### Filtres
-67
+33
+### Limitation
+34
  
-68
-Tous les résultats affichés.
-69
+35
+Maximum :
+36
  
-70
+37
+8 événements affichés.
+38
+ 
+39
 ### Compteur
+40
+ 
+41
+Exemple :
+42
+ 
+43
+8 résultats affichés sur 12 trouvés
+44
+ 
+45
+### Navigation
+46
+ 
+47
+CONSULTER TOUT L’AGENDA →
+48
+ 
+49
+ouvre agenda.html
+50
+ 
+51
+---
+52
+ 
+53
+## Agenda complet
+54
+ 
+55
+Page :
+56
+ 
+57
+agenda.html
+58
+ 
+59
+### Introduction
+60
+ 
+61
+Retrouvez toute la programmation culturelle du Musée des Beaux-Arts de Pau.
+62
+ 
+63
+### Chargement
+64
+ 
+65
+Tous les événements affichés.
+66
+ 
+67
+### Recherche
+68
+ 
+69
+Tous les résultats affichés.
+70
+ 
 71
- 
+### Filtres
 72
-Visible uniquement :
-73
  
+73
+Tous les résultats affichés.
 74
-- lors d'une recherche
+ 
 75
-- lors d'un filtre
+### Compteur
 76
  
 77
-Exemple :
+Affiché uniquement :
 78
  
 79
-3 résultats trouvés
+- lorsqu'un filtre est actif
 80
- 
+- lorsqu'une recherche est active
 81
-### Réinitialisation
+ 
 82
- 
+Exemple :
 83
-Retour à l'état neutre.
+ 
 84
- 
+3 résultats trouvés
 85
-Aucun compteur.
+ 
 86
- 
+### Réinitialisation
 87
----
+ 
 88
- 
+Retour à l'état neutre.
 89
-# Données actuelles
+ 
 90
- 
+---
 91
-12 événements de test.
+ 
 92
- 
+# Données
 93
-Exemples :
-94
  
+94
+Chaque événement contient désormais :
 95
-- Les Impressionnistes
+ 
 96
-- L'histoire du portrait
+```js
 97
-- Les couleurs du musée
+{
 98
-- Les petits explorateurs
+lieu: "",
 99
-- Cézanne et la modernité
+modaliteAcces: "",
 100
-- Sieste musicale au musée
+statut: "Publié"
 101
-- Sieste musicale au musée #2
+}
 102
-- Sieste musicale au musée #3
+```
 103
-- Bien-être au musée
+ 
 104
-- Concert au musée
+en plus des données historiques.
 105
-- Visite flash : les chefs-d'œuvre
+ 
 106
-- Vernissage d'automne
+---
 107
  
 108
----
+# Types d'activités
 109
  
 110
-# Types d'activités
-111
- 
-112
-- Arrêt sur œuvre
-113
-- Concert
-114
-- Conférence
-115
-- Événement national
-116
 - Exposition
-117
-- Jeu de l'oie
-118
-- Memory
-119
-- Rencontre
-120
-- Sieste musicale
-121
-- Spectacle
-122
-- Vernissage
-123
+111
 - Visite atelier
-124
+112
 - Visite commentée
-125
+113
 - Visite contée
-126
+114
 - Visite flash
+115
+- Conférence
+116
+- Concert
+117
+- Spectacle
+118
+- Rencontre
+119
+- Sieste musicale
+120
+- Vernissage
+121
+- Événement national
+122
+- Arrêt sur œuvre
+123
+- Jeu de l'oie
+124
+- Memory
+125
+- L'heure du conte
+126
+- Nocturne
 127
  
 128
@@ -256,230 +256,48 @@ Exemples :
 129
  
 130
-# Variables importantes
+# Publics
 131
  
 132
-## Mode Agenda
+Valeurs métier :
 133
  
 134
-```js
+- Tout public
 135
-const modeAgenda =
+- Adulte
 136
-window.location.pathname.includes("agenda.html");
+- Famille
 137
-```
+- Jeune public
 138
  
 139
-### Accueil
+## Particularité
 140
  
 141
-modeAgenda = false
+Dans les filtres du widget :
 142
  
 143
-### Agenda
+"Tout public"
 144
  
 145
-modeAgenda = true
+correspond actuellement à :
 146
-```
+ 
 147
- 
+- Tout public
 148
-## Limite accueil
+- Adulte
 149
- 
+- Famille
 150
-```js
+- Jeune public
 151
-const MAX_RESULTATS_ACCUEIL = 8;
+ 
 152
-```
-153
- 
-154
----
-155
- 
-156
-# Fonctionnalités validées
-157
- 
-158
-✅ cartes événement
-159
- 
-160
-✅ modales détaillées
-161
- 
-162
-✅ gestion des expositions longues
-163
- 
-164
-✅ âge minimum
-165
- 
-166
-✅ réservation conditionnelle
-167
- 
-168
-✅ lien complémentaire
-169
- 
-170
-✅ recherche globale
-171
- 
-172
-✅ filtres
-173
- 
-174
-✅ logique Tout public
-175
- 
-176
-✅ sieste musicale
-177
- 
-178
-✅ agenda complet
-179
- 
-180
-✅ compteur contextuel
-181
- 
-182
-✅ réinitialisation
-183
- 
-184
-✅ recherche "tout public"
-185
- 
-186
----
-187
- 
-188
-# Images à prévoir
-189
- 
-190
-- sieste-musicale.jpg
-191
-- bien-etre.jpg
-192
-- concert.jpg
-193
-- visite-flash.jpg
-194
-- vernissage.jpg
-195
- 
-196
----
-197
- 
-198
-# Sujet mis en attente
-199
- 
-200
-## Fermeture automatique des filtres
-201
- 
-202
-Objectif :
-203
- 
-204
-- clic extérieur
-205
-- touche Échap
-206
- 
-207
-À reprendre après stabilisation.
-208
- 
-209
----
-210
- 
-211
-# Prochaine étape
-212
- 
-213
-## V2.22-beta3
-214
- 
-215
-Relier définitivement :
-216
- 
-217
-CONSULTER TOUT L’AGENDA →
-218
- 
-219
-à
-220
- 
-221
-agenda.html
-222
- 
-223
----
-224
- 
-225
-# Prochaine grande étape
-226
- 
-227
-## V3
-228
- 
-229
-Connexion SharePoint.
-230
- 
-231
-Objectif :
-232
- 
-233
-Remplacer :
-234
- 
-235
-```js
-236
-const events = [...]
-237
-```
-238
- 
-239
-par :
-240
- 
-241
-Liste SharePoint Agenda MBA
-242
- 
-243
-sans modifier l'interface utilisateur.
+pour faciliter la consultation.

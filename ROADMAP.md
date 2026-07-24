@@ -14,9 +14,9 @@
 8
 - Harmonisation image / date / contenu
 9
-- Amélioration de la hiérarchie visuelle
-10
 - Optimisation du bouton "+"
+10
+- Amélioration de la hiérarchie visuelle
 11
 - Intégration des icônes Lucide
 12
@@ -44,738 +44,720 @@
 23
  
 24
-### Règle métier
+## Types d'activités
 25
  
 26
-Tout public =
+- Exposition
 27
- 
+- Visite atelier
 28
-- Adulte
+- Visite commentée
 29
-- Famille
+- Visite contée
 30
-- Jeune public
+- Visite flash
 31
- 
-32
-## Types d'activités
-33
- 
-34
-- Arrêt sur œuvre
-35
-- Concert
-36
 - Conférence
+32
+- Concert
+33
+- Spectacle
+34
+- Rencontre
+35
+- Sieste musicale
+36
+- Vernissage
 37
 - Événement national
 38
-- Exposition
+- Arrêt sur œuvre
 39
 - Jeu de l'oie
 40
 - Memory
 41
-- Rencontre
+- L'heure du conte
 42
-- Sieste musicale
+- Nocturne
 43
-- Spectacle
+ 
 44
-- Vernissage
-45
-- Visite atelier
-46
-- Visite commentée
-47
-- Visite contée
-48
-- Visite flash
-49
- 
-50
 ## Quand
-51
+45
  
-52
+46
 - Aujourd'hui
-53
+47
 - Demain
-54
+48
 - Cette semaine
-55
+49
 - Ce week-end
-56
+50
 - Ce mois-ci
-57
+51
 - Période personnalisée
+52
+ 
+53
+---
+54
+ 
+55
+# ✅ V2.20.8 — Modales détaillées
+56
+ 
+57
+## Expositions longues
 58
  
 59
----
+Gestion :
 60
  
 61
-# ✅ V2.20.8 — Modales détaillées
+- date début
 62
- 
+- date fin
 63
-## Gestion des expositions longues
-64
  
+64
+## Âge minimum
 65
-- Date début
+ 
 66
-- Date fin
+Affichage :
 67
  
 68
-## Âge minimum
-69
- 
-70
-Affichage automatique :
-71
- 
-72
 - À partir de 5 ans
-73
+69
 - À partir de 6 ans
-74
+70
 - À partir de 8 ans
-75
+71
 - À partir de 12 ans
+72
+ 
+73
+## Réservation conditionnelle
+74
+ 
+75
+Bloc réservation masqué lorsque :
 76
  
 77
-## Réservation conditionnelle
+reservationObligatoire = false
 78
  
 79
-Si :
+## Lien complémentaire
 80
  
 81
-reservationObligatoire = false
+En savoir plus →
 82
  
 83
-→ bloc réservation masqué
+---
 84
  
 85
-## Liens complémentaires
+# ✅ V2.21-beta1
 86
  
 87
-Affichage automatique :
+## Recherche globale
 88
  
 89
-En savoir plus →
+Recherche dans :
 90
  
 91
----
-92
- 
-93
-# ✅ V2.21-beta1
-94
- 
-95
-## Recherche globale
-96
- 
-97
-Recherche dans :
-98
- 
-99
 - titre
-100
+92
 - type
-101
+93
 - public
-102
+94
 - description
+95
+ 
+96
+## Correctifs
+97
+ 
+98
+- suppression des références obsolètes
+99
+- nettoyage console
+100
+- suppression des erreurs JS
+101
+ 
+102
+---
 103
  
 104
-## Correctifs
+# ✅ V2.21-beta2
 105
  
 106
-- suppression références obsolètes quand-date
+## Accueil
 107
-- nettoyage console
+ 
 108
-- suppression erreurs JS
+Affichage :
 109
  
 110
----
+4 événements
 111
  
 112
-# ✅ V2.21-beta2
+## Recherche
 113
  
 114
-## Accueil
+Recherche sur l'ensemble de la programmation.
 115
  
 116
-Affichage :
+## Filtres
 117
  
 118
-4 événements
+Filtres sur l'ensemble de la programmation.
 119
  
 120
-## Recherche
+## Réinitialisation
 121
  
 122
-Recherche sur toute la programmation.
+Retour à l'accueil.
 123
  
 124
-## Filtres
+---
 125
  
 126
-Filtres sur toute la programmation.
+# ✅ V2.21-beta3
 127
  
 128
-## Réinitialisation
+## Limitation intelligente
 129
  
 130
-Retour à l'accueil.
+### Accueil
 131
  
 132
----
+4 événements au chargement.
 133
  
 134
-# ✅ V2.21-beta3
+### Recherche / filtres
 135
  
 136
-## Limitation des résultats
+Maximum :
 137
  
 138
-### Accueil
+8 événements affichés.
 139
  
 140
-4 événements au chargement.
+### Information
 141
  
 142
-### Recherche / Filtres
+Exemple :
 143
  
 144
-Maximum :
+8 résultats affichés sur 12 trouvés
 145
  
 146
-8 événements affichés.
+### Navigation
 147
  
 148
-### Information utilisateur
+CONSULTER TOUT L’AGENDA →
 149
  
 150
-Exemple :
+Toujours visible.
 151
  
 152
-8 résultats affichés sur 12 trouvés
+---
 153
  
 154
-### Navigation
+# ✅ V2.22-beta1
 155
  
 156
-CONSULTER TOUT L’AGENDA →
+## Création de l'Agenda complet
 157
  
 158
-Toujours visible.
+Nouvelle page :
 159
  
 160
----
+agenda.html
 161
  
 162
-# ✅ V2.22-beta1
+### Accueil
 163
  
 164
-## Création d'une page Agenda
+4 événements
 165
  
 166
-Nouvelle page :
+### Agenda
 167
  
 168
-agenda.html
+Toute la programmation
 169
  
 170
-## Comportement
+---
 171
  
 172
-### Accueil
+# ✅ V2.22-beta2
 173
  
 174
-- 4 événements
+## Ligne éditoriale Agenda
 175
  
 176
-### Agenda
+### Titre
 177
  
 178
-- toute la programmation
+Agenda
 179
  
 180
-## Recherche
+### Introduction
 181
  
 182
-### Accueil
+Retrouvez toute la programmation culturelle du Musée des Beaux-Arts de Pau.
 183
  
 184
-8 résultats maximum
+### Compteur
 185
  
 186
-### Agenda
+Accueil :
 187
  
 188
-Tous les résultats
+8 résultats affichés sur X trouvés
 189
  
 190
-## Filtres
+Agenda :
 191
  
 192
-### Accueil
+X résultats trouvés
 193
  
 194
-8 résultats maximum
+### Philosophie
 195
  
 196
-### Agenda
+Inspirée :
 197
  
 198
-Tous les résultats
+- Musée des Beaux-Arts de Pau
 199
- 
+- Musée d'Arts de Nantes
 200
----
+- MusBA Bordeaux
 201
  
 202
-# ✅ V2.22-beta2
+---
 203
  
 204
-## Positionnement éditorial
+# ✅ V2.22-beta3
 205
  
 206
-### Titre
+## Navigation complète
 207
  
 208
-Agenda
+### Accueil
 209
  
 210
-### Introduction
+CONSULTER TOUT L’AGENDA →
 211
  
 212
-Retrouvez toute la programmation culturelle du Musée des Beaux-Arts de Pau.
+ouvre :
 213
  
 214
-## Philosophie
+agenda.html
 215
  
 216
-Inspirée :
+### Agenda
 217
  
 218
-- du Musée d'Arts de Nantes
+Tous les événements affichés.
 219
-- du MusBA Bordeaux
+ 
 220
-- du site du MBA Pau
+### Recherche
 221
  
 222
-### Principes
+Tous les résultats affichés.
 223
  
 224
-- sobriété
+### Filtres
 225
-- lisibilité
+ 
 226
-- hiérarchie claire
+Tous les résultats affichés.
 227
-- absence d'effets inutiles
+ 
 228
-- contenu au centre
+---
 229
  
 230
-## Compteur
+# ✅ V2.22-beta4
 231
  
 232
-### Accueil
+## Préparation SharePoint
 233
  
 234
-Affiché uniquement lorsque nécessaire.
+Ajout aux événements :
 235
  
 236
-Exemple :
+- lieu
 237
- 
+- modaliteAcces
 238
-8 résultats affichés sur 12 trouvés
+- statut
 239
  
 240
-### Agenda
+## Audit métier
 241
  
 242
-Affiché uniquement lorsqu'une recherche ou un filtre est actif.
+### Tarification
 243
  
 244
-Exemple :
+Définition complète des activités :
 245
  
 246
-3 résultats trouvés
+- gratuites
 247
- 
+- payantes
 248
-### Aucun compteur
-249
  
+249
+### Modalités d'accès
 250
-- au chargement
+ 
 251
-- après réinitialisation
+Définition complète :
 252
  
 253
----
+- Réservation obligatoire
 254
- 
+- Accès libre
 255
-# 🚧 V2.22-beta3
+- Accès libre dans la limite des places disponibles
 256
  
 257
-## Liaison Accueil → Agenda
+### Publics
 258
  
 259
-Bouton :
+- Tout public
 260
- 
+- Adulte
 261
-CONSULTER TOUT L’AGENDA →
+- Famille
 262
- 
+- Jeune public
 263
-ouvre :
+ 
 264
- 
+### Cycle de vie
 265
-agenda.html
+ 
 266
- 
+- Brouillon
 267
----
+- Publié
 268
- 
+- Archivé
 269
-# 🚧 V2.22-beta4
+ 
 270
- 
+### Événements récurrents
 271
-## Confort utilisateur
+ 
 272
- 
+1 occurrence = 1 ligne
 273
-### Filtres
+ 
 274
- 
+## Nouveaux types
 275
-Fermeture automatique :
-276
  
+276
+Ajout :
 277
-- clic extérieur
+ 
 278
-- touche Échap
+- Nocturne
 279
  
 280
-À reprendre plus tard.
+## UX
 281
  
 282
----
+### Fermeture ESC
 283
  
 284
-# 🚧 V2.23
+Échap ferme les filtres ouverts.
 285
  
 286
-## Responsive
+---
 287
  
 288
-### Tablette
+# 🚧 V2.23
 289
  
 290
-- cartes
+## Responsive
 291
-- filtres
+ 
 292
-- modales
+### Mobile
 293
  
 294
-### Mobile
+Adaptation selon maquette validée.
 295
  
 296
-- optimisation tactile
+### Tablette
 297
-- réorganisation verticale
+ 
 298
-- tests utilisateurs
+Optimisation :
 299
  
 300
----
+- cartes
 301
- 
+- filtres
 302
-# 🚀 V3 — SharePoint
+- recherche
 303
  
 304
-## Source unique
+### Recette responsive
 305
  
 306
-Liste :
+Validation :
 307
  
 308
-Agenda MBA
+- smartphone
 309
- 
+- tablette
 310
-## Colonnes
+- desktop
 311
  
 312
-- Titre
+---
 313
-- Type d'activité
+ 
 314
-- Public
+# 🚧 V2.24
 315
-- Âge minimum
+ 
 316
-- Date début
+## Harmonisation graphique
 317
-- Heure début
+ 
 318
-- Date fin
+### Audit typographique
 319
-- Heure fin
+ 
 320
-- Lieu
+Objectif :
 321
-- Tarif
+ 
 322
-- Réservation obligatoire
+Alignement avec le site du musée.
 323
-- Téléphone
+ 
 324
-- Email
+### Audit des espacements
 325
-- Description
+ 
 326
-- Lien complémentaire
+### Hiérarchie visuelle
 327
-- Image
+ 
 328
-- Statut
+### Uniformité des tailles de police
 329
  
 330
-## Statut
+---
 331
  
 332
-- Brouillon
+# 🚀 V3 — SharePoint
 333
-- Publié
+ 
 334
-- Archivé
+## Source de données
 335
  
 336
-## Administration
+Liste SharePoint :
 337
  
 338
-Sans modification du code.
+Agenda MBA
 339
  
 340
-### Actions
+## Colonnes principales
 341
  
 342
-- Ajouter
+- Titre
 343
-- Modifier
+- Type d'activité
 344
-- Dupliquer
+- Public
 345
-- Archiver
+- Âge minimum
 346
- 
+- Date début
 347
----
+- Heure début
 348
- 
+- Date fin
 349
-# Évolutivité
+- Heure fin
 350
- 
+- Lieu
 351
-Types futurs possibles :
+- Tarif
 352
- 
+- Modalité d'accès
 353
-- Activité bien-être
+- Description
 354
-- Sieste musicale
+- Lien complémentaire
 355
-- Nouveaux formats
+- Image
 356
- 
+- Statut
 357
-Sans impact majeur sur le widget.
+ 
 358
- 
+## Administration
 359
----
-360
  
+360
+- Administrateur principal
 361
-# Vision cible
+- Administrateurs suppléants
 362
  
 363
-Accueil
+## Archivage
 364
  
 365
-↓
+Automatique après la date de fin.
 366
  
 367
-4 événements
+## Vision cible
 368
  
 369
-↓
+Accueil
 370
  
 371
-Recherche rapide
+↓
 372
  
 373
-↓
+Agenda complet
 374
  
 375
-Filtres
+↓
 376
  
 377
-↓
+SharePoint
 378
  
 379
-CONSULTER TOUT L’AGENDA →
+↓
 380
  
 381
-↓
+Administration autonome du MBA
 382
- 
-383
-Agenda complet
-384
- 
-385
-↓
-386
- 
-387
-Liste SharePoint MBA
-388
- 
-389
-↓
-390
- 
-391
-Administration autonome
+`
