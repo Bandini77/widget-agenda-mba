@@ -502,6 +502,9 @@ const events = [
     categorie: "Tout public",
     ageMinimum: "",
     type: "Exposition",
+    lieu: "",
+    modaliteAcces: "Accès libre",
+    statut: "Publié",
     description: "Découvrez les chefs-d'œuvre impressionnistes du musée.",
     tarif: "Gratuit",
     telephone: "05 59 27 33 02",
@@ -520,6 +523,9 @@ const events = [
     meta: "Adulte",
     categorie: "Adulte",
     type: "Conférence",
+    lieu: "",
+    modaliteAcces: "Réservation obligatoire",
+    statut: "Publié",
     description: "Conférence autour de l'histoire du portrait.",
     tarif: "5 €",
     telephone: "05 59 27 33 03",
@@ -539,6 +545,9 @@ const events = [
     categorie: "Famille",
     ageMinimum: "5",
     type: "Visite atelier",
+    lieu: "",
+    modaliteAcces: "Réservation obligatoire",
+    statut: "Publié",
     description: "Découverte créative des collections.",
     tarif: "3 €",
     telephone: "05 59 27 33 04",
@@ -582,6 +591,9 @@ const events = [
   ageMinimum: "",
 
   type: "Conférence",
+  lieu: "",
+  modaliteAcces: "Réservation obligatoire",
+  statut: "Publié",
 
   description:
     "Une conférence consacrée à l'influence de Paul Cézanne sur les artistes du XXe siècle.",
@@ -612,6 +624,9 @@ const events = [
   ageMinimum: "8",
 
   type: "Sieste musicale",
+  lieu: "",
+  modaliteAcces: "Réservation obligatoire",
+  statut: "Publié",
 
   description:
   "Une parenthèse sonore et contemplative au cœur des collections du musée. Installez-vous confortablement et laissez-vous porter par la musique.",
@@ -641,6 +656,9 @@ const events = [
   ageMinimum: "",
 
   type: "Sieste musicale",
+  lieu: "",
+  modaliteAcces: "Réservation obligatoire",
+  statut: "Publié",
 
   description:
     "Installez-vous confortablement au cœur des collections et laissez-vous porter par une sélection musicale immersive.",
@@ -670,6 +688,9 @@ const events = [
   ageMinimum: "",
 
   type: "Sieste musicale",
+  lieu: "",
+  modaliteAcces: "Réservation obligatoire",
+  statut: "Publié",
 
   description:
     "Une nouvelle parenthèse musicale et contemplative dans les salles du musée.",
@@ -699,6 +720,9 @@ const events = [
   ageMinimum: "",
 
   type: "Activité bien-être",
+  lieu: "",
+  modaliteAcces: "Réservation obligatoire",
+  statut: "Publié",
 
   description:
     "Une séance dédiée au bien-être et à la détente inspirée des œuvres du musée.",
@@ -728,6 +752,9 @@ const events = [
   ageMinimum: "",
 
   type: "Concert",
+  lieu: "",
+  modaliteAcces: "Réservation obligatoire",
+  statut: "Publié",
 
   description:
     "Une soirée musicale exceptionnelle dans les espaces du musée.",
@@ -757,6 +784,9 @@ const events = [
   ageMinimum: "8",
 
   type: "Visite flash",
+  lieu: "",
+  modaliteAcces: "Réservation obligatoire",
+  statut: "Publié",
 
   description:
     "Une découverte rapide et accessible des œuvres incontournables du MBA.",
@@ -786,6 +816,9 @@ const events = [
   ageMinimum: "",
 
   type: "Vernissage",
+  lieu: "",
+  modaliteAcces: "Sans réservation",
+  statut: "Publié",
 
   description:
     "Présentation officielle de la nouvelle exposition temporaire et rencontre avec les équipes du musée.",
