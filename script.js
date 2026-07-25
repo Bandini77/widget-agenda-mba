@@ -1159,6 +1159,10 @@ ${
 }
 
 </div>
+<div class="detail-tarif-mobile">
+  <i data-lucide="ticket"></i>
+  ${events[index].tarif}
+</div>
 
     <p class="detail-description">
   ${events[index].description}
@@ -1200,13 +1204,19 @@ events[index].reservationObligatoire !== false
 
   <div>
 
-    <h4>Réservation</h4>
+    <h4 class="reservation-toggle">
+  Réservation
+</h4>
 
-    <p>${events[index].telephone}</p>
+<div class="reservation-content">
 
-    <p>${events[index].email}</p>
+  <p>${events[index].telephone}</p>
 
-    <p>${events[index].reservation}</p>
+  <p>${events[index].email}</p>
+
+  <p>${events[index].reservation}</p>
+
+</div>
 
   </div>
 
@@ -1230,21 +1240,40 @@ events[index].reservationObligatoire !== false
   Email
 </p>
 
-<button class="calendar-btn">
+</div>
+
+    </div>
+
+  </div>
+   <button class="calendar-btn">
   <i data-lucide="calendar-plus"></i>
   Ajouter à mon calendrier
 </button>
 
 </div>
 
-    </div>
-
-  </div>
-
-</div>
-
 `;
 lucide.createIcons();
+const reservationToggle =
+  document.querySelector(".reservation-toggle");
+
+const reservationContent =
+  document.querySelector(".reservation-content");
+
+if(reservationToggle && reservationContent){
+
+  reservationToggle.addEventListener(
+    "click",
+    () => {
+
+      reservationContent.classList.toggle("open");
+
+      reservationToggle.classList.toggle("open");
+
+    }
+  );
+
+}
 document
   .getElementById("fermer-detail")
   .addEventListener("click", () => {
