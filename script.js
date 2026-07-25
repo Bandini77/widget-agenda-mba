@@ -1056,17 +1056,23 @@ buttons.forEach((button, index) => {
       ${events[index].title}
     </h2>
 
-    <div class="detail-public">
+   <div class="detail-public">
   <i data-lucide="users"></i>
 
-  ${events[index].meta}
+  <span class="detail-public-label">
+    ${events[index].meta}
+  </span>
 
   ${
     events[index].ageMinimum
-      ? ` • À partir de ${events[index].ageMinimum} ans`
+      ? `
+        <span class="detail-separator">•</span>
+        <span class="detail-age">
+          À partir de ${events[index].ageMinimum} ans
+        </span>
+      `
       : ""
   }
-
 </div>
 
 

@@ -59,7 +59,7 @@ body{
 .search-container{
   display:flex;
   gap:12px;
-  margin-bottom:24px;
+  margin-bottom:32px;
 }
 
 .search-container input{
@@ -71,7 +71,7 @@ body{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
-  margin-bottom:24px;
+  margin-bottom:36px;
 }
 
 
@@ -425,7 +425,7 @@ background:#876d45;
   display:flex;
   align-items:center;
   gap:8px;
-
+  line-height:1.5;
   font-size:18px;
   margin-top:15px;
   margin-bottom:15px;
@@ -894,7 +894,7 @@ background:#876d45;
   height:18px;
   flex-shrink:0;
   position:relative;
-top:-2px;
+top:-1px;
 }
 .event-more{
   width:42px;
@@ -1088,4 +1088,26 @@ top:-2px;
 
   font-weight:600;
 
+}
+.detail-public{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:-3px;
+}
+
+.detail-separator{
+  opacity:.6;
+}
+
+.detail-age{
+  white-space:nowrap;
+}
+.detail-public{
+  position:relative;
+  top:-2px;
+}
+.detail-public svg{
+  position:relative;
+  top:-2px;
 }
