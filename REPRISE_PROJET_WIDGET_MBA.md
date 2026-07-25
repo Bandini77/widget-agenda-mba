@@ -2,87 +2,87 @@
 2
  
 3
-## Situation actuelle
+## État général
 4
  
 5
-Le projet dispose désormais :
+Le widget est fonctionnel, stabilisé et largement aligné avec le site du Musée des Beaux-Arts de Pau.
 6
  
 7
-- index.html
+Le projet est actuellement prêt pour le chantier Responsive.
 8
-- agenda.html
+ 
 9
-- style.css
+---
 10
-- script.js
+ 
 11
-- ROADMAP.md
+# Pages
 12
-- REPRISE_PROJET_WIDGET_MBA.md
+ 
 13
-- SHAREPOINT_MODELE_MBA.md
+## index.html
 14
  
 15
----
+Accueil.
 16
  
 17
-# Pages
+### Chargement
 18
  
 19
-## Accueil
+4 événements affichés.
 20
  
 21
-Page :
+### Recherche
 22
  
 23
-index.html
+Recherche sur toute la programmation.
 24
  
 25
-### Chargement
+### Filtres
 26
  
 27
-4 événements affichés.
+Recherche et filtrage globaux.
 28
  
 29
-### Recherche
+### Navigation
 30
  
 31
-Recherche sur toute la programmation.
+CONSULTER TOUT L’AGENDA →
 32
  
 33
-### Limitation
+ouvre agenda.html
 34
  
 35
-Maximum :
+---
 36
  
 37
-8 événements affichés.
+## agenda.html
 38
  
 39
-### Compteur
+Agenda complet.
 40
  
 41
-Exemple :
+### Introduction
 42
  
 43
-8 résultats affichés sur 12 trouvés
+Retrouvez toute la programmation culturelle du Musée des Beaux-Arts de Pau.
 44
  
 45
@@ -90,214 +90,502 @@ Exemple :
 46
  
 47
-CONSULTER TOUT L’AGENDA →
+← Retour au site du musée
 48
  
 49
-ouvre agenda.html
+### Confort
 50
  
 51
----
+↑ Retour en haut
 52
  
 53
-## Agenda complet
+### Résultats
 54
  
 55
-Page :
+Affichage complet de la programmation.
 56
  
 57
-agenda.html
+### Recherche
 58
  
 59
-### Introduction
+Tous les résultats.
 60
  
 61
-Retrouvez toute la programmation culturelle du Musée des Beaux-Arts de Pau.
+### Filtres
 62
  
 63
-### Chargement
+Tous les résultats.
 64
  
 65
-Tous les événements affichés.
+---
 66
  
 67
-### Recherche
+# Données événement
 68
  
 69
-Tous les résultats affichés.
+Chaque événement contient :
 70
  
 71
-### Filtres
+```js
 72
- 
+{
 73
-Tous les résultats affichés.
+lieu: "",
 74
- 
+modaliteAcces: "",
 75
-### Compteur
+statut: "Publié",
 76
- 
+accessibilitePMR: true
 77
-Affiché uniquement :
+}
 78
- 
+```
 79
-- lorsqu'un filtre est actif
+ 
 80
-- lorsqu'une recherche est active
+en plus des champs historiques.
 81
  
 82
-Exemple :
+---
 83
  
 84
-3 résultats trouvés
+# Publics
 85
  
 86
-### Réinitialisation
+Valeurs métier :
 87
  
 88
-Retour à l'état neutre.
+- Tout public
 89
- 
+- Adulte
 90
----
+- Famille
 91
- 
+- Jeune public
 92
-# Données
+ 
 93
- 
+Particularité :
 94
-Chaque événement contient désormais :
+ 
 95
- 
+Dans le widget :
 96
-```js
+ 
 97
-{
+"Tout public"
 98
-lieu: "",
+ 
 99
-modaliteAcces: "",
+agit comme :
 100
-statut: "Publié"
+ 
 101
-}
+Afficher tous les publics.
 102
-```
+ 
 103
- 
+Ne pas confondre avec la valeur métier SharePoint.
 104
-en plus des données historiques.
+ 
 105
- 
-106
 ---
+106
+ 
 107
- 
-108
 # Types d'activités
-109
+108
  
-110
+109
 - Exposition
-111
+110
 - Visite atelier
-112
+111
 - Visite commentée
-113
+112
 - Visite contée
-114
+113
 - Visite flash
-115
+114
 - Conférence
-116
+115
 - Concert
-117
+116
 - Spectacle
-118
+117
 - Rencontre
-119
+118
 - Sieste musicale
-120
+119
 - Vernissage
-121
+120
 - Événement national
-122
+121
 - Arrêt sur œuvre
+122
+- Memory
 123
 - Jeu de l'oie
 124
-- Memory
-125
 - L'heure du conte
-126
+125
 - Nocturne
+126
+ 
 127
- 
-128
 ---
+128
+ 
 129
- 
+# Tarification
 130
-# Publics
+ 
 131
- 
+## Gratuit
 132
-Valeurs métier :
+ 
 133
- 
+- Exposition
 134
-- Tout public
+- Vernissage
 135
-- Adulte
+- Événement national
 136
-- Famille
+- Heure du conte
 137
-- Jeune public
+- Arrêt sur œuvre
 138
- 
+- Sieste musicale
 139
-## Particularité
+- Nocturne
 140
  
 141
-Dans les filtres du widget :
+## Payant
 142
  
 143
-"Tout public"
+5 €
 144
  
 145
-correspond actuellement à :
+- Visite atelier
 146
- 
+- Visite commentée
 147
-- Tout public
+- Conférence
 148
-- Adulte
+- Concert
 149
-- Famille
+- Spectacle
 150
-- Jeune public
+- Rencontre
 151
- 
+- Visite flash
 152
-pour faciliter la consultation.
+- Memory
+153
+- Jeu de l'oie
+154
+- Visite contée
+155
+ 
+156
+---
+157
+ 
+158
+# Modalités d'accès
+159
+ 
+160
+## Réservation obligatoire
+161
+ 
+162
+- Visite atelier
+163
+- Visite commentée
+164
+- Conférence
+165
+- Concert
+166
+- Spectacle
+167
+- Rencontre
+168
+- Visite flash
+169
+- Memory
+170
+- Jeu de l'oie
+171
+- Visite contée
+172
+ 
+173
+## Accès libre
+174
+ 
+175
+- Exposition
+176
+- Vernissage
+177
+- Événement national
+178
+- Heure du conte
+179
+- Arrêt sur œuvre
+180
+- Nocturne
+181
+ 
+182
+## Cas particulier
+183
+ 
+184
+Sieste musicale :
+185
+ 
+186
+Accès libre dans la limite des places disponibles.
+187
+ 
+188
+---
+189
+ 
+190
+# Accessibilité
+191
+ 
+192
+Nouveau champ :
+193
+ 
+194
+```js
+195
+accessibilitePMR
+196
+```
+197
+ 
+198
+Affichage :
+199
+ 
+200
+```txt
+201
+👥 Public • Âge • ♿ PMR
+202
+```
+203
+ 
+204
+dans la modale.
+205
+ 
+206
+---
+207
+ 
+208
+# Cycle de vie
+209
+ 
+210
+## Création
+211
+ 
+212
+2 à 5 mois avant.
+213
+ 
+214
+## Statuts
+215
+ 
+216
+- Brouillon
+217
+- Publié
+218
+- Archivé
+219
+ 
+220
+---
+221
+ 
+222
+# Fonctionnalités validées
+223
+ 
+224
+✅ cartes
+225
+ 
+226
+✅ filtres
+227
+ 
+228
+✅ recherche
+229
+ 
+230
+✅ modales
+231
+ 
+232
+✅ expositions longues
+233
+ 
+234
+✅ âge minimum
+235
+ 
+236
+✅ agenda complet
+237
+ 
+238
+✅ compteur contextuel
+239
+ 
+240
+✅ navigation Accueil → Agenda
+241
+ 
+242
+✅ retour au site du musée
+243
+ 
+244
+✅ retour en haut
+245
+ 
+246
+✅ touche ESC
+247
+ 
+248
+✅ préparation SharePoint
+249
+ 
+250
+✅ audit métier
+251
+ 
+252
+✅ harmonisation typographique
+253
+ 
+254
+✅ accessibilité PMR
+255
+ 
+256
+---
+257
+ 
+258
+# Sujet en attente
+259
+ 
+260
+## Filtres
+261
+ 
+262
+Fermeture automatique au clic extérieur.
+263
+ 
+264
+ESC fonctionne déjà parfaitement.
+265
+ 
+266
+Sujet reporté après le responsive.
+267
+ 
+268
+---
+269
+ 
+270
+# Prochaine étape
+271
+ 
+272
+## V2.25
+273
+ 
+274
+Responsive
+275
+ 
+276
+### Mobile
+277
+ 
+278
+Adaptation complète.
+279
+ 
+280
+### Tablette
+281
+ 
+282
+Adaptation complète.
+283
+ 
+284
+### Validation
+285
+ 
+286
+Desktop + tablette + mobile.
+287
+ 
+288
+---
+289
+ 
+290
+# Objectif final
+291
+ 
+292
+## V3
+293
+ 
+294
+Connexion de la liste SharePoint MBA.
+295
+ 
+296
+Administration autonome de toute la programmation culturelle du musée.

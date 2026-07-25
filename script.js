@@ -511,6 +511,7 @@ const events = [
     modaliteAcces: "Accès libre",
     statut: "Publié",
     description: "Découvrez les chefs-d'œuvre impressionnistes du musée.",
+    accessibilitePMR: true,
     tarif: "Gratuit",
     telephone: "05 59 27 33 02",
     email: "impressionnistes@musee.fr",
@@ -532,6 +533,7 @@ const events = [
     modaliteAcces: "Réservation obligatoire",
     statut: "Publié",
     description: "Conférence autour de l'histoire du portrait.",
+    accessibilitePMR: true,
     tarif: "5 €",
     telephone: "05 59 27 33 03",
     email: "portrait@musee.fr",
@@ -554,6 +556,7 @@ const events = [
     modaliteAcces: "Réservation obligatoire",
     statut: "Publié",
     description: "Découverte créative des collections.",
+    accessibilitePMR: true,
     tarif: "3 €",
     telephone: "05 59 27 33 04",
     email: "atelier@musee.fr",
@@ -1073,7 +1076,19 @@ buttons.forEach((button, index) => {
       `
       : ""
   }
-</div>
+${
+  events[index].accessibilitePMR
+    ? `
+      <span class="detail-separator">•</span>
+      <span class="detail-pmr">
+        <i data-lucide="accessibility"></i>
+        PMR
+      </span>
+    `
+    : ""
+}
+  </div>
+
 
 
    <div class="detail-datetime">

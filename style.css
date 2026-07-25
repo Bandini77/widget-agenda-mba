@@ -1111,3 +1111,24 @@ top:-1px;
   position:relative;
   top:-2px;
 }
+.detail-accessibilite{
+
+  margin-top:10px;
+  margin-bottom:16px;
+
+  font-size:16px;
+
+  color:#444;
+
+}
+.detail-pmr{
+  display:flex;
+  align-items:center;
+}
+
+.detail-pmr svg{
+  width:18px;
+  height:18px;
+  position:relative;
+  top:-2px;
+}
