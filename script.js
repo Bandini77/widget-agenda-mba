@@ -1949,5 +1949,32 @@ document.addEventListener("keydown", (event) => {
 
 });
 
+const boutonRetourHaut =
+  document.getElementById("retour-haut");
 
-  
+if (boutonRetourHaut) {
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 100) {
+
+      boutonRetourHaut.style.display = "block";
+
+    } else {
+
+      boutonRetourHaut.style.display = "none";
+
+    }
+
+  });
+
+  boutonRetourHaut.addEventListener("click", () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+}
