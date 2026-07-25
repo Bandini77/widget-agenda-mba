@@ -935,6 +935,43 @@ lucide.createIcons();
   content.appendChild(type);
 content.appendChild(title);
 content.appendChild(meta);
+if (event.type === "Exposition") {
+
+  const periode = document.createElement("p");
+
+  periode.className = "event-period-mobile";
+
+  periode.innerHTML = `
+    <i data-lucide="calendar"></i>
+    Du ${event.date} au ${event.dateFin}
+  `;
+
+  content.appendChild(periode);
+
+}
+if (event.type !== "Exposition") {
+
+  const dateMobile = document.createElement("p");
+
+  dateMobile.className = "event-date-mobile";
+
+  dateMobile.innerHTML = `
+
+  <div>
+    <i data-lucide="calendar"></i>
+    ${event.date}
+  </div>
+
+  <div>
+    <i data-lucide="clock-3"></i>
+    ${event.heure}
+  </div>
+
+`;
+
+  content.appendChild(dateMobile);
+
+}
 
   const more = document.createElement("button");
 
