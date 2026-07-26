@@ -515,7 +515,7 @@ const events = [
     dateFin: "15 JANV. 2027",
     reservationObligatoire: false,
     lienComplementaire: "https://musee.pau.fr/fr/l-art-au-service-des-travailleurs",
-    dateISO: "2026-07-19",
+    dateISO: "2026-09-18",
     image: "images/impressionnistes.jpeg",
     title: "Les Impressionnistes",
     meta: "Tout public",
@@ -1875,6 +1875,23 @@ document
   const cartes =
     document.querySelectorAll(".event-card");
 
+  const aujourdHui = new Date();
+
+  const debutWeekend = new Date(aujourdHui);
+  const finWeekend = new Date(aujourdHui);
+
+  const jourActuel = aujourdHui.getDay();
+
+  const joursAvantSamedi = (6 - jourActuel + 7) % 7;
+
+  debutWeekend.setDate(
+    aujourdHui.getDate() + joursAvantSamedi
+  );
+
+  finWeekend.setDate(
+    debutWeekend.getDate() + 1
+  );
+
   cartes.forEach((carte, index) => {
 
     if (!coche) {
@@ -1887,10 +1904,10 @@ document
     const dateEvenement =
       new Date(events[index].dateISO);
 
-    const jour =
-      dateEvenement.getDay();
-
-    if (jour === 0 || jour === 6) {
+    if (
+      dateEvenement >= debutWeekend &&
+      dateEvenement <= finWeekend
+    ) {
 
       carte.style.display = "";
 
