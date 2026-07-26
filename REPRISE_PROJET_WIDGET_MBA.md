@@ -1,128 +1,128 @@
-# Reprise Projet — Widget Agenda MBA
+# Reprise de projet - Widget Agenda MBA
 2
  
 3
-Version actuelle : V2.25
+## Situation actuelle
 4
  
 5
-Statut : Stable
+Le widget est :
 6
  
 7
-Date de référence : Juillet 2026
+✅ fonctionnel
 8
  
 9
----
+✅ responsive
 10
  
 11
-# Dépôt GitHub
+✅ documenté
 12
  
 13
-Branche principale :
+✅ publié sur GitHub Pages
 14
  
 15
-v2-maquette
+✅ intégrable dans le CMS du musée via iframe
 16
  
 17
-Dépôt :
+---
 18
  
 19
-https://github.com/Bandini77/widget-agenda-mba
+## URL GitHub Pages
 20
  
 21
----
+https://bandini77.github.io/widget-agenda-mba/
 22
  
 23
-# État général
+---
 24
  
 25
-Le widget Agenda MBA est fonctionnel sur :
+# Principales décisions
 26
  
 27
-✅ Desktop
+## Événements
 28
  
 29
-✅ Tablette
+Une occurrence = une ligne.
 30
  
 31
-✅ Mobile
+Exemple :
 32
  
 33
-Une recette complète a été réalisée.
+Sieste musicale :
 34
  
 35
----
+- 10 mars
 36
- 
+- 15 avril
 37
-# Fonctionnalités disponibles
+- 12 mai
 38
  
 39
-## Cartes
+=
 40
  
 41
-- image
+3 événements
 42
-- date
+ 
 43
-- heure
-44
-- public
-45
-- type
-46
-- bouton détail
-47
- 
-48
 ---
+44
+ 
+45
+## Publics
+46
+ 
+47
+Publics réels :
+48
+ 
 49
- 
+- Adulte
 50
-## Modales
+- Famille
 51
- 
+- Jeune public
 52
-- image
+ 
 53
-- type
+"Tout public"
 54
-- titre
+ 
 55
-- public
+est une vue globale et non une catégorie métier.
 56
-- PMR
+ 
 57
-- dates
+---
 58
-- heures
+ 
 59
-- description
+## PMR
 60
-- tarif
+ 
 61
-- réservation
+Considéré comme automatique.
 62
-- partage
+ 
 63
-- calendrier
+Aucune donnée spécifique nécessaire.
 64
  
 65
@@ -130,506 +130,212 @@ Une recette complète a été réalisée.
 66
  
 67
-## Filtres
+# État des filtres
 68
  
 69
-- type d'activité
+✅ Filtre Ce week-end corrigé
 70
-- public
+ 
 71
-- quand
+✅ Filtre Tout public corrigé
 72
-- réservation
+ 
 73
- 
+✅ Recherche fonctionnelle
 74
----
+ 
 75
- 
+✅ Filtres publics fonctionnels
 76
-## Recherche
+ 
 77
- 
+✅ Filtres types d'activité fonctionnels
 78
-Recherche multi-événements opérationnelle.
+ 
 79
- 
+---
 80
----
+ 
 81
- 
+# Meta-line
 82
-# Correctifs V2.25
+ 
 83
- 
+Composant généralisé.
 84
-## Responsive
+ 
 85
- 
+Utilisé pour :
 86
-✅ Refonte tablette
+ 
 87
- 
+- Public
 88
-✅ Refonte mobile
+- Date
 89
- 
+- Heure
 90
----
+ 
 91
- 
+Objectif atteint :
 92
-## Footer
+ 
 93
- 
+Alignement cohérent dans les cartes et modales.
 94
-✅ Harmonisation desktop
+ 
 95
- 
+---
 96
-✅ Harmonisation mobile
+ 
 97
- 
+# Découverte majeure lors du test CMS
 98
-✅ Alignement du calendrier
+ 
 99
- 
+L'intégration iframe fonctionne.
 100
-✅ Alignement du partage
+ 
 101
- 
+---
 102
----
+ 
 103
- 
+## Conclusion
 104
-## Modales
+ 
 105
- 
+Le modèle :
 106
-✅ Calendrier mobile restauré
+ 
 107
- 
+Accueil + Agenda complet dans une seule page
 108
-✅ Accordéon réservation restauré
+ 
 109
- 
+n'est pas adapté.
 110
-✅ Suppression du double séparateur
+ 
 111
- 
-112
 ---
+112
+ 
 113
- 
+# Nouvelle architecture validée
 114
-## Filtres
+ 
 115
- 
+## Page Accueil
 116
-✅ Fermeture par clic extérieur
+ 
 117
- 
+Contenu :
 118
-✅ Correction du double-clic
-119
  
+119
+- 4 événements
 120
-✅ Correction du filtre Week-end
+- bouton "Consulter tout l'agenda"
 121
  
 122
----
+Fin du widget.
 123
  
 124
-## Données
+---
 125
  
 126
-✅ Vérification des dateISO
+## Page Agenda
 127
  
 128
-✅ Correction des incohérences détectées
+Contenu :
 129
  
 130
----
+- recherche
 131
- 
+- filtres
 132
-# Décisions métier validées
+- tous les événements
 133
- 
+- modales
 134
-## Types d'activité
+ 
 135
- 
+---
 136
-Les types sont évolutifs.
+ 
 137
- 
+# Suppressions prévues
 138
-Le widget ne doit jamais dépendre d'une liste fermée.
+ 
 139
- 
+## Bouton
 140
----
+ 
 141
- 
+← Retour au site du musée
 142
-## Publics
+ 
 143
- 
+Raison :
 144
-Publics disponibles :
+ 
 145
- 
+inutile dans un iframe.
 146
-- Adulte
+ 
 147
-- Famille
-148
-- Jeune public
-149
- 
-150
-"Tout public" est considéré comme une valeur logique et non comme un public réel.
-151
- 
-152
-Une évolution du filtre reste à prévoir.
-153
- 
-154
 ---
+148
+ 
+149
+# Intégration CMS
+150
+ 
+151
+✅ Fonctionne
+152
+ 
+153
+Points à ajuster :
+154
+ 
 155
- 
+- hauteur du widget
 156
-## Publication
+- modales
 157
- 
+- espace occupé
 158
-Seuls les événements :
+- bouton réinitialiser
 159
  
 160
-- Publiés
-161
-- Non terminés
-162
- 
-163
-doivent être affichés.
-164
- 
-165
 ---
-166
+161
  
+162
+# Priorité actuelle
+163
+ 
+164
+Créer :
+165
+ 
+166
+- Accueil
 167
-# Images
+- Agenda complet
 168
  
 169
-## Format officiel MBA
+séparés.
 170
  
 171
-Dimensions :
-172
- 
-173
-1600 × 900 px
-174
- 
-175
-Ratio :
-176
- 
-177
-16:9
-178
- 
-179
-Format :
-180
- 
-181
-JPG
-182
- 
-183
-Poids maximum :
-184
- 
-185
-2 Mo
-186
- 
-187
----
-188
- 
-189
-## Règles
-190
- 
-191
-Pas de texte dans l'image.
-192
- 
-193
-Le sujet principal doit rester lisible.
-194
- 
-195
-Le recadrage manuel est autorisé.
-196
- 
-197
-Le recadrage automatique du widget ne doit pas constituer le principal mode de cadrage.
-198
- 
-199
----
-200
- 
-201
-## Constats
-202
- 
-203
-Les cartes fonctionnent correctement avec ce format.
-204
- 
-205
-Les modales nécessiteront une réflexion complémentaire.
-206
- 
-207
-Sujet reporté en V3.
-208
- 
-209
----
-210
- 
-211
-# Audit Microsoft 365
-212
- 
-213
-## Outils disponibles
-214
- 
-215
-✅ SharePoint Online
-216
- 
-217
-✅ Microsoft Lists
-218
- 
-219
-✅ Power Automate
-220
- 
-221
-✅ Teams
-222
- 
-223
----
-224
- 
-225
-## Site projet existant
-226
- 
-227
-Team Musées-Widget
-228
- 
-229
-Utilisé actuellement pour :
-230
- 
-231
-- documentation
-232
-- sauvegardes
-233
-- maquettes
-234
-- fichiers projet
-235
- 
-236
----
-237
- 
-238
-# Vision cible
-239
- 
-240
-Agent musée
-241
- 
-242
-↓
-243
- 
-244
-Liste Agenda MBA
-245
- 
-246
-↓
-247
- 
-248
-Power Automate
-249
- 
-250
-↓
-251
- 
-252
-Widget Agenda MBA
-253
- 
-254
-↓
-255
- 
-256
-Publication automatique
-257
- 
-258
----
-259
- 
-260
-# Dette technique connue
-261
- 
-262
-## Icônes
-263
- 
-264
-Léger décalage optique entre :
-265
- 
-266
-- Users
-267
-- Calendar
-268
-- Clock
-269
- 
-270
-Sujet non bloquant.
-271
- 
-272
----
-273
- 
-274
-## CSS
-275
- 
-276
-Présence de règles historiques et de certaines surcharges.
-277
- 
-278
-Nettoyage prévu en V3.
-279
- 
-280
----
-281
- 
-282
-# Prochaine étape
-283
- 
-284
-## Priorité haute
-285
- 
-286
-Création de la liste Agenda MBA dans Microsoft Lists.
-287
- 
-288
----
-289
- 
-290
-## Priorité moyenne
-291
- 
-292
-Traitement du filtre "Tout public".
-293
- 
-294
----
-295
- 
-296
-## Priorité moyenne
-297
- 
-298
-Gestion des événements atypiques.
-299
- 
-300
----
-301
- 
-302
-## Priorité moyenne
-303
- 
-304
-Gestion des événements récurrents.
-305
- 
-306
----
-307
- 
-308
-# Évaluation
-309
- 
-310
-Widget Agenda :
-311
- 
-312
-99 %
-313
- 
-314
-Projet global :
-315
- 
-316
-90 %
-317
- 
-318
-Le principal chantier restant concerne désormais l'administration des données et l'intégration Microsoft 365.
+Cette évolution est prioritaire avant SharePoint.

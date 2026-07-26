@@ -1,118 +1,118 @@
-# Roadmap Widget Agenda MBA
+# ROADMAP - Widget Agenda MBA
 2
  
 3
-Version : V2.25
+## Vision
 4
  
 5
-Statut : Stable
+Créer un agenda culturel administrable simplement par les équipes du Musée des Beaux-Arts de Pau.
 6
-Recette terminée
+ 
 7
- 
+Objectifs :
 8
----
+ 
 9
- 
+- interface élégante ;
 10
-# V2.25
+- responsive ;
 11
- 
+- intégration sur le site du musée ;
 12
-## Réalisé
+- administration sans code ;
 13
- 
+- maintenance minimale.
 14
-### Responsive
+ 
 15
- 
+---
 16
-✅ Desktop
+ 
 17
- 
+# V3.1 - Stabilisation technique
 18
-✅ Tablette
+ 
 19
- 
-20
-✅ Mobile
-21
- 
-22
----
-23
- 
-24
-### Interface
-25
- 
-26
-✅ Cartes événements
-27
- 
-28
-✅ Modales événements
-29
- 
-30
-✅ Footer harmonisé
-31
- 
-32
-✅ Calendrier
-33
- 
-34
-✅ Réservation
-35
- 
-36
-✅ Partage
-37
- 
-38
----
-39
- 
-40
-### Filtres
-41
- 
-42
-✅ Type d'activité
-43
- 
-44
-✅ Public
-45
- 
-46
-✅ Quand
-47
- 
-48
-✅ Réservation
-49
- 
-50
-✅ Réinitialisation
-51
- 
-52
-✅ Fermeture par clic extérieur
-53
- 
-54
-✅ Correction du double-clic
-55
- 
-56
 ✅ Correction du filtre "Ce week-end"
-57
+20
  
-58
+21
+✅ Correction du filtre "Tout public"
+22
+ 
+23
 ✅ Vérification des dateISO
+24
+ 
+25
+✅ Harmonisation des meta-line
+26
+ 
+27
+✅ Audit CSS
+28
+ 
+29
+✅ Audit JavaScript
+30
+ 
+31
+✅ Publication GitHub Pages
+32
+ 
+33
+✅ Premier test d'intégration CMS
+34
+ 
+35
+---
+36
+ 
+37
+# V3.2 - Adaptation à l'intégration réelle
+38
+ 
+39
+## Architecture
+40
+ 
+41
+Décision validée :
+42
+ 
+43
+Le modèle :
+44
+ 
+45
+Accueil + Agenda complet dans une seule page
+46
+ 
+47
+n'est pas adapté à l'intégration CMS.
+48
+ 
+49
+---
+50
+ 
+51
+### À faire
+52
+ 
+53
+□ Créer une page Accueil
+54
+ 
+55
+Affichage :
+56
+ 
+57
+- 4 événements
+58
+- bouton "Consulter tout l'agenda"
 59
  
 60
@@ -120,446 +120,234 @@ Recette terminée
 61
  
 62
-### Documentation
+□ Créer une page Agenda complet
 63
  
 64
-✅ Reprise projet
+Affichage :
 65
  
 66
-✅ Roadmap
+- recherche
 67
- 
+- filtres
 68
-✅ Modèle métier initial
+- tous les événements
 69
- 
+- modales
 70
----
+ 
 71
- 
+---
 72
-# V3.0 — Industrialisation
+ 
 73
- 
+□ Modifier le bouton :
 74
-## Interface
+ 
 75
- 
+"Consulter tout l'agenda"
 76
-□ Harmonisation finale des icônes
+ 
 77
- 
+pour ouvrir la page Agenda complète.
 78
-□ Généralisation du composant MetaLine
+ 
 79
- 
+---
 80
-□ Harmonisation des espacements
+ 
 81
- 
+□ Supprimer :
 82
-□ Audit UX global
+ 
 83
- 
+"Retour au site du musée"
 84
----
+ 
 85
- 
+---
 86
-## Images
+ 
 87
- 
+## Interface
 88
-### Décisions validées
+ 
 89
- 
+□ Ajuster les modales dans le contexte iframe
 90
-✅ Format officiel MBA
+ 
 91
- 
+□ Repenser le bouton :
 92
-1600 × 900 px
+ 
 93
- 
+Réinitialiser les filtres
 94
-Ratio 16:9
+ 
 95
- 
+---
 96
-JPG
+ 
 97
- 
+## Responsive
 98
-≤ 2 Mo
+ 
 99
- 
+□ Recette Desktop
 100
-✅ Recadrage manuel autorisé
+ 
 101
- 
+□ Recette Tablette
 102
-✅ Sujet principal prioritaire
+ 
 103
- 
+□ Recette Mobile
 104
-✅ Sans texte intégré
+ 
 105
- 
+après séparation Accueil / Agenda
 106
----
+ 
 107
- 
+---
 108
-### À traiter
+ 
 109
- 
+# V3.3 - Validation CMS
 110
-□ Étudier l'affichage des images dans les modales
+ 
 111
- 
+## Tests
 112
-□ Conserver object-fit: cover dans les cartes
+ 
 113
- 
+□ Affichage accueil
 114
-□ Étudier contain ou approche hybride dans les modales
+ 
 115
- 
+□ Affichage agenda complet
 116
-□ Création du gabarit graphique officiel MBA
+ 
 117
- 
+□ Modales
 118
----
+ 
 119
- 
+□ Filtres
 120
-## Technique
+ 
 121
- 
+□ Scroll
 122
-□ Nettoyage CSS
+ 
 123
- 
+□ Responsive
 124
-□ Suppression des doublons
+ 
 125
- 
+□ Performance
 126
-□ Rationalisation JavaScript
+ 
 127
- 
+---
 128
-□ Simplification responsive
+ 
 129
- 
+# V3.5 - Administration
 130
----
+ 
 131
- 
+## SharePoint
 132
-## Données
+ 
 133
- 
+Créer :
 134
-✅ Vérification globale des dateISO
+ 
 135
- 
+Site SharePoint Agenda MBA
 136
-□ Audit cohérence des données
+ 
 137
- 
+---
 138
-□ Traiter la logique métier "Tout public"
+ 
 139
- 
+## Microsoft Lists
 140
----
+ 
 141
- 
-V3.1 — Stabilisation technique
-
-□ Corriger le filtre Tout public
-□ Harmoniser les meta-line
-□ Finaliser les alignements
-□ Nettoyer le CSS
-□ Nettoyer le JavaScript
-□ Réduire la dette technique
+Créer :
 142
-# V3.5 — Administration Agenda
+ 
 143
- 
-144
-## Objectif
-145
- 
-146
-Permettre à un agent du musée d'ajouter un événement sans modifier le code.
-147
- 
-148
----
-149
- 
-150
-## Modèle métier
-151
- 
-152
-✅ Maquette SharePoint validée
-153
- 
-154
-✅ Structure des données validée
-155
- 
-156
-✅ Types d'activité évolutifs
-157
- 
-158
-✅ Widget indépendant des catégories
-159
- 
-160
----
-161
- 
-162
-## À réaliser
-163
- 
-164
-□ Création de la liste Agenda MBA
-165
- 
-166
-□ Création des colonnes
-167
- 
-168
-□ Création des vues
-169
- 
-170
-□ Validation du workflow de saisie
-171
- 
-172
----
-173
- 
-174
-# V4.0 — Intégration Microsoft 365
-175
- 
-176
-## Outils disponibles
-177
- 
-178
-✅ SharePoint Online
-179
- 
-180
-✅ Microsoft Lists
-181
- 
-182
-✅ Power Automate
-183
- 
-184
-✅ Teams
-185
- 
-186
----
-187
- 
-188
-## Architecture cible
-189
- 
-190
-Agent musée
-191
- 
-192
-↓
-193
- 
-194
 Liste Agenda MBA
-195
+144
  
-196
+145
+à partir du modèle métier validé.
+146
+ 
+147
+---
+148
+ 
+149
+# V4 - Publication automatisée
+150
+ 
+151
+Objectif :
+152
+ 
+153
+Administration sans code.
+154
+ 
+155
+Architecture cible :
+156
+ 
+157
+Microsoft Lists
+158
+ 
+159
 ↓
-197
+160
  
-198
-Power Automate
-199
- 
-200
-↓
-201
- 
-202
+161
 Widget Agenda MBA
-203
+162
  
-204
+163
 ↓
-205
+164
  
-206
-Publication automatique
-207
+165
+Publication site musée
+166
  
-208
+167
 ---
-209
+168
  
-210
-## Objectifs
-211
+169
+# Évolutions futures
+170
  
-212
-□ Éviter toute modification du code
-213
- 
-214
-□ Publication simplifiée
-215
- 
-216
-□ Gestion documentaire centralisée
-217
- 
-218
-□ Historisation des événements
-219
- 
-220
-□ Archivage automatique
-221
- 
-222
----
-223
- 
-224
-# Sujets ouverts
-225
- 
-226
-## Public "Tout public"
-227
- 
-228
-Comportement actuel :
-229
- 
-230
-Le filtre peut exclure certains événements.
-231
- 
-232
-Comportement attendu :
-233
- 
-234
-Le filtre doit afficher tous les événements.
-235
- 
-236
-Décision métier à implémenter.
-237
- 
-238
----
-239
- 
-240
-## Types d'activité
-241
- 
-242
-Les types doivent rester enrichissables.
-243
- 
-244
-Le widget ne doit jamais dépendre d'une liste fermée.
-245
- 
-246
----
-247
- 
-248
-## Événements atypiques
-249
- 
-250
+171
 À étudier :
-251
+172
  
-252
-- événements exceptionnels
-253
-- événements partenaires
-254
-- manifestations nationales
-255
-- performances
-256
-- projections
-257
- 
-258
----
-259
- 
-260
-## Événements récurrents
-261
- 
-262
-À étudier :
-263
- 
-264
-- atelier hebdomadaire
-265
-- visite mensuelle
-266
-- cycle de conférences
-267
- 
-268
----
-269
- 
-270
-# Vision long terme
-271
- 
-272
-Créer un agenda :
-273
- 
-274
-- responsive ;
-275
-- maintenable ;
-276
-- administrable sans développeur ;
-277
-- connecté à Microsoft 365 ;
-278
-- évolutif ;
-279
-- robuste face aux nouveaux types d'événements.
+173
+- publication programmée
+174
+- workflow de validation
+175
+- statistiques
+176
+- billetterie
+177
+- synchronisation OpenAgenda
