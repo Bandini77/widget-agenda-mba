@@ -1458,10 +1458,10 @@ const type =
   events[index].type;
 
     if (
-      (publicCoche && categorie === "Tout public") ||
-      (adulteCoche && categorie === "Adulte") ||
-      (familleCoche && categorie === "Famille") ||
-      (jeuneCoche && categorie === "Jeune public") ||
+  publicCoche ||
+  (adulteCoche && categorie === "Adulte") ||
+  (familleCoche && categorie === "Famille") ||
+  (jeuneCoche && categorie === "Jeune public") ||
       (expositionCoche && type === "Exposition") ||
 (conferenceCoche && type === "Conférence") ||
 (visiteCoche && type === "Visite atelier") ||
