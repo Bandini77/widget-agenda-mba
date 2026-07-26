@@ -529,12 +529,12 @@ background:#876d45;
 
   margin-top:12px;
 
-  margin-left:auto;
+  margin-left:0;
 
   width:auto;
 
   display:flex;
-  justify-content:flex-end;
+  justify-content:flex-start;
 
   padding:0;
 
@@ -675,6 +675,10 @@ background:#876d45;
   display:flex;
   flex-direction:column;
   gap:2px;
+}
+
+.share-actions p{
+  margin:0;
 }
 .barre-filtres button{
   min-width:230px;
@@ -1488,6 +1492,18 @@ font-weight:600;
 .detail-footer{
   width:100%;
 }
+.mobile-calendar-btn{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  padding-top:16px;
+
+  font-weight:600;
+  cursor:pointer;
+
+}
+
 
 }
 .event-period-mobile{
