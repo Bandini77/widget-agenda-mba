@@ -1488,11 +1488,7 @@ font-weight:600;
 .detail-footer{
   width:100%;
 }
-.mobile-calendar-btn{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding-top:16px;}
+
 }
 .event-period-mobile{
   display:none;

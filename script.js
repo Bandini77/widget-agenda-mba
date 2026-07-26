@@ -73,7 +73,9 @@ wrapperQuand.appendChild(filtreQuand);
 barreFiltres.appendChild(wrapperQuand);
 
 filtreQuand.style.display = "none";
-boutonQuand.addEventListener("click", () => {
+boutonQuand.addEventListener("click", (e) => {
+
+  e.stopPropagation();
 
   const ouvert =
     filtreQuand.style.display === "block";
@@ -123,7 +125,9 @@ wrapperPourQui.appendChild(filtreBarre);
 
 barreFiltres.appendChild(wrapperPourQui);
 filtreBarre.style.display = "none";
-boutonPourQui.addEventListener("click", () => {
+boutonPourQui.addEventListener("click", (e) => {
+
+  e.stopPropagation();
 
   const ouvert =
     filtreBarre.style.display === "block";
@@ -274,7 +278,9 @@ wrapperType.appendChild(filtreType);
 
 barreFiltres.appendChild(wrapperType);
 filtreType.style.display = "none";
-boutonType.addEventListener("click", () => {
+boutonType.addEventListener("click", (e) => {
+
+  e.stopPropagation();
 
   const ouvert =
     filtreType.style.display === "block";
@@ -295,6 +301,15 @@ lucide.createIcons();
 });
 
 app.appendChild(barreFiltres);
+
+document.addEventListener("click", (e) => {
+
+  if (!e.target.closest(".filtre-wrapper")) {
+    fermerTousLesFiltres();
+  }
+
+});
+
 document.addEventListener("change", (e) => {
 
   if (e.target.id === "quand-personnalise") {

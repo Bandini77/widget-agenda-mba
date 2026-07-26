@@ -154,112 +154,246 @@ Responsive mobile – filtres et modales.
 78
  
 79
-Accordéons mobiles :
+Responsive mobile finalisé :
 80
  
 81
-- Tarif
+- accordéon Tarif
 82
-- Réservation
+- accordéon Réservation
 83
- 
+- calendrier mobile dédié
 84
-Optimisation finale :
+- harmonisation des séparateurs
 85
- 
+- harmonisation du footer
 86
-- harmonisation séparateurs
+ 
 87
-- derniers espacements mobile
+Optimisation finale :
 88
  
 89
----
+- position définitive de la croix de fermeture
 90
- 
+- harmonisation des espacements desktop
 91
-## 🚧 V2.25
+- harmonisation des alignements icônes / textes
 92
- 
+- fermeture des filtres par clic extérieur
 93
-Recette complète.
+ 
 94
- 
-95
-### Desktop
-96
- 
-97
-Validation finale.
-98
- 
-99
-### Tablette
-100
- 
-101
-Validation finale.
-102
- 
-103
-### Mobile
-104
- 
-105
-Validation finale.
-106
- 
-107
 ---
+95
+ 
+96
+## 🚧 V2.25
+97
+ 
+98
+Recette complète.
+99
+ 
+100
+### Desktop
+101
+ 
+102
+Validation finale :
+103
+ 
+104
+- cartes
+105
+- modales
+106
+- footer
+107
+- alignements
 108
  
 109
-## 🚀 V3
+### Tablette
 110
  
 111
-Connexion SharePoint.
+Validation finale.
 112
  
 113
-### Source
+### Mobile
 114
  
 115
-Liste SharePoint MBA.
+Validation finale.
 116
  
 117
-### Administration
+### Métier
 118
  
 119
-Gestion autonome des événements.
+Validation :
 120
  
 121
-### Archivage
+- gratuit
 122
- 
+- payant
 123
-Archivage automatique.
+- réservation
 124
- 
+- entrée libre
 125
-### Vision cible
+- tout public
 126
- 
+- famille
 127
-Administration MBA
+- jeune public
 128
-↓
+- adulte
 129
-SharePoint
+ 
 130
-↓
+---
 131
-Widget Agenda
+ 
 132
-↓
+## 🚀 V3
 133
+ 
+134
+Connexion SharePoint.
+135
+ 
+136
+### Source
+137
+ 
+138
+Liste SharePoint MBA.
+139
+ 
+140
+### Images
+141
+ 
+142
+Bibliothèque SharePoint / Teams.
+143
+ 
+144
+Objectif :
+145
+ 
+146
+Suppression du stockage local des images
+147
+dans le widget.
+148
+ 
+149
+### Administration
+150
+ 
+151
+Gestion autonome des événements.
+152
+ 
+153
+Administrateur :
+154
+- Sébastien
+155
+ 
+156
+Contributeurs :
+157
+- 2 collègues
+158
+ 
+159
+### Publication
+160
+ 
+161
+Statuts :
+162
+- Brouillon
+163
+- Publié
+164
+ 
+165
+### Archivage
+166
+ 
+167
+Archivage automatique.
+168
+ 
+169
+Les événements passés ne sont plus affichés
+170
+dans le widget mais restent conservés
+171
+dans SharePoint.
+172
+ 
+173
+### Publics
+174
+ 
+175
+Logique à mettre en œuvre :
+176
+ 
+177
+Tout public
+178
+=
+179
+Adulte + Famille + Jeune public
+180
+ 
+181
+Objectif :
+182
+ 
+183
+Un événement "Tout public" doit apparaître
+184
+dans les filtres :
+185
+ 
+186
+- Adulte
+187
+- Famille
+188
+- Jeune public
+189
+ 
+190
+### Vision cible
+191
+ 
+192
+Administration MBA
+193
+↓
+194
+Liste SharePoint MBA
+195
+↓
+196
+Bibliothèque Images MBA
+197
+↓
+198
+Widget Agenda
+199
+↓
+200
 Site du musée
