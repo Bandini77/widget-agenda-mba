@@ -972,18 +972,18 @@ if (event.type !== "Exposition") {
 
   const dateMobile = document.createElement("p");
 
-  dateMobile.className = "event-date-mobile";
+dateMobile.className = "event-date-mobile";
 
-  dateMobile.innerHTML = `
+dateMobile.innerHTML = `
 
-  <div>
+  <div class="meta-line">
     <i data-lucide="calendar"></i>
-    ${event.date}
+    <span>${event.date}</span>
   </div>
 
-  <div>
+  <div class="meta-line">
     <i data-lucide="clock-3"></i>
-    ${event.heure}
+    <span>${event.heure}</span>
   </div>
 
 `;
@@ -1154,25 +1154,27 @@ ${
 
   ? `
 
+  <span class="meta-line">
+  <i data-lucide="calendar"></i>
   <span>
-    <i data-lucide="calendar"></i>
     Du ${events[index].date}
     au ${events[index].dateFin}
   </span>
+</span>
 
   `
 
   : `
 
-  <span>
-    <i data-lucide="calendar"></i>
-    ${events[index].date}
-  </span>
+  <span class="meta-line">
+  <i data-lucide="calendar"></i>
+  <span>${events[index].date}</span>
+</span>
 
-  <span>
-    <i data-lucide="clock-3"></i>
-    ${events[index].heure}
-  </span>
+<span class="meta-line">
+  <i data-lucide="clock-3"></i>
+  <span>${events[index].heure}</span>
+</span>
 
   `
 }
