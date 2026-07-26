@@ -1225,35 +1225,30 @@ events[index].reservationObligatoire !== false
   : ""
 
 }
-<div class="share-section">
+<div>
 
   <h4>Partager</h4>
+<div class="share-actions">
 
-  <div class="share-actions">
+<p>
+  <i data-lucide="link"></i>
+  Copier le lien
+</p>
 
-    <p>
-      <i data-lucide="mail"></i>
-      Email
-    </p>
-
-    <p>
-      <i data-lucide="link"></i>
-      Copier le lien
-    </p>
-
-    <p class="calendar-btn">
-      <i data-lucide="calendar-plus"></i>
-      Ajouter à mon calendrier
-    </p>
-
-  </div>
+<p>
+  <i data-lucide="mail"></i>
+  Email
+</p>
 
 </div>
 
-<p class="mobile-calendar-btn">
+    </div>
+
+  </div>
+   <button class="calendar-btn">
   <i data-lucide="calendar-plus"></i>
   Ajouter à mon calendrier
-</p>
+</button>
 
 </div>
 
