@@ -1,869 +1,427 @@
-# Reprise du projet Widget Agenda MBA
+# Reprise Projet — Widget Agenda MBA
 2
  
 3
-## Branche
+## État du projet
 4
  
 5
-v2-maquette
+### Version actuelle
 6
  
 7
----
+V2.25
 8
  
 9
-## État actuel
+Statut : Stable
 10
- 
+Recette : Terminée
 11
-Le widget est fonctionnel sur :
+ 
 12
- 
+### Branche de travail
 13
-✅ Desktop
+ 
 14
- 
+v2-maquette
 15
-✅ Tablette
+ 
 16
- 
+### Dépôt GitHub
 17
-✅ Mobile (quasi finalisé)
+ 
 18
- 
+https://github.com/Bandini77/widget-agenda-mba
 19
----
+ 
 20
- 
+---
 21
-# Gouvernance
+ 
 22
- 
+# Objectif du projet
 23
-Administrateur :
+ 
 24
- 
+Créer un agenda culturel responsive pour le Musée des Beaux-Arts de Pau permettant :
 25
-- Sébastien
+ 
 26
- 
+- consultation des événements ;
 27
-Contributeurs :
+- filtrage multicritère ;
 28
- 
+- affichage détaillé des évènements ;
 29
-- 2 collègues
+- partage des événements ;
 30
- 
+- ajout au calendrier ;
 31
-Objectif :
+- consultation optimale sur Desktop, Tablette et Mobile.
 32
  
 33
-Permettre la création et la modification
-34
-des événements sans intervention dans le code.
-35
- 
-36
 ---
+34
+ 
+35
+# Fonctionnalités disponibles
+36
+ 
 37
- 
+## Cartes événement
 38
-# Pages
+ 
 39
- 
+- Image
 40
-## index.html
+- Date
 41
- 
+- Heure
 42
-Accueil.
+- Public
 43
- 
+- Type d'activité
 44
-Affichage :
+- Bouton détail
 45
  
 46
-- 4 événements
+## Filtres
 47
  
 48
-Recherche globale.
+- Type d'activité
 49
- 
+- Public
 50
-Filtres globaux.
+- Quand
 51
- 
+- Réservation
 52
-Lien :
+- Réinitialisation
 53
- 
+- Fermeture par clic extérieur
 54
-CONSULTER TOUT L'AGENDA →
+ 
 55
- 
+## Modale événement
 56
----
+ 
 57
- 
+- Image
 58
-## agenda.html
+- Type
 59
- 
+- Titre
 60
-Agenda complet.
+- Public
 61
- 
+- PMR
 62
-Ajouts :
+- Date
 63
- 
+- Heure
 64
-- Retour au site du musée
+- Description
 65
-- Retour en haut
+- Tarif
 66
- 
+- Réservation
 67
----
+- Partage
 68
- 
+- Ajout au calendrier
 69
-# Responsive
+ 
 70
- 
+---
 71
-## Desktop
+ 
 72
- 
+# Responsive
 73
-Version de référence.
+ 
 74
- 
+## Desktop
 75
-Points en cours :
+ 
 76
- 
+> 1024 px
 77
-- croix de fermeture
+ 
 78
-- harmonisation footer
+Validé.
 79
-- alignement icônes
+ 
 80
- 
-81
----
-82
- 
-83
 ## Tablette
+81
+ 
+82
+768 px à 1024 px
+83
+ 
 84
- 
+Validé.
 85
-Version fonctionnelle.
+ 
 86
- 
-87
-Conservation de la logique desktop.
-88
- 
-89
----
-90
- 
-91
 ## Mobile
+87
+ 
+88
+< 768 px
+89
+ 
+90
+Validé.
+91
+ 
 92
- 
+---
 93
-### Cartes
+ 
 94
- 
+# Correctifs réalisés en V2.25
 95
-Structure :
+ 
 96
- 
+## Responsive
 97
-Image
-98
  
+98
+- Refonte tablette
 99
-Type
+- Refonte mobile
 100
  
 101
-Titre
+## Footer
 102
  
 103
-Public
+- Harmonisation desktop
 104
- 
+- Harmonisation mobile
 105
-Date / Heure
+- Alignement bloc Partager
 106
- 
+- Alignement calendrier
 107
-Bouton +
+ 
 108
- 
+## Modales
 109
-### Expositions
+ 
 110
- 
+- Calendrier mobile restauré
 111
-Affichage :
+- Accordéon Réservation restauré
 112
- 
+- Suppression du double séparateur
 113
-📅 Du ... au ...
+ 
 114
- 
+## Filtres
 115
-au lieu de la date verticale.
+ 
 116
- 
+- Fermeture par clic extérieur
 117
-### Filtres
+- Correction du double-clic
 118
- 
+- Correction du filtre "Ce week-end"
 119
-Empilés verticalement.
+- Correction des incohérences dateISO
 120
  
 121
-### Modale
+## Git
 122
  
 123
-Image pleine largeur.
+- Synchronisation GitHub rétablie
 124
- 
+- Branche v2-maquette à jour
 125
-Public :
+ 
 126
- 
+---
 127
-👥 Public • Âge • ♿ PMR
+ 
 128
- 
+# Recette V2.25
 129
-Date :
+ 
 130
- 
+## Desktop
 131
-📅 Date
+ 
 132
- 
+✅ Cartes
 133
-🕒 Heure
+ 
 134
- 
+✅ Modales
 135
-Description.
+ 
 136
- 
+✅ Footer
 137
-Partager masqué.
+ 
 138
- 
+✅ Filtres
 139
-Ajouts :
+ 
 140
- 
+## Tablette
 141
-✅ Accordéon Tarif
+ 
 142
- 
+✅ 1024 px
 143
-✅ Accordéon Réservation
+ 
 144
- 
+✅ 768 px
 145
-✅ Calendrier mobile dédié
+ 
 146
- 
+## Mobile
 147
----
+ 
 148
- 
+✅ Cartes
 149
-# Données événement
+ 
 150
- 
+✅ Modales
 151
-Chaque événement contient :
+ 
 152
- 
+✅ Réservation
 153
-{
+ 
 154
-lieu: "",
+✅ Calendrier
 155
-modaliteAcces: "",
+ 
 156
-statut: "Publié"
+✅ Footer
 157
-}
+ 
 158
- 
-159
 ---
+159
+ 
 160
- 
+# Gestion des images
 161
-# PMR
+ 
 162
- 
+## Recommandations
 163
-Le musée est accessible PMR.
+ 
 164
- 
+Format : JPG
 165
-PMR est toujours affiché.
+ 
 166
- 
+Dimensions recommandées : 1200 x 900 px
 167
-Affichage :
+ 
 168
- 
+Ratio recommandé : 4:3
 169
-👥 Public • Âge • ♿ PMR
-170
  
+170
+Orientation recommandée : Paysage
 171
-Aucune gestion spécifique prévue
+ 
 172
-dans SharePoint.
+Poids maximum : 2 Mo
 173
  
 174
----
+## Remarque
 175
  
 176
-# Publics
+Les formats portrait, paysage et carrés doivent rester acceptés.
 177
  
 178
-Publics disponibles :
+Les œuvres peuvent être recadrées automatiquement dans les cartes.
 179
  
 180
-- Adulte
+Une réflexion complémentaire sera menée en V3 afin d'améliorer le respect des œuvres verticales.
 181
-- Famille
+ 
 182
-- Jeune public
+---
 183
  
 184
-Règle métier :
+# Dette technique connue
 185
  
 186
-Tout public
+## Icônes
 187
-=
+ 
 188
-Adulte + Famille + Jeune public
+Léger décalage optique entre :
 189
  
 190
-Sujet à auditer :
+- Users
 191
- 
+- Calendar
 192
-Les filtres du widget doivent continuer
+- Clock
 193
-à afficher les événements Tout public
+ 
 194
-lorsqu'un utilisateur filtre :
+Sujet identifié mais non bloquant.
 195
  
 196
-- Adulte
+## CSS
 197
-- Famille
+ 
 198
-- Jeune public
+Présence de plusieurs couches historiques :
 199
  
 200
-Objectif :
+- règles dupliquées ;
 201
- 
+- surcharges responsive ;
 202
-Ne pas exclure d'événements.
+- ajustements optiques successifs.
 203
  
 204
----
+Un nettoyage global est prévu en V3.
 205
  
 206
-# Types
+---
 207
  
 208
-- Exposition
+# Évaluation
 209
-- Visite atelier
+ 
 210
-- Visite commentée
+Widget Agenda : 99 %
 211
-- Visite contée
+ 
 212
-- Visite flash
+Projet global : 85 %
 213
-- Conférence
+ 
 214
-- Concert
-215
-- Spectacle
-216
-- Rencontre
-217
-- Sieste musicale
-218
-- Vernissage
-219
-- Événement national
-220
-- Arrêt sur œuvre
-221
-- Memory
-222
-- Jeu de l’oie
-223
-- L'heure du conte
-224
-- Nocturne
-225
- 
-226
-Sujet futur :
-227
- 
-228
-Réflexion autour du pôle Bien-être.
-229
- 
-230
----
-231
- 
-232
-# Tarification
-233
- 
-234
-Gratuit :
-235
- 
-236
-- Exposition
-237
-- Vernissage
-238
-- Nocturne
-239
-- Heure du conte
-240
-- Arrêt sur œuvre
-241
-- Événement national
-242
-- Sieste musicale
-243
- 
-244
-Payant :
-245
- 
-246
-5 €
-247
- 
-248
-- Conférence
-249
-- Concert
-250
-- Spectacle
-251
-- Rencontre
-252
-- Visite atelier
-253
-- Visite commentée
-254
-- Visite contée
-255
-- Visite flash
-256
- 
-257
-Tarif spécifique :
-258
- 
-259
-5 €
-260
- 
-261
-- Memory
-262
-- Jeu de l’oie
-263
- 
-264
-Précision :
-265
- 
-266
-Payant uniquement pour
-267
-l’adulte accompagnateur.
-268
- 
-269
----
-270
- 
-271
-# Réservation
-272
- 
-273
-Sur réservation :
-274
- 
-275
-- Conférence
-276
-- Concert
-277
-- Spectacle
-278
-- Rencontre
-279
-- Visite atelier
-280
-- Visite commentée
-281
-- Visite contée
-282
-- Visite flash
-283
-- Memory
-284
-- Jeu de l’oie
-285
- 
-286
-Entrée libre :
-287
- 
-288
-- Exposition
-289
-- Vernissage
-290
-- Nocturne
-291
-- Heure du conte
-292
-- Arrêt sur œuvre
-293
-- Événement national
-294
- 
-295
-Cas particulier :
-296
- 
-297
-Sieste musicale
-298
- 
-299
-Entrée libre
-300
-dans la limite des places disponibles.
-301
- 
-302
----
-303
- 
-304
-# Cycle de vie des événements
-305
- 
-306
-Création :
-307
- 
-308
-entre 2 et 5 mois avant la date.
-309
- 
-310
-Principe :
-311
- 
-312
-1 événement
-313
-=
-314
-1 fiche
-315
- 
-316
-Pas de récurrence.
-317
- 
-318
-Exemple :
-319
- 
-320
-Visite commentée du 15 septembre
-321
- 
-322
-↓
-323
- 
-324
-1 événement
-325
- 
-326
-Visite commentée du 22 septembre
-327
- 
-328
-↓
-329
- 
-330
-1 autre événement
-331
- 
-332
----
-333
- 
-334
-# Images
-335
- 
-336
-Principe :
-337
- 
-338
-1 événement
-339
-=
-340
-1 image principale
-341
- 
-342
-Pas de galerie.
-343
- 
-344
-Aujourd'hui :
-345
- 
-346
-images stockées dans le widget.
-347
- 
-348
-Objectif V3 :
-349
- 
-350
-Bibliothèque Images SharePoint / Teams.
-351
- 
-352
----
-353
- 
-354
-# Vision SharePoint
-355
- 
-356
-Architecture cible :
-357
- 
-358
-Administration MBA
-359
-↓
-360
-Liste SharePoint MBA
-361
-↓
-362
-Bibliothèque Images MBA
-363
-↓
-364
-Widget Agenda
-365
-↓
-366
-Site du musée
-367
- 
-368
-Objectif :
-369
- 
-370
-Créer un événement sans modifier :
-371
- 
-372
-- script.js
-373
-- style.css
-374
- 
-375
----
-376
- 
-377
-# Statuts
-378
- 
-379
-Prévision V3 :
-380
- 
-381
-- Brouillon
-382
-- Publié
-383
- 
-384
-Le widget n'affiche que les événements publiés.
-385
- 
-386
----
-387
- 
-388
-# Archivage
-389
- 
-390
-Objectif :
-391
- 
-392
-À la fin d'un événement :
-393
- 
-394
-✅ disparition automatique du widget
-395
- 
-396
-✅ conservation dans SharePoint
-397
- 
-398
----
-399
- 
-400
-# À faire
-401
- 
-402
-## V2.25
-403
- 
-404
-- position définitive de la croix
-405
-- harmonisation fine du footer
-406
-- harmonisation icônes / textes
-407
-- fermeture des filtres par clic extérieur
-408
-- recette desktop
-409
-- recette tablette
-410
-- recette mobile
-411
- 
-412
-## V3
-413
- 
-414
-- structure SharePoint
-415
-- bibliothèque d'images
-416
-- publication automatique
-417
-- archivage automatique
-418
-- logique des publics
-419
-- audit des filtres "Tout public"
-420
- 
-421
----
-422
- 
-423
-# Objectif final
-424
- 
-425
-Créer un événement
-426
-↓
-427
-Ajouter une image
-428
-↓
-429
-Publier
-430
-↓
-431
-Affichage automatique dans le widget
-432
-↓
-433
-Disparition automatique après la date de fin
-434
- 
-435
-Sans modifier le code du widget.
+Le principal chantier restant concerne désormais l'alimentation automatisée des contenus.

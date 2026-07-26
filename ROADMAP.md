@@ -1,399 +1,244 @@
-# Widget Agenda MBA – Roadmap
+# Roadmap Widget Agenda MBA
 2
  
 3
-## ✅ V2.20.6
+## Version actuelle
 4
-Refonte des cartes.
+ 
 5
- 
+V2.25
 6
-## ✅ V2.20.7
-7
-Filtres avancés.
-8
  
+7
+Statut : Stable
+8
+Recette terminée
 9
-## ✅ V2.20.8
+ 
 10
-Modales enrichies.
+---
 11
  
 12
-## ✅ V2.21
+# V2.25
 13
-Recherche et agenda d'accueil.
-14
  
+14
+## Réalisé
 15
-## ✅ V2.22
+ 
 16
-Agenda complet.
+### Interface
 17
  
 18
-## ✅ V2.22-beta5
+- Responsive Desktop
 19
-Préparation SharePoint.
+- Responsive Tablette
 20
- 
+- Responsive Mobile
 21
-Ajouts :
+- Footer harmonisé
 22
-- lieu
+- Modales harmonisées
 23
-- modaliteAcces
+ 
 24
-- statut
+### Fonctionnel
 25
-- Nocturne
+ 
 26
- 
+- Recherche
 27
-Audit métier réalisé.
+- Filtres
 28
- 
+- Partage
 29
-## ✅ V2.24-beta1
+- Calendrier
 30
-Harmonisation typographique.
+- Réservation
 31
  
 32
-## ✅ V2.24-beta1.1
+### Correctifs
 33
-Navigation Agenda.
-34
  
+34
+- Fermeture des filtres par clic extérieur
 35
-Ajouts :
+- Correction du double-clic
 36
-- Retour au site du musée
+- Correction filtre "Ce week-end"
 37
-- Retour en haut
+- Vérification cohérence dateISO
 38
  
 39
-## ✅ V2.24-beta2
+---
 40
-Espacements et respiration.
-41
  
+41
+# V3.0 — Industrialisation
 42
-## ✅ V2.24-beta3
+ 
 43
-Accessibilité PMR.
+## Interface
 44
  
 45
-Affichage :
+- Harmonisation finale des icônes
 46
- 
+- Uniformisation des composants MetaLine
 47
-👥 Public • Âge • ♿ PMR
+- Audit complet des espacements
 48
- 
+- Harmonisation visuelle globale
 49
-## ✅ V2.25-beta1
+ 
 50
-Responsive tablette.
+## Images
 51
  
 52
-- cartes
+- Audit du cadrage des œuvres
 53
-- filtres
+- Gestion portrait/paysage
 54
-- recherche
+- Étude object-fit cover vs contain
 55
-- modales
+- Documentation image
 56
  
 57
-## ✅ V2.25-beta2
+## Technique
 58
-Responsive mobile – cartes.
+ 
 59
- 
+- Nettoyage CSS
 60
-- nouvelle présentation mobile
+- Suppression des doublons
 61
-- dates compactes
+- Rationalisation JavaScript
 62
-- expositions optimisées
+- Centralisation des composants réutilisables
 63
-- hiérarchie mobile
+ 
 64
- 
+## Données
 65
-## ✅ V2.25-beta3
-66
-Responsive mobile – filtres et modales.
-67
  
+66
+- Audit complet des dateISO
+67
+- Contrôles de cohérence
 68
-- filtres empilés
+ 
 69
-- modale plein format
+---
 70
-- suppression du partage mobile
+ 
 71
-- footer mobile réorganisé
+# V3.5 — Administration simplifiée
 72
-- PMR mobile
+ 
 73
-- optimisation des séparateurs
+## Objectif
 74
  
 75
----
+Permettre à un agent du musée d'ajouter un événement sans modifier le code.
 76
  
 77
-## 🚧 V2.25-beta4
+## Étapes
 78
  
 79
-Responsive mobile finalisé :
+- Analyse environnement Microsoft 365
 80
- 
+- Analyse SharePoint Online
 81
-- accordéon Tarif
+- Analyse Microsoft Lists
 82
-- accordéon Réservation
+- Analyse Power Automate
 83
-- calendrier mobile dédié
+- Validation architecture cible
 84
-- harmonisation des séparateurs
+ 
 85
-- harmonisation du footer
+---
 86
  
 87
-Optimisation finale :
+# V4.0 — Intégration SharePoint
 88
  
 89
-- position définitive de la croix de fermeture
+## Architecture cible (à confirmer)
 90
-- harmonisation des espacements desktop
+ 
 91
-- harmonisation des alignements icônes / textes
+Agent du musée
 92
-- fermeture des filtres par clic extérieur
+ 
 93
- 
+↓
 94
----
+ 
 95
- 
+Microsoft Lists
 96
-## 🚧 V2.25
+ 
 97
- 
+↓
 98
-Recette complète.
+ 
 99
- 
+SharePoint Online
 100
-### Desktop
+ 
 101
- 
+↓
 102
-Validation finale :
+ 
 103
- 
-104
-- cartes
-105
-- modales
-106
-- footer
-107
-- alignements
-108
- 
-109
-### Tablette
-110
- 
-111
-Validation finale.
-112
- 
-113
-### Mobile
-114
- 
-115
-Validation finale.
-116
- 
-117
-### Métier
-118
- 
-119
-Validation :
-120
- 
-121
-- gratuit
-122
-- payant
-123
-- réservation
-124
-- entrée libre
-125
-- tout public
-126
-- famille
-127
-- jeune public
-128
-- adulte
-129
- 
-130
----
-131
- 
-132
-## 🚀 V3
-133
- 
-134
-Connexion SharePoint.
-135
- 
-136
-### Source
-137
- 
-138
-Liste SharePoint MBA.
-139
- 
-140
-### Images
-141
- 
-142
-Bibliothèque SharePoint / Teams.
-143
- 
-144
-Objectif :
-145
- 
-146
-Suppression du stockage local des images
-147
-dans le widget.
-148
- 
-149
-### Administration
-150
- 
-151
-Gestion autonome des événements.
-152
- 
-153
-Administrateur :
-154
-- Sébastien
-155
- 
-156
-Contributeurs :
-157
-- 2 collègues
-158
- 
-159
-### Publication
-160
- 
-161
-Statuts :
-162
-- Brouillon
-163
-- Publié
-164
- 
-165
-### Archivage
-166
- 
-167
-Archivage automatique.
-168
- 
-169
-Les événements passés ne sont plus affichés
-170
-dans le widget mais restent conservés
-171
-dans SharePoint.
-172
- 
-173
-### Publics
-174
- 
-175
-Logique à mettre en œuvre :
-176
- 
-177
-Tout public
-178
-=
-179
-Adulte + Famille + Jeune public
-180
- 
-181
-Objectif :
-182
- 
-183
-Un événement "Tout public" doit apparaître
-184
-dans les filtres :
-185
- 
-186
-- Adulte
-187
-- Famille
-188
-- Jeune public
-189
- 
-190
-### Vision cible
-191
- 
-192
-Administration MBA
-193
-↓
-194
-Liste SharePoint MBA
-195
-↓
-196
-Bibliothèque Images MBA
-197
-↓
-198
 Widget Agenda
-199
-↓
-200
-Site du musée
+104
+ 
+105
+## Objectifs
+106
+ 
+107
+- Saisie simplifiée
+108
+- Suppression des modifications manuelles du code
+109
+- Publication des événements depuis Microsoft 365
+110
+- Réduction du risque d'erreurs
+111
+ 
+112
+---
+113
+ 
+114
+# Vision long terme
+115
+ 
+116
+Créer un agenda culturel :
+117
+ 
+118
+- responsive ;
+119
+- maintenable ;
+120
+- autonome ;
+121
+- administrable sans développeur ;
+122
+- connecté à l'écosystème Microsoft 365 du musée.
+Afficher moins
