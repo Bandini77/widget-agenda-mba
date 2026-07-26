@@ -2,225 +2,225 @@
 2
  
 3
-## État du projet
+Version actuelle : V2.25
 4
  
 5
-### Version actuelle
+Statut : Stable
 6
  
 7
-V2.25
+Date de référence : Juillet 2026
 8
  
 9
-Statut : Stable
-10
-Recette : Terminée
-11
- 
-12
-### Branche de travail
-13
- 
-14
-v2-maquette
-15
- 
-16
-### Dépôt GitHub
-17
- 
-18
-https://github.com/Bandini77/widget-agenda-mba
-19
- 
-20
 ---
+10
+ 
+11
+# Dépôt GitHub
+12
+ 
+13
+Branche principale :
+14
+ 
+15
+v2-maquette
+16
+ 
+17
+Dépôt :
+18
+ 
+19
+https://github.com/Bandini77/widget-agenda-mba
+20
+ 
 21
- 
+---
 22
-# Objectif du projet
+ 
 23
- 
+# État général
 24
-Créer un agenda culturel responsive pour le Musée des Beaux-Arts de Pau permettant :
-25
  
+25
+Le widget Agenda MBA est fonctionnel sur :
 26
-- consultation des événements ;
+ 
 27
-- filtrage multicritère ;
+✅ Desktop
 28
-- affichage détaillé des évènements ;
+ 
 29
-- partage des événements ;
+✅ Tablette
 30
-- ajout au calendrier ;
+ 
 31
-- consultation optimale sur Desktop, Tablette et Mobile.
+✅ Mobile
 32
  
 33
----
+Une recette complète a été réalisée.
 34
  
 35
-# Fonctionnalités disponibles
+---
 36
  
 37
-## Cartes événement
+# Fonctionnalités disponibles
 38
  
 39
-- Image
+## Cartes
 40
-- Date
-41
-- Heure
-42
-- Public
-43
-- Type d'activité
-44
-- Bouton détail
-45
  
+41
+- image
+42
+- date
+43
+- heure
+44
+- public
+45
+- type
 46
-## Filtres
+- bouton détail
 47
  
 48
-- Type d'activité
-49
-- Public
-50
-- Quand
-51
-- Réservation
-52
-- Réinitialisation
-53
-- Fermeture par clic extérieur
-54
- 
-55
-## Modale événement
-56
- 
-57
-- Image
-58
-- Type
-59
-- Titre
-60
-- Public
-61
-- PMR
-62
-- Date
-63
-- Heure
-64
-- Description
-65
-- Tarif
-66
-- Réservation
-67
-- Partage
-68
-- Ajout au calendrier
-69
- 
-70
 ---
-71
+49
  
+50
+## Modales
+51
+ 
+52
+- image
+53
+- type
+54
+- titre
+55
+- public
+56
+- PMR
+57
+- dates
+58
+- heures
+59
+- description
+60
+- tarif
+61
+- réservation
+62
+- partage
+63
+- calendrier
+64
+ 
+65
+---
+66
+ 
+67
+## Filtres
+68
+ 
+69
+- type d'activité
+70
+- public
+71
+- quand
 72
-# Responsive
+- réservation
 73
  
 74
-## Desktop
+---
 75
  
 76
-> 1024 px
+## Recherche
 77
  
 78
-Validé.
+Recherche multi-événements opérationnelle.
 79
  
 80
-## Tablette
+---
 81
  
 82
-768 px à 1024 px
+# Correctifs V2.25
 83
  
 84
-Validé.
+## Responsive
 85
  
 86
-## Mobile
+✅ Refonte tablette
 87
  
 88
-< 768 px
+✅ Refonte mobile
 89
  
 90
-Validé.
+---
 91
  
 92
----
+## Footer
 93
  
 94
-# Correctifs réalisés en V2.25
+✅ Harmonisation desktop
 95
  
 96
-## Responsive
+✅ Harmonisation mobile
 97
  
 98
-- Refonte tablette
+✅ Alignement du calendrier
 99
-- Refonte mobile
+ 
 100
- 
+✅ Alignement du partage
 101
-## Footer
-102
  
+102
+---
 103
-- Harmonisation desktop
+ 
 104
-- Harmonisation mobile
+## Modales
 105
-- Alignement bloc Partager
+ 
 106
-- Alignement calendrier
+✅ Calendrier mobile restauré
 107
  
 108
-## Modales
+✅ Accordéon réservation restauré
 109
  
 110
-- Calendrier mobile restauré
+✅ Suppression du double séparateur
 111
-- Accordéon Réservation restauré
+ 
 112
-- Suppression du double séparateur
+---
 113
  
 114
@@ -228,200 +228,408 @@ Validé.
 115
  
 116
-- Fermeture par clic extérieur
+✅ Fermeture par clic extérieur
 117
-- Correction du double-clic
+ 
 118
-- Correction du filtre "Ce week-end"
+✅ Correction du double-clic
 119
-- Correction des incohérences dateISO
+ 
 120
- 
+✅ Correction du filtre Week-end
 121
-## Git
-122
  
+122
+---
 123
-- Synchronisation GitHub rétablie
+ 
 124
-- Branche v2-maquette à jour
+## Données
 125
  
 126
----
+✅ Vérification des dateISO
 127
  
 128
-# Recette V2.25
+✅ Correction des incohérences détectées
 129
  
 130
-## Desktop
+---
 131
  
 132
-✅ Cartes
+# Décisions métier validées
 133
  
 134
-✅ Modales
+## Types d'activité
 135
  
 136
-✅ Footer
+Les types sont évolutifs.
 137
  
 138
-✅ Filtres
+Le widget ne doit jamais dépendre d'une liste fermée.
 139
  
 140
-## Tablette
+---
 141
  
 142
-✅ 1024 px
+## Publics
 143
  
 144
-✅ 768 px
+Publics disponibles :
 145
  
 146
-## Mobile
+- Adulte
 147
- 
+- Famille
 148
-✅ Cartes
+- Jeune public
 149
  
 150
-✅ Modales
+"Tout public" est considéré comme une valeur logique et non comme un public réel.
 151
  
 152
-✅ Réservation
+Une évolution du filtre reste à prévoir.
 153
  
 154
-✅ Calendrier
+---
 155
  
 156
-✅ Footer
+## Publication
 157
  
 158
----
+Seuls les événements :
 159
  
 160
-# Gestion des images
+- Publiés
 161
- 
+- Non terminés
 162
-## Recommandations
+ 
 163
- 
+doivent être affichés.
 164
-Format : JPG
+ 
 165
- 
+---
 166
-Dimensions recommandées : 1200 x 900 px
+ 
 167
- 
+# Images
 168
-Ratio recommandé : 4:3
+ 
 169
- 
+## Format officiel MBA
 170
-Orientation recommandée : Paysage
+ 
 171
- 
+Dimensions :
 172
-Poids maximum : 2 Mo
+ 
 173
- 
+1600 × 900 px
 174
-## Remarque
+ 
 175
- 
+Ratio :
 176
-Les formats portrait, paysage et carrés doivent rester acceptés.
+ 
 177
- 
+16:9
 178
-Les œuvres peuvent être recadrées automatiquement dans les cartes.
+ 
 179
- 
+Format :
 180
-Une réflexion complémentaire sera menée en V3 afin d'améliorer le respect des œuvres verticales.
+ 
 181
- 
+JPG
 182
----
+ 
 183
- 
+Poids maximum :
 184
-# Dette technique connue
+ 
 185
- 
+2 Mo
 186
-## Icônes
+ 
 187
- 
-188
-Léger décalage optique entre :
-189
- 
-190
-- Users
-191
-- Calendar
-192
-- Clock
-193
- 
-194
-Sujet identifié mais non bloquant.
-195
- 
-196
-## CSS
-197
- 
-198
-Présence de plusieurs couches historiques :
-199
- 
-200
-- règles dupliquées ;
-201
-- surcharges responsive ;
-202
-- ajustements optiques successifs.
-203
- 
-204
-Un nettoyage global est prévu en V3.
-205
- 
-206
 ---
+188
+ 
+189
+## Règles
+190
+ 
+191
+Pas de texte dans l'image.
+192
+ 
+193
+Le sujet principal doit rester lisible.
+194
+ 
+195
+Le recadrage manuel est autorisé.
+196
+ 
+197
+Le recadrage automatique du widget ne doit pas constituer le principal mode de cadrage.
+198
+ 
+199
+---
+200
+ 
+201
+## Constats
+202
+ 
+203
+Les cartes fonctionnent correctement avec ce format.
+204
+ 
+205
+Les modales nécessiteront une réflexion complémentaire.
+206
+ 
 207
- 
+Sujet reporté en V3.
 208
-# Évaluation
+ 
 209
- 
+---
 210
-Widget Agenda : 99 %
+ 
 211
- 
+# Audit Microsoft 365
 212
-Projet global : 85 %
-213
  
+213
+## Outils disponibles
 214
-Le principal chantier restant concerne désormais l'alimentation automatisée des contenus.
+ 
+215
+✅ SharePoint Online
+216
+ 
+217
+✅ Microsoft Lists
+218
+ 
+219
+✅ Power Automate
+220
+ 
+221
+✅ Teams
+222
+ 
+223
+---
+224
+ 
+225
+## Site projet existant
+226
+ 
+227
+Team Musées-Widget
+228
+ 
+229
+Utilisé actuellement pour :
+230
+ 
+231
+- documentation
+232
+- sauvegardes
+233
+- maquettes
+234
+- fichiers projet
+235
+ 
+236
+---
+237
+ 
+238
+# Vision cible
+239
+ 
+240
+Agent musée
+241
+ 
+242
+↓
+243
+ 
+244
+Liste Agenda MBA
+245
+ 
+246
+↓
+247
+ 
+248
+Power Automate
+249
+ 
+250
+↓
+251
+ 
+252
+Widget Agenda MBA
+253
+ 
+254
+↓
+255
+ 
+256
+Publication automatique
+257
+ 
+258
+---
+259
+ 
+260
+# Dette technique connue
+261
+ 
+262
+## Icônes
+263
+ 
+264
+Léger décalage optique entre :
+265
+ 
+266
+- Users
+267
+- Calendar
+268
+- Clock
+269
+ 
+270
+Sujet non bloquant.
+271
+ 
+272
+---
+273
+ 
+274
+## CSS
+275
+ 
+276
+Présence de règles historiques et de certaines surcharges.
+277
+ 
+278
+Nettoyage prévu en V3.
+279
+ 
+280
+---
+281
+ 
+282
+# Prochaine étape
+283
+ 
+284
+## Priorité haute
+285
+ 
+286
+Création de la liste Agenda MBA dans Microsoft Lists.
+287
+ 
+288
+---
+289
+ 
+290
+## Priorité moyenne
+291
+ 
+292
+Traitement du filtre "Tout public".
+293
+ 
+294
+---
+295
+ 
+296
+## Priorité moyenne
+297
+ 
+298
+Gestion des événements atypiques.
+299
+ 
+300
+---
+301
+ 
+302
+## Priorité moyenne
+303
+ 
+304
+Gestion des événements récurrents.
+305
+ 
+306
+---
+307
+ 
+308
+# Évaluation
+309
+ 
+310
+Widget Agenda :
+311
+ 
+312
+99 %
+313
+ 
+314
+Projet global :
+315
+ 
+316
+90 %
+317
+ 
+318
+Le principal chantier restant concerne désormais l'administration des données et l'intégration Microsoft 365.

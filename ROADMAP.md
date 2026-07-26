@@ -2,243 +2,564 @@
 2
  
 3
-## Version actuelle
+Version : V2.25
 4
  
 5
-V2.25
-6
- 
-7
 Statut : Stable
-8
+6
 Recette terminée
+7
+ 
+8
+---
 9
  
 10
----
+# V2.25
 11
  
 12
-# V2.25
+## Réalisé
 13
  
 14
-## Réalisé
+### Responsive
 15
  
 16
-### Interface
+✅ Desktop
 17
  
 18
-- Responsive Desktop
+✅ Tablette
 19
-- Responsive Tablette
+ 
 20
-- Responsive Mobile
+✅ Mobile
 21
-- Footer harmonisé
+ 
 22
-- Modales harmonisées
+---
 23
  
 24
-### Fonctionnel
+### Interface
 25
  
 26
-- Recherche
+✅ Cartes événements
 27
-- Filtres
+ 
 28
-- Partage
+✅ Modales événements
 29
-- Calendrier
+ 
 30
-- Réservation
+✅ Footer harmonisé
 31
  
 32
-### Correctifs
+✅ Calendrier
 33
  
 34
-- Fermeture des filtres par clic extérieur
+✅ Réservation
 35
-- Correction du double-clic
+ 
 36
-- Correction filtre "Ce week-end"
+✅ Partage
 37
-- Vérification cohérence dateISO
+ 
 38
- 
-39
 ---
+39
+ 
 40
- 
+### Filtres
 41
-# V3.0 — Industrialisation
+ 
 42
- 
+✅ Type d'activité
 43
-## Interface
-44
  
+44
+✅ Public
 45
-- Harmonisation finale des icônes
+ 
 46
-- Uniformisation des composants MetaLine
+✅ Quand
 47
-- Audit complet des espacements
+ 
 48
-- Harmonisation visuelle globale
+✅ Réservation
 49
  
 50
-## Images
+✅ Réinitialisation
 51
  
 52
-- Audit du cadrage des œuvres
+✅ Fermeture par clic extérieur
 53
-- Gestion portrait/paysage
+ 
 54
-- Étude object-fit cover vs contain
+✅ Correction du double-clic
 55
-- Documentation image
+ 
 56
- 
+✅ Correction du filtre "Ce week-end"
 57
-## Technique
-58
  
+58
+✅ Vérification des dateISO
 59
-- Nettoyage CSS
+ 
 60
-- Suppression des doublons
+---
 61
-- Rationalisation JavaScript
+ 
 62
-- Centralisation des composants réutilisables
+### Documentation
 63
  
 64
-## Données
+✅ Reprise projet
 65
  
 66
-- Audit complet des dateISO
+✅ Roadmap
 67
-- Contrôles de cohérence
+ 
 68
- 
+✅ Modèle métier initial
 69
----
+ 
 70
- 
-71
-# V3.5 — Administration simplifiée
-72
- 
-73
-## Objectif
-74
- 
-75
-Permettre à un agent du musée d'ajouter un événement sans modifier le code.
-76
- 
-77
-## Étapes
-78
- 
-79
-- Analyse environnement Microsoft 365
-80
-- Analyse SharePoint Online
-81
-- Analyse Microsoft Lists
-82
-- Analyse Power Automate
-83
-- Validation architecture cible
-84
- 
-85
 ---
+71
+ 
+72
+# V3.0 — Industrialisation
+73
+ 
+74
+## Interface
+75
+ 
+76
+□ Harmonisation finale des icônes
+77
+ 
+78
+□ Généralisation du composant MetaLine
+79
+ 
+80
+□ Harmonisation des espacements
+81
+ 
+82
+□ Audit UX global
+83
+ 
+84
+---
+85
+ 
 86
- 
+## Images
 87
-# V4.0 — Intégration SharePoint
+ 
 88
- 
+### Décisions validées
 89
-## Architecture cible (à confirmer)
+ 
 90
- 
+✅ Format officiel MBA
 91
-Agent du musée
+ 
 92
- 
+1600 × 900 px
 93
-↓
+ 
 94
- 
+Ratio 16:9
 95
-Microsoft Lists
+ 
 96
- 
+JPG
 97
-↓
+ 
 98
- 
+≤ 2 Mo
 99
-SharePoint Online
+ 
 100
- 
+✅ Recadrage manuel autorisé
 101
-↓
+ 
 102
- 
+✅ Sujet principal prioritaire
 103
-Widget Agenda
+ 
 104
- 
+✅ Sans texte intégré
 105
-## Objectifs
-106
  
+106
+---
 107
-- Saisie simplifiée
+ 
 108
-- Suppression des modifications manuelles du code
+### À traiter
 109
-- Publication des événements depuis Microsoft 365
+ 
 110
-- Réduction du risque d'erreurs
+□ Étudier l'affichage des images dans les modales
 111
  
 112
----
+□ Conserver object-fit: cover dans les cartes
 113
  
 114
-# Vision long terme
+□ Étudier contain ou approche hybride dans les modales
 115
  
 116
-Créer un agenda culturel :
+□ Création du gabarit graphique officiel MBA
 117
  
 118
-- responsive ;
+---
 119
-- maintenable ;
+ 
 120
-- autonome ;
+## Technique
 121
-- administrable sans développeur ;
+ 
 122
-- connecté à l'écosystème Microsoft 365 du musée.
-Afficher moins
+□ Nettoyage CSS
+123
+ 
+124
+□ Suppression des doublons
+125
+ 
+126
+□ Rationalisation JavaScript
+127
+ 
+128
+□ Simplification responsive
+129
+ 
+130
+---
+131
+ 
+132
+## Données
+133
+ 
+134
+✅ Vérification globale des dateISO
+135
+ 
+136
+□ Audit cohérence des données
+137
+ 
+138
+□ Traiter la logique métier "Tout public"
+139
+ 
+140
+---
+141
+ 
+V3.1 — Stabilisation technique
+
+□ Corriger le filtre Tout public
+□ Harmoniser les meta-line
+□ Finaliser les alignements
+□ Nettoyer le CSS
+□ Nettoyer le JavaScript
+□ Réduire la dette technique
+142
+# V3.5 — Administration Agenda
+143
+ 
+144
+## Objectif
+145
+ 
+146
+Permettre à un agent du musée d'ajouter un événement sans modifier le code.
+147
+ 
+148
+---
+149
+ 
+150
+## Modèle métier
+151
+ 
+152
+✅ Maquette SharePoint validée
+153
+ 
+154
+✅ Structure des données validée
+155
+ 
+156
+✅ Types d'activité évolutifs
+157
+ 
+158
+✅ Widget indépendant des catégories
+159
+ 
+160
+---
+161
+ 
+162
+## À réaliser
+163
+ 
+164
+□ Création de la liste Agenda MBA
+165
+ 
+166
+□ Création des colonnes
+167
+ 
+168
+□ Création des vues
+169
+ 
+170
+□ Validation du workflow de saisie
+171
+ 
+172
+---
+173
+ 
+174
+# V4.0 — Intégration Microsoft 365
+175
+ 
+176
+## Outils disponibles
+177
+ 
+178
+✅ SharePoint Online
+179
+ 
+180
+✅ Microsoft Lists
+181
+ 
+182
+✅ Power Automate
+183
+ 
+184
+✅ Teams
+185
+ 
+186
+---
+187
+ 
+188
+## Architecture cible
+189
+ 
+190
+Agent musée
+191
+ 
+192
+↓
+193
+ 
+194
+Liste Agenda MBA
+195
+ 
+196
+↓
+197
+ 
+198
+Power Automate
+199
+ 
+200
+↓
+201
+ 
+202
+Widget Agenda MBA
+203
+ 
+204
+↓
+205
+ 
+206
+Publication automatique
+207
+ 
+208
+---
+209
+ 
+210
+## Objectifs
+211
+ 
+212
+□ Éviter toute modification du code
+213
+ 
+214
+□ Publication simplifiée
+215
+ 
+216
+□ Gestion documentaire centralisée
+217
+ 
+218
+□ Historisation des événements
+219
+ 
+220
+□ Archivage automatique
+221
+ 
+222
+---
+223
+ 
+224
+# Sujets ouverts
+225
+ 
+226
+## Public "Tout public"
+227
+ 
+228
+Comportement actuel :
+229
+ 
+230
+Le filtre peut exclure certains événements.
+231
+ 
+232
+Comportement attendu :
+233
+ 
+234
+Le filtre doit afficher tous les événements.
+235
+ 
+236
+Décision métier à implémenter.
+237
+ 
+238
+---
+239
+ 
+240
+## Types d'activité
+241
+ 
+242
+Les types doivent rester enrichissables.
+243
+ 
+244
+Le widget ne doit jamais dépendre d'une liste fermée.
+245
+ 
+246
+---
+247
+ 
+248
+## Événements atypiques
+249
+ 
+250
+À étudier :
+251
+ 
+252
+- événements exceptionnels
+253
+- événements partenaires
+254
+- manifestations nationales
+255
+- performances
+256
+- projections
+257
+ 
+258
+---
+259
+ 
+260
+## Événements récurrents
+261
+ 
+262
+À étudier :
+263
+ 
+264
+- atelier hebdomadaire
+265
+- visite mensuelle
+266
+- cycle de conférences
+267
+ 
+268
+---
+269
+ 
+270
+# Vision long terme
+271
+ 
+272
+Créer un agenda :
+273
+ 
+274
+- responsive ;
+275
+- maintenable ;
+276
+- administrable sans développeur ;
+277
+- connecté à Microsoft 365 ;
+278
+- évolutif ;
+279
+- robuste face aux nouveaux types d'événements.
