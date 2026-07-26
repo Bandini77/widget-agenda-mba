@@ -941,9 +941,13 @@ type.textContent = event.type;
   const title = document.createElement("h2");
   title.textContent = event.title;
 
-  const meta = document.createElement("p");
-  meta.innerHTML = `
-<i data-lucide="users" class="icon-public"></i> ${event.meta}
+ const meta = document.createElement("div");
+
+meta.className = "meta-line";
+
+meta.innerHTML = `
+<i data-lucide="users"></i>
+<span>${event.meta}</span>
 `;
 lucide.createIcons();
 

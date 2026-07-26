@@ -902,6 +902,17 @@ transform:translateY(-2px);
   align-items:center;
   gap:8px;
 }
+.meta-line{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.meta-line svg{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+}
 
 .detail-public svg,
 .detail-datetime svg,
