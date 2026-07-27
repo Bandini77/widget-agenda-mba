@@ -1980,10 +1980,7 @@ document
 
   });
 
-  if (
-    (modeAgenda && totalTrouves > 0) ||
-    (!modeAgenda && totalTrouves > MAX_RESULTATS_ACCUEIL)
-  ) {
+  if (totalTrouves > 0) {
 
     resultatInfo.style.display = "block";
 
