@@ -1094,14 +1094,7 @@ buttons.forEach((button, index) => {
 <div class="detail-layout">
 
 
-  <div class="detail-image">
-
-    <img
-      src="${events[index].image}"
-      alt="${events[index].title}"
-    >
-
-  </div>
+  <!-- image masquée pour test -->
 
 
 
