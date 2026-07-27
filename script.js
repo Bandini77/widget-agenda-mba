@@ -1564,7 +1564,7 @@ if (
 } else {
 
   resultatInfo.textContent =
-    `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+    `${Math.min(totalTrouves, MAX_RESULTATS_ACCUEIL)} résultats affichés sur ${totalTrouves} trouvés`;
 
 }
 
@@ -1724,7 +1724,7 @@ if (texte === "tout public") {
 } else {
 
   resultatInfo.textContent =
-    `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+    `${Math.min(totalTrouves, MAX_RESULTATS_ACCUEIL)} résultats affichés sur ${totalTrouves} trouvés`;
 
 }
 
@@ -1980,6 +1980,14 @@ document
 
   });
 
+  console.log(
+  "modeAgenda:",
+  modeAgenda,
+  "totalTrouves:",
+  totalTrouves,
+  "compteur:",
+  compteur
+);
   if (totalTrouves > 0) {
 
     resultatInfo.style.display = "block";
@@ -1992,7 +2000,7 @@ document
     } else {
 
       resultatInfo.textContent =
-        `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+        `${Math.min(totalTrouves, MAX_RESULTATS_ACCUEIL)} résultats affichés sur ${totalTrouves} trouvés`;
 
     }
 
