@@ -854,7 +854,7 @@ const events = [
   reservation: "Entrée libre"
 }
 ];
-const MAX_RESULTATS_ACCUEIL = 8;
+const MAX_RESULTATS_ACCUEIL = 4;
 const modeAgenda =
   window.location.pathname.includes("agenda.html");
   
