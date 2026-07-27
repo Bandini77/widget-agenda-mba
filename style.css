@@ -64,7 +64,9 @@ body{
 
 .search-container input{
   flex:1;
+  width:100%;
   height:60px;
+  box-sizing:border-box;
 }
 
 .quick-filters{
@@ -1051,17 +1053,13 @@ transform:translateY(-2px);
 
 }
 .retour-musee{
-
   display:inline-block;
-
   margin-bottom:24px;
-
   color:#876d45;
-
   text-decoration:none;
-
   font-weight:600;
 
+  padding-left:36px;
 }
 
 .retour-musee:hover{
@@ -1111,7 +1109,6 @@ transform:translateY(-2px);
   display:inline-block;
 
   margin-bottom:24px;
-
   padding-left:36px;
 
   color:#876d45;
@@ -1168,6 +1165,15 @@ transform:translateY(-2px);
   display:none;
 }
 @media (max-width:767px){
+  .agenda-page h1,
+.agenda-intro,
+.retour-musee{
+padding-left:16px;
+padding-right:16px;
+}
+.search-container input{
+box-sizing:border-box;
+}
   .event-card{
     grid-template-columns:260px 1fr;
   }
@@ -1527,6 +1533,11 @@ font-weight:600;
 
 .event-date-mobile{
   display:none;
+}
+
+.page-header{
+  max-width:1100px;
+  margin:auto;
 }
 
 
