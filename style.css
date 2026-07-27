@@ -348,7 +348,7 @@ background:#876d45;
   left:50%;
   transform:translate(-50%,-50%);
   width:60%;
-  max-width:850px;
+  max-width:950px;
   max-height:90vh;
   overflow-y:auto;
   overflow-x:hidden;
@@ -385,7 +385,7 @@ background:#876d45;
 
 .detail-layout{
   display:grid;
-  grid-template-columns:35% 65%;
+  grid-template-columns:28% 72%;
   gap:30px;
   align-items:start;
 }
