@@ -1604,7 +1604,10 @@ document
   recherche.addEventListener("input", () => {
 
   const texte =
-    recherche.value.toLowerCase();
+  recherche.value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 
   const cartes =
     document.querySelectorAll(".event-card");
@@ -1615,21 +1618,24 @@ let totalTrouves = 0;
   cartes.forEach((carte, index) => {
 
     const contenu =
-      (
-        events[index].title +
-        " " +
-        events[index].type +
-        " " +
-        events[index].categorie +
-        " " +
-        events[index].meta +
-        " " +
-        events[index].description
-      ).toLowerCase();
+(
+  events[index].title +
+  " " +
+  events[index].type +
+  " " +
+  events[index].categorie +
+  " " +
+  events[index].meta +
+  " " +
+  events[index].description
+)
+  .toLowerCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "");
 const rechercheToutPublic =
-  texte === "tout public" ||
-  texte === "tout-public" ||
-  texte === "public";
+  "tout public".startsWith(texte) ||
+  "tout-public".startsWith(texte) ||
+  "public".startsWith(texte);
 if (texte === "tout public") {
 
 
