@@ -1,341 +1,181 @@
-# Reprise de projet - Widget Agenda MBA
+# REPRISE PROJET
 2
  
 3
-## Situation actuelle
+## État du projet
 4
  
 5
-Le widget est :
+Le widget agenda est fonctionnel et intégré au CMS du musée.
 6
  
 7
-✅ fonctionnel
+### Hébergement
 8
  
 9
-✅ responsive
+GitHub Pages actif.
 10
  
 11
-✅ documenté
+Branche de développement principale :
 12
  
 13
-✅ publié sur GitHub Pages
+v2-maquette
 14
  
 15
-✅ intégrable dans le CMS du musée via iframe
+---
 16
  
 17
----
+## Modale
 18
  
 19
-## URL GitHub Pages
+Version retenue :
 20
  
 21
-https://bandini77.github.io/widget-agenda-mba/
+### V2 sans image
 22
  
 23
----
+Caractéristiques :
 24
  
 25
-# Principales décisions
+- Image supprimée de la modale
 26
- 
+- Informations centrées sur le contenu
 27
-## Événements
+- Plus aucun problème de recadrage
 28
- 
+- Meilleure compatibilité CMS
 29
-Une occurrence = une ligne.
+- Meilleure lisibilité
 30
  
 31
-Exemple :
+Structure :
 32
  
 33
-Sieste musicale :
+Type
 34
  
 35
-- 10 mars
+Titre
 36
-- 15 avril
+ 
 37
-- 12 mai
+Public
 38
  
 39
-=
+Date
 40
  
 41
-3 événements
+Description
 42
  
 43
----
+Tarif | Réservation | Partager
 44
  
 45
-## Publics
+---
 46
  
 47
-Publics réels :
+## Intégration CMS
 48
  
 49
-- Adulte
+Hauteur iframe retenue :
 50
-- Famille
+ 
 51
-- Jeune public
+1175 px
 52
  
 53
-"Tout public"
+Fond :
 54
  
 55
-est une vue globale et non une catégorie métier.
+blanc (#ffffff)
 56
  
 57
----
+Largeur :
 58
  
 59
-## PMR
+pleine largeur du gabarit CMS
 60
  
 61
-Considéré comme automatique.
+Les gabarits resserrés dégradent fortement l'affichage de la modale.
 62
  
 63
-Aucune donnée spécifique nécessaire.
+---
 64
  
 65
----
+## Recherche
 66
  
 67
-# État des filtres
+Fonctionnelle :
 68
  
 69
-✅ Filtre Ce week-end corrigé
+- avec accents
 70
- 
+- sans accents
 71
-✅ Filtre Tout public corrigé
+- recherche dans descriptions
 72
- 
+- recherche « Tout public »
 73
-✅ Recherche fonctionnelle
+ 
 74
- 
+---
 75
-✅ Filtres publics fonctionnels
+ 
 76
- 
+## Branche de sauvegarde
 77
-✅ Filtres types d'activité fonctionnels
+ 
 78
- 
+Branche :
 79
----
+ 
 80
- 
+refonte-modale-v2
 81
-# Meta-line
+ 
 82
- 
+Contient l'intégralité du chantier ayant conduit à la nouvelle modale.
 83
-Composant généralisé.
+ 
 84
- 
+---
 85
-Utilisé pour :
+ 
 86
- 
+## Prochaine session
 87
-- Public
+ 
 88
-- Date
+1. Corriger le bleu iPhone sur les filtres
 89
-- Heure
+2. Tester Ajouter à mon calendrier
 90
- 
+3. Réduire si nécessaire la place du bouton Réinitialiser les filtres
 91
-Objectif atteint :
-92
- 
-93
-Alignement cohérent dans les cartes et modales.
-94
- 
-95
----
-96
- 
-97
-# Découverte majeure lors du test CMS
-98
- 
-99
-L'intégration iframe fonctionne.
-100
- 
-101
----
-102
- 
-103
-## Conclusion
-104
- 
-105
-Le modèle :
-106
- 
-107
-Accueil + Agenda complet dans une seule page
-108
- 
-109
-n'est pas adapté.
-110
- 
-111
----
-112
- 
-113
-# Nouvelle architecture validée
-114
- 
-115
-## Page Accueil
-116
- 
-117
-Contenu :
-118
- 
-119
-- 4 événements
-120
-- bouton "Consulter tout l'agenda"
-121
- 
-122
-Fin du widget.
-123
- 
-124
----
-125
- 
-126
-## Page Agenda
-127
- 
-128
-Contenu :
-129
- 
-130
-- recherche
-131
-- filtres
-132
-- tous les événements
-133
-- modales
-134
- 
-135
----
-136
- 
-137
-# Suppressions prévues
-138
- 
-139
-## Bouton
-140
- 
-141
-← Retour au site du musée
-142
- 
-143
-Raison :
-144
- 
-145
-inutile dans un iframe.
-146
- 
-147
----
-148
- 
-149
-# Intégration CMS
-150
- 
-151
-✅ Fonctionne
-152
- 
-153
-Points à ajuster :
-154
- 
-155
-- hauteur du widget
-156
-- modales
-157
-- espace occupé
-158
-- bouton réinitialiser
-159
- 
-160
----
-161
- 
-162
-# Priorité actuelle
-163
- 
-164
-Créer :
-165
- 
-166
-- Accueil
-167
-- Agenda complet
-168
- 
-169
-séparés.
-170
- 
-171
-Cette évolution est prioritaire avant SharePoint.
+4. Nettoyage du dépôt

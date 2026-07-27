@@ -691,6 +691,9 @@ background:#876d45;
   border-radius:12px;
   gap:10px;
   justify-content:space-between;
+  color:#000000;
+-webkit-appearance:none;
+appearance:none;
 
 }
 
@@ -711,6 +714,7 @@ background:#876d45;
   text-align:left;
   margin-left:12px;
   font-size:16px;
+  color:inherit;
 
 }
 #reset-filtres,

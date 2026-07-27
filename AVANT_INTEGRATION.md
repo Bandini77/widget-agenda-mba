@@ -305,3 +305,129 @@ Widget Agenda MBA
  
 154
 Publication automatique
+
+# AVANT INTEGRATION
+2
+ 
+3
+## Vérifications
+4
+ 
+5
+### ✅ Validées
+6
+ 
+7
+- GitHub Pages
+8
+- Déploiement automatique
+9
+- Affichage desktop
+10
+- Affichage mobile
+11
+- Intégration CMS
+12
+- Recherche
+13
+- Filtres
+14
+- Modale V2
+15
+ 
+16
+---
+17
+ 
+18
+## Paramètres CMS
+19
+ 
+20
+Iframe recommandée :
+21
+ 
+22
+https://bandini77.github.io/widget-agenda-mba/>
+23
+ 
+24
+---
+25
+ 
+26
+## Préconisations
+27
+ 
+28
+### Utiliser
+29
+ 
+30
+Gabarit pleine largeur
+31
+ 
+32
+### Éviter
+33
+ 
+34
+Gabarits resserrés
+35
+ 
+36
+Car ils dégradent l'espace disponible dans les modales.
+37
+ 
+38
+---
+39
+ 
+40
+## Design retenu
+41
+ 
+42
+### Cartes
+43
+ 
+44
+Avec image
+45
+ 
+46
+### Modales
+47
+ 
+48
+Sans image
+49
+ 
+50
+Motifs :
+51
+ 
+52
+- Lisibilité supérieure
+53
+- Compatibilité CMS
+54
+- Plus de problème de cadrage
+55
+- Plus de gestion de formats d'images
+56
+ 
+57
+---
+58
+ 
+59
+## Points de vigilance
+60
+ 
+61
+- Boutons de filtres sur iPhone
+62
+- Ajouter à mon calendrier
+63
+- Réinitialiser les filtres
