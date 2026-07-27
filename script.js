@@ -1800,37 +1800,6 @@ document
 
   });
 
-  /*
-  function filtrerDate() {
-
-  const dateChoisie =
-    document.getElementById("quand-date").value;
-
-  const cartes =
-    document.querySelectorAll(".event-card");
-
-  cartes.forEach((carte, index) => {
-
-    if (
-      dateChoisie === "" ||
-      events[index].dateISO === dateChoisie
-    ) {
-
-      carte.style.display = "";
-
-    } else {
-
-      carte.style.display = "none";
-
-    }
-
-  });
-
-}
-  document
-  .getElementById("quand-date")
-  .addEventListener("change", filtrerDate);
-  */
   function filtrerAujourdHui() {
 
   const coche =
