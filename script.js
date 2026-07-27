@@ -970,7 +970,7 @@ if (modeAgenda) {
 voirPlus.id = "voir-plus";
 voirPlus.addEventListener("click", () => {
 
-  window.location.href = "agenda.html";
+  window.open("agenda.html", "_blank");
 
 });
 
@@ -1943,6 +1943,9 @@ document
   const cartes =
     document.querySelectorAll(".event-card");
 
+  let compteur = 0;
+  let totalTrouves = 0;
+
   cartes.forEach((carte, index) => {
 
     const dateEvenement =
@@ -1953,7 +1956,21 @@ document
       (dateFin === "" || dateEvenement <= dateFin)
     ) {
 
-      carte.style.display = "";
+      totalTrouves++;
+
+      if (
+        modeAgenda ||
+        compteur < MAX_RESULTATS_ACCUEIL
+      ) {
+
+        carte.style.display = "";
+        compteur++;
+
+      } else {
+
+        carte.style.display = "none";
+
+      }
 
     } else {
 
@@ -1962,6 +1979,31 @@ document
     }
 
   });
+
+  if (
+    (modeAgenda && totalTrouves > 0) ||
+    (!modeAgenda && totalTrouves > MAX_RESULTATS_ACCUEIL)
+  ) {
+
+    resultatInfo.style.display = "block";
+
+    if (modeAgenda) {
+
+      resultatInfo.textContent =
+        `${totalTrouves} résultats trouvés`;
+
+    } else {
+
+      resultatInfo.textContent =
+        `${MAX_RESULTATS_ACCUEIL} résultats affichés sur ${totalTrouves} trouvés`;
+
+    }
+
+  } else {
+
+    resultatInfo.style.display = "none";
+
+  }
 
 }
   document
