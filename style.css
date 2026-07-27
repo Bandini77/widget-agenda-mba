@@ -558,15 +558,10 @@ background:#876d45;
 
 .calendar-btn:hover{
   background:#f5f5f5;
-}.menu-filtre label{
-  display:block;
-  margin-bottom:8px;
+
 }#type-activites label{
   display:block;
   margin-bottom:8px;
-}.menu-filtre{
-  max-height:320px;
-  overflow-y:auto;
 }
 #aucun-resultat{
   text-align:center;
@@ -734,12 +729,6 @@ appearance:none;
   align-items:stretch;
 }
 
-.event-left{
-  display:grid;
-  grid-template-columns:320px 100px;
-  align-items:center;
-}
-
 .event-right{
   display:flex;
   justify-content:space-between;
@@ -753,11 +742,6 @@ appearance:none;
   padding:20px 0 20px 30px;
 }
 
-.event-image{
-  width:260px;
-  height:170px;
-  object-fit:cover;
-}
 
 .event-image{
   width:320px;
@@ -766,9 +750,7 @@ appearance:none;
   object-position:center top;
 
 }
-.event-right{
-  position:relative;
-}
+
 .event-left{
   display:grid;
   grid-template-columns:320px 100px;
@@ -869,12 +851,6 @@ transform:translateY(-2px);
 
 }
 
-.menu-filtre input[type="checkbox"]{
-  width:18px;
-  height:18px;
-
-  accent-color:#876d45;
-}
 .filtre-wrapper{
   position:relative;
 }
@@ -1104,25 +1080,14 @@ transform:translateY(-2px);
   background:#6f5838;
 
 }
-.retour-musee {
 
-  display:inline-block;
-
-  margin-bottom:24px;
-  padding-left:36px;
-
-  color:#876d45;
-
-  text-decoration:none;
-
-  font-weight:600;
-
-}
 .detail-public{
   display:flex;
   align-items:center;
   gap:8px;
   margin-top:-3px;
+  position:relative;
+  top:-2px;
 }
 
 .detail-separator{
@@ -1132,10 +1097,7 @@ transform:translateY(-2px);
 .detail-age{
   white-space:nowrap;
 }
-.detail-public{
-  position:relative;
-  top:-2px;
-}
+
 .detail-public svg{
   position:relative;
   top:-2px;
