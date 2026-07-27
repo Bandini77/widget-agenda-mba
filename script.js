@@ -416,92 +416,6 @@ resultatInfo.style.display = "none";
 
 });
 
-/*
-
-document
-  .getElementById("fermer-quand")
-  .addEventListener("click", () => {
-
-    filtreQuand.style.display = "none";
-
-    boutonQuand.textContent =
-      "📅 Quand ▼";
-
-  });*/
-
-/*
-
-  document
-  .getElementById("fermer-pourqui")
-  .addEventListener("click", () => {
-
-    filtreBarre.style.display = "none";
-
-    boutonPourQui.textContent =
-      "👥 Pour qui ▼";
-
-  });*/
-
-/*
-
-document
-  .getElementById("fermer-type")
-  .addEventListener("click", () => {
-
-    filtreType.style.display = "none";
-
-    boutonType.textContent =
-      "🏷️ Type d'activité ▼";
-
-  });*/
-  
-  /*
-  
-  document
-  .getElementById("appliquer-quand")
-  .addEventListener("click", () => {
-
-    filtrerDate();
-    filtrerPeriode();
-
-    filtreQuand.style.display = "none";
-
-    boutonQuand.textContent =
-      "📅 Quand ▼";
-
-  });
-  */
-/*
-document
-  .getElementById("appliquer-pourqui")
-  .addEventListener("click", () => {
-
-    mettreAJourFiltres();
-
-    filtreBarre.style.display = "none";
-
-    boutonPourQui.textContent =
-      "👥 Pour qui ▼";
-
-  });
-
-  */
-
-  /*
-document
-  .getElementById("appliquer-type")
-  .addEventListener("click", () => {
-
-    mettreAJourFiltres();
-
-    filtreType.style.display = "none";
-
-    boutonType.textContent =
-      "🏷️ Type d'activité ▼";
-
-  });
-  */
-
 const events = [
   {
     date: "18 SEPT. 2026",
@@ -1542,8 +1456,8 @@ let totalTrouves = 0;
   !vernissageCoche &&
   !visiteCommenteeCoche &&
   !visiteConteeCoche &&
-  !visiteFlashCoche;
-  !nocturneCoche &&
+  !visiteFlashCoche &&
+  !nocturneCoche ;
   
 
   cartes.forEach((carte, index) => {
