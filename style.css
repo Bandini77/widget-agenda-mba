@@ -1524,6 +1524,11 @@ font-weight:600;
   cursor:pointer;
 
 }
+.search-container,
+.quick-filters{
+  padding-left:16px;
+  padding-right:16px;
+}
 
 
 }
