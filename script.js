@@ -1245,15 +1245,15 @@ events[index].reservationObligatoire !== false
 
   <div class="share-actions">
 
-    <p>
-      <i data-lucide="mail"></i>
-      Email
-    </p>
+    <p class="email-btn">
+  <i data-lucide="mail"></i>
+  Email
+</p>
 
-    <p>
-      <i data-lucide="link"></i>
-      Copier le lien
-    </p>
+<p class="copy-link-btn">
+  <i data-lucide="link"></i>
+  Copier le lien
+</p>
 
     <p class="calendar-btn">
       <i data-lucide="calendar-plus"></i>
@@ -1373,6 +1373,59 @@ END:VCALENDAR
   });
 
 });
+const emailBtn =
+document.querySelector(".email-btn");
+
+if (emailBtn) {
+
+emailBtn.addEventListener("click", () => {
+
+const sujet =
+encodeURIComponent(events[index].title);
+
+const contenu =
+encodeURIComponent(
+`Je souhaite partager cet événement du Musée des Beaux-Arts de Pau :
+
+${events[index].title}
+
+https://bandini77.github.io/widget-agenda-mba/agenda.html`
+);
+
+window.location.href =
+`mailto:?subject=${sujet}&body=${contenu}`;
+
+});
+
+}
+
+const copyLinkBtn =
+document.querySelector(".copy-link-btn");
+
+if (copyLinkBtn) {
+
+copyLinkBtn.addEventListener("click", async () => {
+
+try {
+
+await navigator.clipboard.writeText(
+"https://bandini77.github.io/widget-agenda-mba/agenda.html"
+);
+
+alert("✅ Lien copié dans le presse-papiers");
+
+} catch(error) {
+
+alert(
+"Impossible de copier le lien."
+);
+
+}
+
+});
+
+}
+
 
   });
 
