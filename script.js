@@ -1301,7 +1301,79 @@ document
 overlay.style.display = "none";
 
   });
-    
+const calendarBtns = document.querySelectorAll(
+  ".calendar-btn, .mobile-calendar-btn"
+);
+
+calendarBtns.forEach((btn) => {
+
+  btn.addEventListener("click", () => {
+
+    const event = events[index];
+
+    const heure =
+      event.heure
+        ? event.heure.replace("h", ":")
+        : "14:00";
+
+    const debut = new Date(
+      `${event.dateISO}T${heure}:00`
+    );
+
+    const fin = new Date(
+      debut.getTime() + (60 * 60 * 1000)
+    );
+
+    const formatICS = (date) => {
+
+      return date
+        .toISOString()
+        .replace(/[-:]/g, "")
+        .split(".")[0] + "Z";
+
+    };
+
+    const contenuICS = `
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${event.title}
+DESCRIPTION:${event.description}
+DTSTART:${formatICS(debut)}
+DTEND:${formatICS(fin)}
+LOCATION:Musée des Beaux-Arts de Pau
+END:VEVENT
+END:VCALENDAR
+`.trim();
+
+    const blob = new Blob(
+      [contenuICS],
+      { type: "text/calendar" }
+    );
+
+    const url =
+      URL.createObjectURL(blob);
+
+    const lien =
+      document.createElement("a");
+
+    lien.href = url;
+
+    lien.download =
+      `${event.title}.ics`;
+
+    document.body.appendChild(lien);
+
+    lien.click();
+
+    document.body.removeChild(lien);
+
+    URL.revokeObjectURL(url);
+
+  });
+
+});
+
   });
 
 });
