@@ -1,3 +1,13 @@
+fetch("agenda.json")
+  .then(response => response.json())
+  .then(data => {
+    console.log("JSON MBA :", data);
+    console.log("Nombre d'événements :", data.length);
+  })
+  .catch(error => {
+    console.error("Erreur JSON :", error);
+  });
+
 const app = document.getElementById("app");
 const recherche = document.createElement("input");
 
