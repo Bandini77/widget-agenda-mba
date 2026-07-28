@@ -423,6 +423,7 @@ const events = [
     mois: "SEPT.",
     annee: "2026",
     heure: "14h30",
+    duree: "",
     jourFin: "15",
     moisFin: "JANV.",
     anneeFin: "2027",
@@ -452,6 +453,7 @@ const events = [
     mois: "SEPT.",
     annee: "2026",
     heure: "14h30",
+    duree: "1h30",
     dateISO: "2026-09-19",
     image: "images/portrait.jpg",
     title: "L'histoire du portrait",
@@ -474,6 +476,7 @@ const events = [
     mois: "SEPT.",
     annee: "2026",
     heure: "14h30",
+    duree: "2h",
     dateISO: "2026-09-25",
     image: "images/atelier.jpg",
     title: "Les couleurs du musée",
@@ -497,6 +500,7 @@ const events = [
     mois: "SEPT.",
     annee: "2026",
     heure: "14h30",
+    duree: "1h",
     dateISO: "2026-09-29",
     image: "images/conte.jpg",
     title: "Les petits explorateurs",
@@ -516,6 +520,7 @@ const events = [
   mois: "OCT.",
   annee: "2026",
   heure: "16h00",
+  duree: "1h30",
   dateISO: "2026-10-03",
 
   image: "images/conference-cezanne.jpg",
@@ -548,6 +553,7 @@ const events = [
   mois: "OCT.",
   annee: "2026",
   heure: "15h00",
+  duree: "1h",
   dateISO: "2026-10-10",
 
   image: "images/projection.jpg",
@@ -581,6 +587,7 @@ const events = [
   mois: "OCT.",
   annee: "2026",
   heure: "11h00",
+  duree: "1h",
   dateISO: "2026-10-17",
 
   image: "images/sieste-musicale.jpg",
@@ -613,6 +620,7 @@ const events = [
   mois: "OCT.",
   annee: "2026",
   heure: "11h00",
+  duree: "1h",
   dateISO: "2026-10-24",
 
   image: "images/sieste-musicale.jpg",
@@ -645,6 +653,7 @@ const events = [
   mois: "OCT.",
   annee: "2026",
   heure: "10h30",
+  duree: "1h30",
   dateISO: "2026-10-31",
 
   image: "images/bien-etre.jpg",
@@ -677,6 +686,7 @@ const events = [
   mois: "NOV.",
   annee: "2026",
   heure: "18h30",
+  duree: "1h30",
   dateISO: "2026-11-07",
 
   image: "images/concert.jpg",
@@ -709,6 +719,7 @@ const events = [
   mois: "NOV.",
   annee: "2026",
   heure: "15h00",
+  duree: "30min",
   dateISO: "2026-11-14",
 
   image: "images/visite-flash.jpg",
@@ -741,6 +752,7 @@ const events = [
   mois: "NOV.",
   annee: "2026",
   heure: "18h00",
+  duree: "",
   dateISO: "2026-11-21",
 
   image: "images/vernissage.jpg",
@@ -1082,6 +1094,17 @@ ${
   <i data-lucide="clock-3"></i>
   <span>${events[index].heure}</span>
 </span>
+
+${
+  events[index].duree
+    ? `
+<span class="meta-line">
+  <i data-lucide="timer"></i>
+  <span>${events[index].duree}</span>
+</span>
+`
+    : ""
+}
 
   `
 }
