@@ -2,63 +2,63 @@
 2
  
 3
-Version : 1.0
+Version : 2.0
 4
  
 5
 Date : 28 juillet 2026
 6
-Définir les règles métier utilisées par l'Agenda du Musée des Beaux-Arts de Pau.
+ 
 7
- 
+Statut : Validée
 8
-Ce document fait référence pour :
-9
  
+9
+---
 10
-- la liste Microsoft Lists ;
+ 
 11
-- le formulaire métier ;
+# Objet du document
 12
-- le widget Agenda ;
+ 
 13
-- les futures évolutions du projet.
+Ce document définit les règles métier utilisées par l'Agenda du Musée des Beaux-Arts de Pau.
 14
  
 15
----
+Il constitue la référence fonctionnelle du projet.
 16
  
 17
-# Publics
+Toute évolution du widget, de la liste Microsoft Lists ou du fichier agenda.json doit respecter les règles décrites dans ce document.
 18
  
 19
-Champ SharePoint :
+---
 20
  
 21
-Publics concernés
+# Principes généraux
 22
  
 23
-Type :
+Le projet repose sur les principes suivants :
 24
  
 25
-Choix multiples
+- simplicité ;
 26
- 
+- autonomie des équipes métier ;
 27
-Valeurs :
+- faible maintenance ;
 28
- 
+- documentation complète ;
 29
-- Adulte
+- séparation entre administration et diffusion.
 30
-- Famille
+ 
 31
-- Jeune public
+L'objectif est d'éviter toute intervention dans le code du widget pour administrer les événements.
 32
  
 33
@@ -66,107 +66,107 @@ Valeurs :
 34
  
 35
-# Règle Tout public
+# Gestion des événements
 36
  
 37
-Le statut :
+## Une occurrence = une ligne
 38
  
 39
-Tout public
+Chaque occurrence d'un événement doit correspondre à une ligne distincte dans Microsoft Lists.
 40
  
 41
-n'est jamais stocké dans SharePoint.
+Exemple :
 42
  
 43
-Le widget le calcule automatiquement lorsque les trois publics sont sélectionnés :
+```text
 44
- 
+Sieste musicale
 45
-- Adulte
-46
-- Famille
-47
-- Jeune public
-48
  
+46
+10 mars
+47
+12 avril
+48
+15 mai
 49
----
+```
 50
  
 51
-# Affichage des publics dans le widget
+correspond à :
 52
  
 53
-## Cas 1
+```text
 54
- 
+3 lignes différentes
 55
-Public :
+```
 56
  
 57
-Adulte
+Aucune gestion automatique des récurrences n'est prévue dans la V1.
 58
  
 59
-Affichage :
+---
 60
  
 61
-Adulte
+# Publics
 62
  
 63
----
+## Valeurs autorisées
 64
  
 65
-## Cas 2
+Les publics sont saisis dans Microsoft Lists via un champ à choix multiples.
 66
  
 67
-Public :
+Valeurs autorisées :
 68
  
 69
-Famille
+- Adulte
 70
- 
+- Famille
 71
-Affichage :
+- Jeune public
 72
  
 73
-Famille
+---
 74
  
 75
----
+## Valeur Tout public
 76
  
 77
-## Cas 3
+La valeur :
 78
  
 79
-Public :
+```text
 80
- 
+Tout public
 81
-Jeune public
+```
 82
  
 83
-Affichage :
+n'est jamais enregistrée dans Microsoft Lists.
 84
  
 85
-Jeune public
+Elle est calculée automatiquement par le widget.
 86
  
 87
@@ -174,635 +174,635 @@ Jeune public
 88
  
 89
-## Cas 4
+## Calcul de Tout public
 90
  
 91
-Public :
+Si les trois publics suivants sont sélectionnés :
 92
  
 93
-Adulte + Famille + Jeune public
+- Adulte
 94
- 
+- Famille
 95
-Affichage :
+- Jeune public
 96
  
 97
-Tout public
+alors le widget affiche :
 98
  
 99
----
+```text
 100
- 
+Tout public
 101
-# Filtres publics
+```
 102
  
 103
-## Tout public
+---
 104
  
 105
-Affiche tous les événements.
+# Filtres publics
 106
  
 107
-Il ne s'agit pas d'un public spécifique mais d'un filtre global.
+## Tout public
 108
  
 109
----
+Le filtre :
 110
  
 111
-## Adulte
+```text
 112
- 
+Tout public
 113
-Affiche tous les événements contenant :
+```
 114
  
 115
-Adulte
+affiche tous les événements.
 116
  
 117
-Exemple :
+Il s'agit d'un filtre global.
 118
  
 119
-- Adulte
-120
-- Adulte + Famille + Jeune public
-121
- 
-122
 ---
+120
+ 
+121
+## Adulte
+122
+ 
 123
- 
-124
-## Famille
-125
- 
-126
 Affiche tous les événements contenant :
+124
+ 
+125
+```text
+126
+Adulte
 127
- 
+```
 128
-Famille
+ 
 129
- 
+Exemples :
 130
-Exemple :
-131
  
+131
+```text
 132
-- Famille
+Adulte
 133
-- Adulte + Famille + Jeune public
+```
 134
  
 135
----
+ou
 136
  
 137
-## Jeune public
+```text
 138
- 
+Adulte + Famille + Jeune public
 139
-Affiche tous les événements contenant :
+```
 140
  
 141
-Jeune public
+---
 142
  
 143
-Exemple :
+## Famille
 144
  
 145
-- Jeune public
+Affiche tous les événements contenant :
 146
-- Adulte + Famille + Jeune public
+ 
 147
- 
+```text
 148
----
+Famille
 149
- 
+```
 150
-# PMR
+ 
 151
- 
+Exemples :
 152
-Tous les événements sont considérés accessibles PMR.
+ 
 153
- 
+```text
 154
-Aucune colonne SharePoint spécifique n'est prévue.
+Famille
 155
- 
+```
 156
-Le pictogramme PMR est affiché automatiquement dans le widget.
+ 
 157
- 
+ou
 158
----
+ 
 159
- 
+```text
 160
-# Réservation
+Adulte + Famille + Jeune public
 161
- 
+```
 162
-Champ SharePoint :
+ 
 163
- 
+---
 164
-Réservation
+ 
 165
- 
+## Jeune public
 166
-Type :
+ 
 167
- 
+Affiche tous les événements contenant :
 168
-Choix
+ 
 169
- 
+```text
 170
-Valeurs :
+Jeune public
 171
- 
+```
 172
-- Oui
+ 
 173
-- Non
+Exemples :
 174
  
 175
----
+```text
 176
- 
+Jeune public
 177
-# Affichage du bloc Réservation
+```
 178
  
 179
-## Réservation = Oui
+ou
 180
  
 181
-Le widget affiche le bloc :
+```text
 182
- 
+Adulte + Famille + Jeune public
 183
-RÉSERVATION
+```
 184
  
 185
-et affiche les informations disponibles :
+---
 186
  
 187
-- téléphone ;
+# Recherche
 188
-- email ;
+ 
 189
-- lien.
+La recherche porte sur :
 190
  
 191
----
+- le titre ;
 192
- 
+- le type d'événement ;
 193
-## Réservation = Non
+- le public ;
 194
- 
+- la description.
 195
-Le widget masque complètement le bloc :
+ 
 196
- 
+---
 197
-RÉSERVATION
+ 
 198
- 
+## Gestion des majuscules et accents
 199
----
+ 
 200
- 
+La recherche doit être insensible :
 201
-# Téléphone
+ 
 202
- 
+- aux majuscules ;
 203
-Champ texte libre.
+- aux minuscules ;
 204
- 
+- aux accents.
 205
-Utilisé pour les réservations ou contacts.
+ 
 206
- 
+Exemples :
 207
----
+ 
 208
- 
+```text
 209
-# Email
+tout public
 210
- 
+Tout Public
 211
-Champ texte libre.
+TOUT PUBLIC
 212
- 
+```
 213
-Utilisé pour les réservations ou contacts.
+ 
 214
- 
+doivent produire le même résultat.
 215
----
+ 
 216
- 
+---
 217
-# Lien
+ 
 218
- 
+# PMR
 219
-Champ hyperlien.
+ 
 220
- 
+Tous les événements sont considérés comme accessibles PMR.
 221
-Utilisé lorsqu'une réservation est gérée :
+ 
 222
- 
+Aucune donnée spécifique n'est demandée dans Microsoft Lists.
 223
-- par le musée ;
+ 
 224
-- par un partenaire ;
+Le pictogramme PMR est affiché automatiquement dans le widget.
 225
-- par une plateforme externe.
+ 
 226
- 
+---
 227
----
+ 
 228
- 
-229
-# Tarif
-230
- 
-231
-Champ texte libre.
-232
- 
-233
-Exemples :
-234
- 
-235
-- Gratuit
-236
-- 5 €
-237
-- Adulte accompagnateur : 5 €
-238
-- Tarif réduit
-239
-- Gratuit sur présentation d'un justificatif
-240
- 
-241
-Le widget affiche le contenu tel qu'il est saisi.
-242
- 
-243
----
-244
- 
-245
 # Âge conseillé
-246
+229
  
-247
+230
+## Stockage
+231
+ 
+232
 Champ :
-248
+233
  
-249
+234
+```text
+235
 Âge conseillé
-250
+236
+```
+237
  
-251
+238
 Type :
-252
+239
  
-253
+240
+```text
+241
 Nombre
-254
+242
+```
+243
  
-255
+244
 Exemples :
-256
+245
  
+246
+```text
+247
+6
+248
+8
+249
+12
+250
+```
+251
+ 
+252
+---
+253
+ 
+254
+## Affichage
+255
+ 
+256
+Le widget affiche automatiquement :
 257
-- 3
+ 
 258
-- 6
+```text
 259
-- 8
+À partir de 6 ans
 260
-- 12
+```
 261
  
 262
-Le widget affiche automatiquement :
+à partir de la valeur stockée.
 263
  
 264
-À partir de X ans
+---
 265
  
 266
-Exemple :
+# Durée
 267
  
 268
-Valeur stockée :
+## Stockage
 269
  
 270
-6
+Champ :
 271
  
 272
-Affichage :
+```text
 273
- 
+Durée
 274
-À partir de 6 ans
+```
 275
  
 276
----
+Type :
 277
  
 278
-# Durée
+```text
 279
- 
+Texte simple
 280
-Champ :
+```
 281
  
 282
-Durée
+Exemples :
 283
  
 284
-Type :
+```text
 285
- 
+45 min
 286
-Texte simple
+1 h
 287
- 
+1 h 30
 288
-Exemples :
+2 h
 289
- 
+Toute la journée
 290
-- 45 min
+En continu
 291
-- 1 h
+```
 292
-- 1 h 30
+ 
 293
-- 2 h
+---
 294
-- Toute la journée
+ 
 295
-- En continu
+## Affichage
 296
  
 297
----
+La durée apparaît dans l'en-tête de la modale.
 298
  
 299
-# Affichage de la durée
+Exemple :
 300
  
 301
-La durée apparaît dans l'en-tête de la modale.
+```text
 302
- 
+📅 19 SEPT. 2026 • 🕒 14h30 • ⏱️ 1 h 30
 303
-Exemple :
+```
 304
  
 305
-📅 19 SEPT. 2026
+Si aucune durée n'est renseignée, elle n'est pas affichée.
 306
  
 307
-🕒 14h30
+---
 308
  
 309
-⏱️ 1 h 30
+# Tarif
 310
  
 311
-Les trois informations doivent apparaître sur une même ligne visuelle.
+## Stockage
 312
  
 313
----
+Champ texte libre.
 314
  
 315
-# Images
+Exemples :
 316
  
 317
-Les visuels utilisés par l'agenda sont stockés dans :
+```text
 318
- 
+Gratuit
 319
-Images Agenda
+5 €
 320
- 
+Tarif réduit
 321
-Bibliothèque SharePoint dédiée.
+Adulte accompagnateur : 5 €
 322
- 
+```
 323
-Sources possibles :
+ 
 324
- 
+---
 325
-- Photothèque du musée ;
+ 
 326
-- Réseau Ville ;
+## Affichage
 327
-- Visuels graphiste ;
+ 
 328
-- Production interne ;
+Le widget affiche le texte tel qu'il est saisi.
 329
-- Partenaires.
+ 
 330
- 
+---
 331
----
+ 
 332
- 
+# Réservation
 333
-# Publication
+ 
 334
- 
+## Stockage
 335
-Un événement est visible sur le widget si :
+ 
 336
- 
+Champ :
 337
-Statut = Publié
+ 
 338
- 
+```text
 339
-ET
+Réservation
 340
- 
+```
 341
-Date/heure de fin > maintenant
+ 
 342
- 
+Type :
 343
----
+ 
 344
- 
+```text
 345
-# Brouillon
+Choix
 346
- 
+```
 347
-Un événement en brouillon :
+ 
 348
- 
+Valeurs :
 349
-- est visible dans SharePoint ;
+ 
 350
-- est invisible dans le widget.
+- Oui
 351
- 
+- Non
 352
----
+ 
 353
- 
-354
-# Événement terminé
-355
- 
-356
-Un événement terminé :
-357
- 
-358
-- disparaît automatiquement du widget ;
-359
-- reste conservé dans SharePoint.
-360
- 
-361
 ---
+354
+ 
+355
+## Réservation = Oui
+356
+ 
+357
+Le widget affiche le bloc :
+358
+ 
+359
+```text
+360
+RÉSERVATION
+361
+```
 362
  
 363
-# Archivage
+Le message :
 364
  
 365
-Aucun statut "Archivé" n'est prévu.
+```text
 366
- 
+Obligatoire
 367
-Microsoft Lists constitue l'historique des événements.
+```
 368
  
 369
----
+est affiché automatiquement.
 370
  
 371
-# Pièces jointes
+Le widget peut également afficher :
 372
  
 373
-Les pièces jointes SharePoint ne sont pas utilisées.
+- téléphone ;
 374
- 
+- email ;
 375
-Les images sont gérées dans :
+- lien de réservation.
 376
  
 377
-Images Agenda
+---
 378
  
 379
-ou via la colonne :
+## Réservation = Non
 380
  
 381
-Visuel
+Le bloc :
 382
  
 383
-selon l'architecture retenue.
+```text
 384
- 
+RÉSERVATION
 385
----
+```
 386
  
 387
-# Principe général
+est totalement masqué.
 388
  
 389
-Une occurrence = une ligne.
+---
 390
  
 391
-Exemple :
+# Téléphone
 392
  
 393
-Sieste musicale
+Champ texte libre.
 394
  
 395
-10 mars
+Format recommandé :
 396
  
 397
-12 avril
+```text
 398
- 
+05 59 27 33 02
 399
-15 mai
+```
 400
  
 401
-=
+Les espaces sont utilisés.
 402
  
 403
-3 événements distincts dans Microsoft Lists.
+Les points ne sont pas utilisés.
 404
  
 405
@@ -810,28 +810,380 @@ Sieste musicale
 406
  
 407
-# Philosophie du projet
+# Email
 408
  
 409
-Priorité absolue :
+Champ texte libre.
 410
  
 411
-Simplicité.
+Utilisé pour les réservations ou le contact.
 412
  
 413
-Éviter :
+---
 414
  
 415
-- les développements complexes ;
+# Lien
 416
-- les dépendances inutiles ;
+ 
 417
-- les paramétrages difficiles à transmettre.
+Champ hyperlien.
 418
  
 419
-L'administration des événements doit pouvoir être réalisée sans modification du code source du widget.
+Utilisé pour :
+420
+ 
+421
+- réservation en ligne ;
+422
+- information complémentaire ;
+423
+- réservation partenaire.
+424
+ 
+425
+---
+426
+ 
+427
+# Images
+428
+ 
+429
+## Principe
+430
+ 
+431
+Chaque événement possède un visuel.
+432
+ 
+433
+Le visuel est stocké via le champ :
+434
+ 
+435
+```text
+436
+Visuel
+437
+```
+438
+ 
+439
+---
+440
+ 
+441
+## Sources possibles
+442
+ 
+443
+- photothèque MBA ;
+444
+- graphistes ;
+445
+- partenaires ;
+446
+- réseau Ville ;
+447
+- production interne.
+448
+ 
+449
+---
+450
+ 
+451
+## Pièces jointes
+452
+ 
+453
+Les pièces jointes SharePoint sont désactivées.
+454
+ 
+455
+Elles ne sont pas utilisées dans le projet.
+456
+ 
+457
+---
+458
+ 
+459
+# Affichage du widget accueil
+460
+ 
+461
+Le widget d'accueil affiche :
+462
+ 
+463
+```text
+464
+4 événements maximum
+465
+```
+466
+ 
+467
+correspondant aux prochains événements publiés.
+468
+ 
+469
+---
+470
+ 
+471
+# Affichage de l'agenda complet
+472
+ 
+473
+L'agenda complet affiche :
+474
+ 
+475
+```text
+476
+Tous les événements publiés
+477
+dont la date de fin n'est pas dépassée.
+478
+```
+479
+ 
+480
+---
+481
+ 
+482
+# Cas particulier : Exposition
+483
+ 
+484
+Les expositions sont affichées différemment des événements ponctuels.
+485
+ 
+486
+Affichage :
+487
+ 
+488
+```text
+489
+18 SEPT. 2026
+490
+—
+491
+15 JANV. 2027
+492
+```
+493
+ 
+494
+au lieu d'une date et heure uniques.
+495
+ 
+496
+---
+497
+ 
+498
+# Publication
+499
+ 
+500
+Un événement est visible dans le widget si :
+501
+ 
+502
+```text
+503
+Statut = Publié
+504
+```
+505
+ 
+506
+ET
+507
+ 
+508
+```text
+509
+Date/heure de fin > maintenant
+510
+```
+511
+ 
+512
+---
+513
+ 
+514
+# Brouillon
+515
+ 
+516
+Un événement en brouillon :
+517
+ 
+518
+- reste visible dans Microsoft Lists ;
+519
+- reste invisible dans le widget.
+520
+ 
+521
+---
+522
+ 
+523
+# Événement terminé
+524
+ 
+525
+Un événement terminé :
+526
+ 
+527
+- disparaît automatiquement du widget ;
+528
+- reste conservé dans Microsoft Lists.
+529
+ 
+530
+---
+531
+ 
+532
+# Archivage
+533
+ 
+534
+Aucun statut :
+535
+ 
+536
+```text
+537
+Archivé
+538
+```
+539
+ 
+540
+n'est prévu.
+541
+ 
+542
+Microsoft Lists constitue l'historique de programmation.
+543
+ 
+544
+---
+545
+ 
+546
+# Diffusion des données
+547
+ 
+548
+## Administration
+549
+ 
+550
+Les événements sont administrés dans :
+551
+ 
+552
+```text
+553
+Microsoft Lists
+554
+```
+555
+ 
+556
+---
+557
+ 
+558
+## Diffusion
+559
+ 
+560
+Le widget consomme les données via :
+561
+ 
+562
+```text
+563
+agenda.json
+564
+```
+565
+ 
+566
+---
+567
+ 
+568
+## Règle
+569
+ 
+570
+Aucun événement ne doit être codé manuellement dans :
+571
+ 
+572
+```javascript
+573
+script.js
+574
+```
+575
+ 
+576
+Les données diffusées doivent provenir exclusivement du fichier :
+577
+ 
+578
+```text
+579
+agenda.json
+580
+```
+581
+ 
+582
+---
+583
+ 
+584
+# Philosophie du projet
+585
+ 
+586
+Toute évolution doit respecter les principes suivants :
+587
+ 
+588
+- simplicité ;
+589
+- lisibilité ;
+590
+- maintenabilité ;
+591
+- autonomie métier ;
+592
+- gratuité ;
+593
+- documentation.
+594
+ 
+595
+Une solution simple doit toujours être préférée à une solution complexe.

@@ -1,8 +1,8 @@
-# MAPPING SHAREPOINT → WIDGET MBA
+# MAPPING SHAREPOINT → JSON → WIDGET MBA
 2
  
 3
-Version : 1.0
+Version : 2.0
 4
  
 5
@@ -18,427 +18,427 @@ Statut : Validé
 10
  
 11
-# Objectif
+# Objet du document
 12
  
 13
-Définir la correspondance entre les données stockées dans Microsoft Lists et les éléments affichés dans le widget Agenda MBA.
+Ce document décrit la transformation des données entre :
 14
  
 15
-Ce document constitue la référence technique pour l'intégration SharePoint ↔ Widget.
+```text
 16
- 
+Microsoft Lists
 17
----
+↓
 18
- 
+agenda.json
 19
-# Principe général
+↓
 20
- 
+Widget Agenda MBA
 21
-Source de vérité :
+```
 22
  
 23
-Microsoft Lists
+Il constitue la référence technique de transformation des données.
 24
  
 25
-Liste :
+---
 26
  
 27
-Agenda MBA
+# Architecture de circulation des données
 28
  
 29
-Le widget ne contient plus d'événements codés en dur.
+```text
 30
- 
+Microsoft Lists
 31
-Toutes les informations affichées proviennent de la liste SharePoint.
+↓
 32
  
 33
----
+Transformation
 34
  
 35
-# Carte événement
+↓
 36
  
 37
-## Visuel
+agenda.json
 38
  
 39
-Champ SharePoint :
+↓
 40
  
 41
-Visuel
+Widget Agenda MBA
 42
- 
+```
 43
-Affichage :
+ 
 44
- 
+Microsoft Lists constitue la source d'administration.
 45
-Image de la carte.
+ 
 46
- 
+Le widget ne lit jamais directement Microsoft Lists.
 47
----
+ 
 48
- 
+Le widget lit exclusivement :
 49
-## Type d'événement
+ 
 50
- 
+```text
 51
-Champ SharePoint :
+agenda.json
 52
- 
+```
 53
-Type d'événement
+ 
 54
- 
+---
 55
-Affichage :
+ 
 56
- 
+# Principes de transformation
 57
-Catégorie affichée au-dessus du titre.
+ 
 58
- 
+Chaque colonne SharePoint est transformée en une propriété du JSON.
 59
-Exemple :
+ 
 60
- 
+Le widget consomme ensuite le JSON sans connaître SharePoint.
 61
-Visite commentée
+ 
 62
- 
+---
 63
-Concert
+ 
 64
- 
+# Identifiant
 65
-Exposition
+ 
 66
- 
+## SharePoint
 67
----
+ 
 68
- 
+```text
 69
-## Titre
+ID
 70
- 
+```
 71
-Champ SharePoint :
+ 
 72
- 
+## JSON
 73
-Titre
+ 
 74
- 
+```json
 75
-Affichage :
+"id": 1
 76
- 
+```
 77
-Titre principal de la carte.
+ 
 78
- 
+## Widget
 79
----
+ 
 80
- 
+Identifiant technique.
 81
-## Public
+ 
 82
- 
+---
 83
-Champ SharePoint :
+ 
 84
- 
+# Statut
 85
-Publics concernés
+ 
 86
- 
+## SharePoint
 87
-Affichage :
-88
  
+88
+```text
 89
-- Adulte
+Statut
 90
-- Famille
+```
 91
-- Jeune public
+ 
 92
-- Tout public
+Valeurs :
 93
  
 94
----
+```text
 95
- 
+Brouillon
 96
-### Règle Tout public
+Publié
 97
- 
+```
 98
-Si les trois publics sont sélectionnés :
+ 
 99
- 
+## JSON
 100
-- Adulte
+ 
 101
-- Famille
+```json
 102
-- Jeune public
+"statut": "Publié"
 103
- 
+```
 104
-Le widget affiche :
+ 
 105
- 
+## Widget
 106
-Tout public
+ 
 107
- 
+Utilisé pour déterminer la visibilité.
 108
----
+ 
 109
- 
+---
 110
-## Date
+ 
 111
- 
+# Type d'événement
 112
-Champ SharePoint :
+ 
 113
- 
+## SharePoint
 114
-Date début
+ 
 115
- 
+```text
 116
-Affichage :
-117
- 
-118
-Date visible sur la carte.
-119
- 
-120
----
-121
- 
-122
-## Heure
-123
- 
-124
-Champ SharePoint :
-125
- 
-126
-Heure début
-127
- 
-128
-Affichage :
-129
- 
-130
-Horaire visible sur la carte.
-131
- 
-132
----
-133
- 
-134
-# Modale événement
-135
- 
-136
-## Visuel
-137
- 
-138
-Champ SharePoint :
-139
- 
-140
-Visuel
-141
- 
-142
-Affichage :
-143
- 
-144
-Image d'en-tête de la modale.
-145
- 
-146
----
-147
- 
-148
-## Type d'événement
-149
- 
-150
-Champ SharePoint :
-151
- 
-152
 Type d'événement
-153
+117
+```
+118
  
-154
+119
+## JSON
+120
+ 
+121
+```json
+122
+"type": "Visite atelier"
+123
+```
+124
+ 
+125
+## Widget
+126
+ 
+127
 Affichage :
-155
+128
  
-156
-Catégorie.
-157
+129
+- carte ;
+130
+- modale ;
+131
+- filtres.
+132
  
-158
+133
 ---
-159
+134
  
-160
-## Titre
-161
+135
+# Titre
+136
  
-162
-Champ SharePoint :
-163
+137
+## SharePoint
+138
  
-164
+139
+```text
+140
 Titre
-165
+141
+```
+142
  
-166
-Affichage :
-167
+143
+## JSON
+144
  
-168
+145
+```json
+146
+"title": "Initiation au quilling"
+147
+```
+148
+ 
+149
+## Widget
+150
+ 
+151
 Titre principal.
+152
+ 
+153
+---
+154
+ 
+155
+# Publics
+156
+ 
+157
+## SharePoint
+158
+ 
+159
+```text
+160
+Publics
+161
+```
+162
+ 
+163
+Valeurs :
+164
+ 
+165
+```text
+166
+Adulte
+167
+Famille
+168
+Jeune public
 169
- 
+```
 170
----
+ 
 171
- 
+## JSON
 172
-## Public
+ 
 173
- 
+```json
 174
-Champ SharePoint :
+"publics": [
 175
- 
+"Famille"
 176
-Publics concernés
+]
 177
- 
+```
 178
-Affichage :
+ 
 179
- 
+ou
 180
-- Adulte
+ 
 181
-- Famille
+```json
 182
-- Jeune public
+"publics": [
 183
-- Tout public
+"Adulte",
 184
- 
+"Famille",
 185
----
+"Jeune public"
 186
- 
+]
 187
-## Âge conseillé
+```
 188
  
 189
-Champ SharePoint :
+---
 190
  
 191
-Âge conseillé
+## Transformation
 192
  
 193
-Valeur stockée :
+Si les trois publics sont présents :
 194
  
 195
-6
+```text
 196
- 
+Adulte
 197
-Affichage :
+Famille
 198
- 
+Jeune public
 199
-À partir de 6 ans
+```
 200
  
 201
----
+Le widget calcule :
 202
  
 203
-## PMR
+```text
 204
- 
+Tout public
 205
-Aucune donnée SharePoint.
+```
 206
  
 207
-Affichage automatique.
+---
 208
  
 209
-Tous les événements sont considérés accessibles PMR.
+## Widget
 210
  
 211
----
+Affichage :
 212
  
 213
-## Date
+```json
 214
- 
+"meta": "Tout public"
 215
-Champ SharePoint :
+```
 216
  
 217
-Date début
+ou
 218
  
 219
-Affichage :
+```json
 220
- 
+"meta": "Famille"
 221
-📅 19 SEPT. 2026
+```
 222
  
 223
@@ -446,193 +446,193 @@ Affichage :
 224
  
 225
-## Horaire
+# Date début
 226
  
 227
-Champ SharePoint :
+## SharePoint
 228
  
 229
-Heure début
+```text
 230
- 
+Date début
 231
-Affichage :
+```
 232
  
 233
-🕒 14h30
+## JSON
 234
  
 235
----
+```json
 236
- 
+"dateDebut": "2026-08-21"
 237
-## Durée
+```
 238
  
 239
-Champ SharePoint :
+## Widget
 240
  
 241
-Durée
+Transformé en :
 242
  
 243
-Affichage :
+```json
 244
- 
+"date": "21 AOÛT 2026"
 245
-⏱️ 1 h 30
+"jour": "21"
 246
- 
+"mois": "AOÛT"
 247
----
+"annee": "2026"
 248
- 
+```
 249
-### Affichage de l'en-tête
+ 
 250
- 
+---
 251
-Les informations suivantes apparaissent sur une même ligne visuelle :
+ 
 252
- 
+# Heure début
 253
-📅 Date
+ 
 254
- 
+## SharePoint
 255
-🕒 Horaire
+ 
 256
- 
+```text
 257
-⏱️ Durée
+Heure début
 258
- 
+```
 259
-Exemple :
+ 
 260
- 
+## JSON
 261
-📅 19 SEPT. 2026 • 🕒 14h30 • ⏱️ 1 h 30
+ 
 262
- 
+```json
 263
----
+"heureDebut": "14:30"
 264
- 
+```
 265
-## Description
+ 
 266
- 
+## Widget
 267
-Champ SharePoint :
+ 
 268
- 
+Transformé en :
 269
-Description
+ 
 270
- 
+```json
 271
-Affichage :
+"heure": "14h30"
 272
- 
+```
 273
-Texte principal de la modale.
+ 
 274
- 
+---
 275
----
+ 
 276
- 
+# Date fin
 277
-## Tarif
+ 
 278
- 
+## SharePoint
 279
-Champ SharePoint :
+ 
 280
- 
+```text
 281
-Tarif
+Date fin
 282
- 
+```
 283
-Affichage :
+ 
 284
- 
+## JSON
 285
-Bloc Tarif.
+ 
 286
- 
+```json
 287
-Exemples :
+"dateFin": "2026-08-21"
 288
- 
+```
 289
-- Gratuit
+ 
 290
-- 5 €
+## Widget
 291
-- Adulte accompagnateur : 5 €
+ 
 292
- 
+Utilisée pour :
 293
----
-294
  
+294
+- expositions ;
 295
-# Réservation
+- dépublication automatique.
 296
  
 297
-## Champ SharePoint
+---
 298
  
 299
-Réservation
+# Heure fin
 300
  
 301
-Valeurs :
+## SharePoint
 302
  
 303
-- Oui
+```text
 304
-- Non
+Heure fin
 305
- 
+```
 306
----
+ 
 307
- 
+## JSON
 308
-## Réservation = Oui
+ 
 309
- 
+```json
 310
-Le widget affiche le bloc :
+"heureFin": "16:30"
 311
- 
+```
 312
-RÉSERVATION
+ 
 313
- 
+## Widget
 314
-et affiche les informations disponibles :
-315
  
+315
+Utilisée pour :
 316
-- Téléphone
+ 
 317
-- Email
+- export ICS ;
 318
-- Lien
+- dépublication.
 319
  
 320
@@ -640,39 +640,39 @@ et affiche les informations disponibles :
 321
  
 322
-## Réservation = Non
+# Description
 323
  
 324
-Le widget masque complètement le bloc :
+## SharePoint
 325
  
 326
-RÉSERVATION
+```text
 327
- 
+Description
 328
----
+```
 329
  
 330
-## Téléphone
+## JSON
 331
  
 332
-Champ SharePoint :
+```json
 333
- 
+"description": "..."
 334
-Téléphone
+```
 335
  
 336
-Affichage :
+## Widget
 337
  
 338
-Bloc Réservation.
+Texte principal de la modale.
 339
  
 340
@@ -680,47 +680,47 @@ Bloc Réservation.
 341
  
 342
-## Email
+# Âge conseillé
 343
  
 344
-Champ SharePoint :
+## SharePoint
 345
  
 346
-Email
+```text
 347
- 
+Âge conseillé
 348
-Affichage :
+```
 349
  
 350
-Bloc Réservation.
+## JSON
 351
  
 352
----
+```json
 353
- 
+"ageMinimum": 6
 354
-## Lien
+```
 355
  
 356
-Champ SharePoint :
+## Widget
 357
  
 358
-Lien
+Affichage :
 359
  
 360
-Affichage :
+```text
 361
- 
+À partir de 6 ans
 362
-Bouton ou lien de réservation.
+```
 363
  
 364
@@ -728,294 +728,542 @@ Bouton ou lien de réservation.
 365
  
 366
-# Partage
+# Durée
 367
  
 368
-Le widget conserve :
+## SharePoint
 369
  
 370
-- Partage par email
+```text
 371
-- Copie de lien
+Durée
 372
-- Export calendrier ICS
+```
 373
  
 374
-Aucune donnée SharePoint spécifique n'est nécessaire.
+## JSON
 375
  
 376
----
+```json
 377
- 
+"duree": "2h"
 378
-# Publication
+```
 379
  
 380
-## Événement visible
+## Widget
 381
  
 382
-Conditions :
+Affichage :
 383
  
 384
-Statut = Publié
+```text
 385
- 
+⏱️ 2h
 386
-ET
+```
 387
  
 388
-Date/Heure de fin > maintenant
+---
 389
  
 390
----
+# Tarif
 391
  
 392
-## Brouillon
+## SharePoint
 393
  
 394
-Conditions :
+```text
 395
- 
+Tarif
 396
-Statut = Brouillon
+```
 397
  
 398
-Résultat :
+## JSON
 399
  
 400
-Invisible dans le widget.
+```json
 401
- 
+"tarif": "5 €"
 402
-Visible dans SharePoint.
+```
 403
  
 404
----
+## Widget
 405
  
 406
-## Événement terminé
+Bloc Tarif.
 407
  
 408
-Conditions :
+---
 409
  
 410
-Date/Heure de fin < maintenant
+# Réservation
 411
  
 412
-Résultat :
+## SharePoint
 413
  
 414
-Invisible dans le widget.
+```text
 415
- 
+Réservation
 416
-Toujours conservé dans SharePoint.
+```
 417
  
 418
----
+Valeurs :
 419
  
 420
-# Gestion des publics
+```text
 421
- 
+Oui
 422
-## Valeurs stockées
+Non
 423
- 
+```
 424
-- Adulte
+ 
 425
-- Famille
+## JSON
 426
-- Jeune public
+ 
 427
- 
+```json
 428
-Le statut :
+"reservationObligatoire": true
 429
- 
+```
 430
-Tout public
+ 
 431
- 
+ou
 432
-n'est jamais stocké.
+ 
 433
- 
+```json
 434
----
+"reservationObligatoire": false
 435
- 
+```
 436
-## Calcul automatique
+ 
 437
- 
+## Widget
 438
-Si les trois publics sont sélectionnés :
+ 
 439
- 
+Détermine l'affichage du bloc :
 440
-- Adulte
+ 
 441
-- Famille
+```text
 442
-- Jeune public
+RÉSERVATION
 443
- 
+```
 444
-Affichage :
+ 
 445
- 
+---
 446
-Tout public
+ 
 447
- 
+# Téléphone
 448
----
+ 
 449
- 
+## SharePoint
 450
-# Filtres
+ 
 451
- 
+```text
 452
-## Tout public
+Téléphone
 453
- 
+```
 454
-Affiche tous les événements.
+ 
 455
- 
+## JSON
 456
----
+ 
 457
- 
+```json
 458
-## Adulte
+"telephone": "05 59 27 33 02"
 459
- 
+```
 460
-Affiche tous les événements contenant :
+ 
 461
- 
+## Widget
 462
-Adulte
+ 
 463
- 
+Bloc Réservation.
 464
----
+ 
 465
- 
+---
 466
-## Famille
+ 
 467
- 
+# Email
 468
-Affiche tous les événements contenant :
+ 
 469
- 
+## SharePoint
 470
-Famille
+ 
 471
- 
+```text
 472
----
+Email
 473
- 
+```
 474
-## Jeune public
+ 
 475
- 
+## JSON
 476
-Affiche tous les événements contenant :
+ 
 477
- 
+```json
 478
-Jeune public
+"email": "contact@musee.fr"
 479
- 
+```
 480
----
+ 
 481
- 
+## Widget
 482
-# Recherche
+ 
 483
- 
+Bloc Réservation.
 484
-La recherche porte sur :
-485
  
+485
+---
 486
-- le titre ;
+ 
 487
-- le type d'événement ;
+# Lien
 488
-- les publics ;
+ 
 489
-- la description.
+## SharePoint
 490
  
 491
----
+```text
 492
- 
+Lien
 493
-# Architecture cible
+```
 494
  
 495
-Microsoft Lists
+## JSON
 496
-↓
+ 
 497
-Agenda MBA
+```json
 498
-↓
+"lienComplementaire": "https://..."
 499
-Widget Agenda
+```
 500
-↓
+ 
 501
-Site musee.pau.fr
+## Widget
 502
  
 503
----
+Bouton :
 504
  
 505
-# État
+```text
 506
- 
+En savoir plus
 507
-Modèle validé.
+```
 508
  
 509
-Prochaine étape :
+ou lien de réservation.
 510
  
 511
-Connexion Microsoft Lists → Widget Agenda MBA.
+---
+512
+ 
+513
+# Visuel
+514
+ 
+515
+## SharePoint
+516
+ 
+517
+```text
+518
+Visuel
+519
+```
+520
+ 
+521
+Type :
+522
+ 
+523
+```text
+524
+Image
+525
+```
+526
+ 
+527
+## JSON
+528
+ 
+529
+```json
+530
+"image": "images/atelier.jpg"
+531
+```
+532
+ 
+533
+ou URL publique.
+534
+ 
+535
+## Widget
+536
+ 
+537
+Affichage :
+538
+ 
+539
+- carte ;
+540
+- modale ;
+541
+- agenda complet.
+542
+ 
+543
+---
+544
+ 
+545
+# Cas particulier : Exposition
+546
+ 
+547
+## SharePoint
+548
+ 
+549
+Date début
+550
+ 
+551
+Date fin
+552
+ 
+553
+## JSON
+554
+ 
+555
+```json
+556
+"type": "Exposition"
+557
+```
+558
+ 
+559
+## Widget
+560
+ 
+561
+Affichage :
+562
+ 
+563
+```text
+564
+18 SEPT. 2026
+565
+—
+566
+15 JANV. 2027
+567
+```
+568
+ 
+569
+au lieu d'une heure unique.
+570
+ 
+571
+---
+572
+ 
+573
+# Publication
+574
+ 
+575
+## Conditions
+576
+ 
+577
+```text
+578
+Statut = Publié
+579
+```
+580
+ 
+581
+ET
+582
+ 
+583
+```text
+584
+Date/Heure fin > maintenant
+585
+```
+586
+ 
+587
+---
+588
+ 
+589
+# Résultat
+590
+ 
+591
+Événement affiché.
+592
+ 
+593
+---
+594
+ 
+595
+# Brouillon
+596
+ 
+597
+## Conditions
+598
+ 
+599
+```text
+600
+Statut = Brouillon
+601
+```
+602
+ 
+603
+## Résultat
+604
+ 
+605
+Invisible dans le widget.
+606
+ 
+607
+---
+608
+ 
+609
+# Événement terminé
+610
+ 
+611
+## Conditions
+612
+ 
+613
+```text
+614
+Date/heure fin dépassée
+615
+```
+616
+ 
+617
+## Résultat
+618
+ 
+619
+Invisible dans le widget.
+620
+ 
+621
+Conservé dans Microsoft Lists.
+622
+ 
+623
+---
+624
+ 
+625
+# Référence
+626
+ 
+627
+Ce document constitue la référence officielle de transformation des données entre :
+628
+ 
+629
+```text
+630
+Microsoft Lists
+631
+↓
+632
+agenda.json
+633
+↓
+634
+Widget Agenda MBA
+635
+```
