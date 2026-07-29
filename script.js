@@ -793,9 +793,11 @@ const events = [
   reservation: "Entrée libre"
 }
 ];
-const MAX_RESULTATS_ACCUEIL = 4;
+
 const modeAgenda =
   window.location.pathname.includes("agenda.html");
+function afficherCartes(events) {
+const MAX_RESULTATS_ACCUEIL = 4;
   
 let nombreVisible =
   modeAgenda
@@ -957,6 +959,8 @@ card.appendChild(right);
 app.appendChild(card);
 
 });
+}
+afficherCartes(events);
 
 if (!modeAgenda) {
 
