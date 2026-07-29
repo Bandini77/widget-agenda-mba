@@ -1527,9 +1527,24 @@ const type =
 
     if (
   publicCoche ||
-  (adulteCoche && categorie === "Adulte") ||
-  (familleCoche && categorie === "Famille") ||
-  (jeuneCoche && categorie === "Jeune public") ||
+
+  (
+    adulteCoche &&
+    (
+      categorie === "Adulte" ||
+      categorie === "Tout public"
+    )
+  ) ||
+
+  (
+    familleCoche &&
+    categorie === "Famille"
+  ) ||
+
+  (
+    jeuneCoche &&
+    categorie === "Jeune public"
+  ) ||
       (expositionCoche && type === "Exposition") ||
 (conferenceCoche && type === "Conférence") ||
 (visiteCoche && type === "Visite atelier") ||
