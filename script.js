@@ -14,6 +14,9 @@ fetch("agenda.json")
 
     initialiserModales(events);
 
+    app.appendChild(resultatInfo);
+    app.appendChild(voirPlus);
+
   })
   .catch(error => {
     console.error("Erreur JSON :", error);

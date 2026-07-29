@@ -1,6 +1,10 @@
 # Priorité haute
 
-- Migration script.js vers agenda.json
+✅ Migration agenda.json validée
+
+Reste :
+- repositionnement bouton "Consulter tout l'agenda"
+- repositionnement compteur résultats
 
 # Priorité moyenne
 
