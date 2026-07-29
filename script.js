@@ -3,8 +3,15 @@ let eventsJSON = [];
 fetch("agenda.json")
   .then(response => response.json())
   .then(data => {
-    console.log("JSON MBA :", data);
-    console.log("Nombre d'événements :", data.length);
+
+    document
+      .querySelectorAll(".event-card")
+      .forEach(carte => carte.remove());
+
+    afficherCartes(data);
+
+    initialiserModales(data);
+
   })
   .catch(error => {
     console.error("Erreur JSON :", error);
