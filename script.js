@@ -3,12 +3,8 @@ let eventsJSON = [];
 fetch("agenda.json")
   .then(response => response.json())
   .then(data => {
-
-    eventsJSON = data;
-
-    console.log("JSON MBA :", eventsJSON);
-    console.log("Nombre d'événements :", eventsJSON.length);
-
+    console.log("JSON MBA :", data);
+    console.log("Nombre d'événements :", data.length);
   })
   .catch(error => {
     console.error("Erreur JSON :", error);
