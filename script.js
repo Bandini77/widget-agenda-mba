@@ -961,6 +961,7 @@ app.appendChild(card);
 });
 }
 afficherCartes(events);
+initialiserModales(events);
 
 if (!modeAgenda) {
 
@@ -1022,7 +1023,9 @@ detail.style.display = "none";
 
 app.appendChild(resultatInfo);
 app.appendChild(voirPlus);
-app.appendChild(detail);const buttons = document.querySelectorAll(".event-card button");
+app.appendChild(detail);
+function initialiserModales(events) {
+const buttons = document.querySelectorAll(".event-card button");
 
 buttons.forEach((button, index) => {
 
@@ -1383,7 +1386,7 @@ alert(
 
   });
 
-});
+});}
 function afficherAccueil() {
 
   const cartes =
