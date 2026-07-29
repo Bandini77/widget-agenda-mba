@@ -1,7 +1,5 @@
 # Priorité haute
 
-- Corriger le filtre des expositions sur période
-- Refonte du filtre publics
 - Migration script.js vers agenda.json
 
 # Priorité moyenne

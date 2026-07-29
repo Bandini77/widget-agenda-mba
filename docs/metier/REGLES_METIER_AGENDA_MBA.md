@@ -702,58 +702,21 @@ Valeurs :
 352
  
 353
----
+--- réservation
 354
  
 355
-## Réservation = Oui
-356
- 
-357
+Si Réservation = Oui
+
 Le widget affiche le bloc :
-358
- 
-359
-```text
-360
-RÉSERVATION
-361
-```
-362
- 
-363
-Le message :
-364
- 
-365
-```text
-366
-Obligatoire
-367
-```
-368
- 
-369
-est affiché automatiquement.
-370
- 
-371
-Le widget peut également afficher :
-372
- 
-373
+
+SUR RÉSERVATION
+
+avec les informations disponibles :
+
 - téléphone ;
-374
 - email ;
-375
-- lien de réservation.
-376
- 
-377
----
-378
- 
-379
+- lien.
 ## Réservation = Non
 380
  

@@ -1167,7 +1167,7 @@ events[index].reservationObligatoire !== false
   <div>
 
     <h4 class="reservation-toggle">
-  Réservation
+  Sur réservation
 </h4>
 
 <div class="reservation-content">
