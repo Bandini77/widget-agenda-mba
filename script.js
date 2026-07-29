@@ -803,10 +803,10 @@ const eventsSauvegarde = [
 }
 ];
 
+const MAX_RESULTATS_ACCUEIL = 4;
 const modeAgenda =
   window.location.pathname.includes("agenda.html");
 function afficherCartes(events) {
-const MAX_RESULTATS_ACCUEIL = 4;
   
 let nombreVisible =
   modeAgenda
@@ -968,7 +968,9 @@ card.appendChild(right);
 app.appendChild(card);
 
 });
+
 }
+
 afficherCartes(events);
 initialiserModales(events);
 
@@ -1030,9 +1032,9 @@ detail.style.borderRadius = "16px";
 
 detail.style.display = "none";
 
+app.appendChild(detail);
 app.appendChild(resultatInfo);
 app.appendChild(voirPlus);
-app.appendChild(detail);
 function initialiserModales(events) {
 const buttons = document.querySelectorAll(".event-card button");
 
