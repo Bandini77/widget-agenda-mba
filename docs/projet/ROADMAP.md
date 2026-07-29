@@ -496,68 +496,13 @@ Widget
 249
  
 250
-# Phase 6 – En cours
-251
- 
-252
-## Migration du widget
-253
- 
-254
-Objectif :
-255
- 
-256
-Supprimer progressivement :
-257
- 
-258
-```javascript
-259
-const events = [...]
-260
-```
-261
- 
-262
-et remplacer la source des données par :
-263
- 
-264
-```javascript
-265
-agenda.json
-266
-```
-267
- 
-268
----
-269
- 
-270
-### Travaux restants
-271
- 
-272
-- Structurer le JSON définitif
-273
-- Transformer les données SharePoint
-274
-- Faire consommer le JSON par le widget
-275
-- Vérifier les filtres
-276
-- Vérifier la recherche
-277
-- Vérifier les modales
-278
- 
-279
----
-280
- 
-281
+## Réalisé
+
+✅ Migration vers agenda.json
+✅ Recherche compatible JSON
+✅ Filtres compatibles JSON
+✅ Modales compatibles JSON
+✅ Gestion des expositions multi-dates
 # Phase 7 – Automatisation
 282
  

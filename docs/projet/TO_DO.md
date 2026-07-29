@@ -1,34 +1,59 @@
-# Priorité haute
+# TO DO – Agenda MBA
 
-✅ Migration agenda.json validée
+## Réalisé
 
-Reste :
-- repositionnement bouton "Consulter tout l'agenda"
-- repositionnement compteur résultats
+✅ Migration fonctionnelle vers agenda.json
 
-# Priorité moyenne
+✅ Cartes
 
-- Étudier compte GitHub MuseePau
-- Nettoyer les URLs bandini77
-- Préparer la production
+✅ Modales
 
-# Priorité basse
+✅ Recherche
 
-- Automatisation de agenda.json
+✅ Filtres
 
-1. Création / vérification branche integration-json
-2
-2. Analyse du chargement agenda.json
-3
-3. Création de initialiserWidget(events)
-4
-4. Migration progressive
-5
-5. Tests complets
-6
-6. Validation
+✅ Gestion des expositions multi-dates
 
-✅ Bloc "Sur réservation" créé
+✅ Nouvelle logique publics
 
-🔄 Supprimer l'affichage du terme "Obligatoire"
-lorsqu'il n'apporte aucune information supplémentaire.
+✅ Bloc "Sur réservation"
+
+---
+
+## Priorité haute
+
+### Enrichir agenda.json
+
+- ajouter les événements réels
+- ajouter les expositions
+- vérifier toutes les catégories
+
+### Étudier Microsoft Lists → agenda.json
+
+Objectif :
+
+Automatisation complète.
+
+---
+
+## Priorité moyenne
+
+### Nettoyage du code
+
+- conserver temporairement eventsSauvegarde
+- supprimer ensuite le tableau embarqué
+
+### Compte GitHub Musée
+
+- compte institutionnel
+- URL de production
+
+---
+
+## Priorité basse
+
+### Remplacement des URL bandini77
+
+- partage email
+- copier lien
+- URL agenda

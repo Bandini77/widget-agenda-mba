@@ -1,989 +1,715 @@
-# REPRISE PROJET – WIDGET AGENDA MBA
+# REPRISE DE PROJET – WIDGET AGENDA MBA
 2
  
 3
-Version : 2.0
+Dernière mise à jour : Juillet 2026
 4
  
 5
-Date : 28 juillet 2026
+---
 6
  
 7
-Statut : Document de reprise de projet
+# État général du projet
 8
  
 9
----
+Le projet Widget Agenda MBA est désormais fonctionnel.
 10
  
 11
-# Objet du document
+L'architecture cible a été validée et la migration du widget vers une alimentation par fichier JSON a été réalisée avec succès.
 12
  
 13
-Ce document permet une reprise rapide du projet Agenda MBA.
+Le widget fonctionne actuellement à partir du fichier :
 14
  
 15
-Il doit permettre à un nouveau développeur, un prestataire ou une nouvelle conversation Copilot de comprendre :
+```text
 16
- 
+agenda.json
 17
-- le contexte ;
+```
 18
-- l'architecture ;
+ 
 19
-- les choix réalisés ;
+Les fonctionnalités suivantes sont opérationnelles :
 20
-- l'état actuel du projet ;
+ 
 21
-- les prochaines étapes.
+✅ Affichage des événements
 22
  
 23
----
+✅ Gestion des expositions multi-dates
 24
  
 25
-# Présentation du projet
+✅ Modales événement
 26
  
 27
-Le projet concerne l'Agenda du Musée des Beaux-Arts de Pau.
+✅ Recherche libre
 28
  
 29
-L'objectif est de permettre aux équipes du musée d'administrer les événements sans modification du code JavaScript du widget.
+✅ Filtres publics
 30
  
 31
----
+✅ Filtres types d'activité
 32
  
 33
-# Situation actuelle
+✅ Filtres par période
 34
  
 35
-## Widget
+✅ Export calendrier (.ics)
 36
  
 37
-Version :
+✅ Compteur de résultats
 38
  
 39
-```text
+✅ Bouton "Consulter tout l'agenda"
 40
-V2 stable
+ 
 41
-```
+---
 42
  
 43
-Statut :
+# Architecture actuelle
 44
  
 45
-✅ Fonctionnel
+```text
 46
- 
+Microsoft Lists
 47
-✅ Utilisé comme référence
+↓
 48
- 
+agenda.json
 49
-✅ Recherche opérationnelle
+↓
 50
- 
+Widget Agenda MBA
 51
-✅ Filtres opérationnels
+↓
 52
- 
+GitHub Pages
 53
-✅ Modales opérationnelles
+↓
 54
- 
+Site du musée
 55
-✅ Export ICS opérationnel
+```
 56
  
 57
-✅ Responsive
+Le widget ne dépend plus directement du tableau embarqué dans le script.
 58
  
 59
----
+Le JSON constitue désormais la source principale de données du widget.
 60
  
 61
-## Microsoft 365
+---
 62
  
 63
-Statut :
+# Branches Git
 64
  
 65
-✅ Site SharePoint créé
+## Branche stable
 66
  
 67
-✅ Liste Microsoft Lists créée
+```text
 68
- 
+v2-maquette
 69
-✅ Bibliothèque Images Agenda créée
+```
 70
  
 71
-✅ Colonnes validées
+Version de référence.
 72
  
 73
-✅ Données de test créées
+---
 74
  
 75
-✅ API SharePoint testée
+## Branche de développement
 76
  
 77
----
+```text
 78
- 
+integration-json
 79
-## JSON
+```
 80
  
 81
-Statut :
+Branche de travail utilisée pour la migration JSON.
 82
  
 83
-✅ agenda.json créé
+Fusion dans `v2-maquette` à réaliser après validation complète.
 84
  
 85
-✅ Lecture JSON validée
+---
 86
  
 87
-✅ Structure compatible avec le widget
+# Structure documentaire
 88
  
 89
----
-90
- 
-91
-# Architecture retenue
-92
- 
-93
 ```text
+90
+docs/
+91
+│
+92
+├── architecture
+93
+├── metier
 94
-Microsoft Lists
+├── projet
 95
-↓
+├── reprise
 96
-Administration
+├── historique
 97
- 
+└── archive
 98
-agenda.json
+```
 99
-↓
+ 
 100
-Diffusion
+Document de reprise :
 101
  
 102
-Widget Agenda MBA
-103
-↓
-104
-GitHub Pages
-105
-↓
-106
-iframe
-107
-↓
-108
-musee.pau.fr
-109
-```
-110
- 
-111
----
-112
- 
-113
-# Architecture abandonnée
-114
- 
-115
-Architecture étudiée :
-116
- 
-117
 ```text
-118
-Microsoft Lists
-119
-↓
-120
-Widget
-121
+103
+docs/reprise/REPRISE_PROJET_WIDGET_MBA.md
+104
 ```
+105
+ 
+106
+---
+107
+ 
+108
+# Évolutions réalisées
+109
+ 
+110
+## Gestion des expositions
+111
+ 
+112
+Correction du filtre par période.
+113
+ 
+114
+Les expositions sont désormais affichées lorsqu'elles chevauchent une période sélectionnée.
+115
+ 
+116
+Ajout de :
+117
+ 
+118
+```json
+119
+dateFinISO
+120
+```
+121
+ 
 122
- 
+dans le modèle de données.
 123
----
+ 
 124
- 
-125
-## Résultat des tests
-126
- 
-127
-Les appels API SharePoint fonctionnent.
-128
- 
-129
-Les données sont récupérables.
-130
- 
-131
-Exemples récupérés :
-132
- 
-133
-- titre ;
-134
-- description ;
-135
-- publics ;
-136
-- durée ;
-137
-- réservation ;
-138
-- email ;
-139
-- téléphone ;
-140
-- visuel.
-141
- 
-142
 ---
+125
+ 
+126
+## Publics
+127
+ 
+128
+Logique métier validée :
+129
+ 
+130
+```text
+131
+Tout public
+132
+→ Tous les événements
+133
+ 
+134
+Adulte
+135
+→ Adulte + Tout public
+136
+ 
+137
+Famille
+138
+→ Famille uniquement
+139
+ 
+140
+Jeune public
+141
+→ Jeune public uniquement
+142
+```
 143
  
 144
-## Limitation rencontrée
+---
 145
  
 146
-Les visiteurs publics ne disposent pas des autorisations Microsoft 365 nécessaires.
+## Réservation
 147
  
 148
-Erreur obtenue :
+Modification du bloc :
 149
  
 150
 ```text
 151
-403 Unauthorized
+Réservation
 152
 ```
 153
  
 154
----
+vers :
 155
  
 156
-## Décision
+```text
 157
- 
+Sur réservation
 158
-Abandon de la connexion directe.
+```
 159
  
 160
-Adoption d'une couche intermédiaire :
+Le terme :
 161
  
 162
 ```text
 163
-agenda.json
+Obligatoire
 164
 ```
 165
  
 166
----
+n'est plus nécessaire dans l'interface.
 167
  
 168
-# Philosophie du projet
+---
 169
  
 170
-Le projet privilégie :
+## Migration JSON
 171
  
 172
-- la simplicité ;
+Migration fonctionnelle terminée.
 173
-- la gratuité ;
-174
-- la maintenabilité ;
-175
-- la documentation ;
-176
-- l'autonomie métier.
-177
  
+174
+Le widget lit désormais :
+175
+ 
+176
+```text
+177
+agenda.json
 178
-Les solutions complexes doivent être évitées lorsque des solutions plus simples permettent d'obtenir le même résultat.
+```
 179
  
 180
----
+au chargement.
 181
  
 182
-# Décisions structurantes
+Fonctionnalités validées :
 183
  
 184
-## Réservation
-185
- 
-186
-Valeurs autorisées :
-187
- 
-188
 ```text
+185
+✅ cartes
+186
+✅ modales
+187
+✅ recherche
+188
+✅ filtres
 189
-Oui
+✅ agenda complet
 190
-Non
+✅ export calendrier
 191
 ```
 192
  
 193
-Le widget affiche automatiquement le bloc réservation si :
+---
 194
  
 195
-```text
+# Modèle de données recommandé
 196
-Réservation = Oui
+ 
 197
-```
+Deux gabarits existent :
 198
  
 199
----
+```text
 200
- 
+Événement classique
 201
-## Publics
+Exposition
 202
- 
+```
 203
-Valeurs autorisées :
+ 
 204
- 
+Voir documentation métier.
 205
-```text
+ 
 206
-Adulte
+Les champs doivent rester cohérents d'un événement à l'autre, même si certains sont vides.
 207
-Famille
+ 
 208
-Jeune public
-209
-```
-210
- 
-211
 ---
+209
+ 
+210
+# Travaux en cours
+211
+ 
 212
- 
+## Priorité haute
 213
-## Tout public
+ 
 214
- 
+### Enrichir agenda.json
 215
-La valeur :
+ 
 216
- 
+Ajouter davantage d'événements réels.
 217
-```text
+ 
 218
-Tout public
+Vérifier :
 219
-```
+ 
 220
- 
+- événements adultes ;
 221
-n'est jamais stockée.
+- famille ;
 222
- 
+- jeune public ;
 223
-Elle est calculée automatiquement lorsque :
+- expositions ;
 224
- 
+- concerts ;
 225
-```text
+- vernissages.
 226
-Adulte
+ 
 227
-Famille
+---
 228
-Jeune public
+ 
 229
-```
+### Étudier l'automatisation
 230
  
 231
-sont tous présents.
+Objectif :
 232
  
 233
----
+```text
 234
- 
+Microsoft Lists
 235
-## PMR
+↓
 236
- 
+GitHub Action
 237
-Tous les événements sont considérés accessibles PMR.
+↓
 238
- 
+agenda.json
 239
-Aucune colonne spécifique n'existe.
+```
 240
  
 241
----
+Solution privilégiée :
 242
  
 243
-## Durée
+✅ gratuite
 244
  
 245
-Champ texte libre.
+✅ automatisée
 246
  
 247
-Exemples :
+✅ peu de maintenance
 248
  
 249
-```text
+---
 250
-45 min
+ 
 251
-1 h
+## Priorité moyenne
 252
-1 h 30
+ 
 253
-2 h
+### Nettoyage du code
 254
-Toute la journée
+ 
 255
-```
+Conserver temporairement :
 256
  
 257
----
+```javascript
 258
- 
+const eventsSauvegarde
 259
-## Archivage
+```
 260
  
 261
-Statuts retenus :
+comme sécurité.
 262
  
 263
-```text
+Suppression envisagée après validation complète.
 264
-Brouillon
+ 
 265
-Publié
+---
 266
-```
+ 
 267
- 
+### Compte GitHub institutionnel
 268
-Aucun statut :
+ 
 269
- 
+Étudier :
 270
-```text
+ 
 271
-Archivé
+```text
 272
-```
+museepau
 273
- 
+```
 274
-n'est prévu.
+ 
 275
- 
+ou équivalent.
 276
----
+ 
 277
- 
+Objectif :
 278
-# Liste SharePoint
+ 
 279
- 
+remplacer l'URL actuelle :
 280
-Site :
+ 
 281
- 
+```text
 282
-```text
+bandini77.github.io
 283
-https://agglopau.sharepoint.com/sites/TeamMuses-AGENDA
+```
 284
-```
+ 
 285
- 
+par une adresse institutionnelle.
 286
-Liste :
+ 
 287
- 
+---
 288
-```text
+ 
 289
-Agenda museepaufr
+# Vérifications avant chaque séance
 290
-```
+ 
 291
- 
+## Git
 292
----
+ 
 293
- 
+```bash
 294
-# Colonnes validées
+git status
 295
- 
-296
-- Statut
-297
-- Type d'événement
-298
-- Titre
-299
-- Date début
-300
-- Heure début
-301
-- Date fin
-302
-- Heure fin
-303
-- Publics
-304
-- Description
-305
-- Âge conseillé
-306
-- Durée
-307
-- Tarif
-308
-- Réservation
-309
-- Lien
-310
-- Email
-311
-- Téléphone
-312
-- Visuel
-313
- 
-314
----
-315
- 
-316
-# Fonctionnement métier
-317
- 
-318
-Principe :
-319
- 
-320
-```text
-321
-Une occurrence = une ligne
-322
 ```
-323
+296
  
+297
+Résultat attendu :
+298
+ 
+299
+```text
+300
+working tree clean
+301
+```
+302
+ 
+303
+---
+304
+ 
+305
+## JSON
+306
+ 
+307
+Vérifier :
+308
+ 
+309
+```text
+310
+agenda.json
+311
+```
+312
+ 
+313
+---
+314
+ 
+315
+## Widget
+316
+ 
+317
+Tester :
+318
+ 
+319
+```text
+320
+✔ affichage
+321
+✔ recherche
+322
+✔ filtres
+323
+✔ modales
 324
-Exemple :
+```
 325
  
 326
-```text
-327
-Sieste musicale
-328
- 
-329
-10 mars
-330
-12 avril
-331
-15 mai
-332
-```
-333
- 
-334
-correspond à :
-335
- 
-336
-```text
-337
-3 lignes différentes dans Microsoft Lists
-338
-```
-339
- 
-340
 ---
-341
+327
  
+328
+# Objectif final
+329
+ 
+330
+Architecture cible :
+331
+ 
+332
+```text
+333
+Microsoft Lists
+334
+↓
+335
+GitHub Action
+336
+↓
+337
+agenda.json
+338
+↓
+339
+Widget Agenda MBA
+340
+↓
+341
+Site du musée
 342
-# Publication
+```
 343
  
 344
-Visible dans le widget si :
+Le widget doit fonctionner sans intervention technique quotidienne.
 345
  
 346
-```text
+---
 347
-Statut = Publié
+ 
 348
-```
+# Situation actuelle
 349
  
 350
-et :
+Le projet n'est plus au stade prototype.
 351
  
 352
-```text
+Le widget est opérationnel.
 353
-Date/heure de fin > maintenant
+ 
 354
-```
+Les travaux restants concernent principalement :
 355
  
 356
----
+- l'alimentation des données ;
 357
- 
+- l'automatisation ;
 358
-# Brouillon
-359
- 
-360
-Visible dans Microsoft Lists.
-361
- 
-362
-Invisible dans le widget.
-363
- 
-364
----
-365
- 
-366
-# Événement terminé
-367
- 
-368
-Invisible dans le widget.
-369
- 
-370
-Toujours conservé dans Microsoft Lists.
-371
- 
-372
----
-373
- 
-374
-# Documents de référence
-375
- 
-376
-## Architecture
-377
- 
-378
-```text
-379
-ARCHITECTURE_SHAREPOINT_AGENDA_MBA.md
-380
-```
-381
- 
-382
----
-383
- 
-384
-## Métier
-385
- 
-386
-```text
-387
-REGLES_METIER_AGENDA_MBA.md
-388
-```
-389
- 
-390
----
-391
- 
-392
-## Données
-393
- 
-394
-```text
-395
-DICTIONNAIRE_DONNEES_AGENDA_MBA.md
-396
-```
-397
- 
-398
----
-399
- 
-400
-## Mapping
-401
- 
-402
-```text
-403
-MAPPING_SHAREPOINT_WIDGET.md
-404
-```
-405
- 
-406
----
-407
- 
-408
-## Décisions
-409
- 
-410
-```text
-411
-HISTORIQUE_DES_DECISIONS.md
-412
-```
-413
- 
-414
----
-415
- 
-416
-# État d'avancement estimé
-417
- 
-418
-## Widget
-419
- 
-420
-95 %
-421
- 
-422
----
-423
- 
-424
-## Métier
-425
- 
-426
-100 %
-427
- 
-428
----
-429
- 
-430
-## SharePoint
-431
- 
-432
-95 %
-433
- 
-434
----
-435
- 
-436
-## Architecture
-437
- 
-438
-95 %
-439
- 
-440
----
-441
- 
-442
-## Intégration JSON
-443
- 
-444
-50 %
-445
- 
-446
----
-447
- 
-448
-## Mise en production
-449
- 
-450
-30 %
-451
- 
-452
----
-453
- 
-454
-# Prochaine étape
-455
- 
-456
-Objectif immédiat :
-457
- 
-458
-```text
-459
-Remplacer progressivement :
-460
- 
-461
-const events = [...]
-462
- 
-463
-par
-464
- 
-465
-agenda.json
-466
-```
-467
- 
-468
----
-469
- 
-470
-Étapes :
-471
- 
-472
-1. Finaliser la structure JSON.
-473
-2. Faire consommer agenda.json par le widget.
-474
-3. Remplacer les événements de démonstration.
-475
-4. Tester filtres et recherche.
-476
-5. Étudier l'automatisation de génération du JSON.
-477
- 
-478
----
-479
- 
-480
-# Consignes pour toute reprise du projet
-481
- 
-482
-Toujours privilégier :
-483
- 
-484
-- GitHub Pages ;
-485
-- agenda.json ;
-486
-- Microsoft Lists ;
-487
-- documentation complète.
-488
- 
-489
-Éviter autant que possible :
-490
- 
-491
-- Power Apps ;
-492
-- Dataverse ;
-493
-- SPFx ;
-494
-- architectures complexes ;
-495
-- dépendances inutiles.
+- la préparation de la mise en production.

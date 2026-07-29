@@ -1,4 +1,55 @@
 [
+    {
+  "date": "29 MAI 2026",
+
+  "jour": "29",
+  "mois": "MAI",
+  "annee": "2026",
+
+  "dateISO": "2026-05-29",
+
+  "dateFin": "27 SEPT. 2026",
+
+  "jourFin": "27",
+  "moisFin": "SEPT.",
+  "anneeFin": "2026",
+
+  "dateFinISO": "2026-09-27",
+
+  "image": "images/exposition.jpg",
+
+  "title": "L'art au service des travailleurs",
+
+  "meta": "Tout public",
+  "categorie": "Tout public",
+
+  "ageMinimum": "",
+
+  "type": "Exposition",
+
+  "lieu": "",
+
+  "modaliteAcces": "Accès libre",
+
+  "statut": "Publié",
+
+  "description": "Découvrez différentes représentations du travail et les regards des artistes sur celui-ci. Misérabilisme, traditionalisme et propagande laborieuse, réalité du travail des femmes, combats sociaux, représentation moderne des travailleurs sont autant de thématiques à retrouver dans l'exposition. ",
+
+  "accessibilitePMR": true,
+
+  "tarif": "Gratuit",
+
+  "telephone": "",
+
+  "email": "",
+
+  "reservationObligatoire": false,
+
+  "reservation": "",
+
+  "lienComplementaire": "https://musee.pau.fr/fr/l-art-au-service-des-travailleurs"
+},
+
   {
     "date": "13 AOÛT 2026",
     "jour": "13",
@@ -24,6 +75,158 @@
     "reservationObligatoire": true,
     "reservation": ""
   },
+
+  {
+    "date": "14 AOÛT 2026",
+    "jour": "14",
+    "mois": "AOÛT",
+    "annee": "2026",
+    "heure": "14h30",
+    "duree": "1h30",
+    "dateISO": "2026-08-13",
+    "image": "images/atelier.jpg",
+    "title": "Jeu de l'oie en famille",
+    "meta": "Famille",
+    "categorie": "Famille",
+    "ageMinimum": "5",
+    "type": "Jeu de l'oie",
+    "lieu": "",
+    "modaliteAcces": "Réservation obligatoire",
+    "statut": "Brouillon",
+    "description": "Parcourez en famille les galeries et progressez en équipe à la recherche des œuvres en répondant à des énigmes, des questions, et mini jeux... ",
+    "accessibilitePMR": true,
+    "tarif": "5€ (payant seulement pour les adultes)",
+    "telephone": "05 59 27 33 02",
+    "email": "accueil.musee@ville-pau.fr",
+    "reservationObligatoire": true,
+    "reservation": ""
+  },
+  {
+    "date": "25 AOÛT 2026",
+    "jour": "25",
+    "mois": "AOÛT",
+    "annee": "2026",
+    "heure": "14h30",
+    "duree": "1h",
+    "dateISO": "2026-08-25",
+    "image": "images/atelier.jpg",
+    "title": "Memory en famille",
+    "meta": "Famille",
+    "categorie": "Famille",
+    "ageMinimum": "4",
+    "type": "Memory",
+    "lieu": "",
+    "modaliteAcces": "Réservation obligatoire",
+    "statut": "Brouillon",
+    "description": "Le musée des beaux-arts invite les familles à découvrir les chefs-d'œuvre de l'exposition temporaire à travers un jeu de memory géant.",
+    "accessibilitePMR": true,
+    "tarif": "5€ (payant seulement pour les adultes)",
+    "telephone": "05 59 27 33 02",
+    "email": "accueil.musee@ville-pau.fr",
+    "reservationObligatoire": true,
+    "reservation": ""
+  },
+  {
+    "date": "23 AOÛT 2026",
+    "jour": "23",
+    "mois": "AOÛT",
+    "annee": "2026",
+    "heure": "11h30",
+    "duree": "1h",
+    "dateISO": "2026-08-23",
+    "image": "images/atelier.jpg",
+    "title": "Visite contée en famille",
+    "meta": "Famille",
+    "categorie": "Famille",
+    "ageMinimum": "5",
+    "type": "Visite contée",
+    "lieu": "",
+    "modaliteAcces": "Réservation obligatoire",
+    "statut": "Brouillon",
+    "description": "Faites le plein d’histoires d’amour, de chevaliers, d’animaux, de monstres et de héros, avec cette visite contée pour petits et grands.",
+    "accessibilitePMR": true,
+    "tarif": "5€ (payant seulement pour les adultes)",
+    "telephone": "05 59 27 33 02",
+    "email": "accueil.musee@ville-pau.fr",
+    "reservationObligatoire": true,
+    "reservation": ""
+  },
+{
+    "date": "12 AOÛT 2026",
+    "jour": "12",
+    "mois": "AOÛT",
+    "annee": "2026",
+    "heure": "11h15",
+    "duree": "1h",
+    "dateISO": "2026-08-12",
+    "image": "images/atelier.jpg",
+    "title": "L'art au service des travailleurs",
+    "meta": "Adulte",
+    "categorie": "Adulte",
+    "ageMinimum": "",
+    "type": "Visite commentée",
+    "lieu": "",
+    "modaliteAcces": "Réservation obligatoire",
+    "statut": "Brouillon",
+    "description": "Un format long pour explorer les différentes thématiques de l’exposition temporaire l'Art au service des travailleurs.",
+    "accessibilitePMR": true,
+    "tarif": "5€",
+    "telephone": "05 59 27 33 02",
+    "email": "accueil.musee@ville-pau.fr",
+    "reservationObligatoire": true,
+    "reservation": ""
+  },
+{
+    "date": "25 AOÛT 2026",
+    "jour": "25",
+    "mois": "AOÛT",
+    "annee": "2026",
+    "heure": "11h15",
+    "duree": "1h",
+    "dateISO": "2026-08-25",
+    "image": "images/atelier.jpg",
+    "title": "L'art au service des travailleurs",
+    "meta": "Adulte",
+    "categorie": "Adulte",
+    "ageMinimum": "",
+    "type": "Visite commentée",
+    "lieu": "",
+    "modaliteAcces": "Réservation obligatoire",
+    "statut": "Brouillon",
+    "description": "Un format long pour explorer les différentes thématiques de l’exposition temporaire l'Art au service des travailleurs.",
+    "accessibilitePMR": true,
+    "tarif": "5€",
+    "telephone": "05 59 27 33 02",
+    "email": "accueil.musee@ville-pau.fr",
+    "reservationObligatoire": true,
+    "reservation": ""
+  },
+  {
+    "date": "18 AOÛT 2026",
+    "jour": "18",
+    "mois": "AOÛT",
+    "annee": "2026",
+    "heure": "12h",
+    "duree": "30min",
+    "dateISO": "2026-08-18",
+    "image": "images/atelier.jpg",
+    "title": "Artistes aux regards contemporains et engagés",
+    "meta": "Adulte",
+    "categorie": "Adulte",
+    "ageMinimum": "",
+    "type": "Visite flash",
+    "lieu": "",
+    "modaliteAcces": "Réservation obligatoire",
+    "statut": "Brouillon",
+    "description": "Un format court et convivial pour découvrir l'exposition temporaire l'Art au service des travailleurs via des focus sur des artistes, des œuvres ou une thématique précise.",
+    "accessibilitePMR": true,
+    "tarif": "5€",
+    "telephone": "05 59 27 33 02",
+    "email": "accueil.musee@ville-pau.fr",
+    "reservationObligatoire": true,
+    "reservation": ""
+  },
+
   {
     "date": "21 AOÛT 2026",
     "jour": "21",
