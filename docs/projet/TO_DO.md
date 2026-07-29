@@ -23,3 +23,8 @@
 5. Tests complets
 6
 6. Validation
+
+✅ Bloc "Sur réservation" créé
+
+🔄 Supprimer l'affichage du terme "Obligatoire"
+lorsqu'il n'apporte aucune information supplémentaire.

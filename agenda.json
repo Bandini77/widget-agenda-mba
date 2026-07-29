@@ -22,7 +22,7 @@
     "telephone": "05 59 27 33 02",
     "email": "accueil.musee@ville-pau.fr",
     "reservationObligatoire": true,
-    "reservation": "Obligatoire"
+    "reservation": ""
   },
   {
     "date": "21 AOÛT 2026",
@@ -47,6 +47,6 @@
     "telephone": "05 59 27 33 02",
     "email": "accueil.musee@ville-pau.fr",
     "reservationObligatoire": true,
-    "reservation": "Obligatoire"
+    "reservation": ""
   }
 ]

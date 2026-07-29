@@ -1,16 +1,18 @@
-let eventsJSON = [];
+let events = [];
 
 fetch("agenda.json")
   .then(response => response.json())
   .then(data => {
 
+    events = data;
+
     document
       .querySelectorAll(".event-card")
       .forEach(carte => carte.remove());
 
-    afficherCartes(data);
+    afficherCartes(events);
 
-    initialiserModales(data);
+    initialiserModales(events);
 
   })
   .catch(error => {
@@ -435,7 +437,7 @@ resultatInfo.style.display = "none";
 
 });
 
-const events = [
+const eventsSauvegarde = [
   {
     date: "18 SEPT. 2026",
     jour: "18",
