@@ -441,6 +441,7 @@ const events = [
     reservationObligatoire: false,
     lienComplementaire: "https://musee.pau.fr/fr/l-art-au-service-des-travailleurs",
     dateISO: "2026-09-18",
+    dateFinISO: "2027-01-15",
     image: "images/impressionnistes.jpg",
     title: "Les Impressionnistes",
     meta: "Tout public",
@@ -1981,13 +1982,28 @@ document
 
   cartes.forEach((carte, index) => {
 
-    const dateEvenement =
-      events[index].dateISO;
+    let visible = false;
 
-    if (
-      (dateDebut === "" || dateEvenement >= dateDebut) &&
-      (dateFin === "" || dateEvenement <= dateFin)
-    ) {
+if (events[index].type === "Exposition") {
+
+  const debutExpo = events[index].dateISO;
+  const finExpo = events[index].dateFinISO;
+
+  visible =
+    (dateDebut === "" || finExpo >= dateDebut) &&
+    (dateFin === "" || debutExpo <= dateFin);
+
+} else {
+
+  const dateEvenement = events[index].dateISO;
+
+  visible =
+    (dateDebut === "" || dateEvenement >= dateDebut) &&
+    (dateFin === "" || dateEvenement <= dateFin);
+
+}
+
+if (visible) {
 
       totalTrouves++;
 
