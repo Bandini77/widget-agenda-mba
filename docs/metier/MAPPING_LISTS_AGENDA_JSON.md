@@ -1,12 +1,12 @@
-# MAPPING MICROSOFT LISTS → AGENDA.JSON
+# MAPPING_LISTS_AGENDA_JSON.md
 
-Version : 1.0
+Dernière mise à jour : 31 juillet 2026
 
 ---
 
-# Principe
+# Objectif
 
-Ce document constitue la référence entre :
+Ce document constitue la référence officielle entre :
 
 Microsoft Lists
 
@@ -14,107 +14,601 @@ et
 
 agenda.json
 
+utilisé par le Widget Agenda MBA.
+
 ---
 
-# Mapping validé
+# Principe
+
+Trois types de champs existent :
+
+## Champs directs
+
+Valeur copiée directement depuis la Lists.
+
+Exemple :
 
 Titre
 ↓
 title
 
-Type Événement
-↓
-type
+---
 
-Description
-↓
-description
+## Champs transformés
 
-Âge conseillé
-↓
-ageMinimum
+Valeur issue d'une transformation simple.
 
-Durée
-↓
-duree
-
-Tarif
-↓
-tarif
-
-Téléphone
-↓
-telephone
-
-Email
-↓
-email
-
-Lien
-↓
-lienComplementaire
-
-Publics
-↓
-categorie
-
-Publics
-↓
-meta
+Exemple :
 
 Réservation
 ↓
 reservationObligatoire
 
+---
+
+## Champs calculés
+
+Valeur produite à partir d'une date ou d'une règle métier.
+
+Exemple :
+
 Date début
 ↓
-dateISO
-
-Date fin
-↓
-dateFinISO
-
----
-
-# Champs à calculer
-
-Les champs suivants peuvent être générés automatiquement :
-
-date
-
 jour
-
+↓
 mois
-
+↓
 annee
 
-jourFin
+---
 
-moisFin
+# Mapping des champs
 
-anneeFin
+## Titre
+
+Microsoft Lists :
+
+Titre
+
+agenda.json :
+
+```json
+"title"
+```
+
+Type :
+
+Direct
 
 ---
 
-# Exemple d'événement généré
+## Type d'événement
 
+Microsoft Lists :
+
+Type Événement
+
+agenda.json :
+
+```json
+"type"
+```
+
+Type :
+
+Direct
+
+---
+
+## Publics
+
+Microsoft Lists :
+
+Publics
+
+agenda.json :
+
+```json
+"categorie"
+```
+
+```json
+"meta"
+```
+
+Type :
+
+Transformé
+
+Règle :
+
+```text
+Publics = Jeune public
+↓
+categorie = Jeune public
+meta = Jeune public
+
+Publics = Famille
+↓
+categorie = Famille
+meta = Famille
+
+Publics = Tout public
+↓
+categorie = Tout public
+meta = Tout public
+
+Publics = Adulte
+↓
+categorie = Adulte
+meta = Adulte
+```
+
+---
+
+## Description
+
+Microsoft Lists :
+
+Description
+
+agenda.json :
+
+```json
+"description"
+```
+
+Type :
+
+Direct
+
+---
+
+## Âge conseillé
+
+Microsoft Lists :
+
+Âge conseillé
+
+agenda.json :
+
+```json
+"ageMinimum"
+```
+
+Type :
+
+Direct
+
+---
+
+## Durée
+
+Microsoft Lists :
+
+Durée
+
+agenda.json :
+
+```json
+"duree"
+```
+
+Type :
+
+Direct
+
+---
+
+## Tarif
+
+Microsoft Lists :
+
+Tarif
+
+agenda.json :
+
+```json
+"tarif"
+```
+
+Type :
+
+Direct
+
+---
+
+## Téléphone
+
+Microsoft Lists :
+
+Téléphone
+
+agenda.json :
+
+```json
+"telephone"
+```
+
+Type :
+
+Direct
+
+---
+
+## Email
+
+Microsoft Lists :
+
+Email
+
+agenda.json :
+
+```json
+"email"
+```
+
+Type :
+
+Direct
+
+---
+
+## Lien
+
+Microsoft Lists :
+
+Lien
+
+agenda.json :
+
+```json
+"lienComplementaire"
+```
+
+Type :
+
+Direct
+
+---
+
+## Lieu
+
+Microsoft Lists :
+
+Lieu
+
+agenda.json :
+
+```json
+"lieu"
+```
+
+Type :
+
+Direct
+
+Remarque :
+
+Le champ est conservé afin de permettre des événements hors-les-murs.
+
+---
+
+## Statut
+
+Microsoft Lists :
+
+Statut
+
+agenda.json :
+
+```json
+"statut"
+```
+
+Type :
+
+Direct
+
+Valeurs attendues :
+
+```text
+Publié
+Brouillon
+```
+
+---
+
+# Gestion de la réservation
+
+Microsoft Lists :
+
+Réservation
+
+agenda.json :
+
+```json
+"reservationObligatoire"
+```
+
+Type :
+
+Transformé
+
+Règle :
+
+```text
+Oui
+↓
+true
+
+Non
+↓
+false
+```
+
+---
+
+# Images
+
+Microsoft Lists :
+
+Visuel
+
+agenda.json :
+
+```json
+"image"
+```
+
+Type :
+
+Transformé
+
+Principe retenu :
+
+Le visuel est stocké dans SharePoint.
+
+Le flux Power Automate devra produire une URL exploitable par le widget.
+
+Point restant à finaliser.
+
+---
+
+# Accessibilité PMR
+
+agenda.json :
+
+```json
+"accessibilitePMR"
+```
+
+Type :
+
+Calculé
+
+Valeur :
+
+```json
+true
+```
+
+Règle :
+
+Tous les événements sont considérés accessibles PMR.
+
+Aucune colonne Lists n'est nécessaire.
+
+---
+
+# Date de début
+
+Microsoft Lists :
+
+Date début
+
+agenda.json :
+
+```json
+"dateISO"
+```
+
+Type :
+
+Direct
+
+Format :
+
+```text
+YYYY-MM-DD
+```
+
+---
+
+# Champs calculés depuis la date de début
+
+À partir de :
+
+Date début
+
+produire :
+
+```json
+"date"
+```
+
+```json
+"jour"
+```
+
+```json
+"mois"
+```
+
+```json
+"annee"
+```
+
+Exemple :
+
+```text
+2026-08-13
+↓
+date = 13 AOÛT 2026
+jour = 13
+mois = AOÛT
+annee = 2026
+```
+
+---
+
+# Heure
+
+Microsoft Lists :
+
+Heure début
+
+agenda.json :
+
+```json
+"heure"
+```
+
+Type :
+
+Transformé
+
+Format attendu :
+
+```text
+14h30
+```
+
+---
+
+# Gestion des expositions
+
+Les expositions utilisent une date de fin.
+
+---
+
+## Date de fin
+
+Microsoft Lists :
+
+Date fin
+
+agenda.json :
+
+```json
+"dateFinISO"
+```
+
+Type :
+
+Direct
+
+---
+
+## Champs calculés depuis la date de fin
+
+Produire :
+
+```json
+"dateFin"
+```
+
+```json
+"jourFin"
+```
+
+```json
+"moisFin"
+```
+
+```json
+"anneeFin"
+```
+
+Exemple :
+
+```text
+2026-09-27
+↓
+dateFin = 27 SEPT. 2026
+jourFin = 27
+moisFin = SEPT.
+anneeFin = 2026
+```
+
+---
+
+# Exemple d'événement classique
+
+```json
 {
-  "title": "Initiation au quilling",
-  "type": "Visite atelier",
-  "description": "...",
-  "ageMinimum": 7,
+  "date": "13 AOÛT 2026",
+  "jour": "13",
+  "mois": "AOÛT",
+  "annee": "2026",
+  "heure": "14h30",
   "duree": "2h",
-  "tarif": "5 €",
-  "telephone": "05 59 27 33 02",
-  "email": "accueil.musee@ville-pau.fr"
+  "dateISO": "2026-08-13",
+  "title": "Formes et couleurs",
+  "categorie": "Jeune public",
+  "meta": "Jeune public",
+  "ageMinimum": "6",
+  "type": "Visite atelier"
 }
+```
 
 ---
 
-# Objectif final
+# Exemple d'exposition
 
-Produire automatiquement :
+```json
+{
+  "date": "29 MAI 2026",
+  "dateISO": "2026-05-29",
+  "dateFin": "27 SEPT. 2026",
+  "dateFinISO": "2026-09-27",
+  "title": "L'art au service des travailleurs",
+  "type": "Exposition",
+  "categorie": "Tout public",
+  "meta": "Tout public"
+}
+```
 
-agenda.json
+---
 
-directement à partir de Microsoft Lists via Power Automate.
+# Étape suivante
+
+Adapter l'action :
+
+Sélectionner
+
+dans Power Automate afin de produire automatiquement l'intégralité de cette structure JSON.
+
+## Publics
+
+Source :
+
+Public (champ SharePoint multi-sélections)
+
+### Règle métier
+
+1 valeur :
+- Adulte
+- Jeune Public
+- Famille
+
+=> categorie = valeur
+=> meta = valeur
+
+3 valeurs :
+- Adulte
+- Jeune Public
+- Famille
+
+=> categorie = Tout public
+=> meta = Tout public

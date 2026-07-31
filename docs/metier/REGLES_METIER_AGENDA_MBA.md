@@ -1150,3 +1150,27 @@ Toute évolution doit respecter les principes suivants :
  
 595
 Une solution simple doit toujours être préférée à une solution complexe.
+
+# Règle métier Publics
+
+Si une seule valeur est sélectionnée :
+
+- Adulte
+- Jeune Public
+- Famille
+
+Alors :
+
+categorie = valeur
+meta = valeur
+
+Si les trois valeurs sont sélectionnées :
+
+- Adulte
+- Jeune Public
+- Famille
+
+Alors :
+
+categorie = Tout public
+meta = Tout public
