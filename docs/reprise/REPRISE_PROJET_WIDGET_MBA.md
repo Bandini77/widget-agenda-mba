@@ -270,31 +270,20 @@ Statut :
 
 ## Priorité haute
 
-### lienComplementaire
+## Champ lienComplementaire
 
-Champ SharePoint :
+Le lien complémentaire est correctement affiché dans la modale.
 
-Lien hypertexte
+Affichage :
 
-Problème :
+En savoir plus →
 
-Power Automate récupère actuellement un contenu HTML incorrect.
+Le lien est cliquable et ouvre correctement la page cible.
 
-Objectif :
+Aucune anomalie fonctionnelle actuellement constatée.
 
-Obtenir :
-
-"lienComplementaire":"https://..."
-
-Utilisations :
-
-- informations complémentaires ;
-- expositions ;
-- plateforme de réservation.
-
-Statut :
-
-🟨 À résoudre
+Une optimisation future du contenu JSON reste possible,
+mais n'est pas nécessaire au fonctionnement du widget.
 
 ---
 
