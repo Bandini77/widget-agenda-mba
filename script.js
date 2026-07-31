@@ -140,7 +140,7 @@ filtreBarre.innerHTML = `
 
 <label><input type="checkbox" id="filtre-famille">Famille</label>
 
-<label><input type="checkbox" id="filtre-jeune">Jeune public</label>
+<label><input type="checkbox" id="filtre-jeune">Jeune Public</label>
 
 `;
 
@@ -529,8 +529,8 @@ const eventsSauvegarde = [
     dateISO: "2026-09-29",
     image: "images/conte.jpg",
     title: "Les petits explorateurs",
-    meta: "Jeune public",
-    categorie: "Jeune public",
+    meta: "Jeune Public",
+    categorie: "Jeune Public",
     ageMinimum: "6",
     type: "L'heure du conte",
     description: "Visite ludique conçue spécialement pour les enfants.",
@@ -1566,7 +1566,7 @@ const type =
 
   (
     jeuneCoche &&
-    categorie === "Jeune public"
+    categorie === "Jeune Public"
   ) ||
       (expositionCoche && type === "Exposition") ||
 (conferenceCoche && type === "Conférence") ||
@@ -1752,7 +1752,7 @@ if (texte === "tout public") {
       events[index].categorie === "Tout public" ||
       events[index].categorie === "Adulte" ||
       events[index].categorie === "Famille" ||
-      events[index].categorie === "Jeune public"
+      events[index].categorie === "Jeune Public"
     )
   )
 ) {

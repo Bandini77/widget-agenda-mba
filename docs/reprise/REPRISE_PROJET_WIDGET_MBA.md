@@ -2,15 +2,19 @@
 
 Dernière mise à jour : 31 juillet 2026
 
-Document de référence permettant la reprise du projet dans une nouvelle conversation Copilot.
+---
+
+# Contexte
+
+Projet de refonte du widget Agenda du Musée des Beaux-Arts de Pau.
+
+Objectif :
+
+Remplacer l'alimentation manuelle du widget par une génération automatique d'un fichier agenda.json depuis Microsoft Lists via Power Automate.
 
 ---
 
-# Objectif du projet
-
-Créer un widget Agenda pour le Musée des Beaux-Arts de Pau alimenté automatiquement depuis Microsoft Lists.
-
-Architecture cible :
+# Architecture cible
 
 Microsoft Lists
 ↓
@@ -18,53 +22,65 @@ Power Automate
 ↓
 agenda.json
 ↓
+GitHub
+↓
 GitHub Pages
 ↓
-Widget
+Widget Agenda
 ↓
-Site internet du musée
+Site du Musée
 
 ---
 
-# État général
+# État actuel du projet
 
-Le projet est fonctionnel.
+## Statut général
 
-Le widget est alimenté via agenda.json.
+✅ Architecture validée
 
-La génération automatique du JSON depuis Microsoft Lists a été validée.
+✅ Widget fonctionnel
+
+✅ Power Automate fonctionnel
+
+✅ agenda.json généré automatiquement
+
+✅ Tests visuels concluants
+
+Projet en phase de finalisation.
 
 ---
 
-# Jalons majeurs validés
+# Réalisations majeures
 
 ## Migration JSON
 
-✅ Le widget n'utilise plus le tableau JavaScript historique.
+Le widget fonctionne désormais à partir de :
 
-✅ agenda.json est la source principale de données.
+agenda.json
+
+Les anciennes données JavaScript historiques ne constituent plus la source principale du widget.
 
 ---
 
 ## Validation Power Automate
 
-POC réalisés :
+POC validés :
 
 ✅ Création de fichier
 
 ✅ Lecture Microsoft Lists
 
-✅ Transformation des données
-
 ✅ Génération JSON
 
-✅ Génération tableau multi-événements
+✅ Génération multi-événements
 
-✅ Génération du premier agenda.json complet
+✅ Génération agenda.json complet
 
 ---
 
-## Architecture validée
+## Validation bout en bout
+
+Chaîne validée :
 
 Microsoft Lists
 ↓
@@ -82,7 +98,7 @@ Validation réalisée le 31 juillet 2026.
 
 ---
 
-# Mapping métier terminé
+# Mapping métier final
 
 ## Champs directs
 
@@ -103,6 +119,8 @@ Validation réalisée le 31 juillet 2026.
 ✅ email
 
 ✅ statut
+
+✅ image
 
 ---
 
@@ -128,129 +146,221 @@ Validation réalisée le 31 juillet 2026.
 
 ✅ dateFin
 
+✅ heure
+
 ---
 
-## Autres champs
+## Réservation
 
 ✅ reservationObligatoire
 
-✅ accessibilitePMR
+Transformation :
 
-✅ heure
+Oui
+↓
+true
 
-✅ categorie
-
-✅ meta
-
-✅ image (version GitHub)
+Non
+↓
+false
 
 ---
 
-# Règle métier Publics
+## Accessibilité
+
+✅ accessibilitePMR
+
+Valeur fixe :
+
+true
+
+---
+
+## Publics
 
 Source :
 
 Champ SharePoint multi-sélections
 
-Valeurs possibles :
+Valeurs :
 
 - Adulte
 - Jeune Public
 - Famille
 
-Règle :
+Règle métier :
 
-Une seule valeur sélectionnée :
+Une seule valeur :
 
-→ categorie = valeur
+categorie = valeur
 
-→ meta = valeur
+meta = valeur
 
-Trois valeurs sélectionnées :
+Trois valeurs :
 
-- Adulte
-- Jeune Public
-- Famille
+Adulte
++
+Jeune Public
++
+Famille
 
-→ categorie = Tout public
+↓
 
-→ meta = Tout public
+categorie = Tout public
+
+meta = Tout public
 
 ---
 
-# État Power Automate
+# Correctifs réalisés
 
-Flux actuel :
+## Filtre Jeune Public
 
-Déclencheur manuel
-↓
-Obtenir les éléments
-↓
-Sélectionner
-↓
-Créer agenda.json
+Bug constaté :
 
-Le flux n'est pas encore automatisé.
+Le filtre ne retournait aucun résultat.
 
-La génération est actuellement déclenchée manuellement.
+Cause :
+
+Différence de casse :
+
+Jeune public
+
+vs
+
+Jeune Public
+
+Correction :
+
+Alignement des valeurs du filtre sur celles du JSON.
+
+Statut :
+
+✅ Corrigé
 
 ---
 
-# Sujets restant à traiter
+## Réservation
+
+Bug constaté :
+
+Affichage :
+
+undefined
+
+dans la modale.
+
+Cause :
+
+Le champ reservation n'existe plus dans le JSON.
+
+Correction :
+
+Affichage conditionnel :
+
+${events[index].reservation ? `<p>${events[index].reservation}</p>` : ''}
+
+Statut :
+
+✅ Corrigé
+
+---
+
+# Points restant à traiter
 
 ## Priorité haute
 
-### Test du widget avec le JSON généré
+### lienComplementaire
 
-Validation :
+Champ SharePoint :
 
-- cartes
-- modales
-- filtres
-- responsive
-- expositions
+Lien hypertexte
 
----
+Problème :
 
-### Test dans le site du musée
+Power Automate récupère actuellement un contenu HTML incorrect.
 
-Validation iframe dans l'environnement réel.
+Objectif :
+
+Obtenir :
+
+"lienComplementaire":"https://..."
+
+Utilisations :
+
+- informations complémentaires ;
+- expositions ;
+- plateforme de réservation.
+
+Statut :
+
+🟨 À résoudre
 
 ---
 
 ## Priorité moyenne
 
-### Champ lienComplementaire
+### Images SharePoint
 
-Le champ SharePoint de type Hyperlien est actuellement mal interprété par Power Automate.
+Solution actuelle :
 
-Solution définitive à identifier.
+"image":"images/*.jpg"
+
+stockées dans le dépôt GitHub.
+
+Question ouverte :
+
+Faut-il basculer vers une alimentation directe depuis une bibliothèque SharePoint ?
+
+Statut :
+
+🟨 À étudier
 
 ---
 
-### Images SharePoint
+## Priorité moyenne
 
-Version actuelle :
+### Tests dans le site du musée
 
-image = images/*.jpg
+Validation :
 
-Étudier ultérieurement une alimentation directe depuis SharePoint.
+✅ cartes
+
+✅ modales
+
+✅ filtres
+
+✅ recherche
+
+✅ expositions
+
+À réaliser :
+
+iframe en environnement réel.
 
 ---
 
 ## Priorité basse
 
-### Automatisation du flux
+### Automatisation Power Automate
+
+Flux actuel :
+
+Déclencheur manuel
+
+Objectif :
 
 Déclenchement :
 
-- quotidien ;
-- horaire ;
-- ou à la modification d'un élément.
+- quotidien
+- horaire
+- ou à la modification d'un élément
 
 ---
 
-### Fusion Git
+## Git
+
+Fusion future :
 
 integration-json
 ↓
@@ -260,18 +370,8 @@ v2-maquette
 
 # Situation actuelle
 
-Le principal risque technique du projet est considéré comme levé.
+Le principal risque technique du projet est levé.
 
-La chaîne complète :
+La génération automatique de agenda.json depuis Microsoft Lists est validée.
 
-Microsoft Lists
-↓
-Power Automate
-↓
-agenda.json
-↓
-Widget
-
-est désormais démontrée et fonctionnelle.
-
-Le projet est entré dans sa phase de finalisation.
+Le projet est désormais en phase de finalisation, de tests et d'industrialisation.
