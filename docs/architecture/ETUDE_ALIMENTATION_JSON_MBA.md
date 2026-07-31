@@ -1,269 +1,277 @@
-# ETUDE_ALIMENTATION_JSON_MBA.md
+# ETUDE ALIMENTATION JSON MBA
 
-Date : juillet 2026
-
----
-
-# Contexte
-
-Le widget Agenda MBA est désormais alimenté par :
-
-```text
-agenda.json
-```
-
-La migration fonctionnelle a été validée :
-
-✅ affichage des cartes
-
-✅ modales
-
-✅ recherche
-
-✅ filtres
-
-✅ gestion des expositions
-
-✅ agenda complet
+Dernière mise à jour : 31 juillet 2026
 
 ---
 
 # Objectif
 
-Automatiser autant que possible la production de :
+Déterminer une méthode simple, robuste et pérenne permettant de générer automatiquement le fichier :
 
-```text
 agenda.json
-```
 
-à partir de :
-
-```text
-Microsoft Lists
-```
-
-sans dépendre de Visual Studio Code.
-
-Contraintes :
-
-✅ gratuit
-
-✅ simple
-
-✅ transmissible
-
-✅ peu de maintenance
-
-✅ authentification robuste
+à partir de la Microsoft Lists Agenda du Musée des Beaux-Arts de Pau.
 
 ---
 
-# État actuel
+# Contraintes du projet
 
-Microsoft Lists dispose déjà :
+## Fonctionnelles
 
-```text
-Exporter
+- simplicité d'utilisation ;
+- maintenance minimale ;
+- transmission facile à un collègue ;
+- exploitation possible sans connaissances techniques avancées.
+
+## Techniques
+
+- éviter Visual Studio Code ;
+- éviter les scripts locaux ;
+- éviter les secrets et jetons complexes ;
+- privilégier les outils déjà disponibles dans Microsoft 365 ;
+- limiter les dépendances extérieures.
+
+---
+
+# Architecture étudiée
+
+Microsoft Lists
 ↓
-Exporter au format CSV
-```
-
-accessible directement depuis l'interface.
-
-L'export CSV est obtenu en un clic.
-
----
-
-# Structure des données
-
-Les colonnes de la liste sont déjà fortement compatibles avec le widget :
-
-| Microsoft Lists | agenda.json |
-|----------------|-------------|
-| Titre | title |
-| Type Événement | type |
-| Publics | categorie / meta |
-| Description | description |
-| Âge conseillé | ageMinimum |
-| Durée | duree |
-| Tarif | tarif |
-| Email | email |
-| Téléphone | telephone |
-| Date début | dateISO |
-| Date fin | dateFinISO |
-
-Peu de transformations sont nécessaires.
-
----
-
-# Solutions envisagées
-
-## Option 1 : Export CSV manuel
-
-Architecture :
-
-```text
-Microsoft Lists
-        ↓
-Export CSV
-        ↓
-agenda.json
-        ↓
-GitHub
-        ↓
-Widget
-```
-
-Avantages :
-
-✅ très simple
-
-✅ robuste
-
-✅ aucune authentification complexe
-
-✅ aucune maintenance
-
-Inconvénients :
-
-⚠️ nécessite une intervention manuelle.
-
----
-
-## Option 2 : Power Automate
-
-Architecture :
-
-```text
-Microsoft Lists
-        ↓
 Power Automate
-        ↓
+↓
 agenda.json
-        ↓
+↓
 GitHub
-        ↓
-Widget
-```
-
-Avantages :
-
-✅ intégré à Microsoft 365
-
-✅ pas de VS Code
-
-✅ authentification Microsoft native
-
-✅ possibilité d'un déclenchement manuel
-
-✅ possibilité d'un déclenchement automatique
-
----
-
-### Déclencheur recommandé
-
-```text
-Flux de cloud instantané
-```
-
-Scénario :
-
-```text
-Mise à jour de la liste
-        ↓
-Clic sur :
-"Générer agenda.json"
-        ↓
-Création du JSON
-        ↓
-Publication
-```
-
----
-
-## Option 3 : GitHub Actions + Microsoft Graph
-
-Architecture :
-
-```text
-Microsoft Lists
-        ↓
-Microsoft Graph
-        ↓
-GitHub Actions
-        ↓
-agenda.json
-```
-
-Avantages :
-
-✅ automatisation complète
-
-Inconvénients :
-
-⚠️ authentification plus complexe
-
-⚠️ secrets et permissions
-
-⚠️ maintenance plus élevée
-
----
-
-# Constat actuel
-
-Après analyse :
-
-Option 2 apparaît comme la solution la plus équilibrée.
-
-Elle répond aux contraintes :
-
-✅ simplicité
-
-✅ robustesse
-
-✅ faible maintenance
-
-✅ fonctionnement sans VS Code
-
----
-
-# Points à vérifier
-
-## Power Automate
-
-Vérifier :
-
-- récupération de tous les éléments d'une Lists ;
-- génération d'un fichier JSON ;
-- écriture du fichier dans un emplacement exploitable ;
-- éventuelle connexion GitHub.
-
----
-
-## Authentification
-
-Éviter :
-
-- secrets expirant régulièrement ;
-- manipulations Azure complexes ;
-- dépendance à un poste de développement.
-
----
-
-# Conclusion provisoire
-
-Architecture privilégiée :
-
-```text
-Microsoft Lists
-        ↓
-Flux Power Automate
-        ↓
-agenda.json
-        ↓
-GitHub
-        ↓
+↓
 Widget Agenda MBA
-```
+↓
+Site internet du musée
 
-La décision finale sera prise après tests Power Automate.
+---
+
+# Historique de l'étude
+
+## Hypothèse initiale
+
+Utiliser une GitHub Action afin de :
+
+Microsoft Lists
+↓
+Microsoft Graph
+↓
+GitHub Action
+↓
+agenda.json
+
+---
+
+## Limites identifiées
+
+- authentification Microsoft Graph ;
+- gestion des secrets ;
+- maintenance potentielle ;
+- complexité inutile pour le besoin réel.
+
+---
+
+# Découverte Power Automate
+
+L'environnement Microsoft 365 du musée dispose :
+
+✅ Power Automate
+
+✅ Flux instantanés
+
+✅ Flux planifiés
+
+✅ Connecteur SharePoint
+
+✅ Connecteur Microsoft Lists
+
+✅ Création de fichiers SharePoint
+
+---
+
+# POC réalisés
+
+## POC 1
+
+Création d'un fichier SharePoint.
+
+Résultat :
+
+✅ Succès
+
+---
+
+## POC 2
+
+Lecture des données de Microsoft Lists.
+
+Résultat :
+
+✅ Succès
+
+La liste Agenda est accessible par le flux.
+
+---
+
+## POC 3
+
+Injection d'une donnée de Lists dans un fichier.
+
+Résultat :
+
+✅ Succès
+
+Le titre d'un événement est récupéré dynamiquement.
+
+---
+
+## POC 4
+
+Création d'un objet JSON.
+
+Résultat :
+
+✅ Succès
+
+Exemple :
+
+{
+  "title": "Initiation au quilling"
+}
+
+---
+
+## POC 5
+
+Création d'un événement JSON métier.
+
+Résultat :
+
+✅ Succès
+
+Exemple :
+
+{
+  "title": "Initiation au quilling",
+  "type": "Visite atelier",
+  "description": "..."
+}
+
+---
+
+## POC 6
+
+Mise en place d'une structure de type tableau.
+
+Résultat :
+
+✅ Succès
+
+Power Automate gère nativement les tableaux JSON.
+
+---
+
+## POC 7
+
+Génération d'un tableau JSON multi-événements.
+
+Résultat :
+
+✅ Succès
+
+Exemple :
+
+[
+  {
+    "title": "Formes et couleurs"
+  },
+  {
+    "title": "Initiation au quilling"
+  }
+]
+
+---
+
+# Découverte importante
+
+L'action :
+
+Sélectionner
+
+permet de transformer directement les données Lists en JSON.
+
+Exemple :
+
+Titre
+↓
+title
+
+Type Événement
+↓
+type
+
+Description
+↓
+description
+
+---
+
+# Flux minimal validé
+
+Déclencher manuellement un flux
+↓
+Obtenir les éléments
+↓
+Sélectionner
+↓
+Créer un fichier
+
+---
+
+# Exemple de génération réussie
+
+[
+  {
+    "title":"Formes et couleurs",
+    "type":"Visite atelier",
+    "description":"..."
+  },
+  {
+    "title":"Initiation au quilling",
+    "type":"Visite atelier",
+    "description":"..."
+  }
+]
+
+---
+
+# Conclusion
+
+La faisabilité technique de :
+
+Microsoft Lists
+↓
+Power Automate
+↓
+agenda.json
+
+est démontrée.
+
+Le projet ne se situe plus dans une phase d'étude.
+
+Il se situe désormais dans une phase de mise en œuvre.
+
+---
+
+# Étape suivante
+
+Construire le mapping complet :
+
+Microsoft Lists
+↓
+agenda.json
+
+afin de reproduire l'ensemble du modèle attendu par le widget.
