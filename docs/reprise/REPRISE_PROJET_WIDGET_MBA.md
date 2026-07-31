@@ -1,22 +1,14 @@
-# REPRISE DE PROJET - WIDGET AGENDA MBA
+# REPRISE DE PROJET – WIDGET AGENDA MBA
 
 Dernière mise à jour : 31 juillet 2026
 
-Document destiné à permettre la reprise complète du projet dans une nouvelle conversation Copilot.
+Document de référence permettant la reprise du projet dans une nouvelle conversation Copilot.
 
 ---
 
-# Présentation du projet
+# Objectif du projet
 
-Le projet consiste à créer un widget Agenda pour le Musée des Beaux-Arts de Pau.
-
-Le widget est affiché sur le site internet du musée.
-
----
-
-# Objectif final
-
-Permettre la gestion complète des événements depuis Microsoft Lists.
+Créer un widget Agenda pour le Musée des Beaux-Arts de Pau alimenté automatiquement depuis Microsoft Lists.
 
 Architecture cible :
 
@@ -26,296 +18,260 @@ Power Automate
 ↓
 agenda.json
 ↓
-GitHub
+GitHub Pages
 ↓
-Widget Agenda MBA
+Widget
 ↓
 Site internet du musée
 
 ---
 
-# État actuel
+# État général
 
-Le widget est fonctionnel.
+Le projet est fonctionnel.
 
-La migration vers agenda.json est terminée.
+Le widget est alimenté via agenda.json.
 
-Le widget n'est plus dépendant du tableau JavaScript historique.
-
----
-
-# Fonctionnalités validées
-
-✅ Cartes événements
-
-✅ Modales
-
-✅ Recherche
-
-✅ Filtres publics
-
-✅ Filtres types
-
-✅ Filtres périodes
-
-✅ Gestion des expositions multi-dates
-
-✅ Export calendrier ICS
-
-✅ Bouton Consulter tout l'agenda
-
-✅ Compteur de résultats
+La génération automatique du JSON depuis Microsoft Lists a été validée.
 
 ---
 
-# Migration JSON
+# Jalons majeurs validés
 
-Migration réalisée avec succès.
+## Migration JSON
 
-Le widget lit désormais :
+✅ Le widget n'utilise plus le tableau JavaScript historique.
 
-agenda.json
-
-comme source principale de données.
+✅ agenda.json est la source principale de données.
 
 ---
 
-# Structure actuelle du projet
-
-Branches Git :
-
-v2-maquette
-↓
-branche stable
-
-integration-json
-↓
-branche de développement
-
----
-
-# Structure documentaire
-
-docs/
-
-architecture/
-metier/
-projet/
-reprise/
-historique/
-archive/
-
----
-
-# Données
-
-Le widget fonctionne avec un fichier :
-
-agenda.json
-
-contenant actuellement plusieurs événements réels de test.
-
-Les catégories testées :
-
-✅ Exposition
-
-✅ Famille
-
-✅ Jeune public
-
-✅ Adulte
-
-✅ Visites
-
-✅ Ateliers
-
----
-
-# Architecture validée
-
-Widget
-↓
-agenda.json
-
-✅ validé
-
----
-
-Power Automate
-↓
-génération JSON
-
-✅ validé
-
----
-
-Microsoft Lists
-↓
-Power Automate
-↓
-JSON
-
-✅ validé
-
----
-
-# Microsoft Lists
-
-Liste utilisée :
-
-Agenda musee.pau.fr
-
-Principales colonnes :
-
-Titre
-
-Statut
-
-Type Événement
-
-Publics
-
-Date début
-
-Heure début
-
-Date fin
-
-Heure fin
-
-Description
-
-Âge conseillé
-
-Durée
-
-Tarif
-
-Réservation
-
-Lien
-
-Email
-
-Téléphone
-
-Visuel
-
----
-
-# Power Automate
+## Validation Power Automate
 
 POC réalisés :
 
-POC 1
-Création de fichier
+✅ Création de fichier
 
-✅ validé
+✅ Lecture Microsoft Lists
 
-POC 2
-Lecture de Microsoft Lists
+✅ Transformation des données
 
-✅ validé
+✅ Génération JSON
 
-POC 3
-Injection de données Lists
+✅ Génération tableau multi-événements
 
-✅ validé
-
-POC 4
-Création JSON
-
-✅ validé
-
-POC 5
-Création événement JSON réel
-
-✅ validé
-
-POC 6
-Gestion tableau JSON
-
-✅ validé
-
-POC 7
-Génération JSON multi-événements
-
-✅ validé
+✅ Génération du premier agenda.json complet
 
 ---
 
-# Conclusion Power Automate
-
-La chaîne suivante est démontrée :
+## Architecture validée
 
 Microsoft Lists
 ↓
 Power Automate
 ↓
 agenda.json
+↓
+GitHub
+↓
+GitHub Pages
+↓
+Widget
+
+Validation réalisée le 31 juillet 2026.
 
 ---
 
-# Documents importants
+# Mapping métier terminé
 
-REPRISE_PROJET_WIDGET_MBA.md
+## Champs directs
 
-ETUDE_ALIMENTATION_JSON_MBA.md
+✅ title
 
-MAPPING_LISTS_AGENDA_JSON.md
+✅ type
 
-REGLES_METIER_AGENDA_MBA.md
+✅ description
 
-DICTIONNAIRE_DONNEES_AGENDA_MBA.md
+✅ ageMinimum
+
+✅ duree
+
+✅ tarif
+
+✅ telephone
+
+✅ email
+
+✅ statut
 
 ---
 
-# Travaux restant à réaliser
+## Dates
+
+✅ dateISO
+
+✅ dateFinISO
+
+✅ jour
+
+✅ mois
+
+✅ annee
+
+✅ date
+
+✅ jourFin
+
+✅ moisFin
+
+✅ anneeFin
+
+✅ dateFin
+
+---
+
+## Autres champs
+
+✅ reservationObligatoire
+
+✅ accessibilitePMR
+
+✅ heure
+
+✅ categorie
+
+✅ meta
+
+✅ image (version GitHub)
+
+---
+
+# Règle métier Publics
+
+Source :
+
+Champ SharePoint multi-sélections
+
+Valeurs possibles :
+
+- Adulte
+- Jeune Public
+- Famille
+
+Règle :
+
+Une seule valeur sélectionnée :
+
+→ categorie = valeur
+
+→ meta = valeur
+
+Trois valeurs sélectionnées :
+
+- Adulte
+- Jeune Public
+- Famille
+
+→ categorie = Tout public
+
+→ meta = Tout public
+
+---
+
+# État Power Automate
+
+Flux actuel :
+
+Déclencheur manuel
+↓
+Obtenir les éléments
+↓
+Sélectionner
+↓
+Créer agenda.json
+
+Le flux n'est pas encore automatisé.
+
+La génération est actuellement déclenchée manuellement.
+
+---
+
+# Sujets restant à traiter
 
 ## Priorité haute
 
-Créer le mapping complet :
+### Test du widget avec le JSON généré
 
-Microsoft Lists
-↓
-agenda.json
+Validation :
 
-pour l'ensemble des champs utilisés par le widget.
+- cartes
+- modales
+- filtres
+- responsive
+- expositions
+
+---
+
+### Test dans le site du musée
+
+Validation iframe dans l'environnement réel.
 
 ---
 
 ## Priorité moyenne
 
-Construire la première version complète de :
+### Champ lienComplementaire
 
-agenda.json
+Le champ SharePoint de type Hyperlien est actuellement mal interprété par Power Automate.
 
-générée automatiquement depuis Microsoft Lists.
+Solution définitive à identifier.
+
+---
+
+### Images SharePoint
+
+Version actuelle :
+
+image = images/*.jpg
+
+Étudier ultérieurement une alimentation directe depuis SharePoint.
 
 ---
 
 ## Priorité basse
 
-Fusion de integration-json dans v2-maquette.
+### Automatisation du flux
 
-Suppression définitive du tableau historique eventsSauvegarde.
+Déclenchement :
 
-Compte GitHub institutionnel.
-
-Remplacement des URL bandini77.
+- quotidien ;
+- horaire ;
+- ou à la modification d'un élément.
 
 ---
 
-# État du projet
+### Fusion Git
 
-Le projet n'est plus au stade prototype.
+integration-json
+↓
+v2-maquette
 
-Les deux points critiques du projet sont désormais validés :
+---
 
-✅ Migration du widget vers agenda.json
+# Situation actuelle
 
-✅ Génération automatique JSON depuis Microsoft Lists via Power Automate
+Le principal risque technique du projet est considéré comme levé.
 
-Le risque technique majeur est considéré comme levé.
+La chaîne complète :
 
-La prochaine phase consiste à industrialiser le mapping métier afin de produire le fichier agenda.json définitif.
+Microsoft Lists
+↓
+Power Automate
+↓
+agenda.json
+↓
+Widget
+
+est désormais démontrée et fonctionnelle.
+
+Le projet est entré dans sa phase de finalisation.

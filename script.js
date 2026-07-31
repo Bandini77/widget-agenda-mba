@@ -1199,7 +1199,7 @@ events[index].reservationObligatoire !== false
 
   <p>${events[index].email}</p>
 
-  <p>${events[index].reservation}</p>
+  ${events[index].reservation ? `<p>${events[index].reservation}</p>` : ''}
 
 </div>
 
