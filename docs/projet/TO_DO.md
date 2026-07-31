@@ -253,3 +253,68 @@ Action à réaliser :
 ✅ Mapping métier terminé
 
 ✅ Génération Power Automate validée
+
+## Amélioration future
+
+Rendre les comparaisons de filtres insensibles à la casse.
+
+Utiliser :
+
+trim().toLowerCase()
+
+sur les types et catégories.
+
+Objectif :
+
+éviter les incohérences entre :
+
+- Visite flash / Visite Flash
+- Jeune Public / Jeune public
+- Adulte / adulte
+
+## Robustesse des filtres
+
+### Vérification de cohérence Lists ↔ Widget
+
+Objectif :
+
+Comparer systématiquement les valeurs des colonnes Choix de Microsoft Lists avec les valeurs utilisées dans les filtres du widget.
+
+Contrôler notamment :
+
+#### Publics
+
+- Adulte
+- Jeune Public
+- Famille
+- Tout public
+
+#### Types
+
+- Exposition
+- Visite atelier
+- Visite commentée
+- Visite contée
+- Visite flash
+- Conférence
+- Concert
+- Nocturne
+- Vernissage
+- Jeu de l'oie
+- Memory
+- Rencontre
+- Sieste musicale
+- Spectacle
+- Arrêt sur œuvre
+- Événement national
+
+But :
+
+Éviter les incohérences de casse ou de libellé :
+
+- Jeune Public / Jeune public
+- Visite flash / Visite Flash
+
+Statut :
+
+🟨 À auditer avant fusion vers v2-maquette

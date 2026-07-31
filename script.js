@@ -245,7 +245,7 @@ Sieste musicale
 
 <label>
   <input type="checkbox" id="type-visite">
-  Visite Atelier
+  Visite atelier
 </label>
 
 <label>
@@ -259,8 +259,8 @@ Sieste musicale
 </label>
 
 <label>
-  <input type="checkbox" id="type-visite-flash">
-  Visite Flash
+  <input type="checkbox" id="type-Visite-flash">
+  Visite flash
 </label>
 `;
 filtreQuand.className = "menu-filtre";
@@ -747,7 +747,7 @@ const eventsSauvegarde = [
   duree: "30min",
   dateISO: "2026-11-14",
 
-  image: "images/visite-flash.jpg",
+  image: "images/Visite-flash.jpg",
 
   title: "Visite flash : les chefs-d'œuvre",
 
@@ -1485,8 +1485,8 @@ const visiteCommenteeCoche =
 const visiteConteeCoche =
   document.getElementById("type-visite-contee").checked;
 
-const visiteFlashCoche =
-  document.getElementById("type-visite-flash").checked;
+const visiteflashCoche =
+  document.getElementById("type-Visite-flash").checked;
 
   const cartes =
     document.querySelectorAll(".event-card");
@@ -1513,7 +1513,7 @@ let totalTrouves = 0;
   !vernissageCoche &&
   !visiteCommenteeCoche &&
   !visiteConteeCoche &&
-  !visiteFlashCoche &&
+  !visiteflashCoche &&
   !nocturneCoche ;
   
 
@@ -1596,7 +1596,7 @@ const type =
 
 (visiteConteeCoche && type === "Visite contée") ||
 
-(visiteFlashCoche && type === "Visite Flash")
+(visiteflashCoche && type === "Visite flash")
     ) {
       
 totalTrouves++;
@@ -2203,7 +2203,7 @@ document
   });
 
 document
-  .getElementById("type-visite-flash")
+  .getElementById("type-Visite-flash")
   .addEventListener("change", () => {
 
     mettreAJourFiltres();

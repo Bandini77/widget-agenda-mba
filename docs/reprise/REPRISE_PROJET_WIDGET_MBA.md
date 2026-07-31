@@ -364,3 +364,22 @@ Le principal risque technique du projet est levé.
 La génération automatique de agenda.json depuis Microsoft Lists est validée.
 
 Le projet est désormais en phase de finalisation, de tests et d'industrialisation.
+## Règle importante
+
+Les filtres du widget reposent sur des comparaisons exactes.
+
+Les valeurs utilisées dans le code doivent rester strictement identiques
+aux valeurs définies dans les colonnes Choix de Microsoft Lists.
+
+Exemples :
+
+- Jeune Public
+- Famille
+- Adulte
+
+- Visite atelier
+- Visite commentée
+- Visite contée
+- Visite flash
+
+Toute modification d'un libellé dans Lists doit être répercutée dans le widget.
