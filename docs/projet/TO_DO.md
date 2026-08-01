@@ -318,3 +318,25 @@ But :
 Statut :
 
 🟨 À auditer avant fusion vers v2-maquette
+
+## Audit filtres réalisé
+
+✅ Publics conformes à Lists
+
+✅ Types conformes à Lists
+
+⚠️ Vérifier cohérence de l'id :
+type-Visite-flash
+
+⚠️ Décider si le type "Autre"
+doit disposer d'un filtre dédié.
+01/08/2026
+
+Validation de la connexion Power Automate ↔ GitHub API.
+
+Récupération réussie du SHA du fichier agenda.json.
+
+Token GitHub opérationnel.
+
+Étape suivante :
+mise à jour automatique de agenda.json via API GitHub.
