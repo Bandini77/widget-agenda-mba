@@ -367,3 +367,11 @@ Conditions :
 - automatisation GitHub validée
 - tests finaux du widget validés
 - test iframe musée validé
+## Fusion finale
+
+✅ Widget validé
+✅ Microsoft Lists validé
+✅ Power Automate validé
+✅ GitHub API validé
+
+⬜ Fusion integration-json → v2-maquette
