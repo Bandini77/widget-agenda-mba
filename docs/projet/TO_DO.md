@@ -340,3 +340,30 @@ Token GitHub opérationnel.
 
 Étape suivante :
 mise à jour automatique de agenda.json via API GitHub.
+
+## Automatisation GitHub
+
+✅ Token GitHub créé
+
+✅ HTTP Power Automate validé
+
+✅ Lecture agenda.json via GitHub API
+
+✅ SHA récupéré
+
+🟨 Tester écriture dans test.json
+
+🟨 Automatiser mise à jour agenda.json
+
+🟨 Supprimer git add / git commit / git push du processus
+
+## Fusion Git finale
+
+integration-json
+↓
+v2-maquette
+
+Conditions :
+- automatisation GitHub validée
+- tests finaux du widget validés
+- test iframe musée validé
