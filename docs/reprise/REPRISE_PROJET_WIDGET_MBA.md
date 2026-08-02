@@ -6,43 +6,43 @@ Dernière mise à jour : 01/08/2026
 
 # Présentation du projet
 
-Projet de création d'un widget Agenda pour le Musée des Beaux-Arts de Pau.
+Projet de modernisation de l'agenda du Musée des Beaux-Arts de Pau.
 
 Objectif :
 
-Construire une chaîne entièrement automatisée permettant aux équipes du musée de gérer l'agenda depuis Microsoft Lists sans modifier le code du widget.
+Permettre aux équipes du musée de gérer l'intégralité de l'agenda depuis Microsoft Lists, sans modification du code du widget et sans utilisation de Git ou VS Code.
 
-Architecture cible :
+---
+
+# Architecture finale
 
 Microsoft Lists
 ↓
 Power Automate
 ↓
-agenda.json
+Transformation JSON
 ↓
-GitHub
+GitHub API
+↓
+agenda.json
 ↓
 GitHub Pages
 ↓
-Widget
+Widget Agenda
 ↓
 Site internet du musée
 
 ---
 
-# État général du projet
+# État du projet
 
 Statut :
 
 🟢 Fonctionnel
 
-Le widget est désormais alimenté par agenda.json.
+Le projet est désormais opérationnel de bout en bout.
 
-La génération du JSON depuis Microsoft Lists est validée.
-
-Les tests fonctionnels sont validés.
-
-Le projet est entré dans une phase d'industrialisation.
+Publication GitHub automatisée validée.
 
 ---
 
@@ -52,52 +52,84 @@ Dépôt :
 
 widget-agenda-mba
 
-Branche de développement principale :
+Branche active :
 
 integration-json
 
-GitHub Pages est actuellement publié depuis :
+Fusion finale restant à effectuer :
 
 integration-json
+↓
+v2-maquette
 
 ---
 
-# Architecture validée
-
-## Source métier
-
-Microsoft Lists
+# Microsoft Lists
 
 Liste :
 
 Agenda musee.pau.fr
 
----
+Gestion métier réalisée exclusivement dans cette liste.
 
-## Transformation des données
-
-Power Automate
-
-Flux :
-
-- Génération agenda JSON (manuel)
-- Génération agenda JSON (planifié)
+Les agents du musée n'ont plus besoin de modifier le code du widget.
 
 ---
 
-## Diffusion
+# Types d'événements
 
-GitHub Pages
+Valeurs de référence :
 
-Chargement du widget :
-
-```javascript
-fetch("agenda.json")
-```
+- Arrêt sur oeuvre
+- Conférence
+- Concert
+- Événement national
+- Exposition
+- Jeu de l'oie
+- L'heure du conte
+- Memory
+- Nocturne
+- Rencontre
+- Sieste musicale
+- Spectacle
+- Vernissage
+- Visite atelier
+- Visite commentée
+- Visite contée
+- Visite flash
+- Autre
 
 ---
 
-# Mapping métier validé
+# Publics
+
+Valeurs de référence :
+
+- Adulte
+- Jeune Public
+- Famille
+
+Règle métier :
+
+Si :
+
+Adulte
++
+Famille
++
+Jeune Public
+
+sont sélectionnés
+
+↓
+
+categorie = Tout public
+
+meta = Tout public
+
+---
+
+# Mapping validé
 
 ## Champs principaux
 
@@ -151,127 +183,9 @@ fetch("agenda.json")
 
 ---
 
-## Réservation
+# Nettoyages réalisés
 
-Source :
-
-Réservation
-
-Transformation :
-
-Oui
-↓
-true
-
-Non
-↓
-false
-
-Champ JSON :
-
-reservationObligatoire
-
----
-
-## Accessibilité
-
-Champ :
-
-accessibilitePMR
-
-Valeur actuelle :
-
-true
-
----
-
-# Publics
-
-Champ Lists :
-
-Public
-
-Type :
-
-Choix multiples
-
-Valeurs :
-
-- Adulte
-- Jeune Public
-- Famille
-
-Règle métier :
-
-Une seule valeur sélectionnée :
-
-categorie = valeur
-
-meta = valeur
-
-Trois valeurs sélectionnées :
-
-Adulte
-+
-Jeune Public
-+
-Famille
-
-↓
-
-categorie = Tout public
-
-meta = Tout public
-
----
-
-# Images
-
-Champ Lists :
-
-NomImage
-
-Exemple :
-
-atelier.jpg
-
-Transformation :
-
-```json
-"image":"images/atelier.jpg"
-```
-
-Stockage actuel :
-
-Dossier images du dépôt GitHub.
-
----
-
-# Liens complémentaires
-
-Champ Lists :
-
-Lien
-
-Type :
-
-Lien hypertexte
-
-Résultat :
-
-Affichage d'un lien :
-
-En savoir plus →
-
-dans la modale événement.
-
-Lien fonctionnel.
-
----
-
-# Nettoyage JSON réalisé
-
-## Valeurs nulles
+## Null → chaîne vide
 
 Avant :
 
@@ -285,7 +199,7 @@ Après :
 "telephone": ""
 ```
 
-Mêmes corrections pour :
+Même traitement pour :
 
 - ageMinimum
 - duree
@@ -294,18 +208,18 @@ Mêmes corrections pour :
 
 ---
 
-## Mois
+## Mois normalisés
 
 Avant :
 
 ```json
-"mois":"août"
+"août"
 ```
 
 Après :
 
 ```json
-"mois":"AOÛT"
+"AOÛT"
 ```
 
 Même traitement pour :
@@ -315,52 +229,61 @@ Même traitement pour :
 
 ---
 
-# Types d'événements Lists
+# Liens complémentaires
 
-Valeurs de référence :
+Champ Lists :
 
-- Arrêt sur oeuvre
-- Conférence
-- Concert
-- Événement national
-- Exposition
-- Jeu de l'oie
-- L'heure du conte
-- Memory
-- Nocturne
-- Rencontre
-- Sieste musicale
-- Spectacle
-- Vernissage
-- Visite atelier
-- Visite commentée
-- Visite contée
-- Visite flash
-- Autre
+Lien
+
+Transformation :
+
+Lien hypertexte fonctionnel dans les modales.
+
+---
+
+# Images
+
+Champ Lists :
+
+NomImage
+
+Transformation :
+
+```json
+"image":"images/fichier.jpg"
+```
+
+Stockage :
+
+Dépôt GitHub
+
+dossier :
+
+images/
 
 ---
 
 # Audit des filtres
 
-Audit réalisé le 01/08/2026.
+Audit effectué.
 
 Résultat :
 
-✅ Publics conformes
+✅ Conforme
 
-✅ Types conformes
+Publics :
 
-✅ Visite atelier conforme
+- Adulte
+- Jeune Public
+- Famille
 
-✅ Visite commentée conforme
+Types :
 
-✅ Visite contée conforme
-
-✅ Visite flash conforme
-
-✅ Exposition conforme
-
-✅ Aucun écart résiduel identifié
+- Visite atelier
+- Visite commentée
+- Visite contée
+- Visite flash
+- etc.
 
 ---
 
@@ -370,15 +293,7 @@ Résultat :
 
 Problème :
 
-Jeune public
-
-≠
-
-Jeune Public
-
-Correction :
-
-Alignement du libellé.
+Jeune public ≠ Jeune Public
 
 Statut :
 
@@ -390,15 +305,15 @@ Statut :
 
 Problème :
 
-Visite Flash
+Visite Flash ≠ Visite flash
 
-≠
+Statut :
 
-Visite flash
+✅ Corrigé
 
-Correction :
+---
 
-Alignement du libellé.
+## Valeurs nulles
 
 Statut :
 
@@ -408,22 +323,6 @@ Statut :
 
 ## Réservation
 
-Problème :
-
-Affichage du texte :
-
-undefined
-
-dans la modale.
-
-Cause :
-
-Champ reservation absent du JSON.
-
-Correction :
-
-Affichage conditionnel.
-
 Statut :
 
 ✅ Corrigé
@@ -432,11 +331,9 @@ Statut :
 
 # Widget
 
-Validation réalisée avec :
+Validation réalisée.
 
-10 événements
-
-Résultats :
+Fonctionnalités :
 
 ✅ Cartes
 
@@ -450,11 +347,9 @@ Résultats :
 
 ✅ Expositions
 
-✅ Accueil
-
 ✅ Agenda complet
 
-✅ Liens complémentaires
+✅ Accueil
 
 ---
 
@@ -464,240 +359,162 @@ Résultats :
 
 Nom :
 
-Génération agenda JSON (manuel)
+Génération agenda JSON (manuel) - GitHub
+
+Objectif :
+
+Publication immédiate.
 
 Usage :
 
 - correction urgente
-- nouvelle publication
-- test
+- changement d'horaire
+- changement de date
+- ajout d'événement
+- publication immédiate
 
 Statut :
 
-✅ opérationnel
+✅ Fonctionnel
 
 ---
 
-## Flux planifié
+## Flux automatique
 
 Nom :
 
-Génération agenda JSON
+Génération agenda JSON (automatique)
 
-Type :
+Déclencheur :
 
-Planifié
+Périodicité
 
 Statut :
 
-✅ créé
+✅ Fonctionnel
 
-Automatisation à finaliser.
+---
+
+# Publication GitHub
+
+Solution retenue :
+
+GitHub API
+
+---
+
+## Étapes automatisées
+
+GET agenda.json
+↓
+Récupération SHA
+↓
+Génération JSON
+↓
+Encodage Base64
+↓
+PUT agenda.json
+↓
+Commit GitHub
+↓
+GitHub Pages
 
 ---
 
 # GitHub API
 
-Objectif :
+Validations réalisées
 
-Supprimer totalement :
+✅ Token GitHub créé
 
-- téléchargement manuel
-- git add
-- git commit
-- git push
+✅ Action HTTP fonctionnelle
 
----
+✅ Lecture du SHA
 
-## Tests validés
+✅ Écriture dans GitHub
 
-### HTTP Power Automate
+✅ Commit automatique GitHub
 
-Test :
-
-GET
-
-Vers :
-
-https://api.github.com
-
-Résultat :
-
-✅ succès
+✅ Mise à jour automatique agenda.json
 
 ---
 
-### GitHub API
+# Fichiers de test
 
-Test :
+Historique :
 
-GET agenda.json
+test.json
 
-Branche :
+agenda-json-test.json
+
+Utilisés uniquement pour validation.
+
+Peuvent être supprimés après validation complète.
+
+---
+
+# Procédure de secours
+
+En cas d'urgence :
+
+Exécuter :
+
+Génération agenda JSON (manuel) - GitHub
+
+Permet de republier immédiatement agenda.json.
+
+---
+
+# Actions restant à réaliser
+
+## Priorité 1
+
+Surveiller quelques exécutions automatiques.
+
+---
+
+## Priorité 2
+
+Supprimer :
+
+- agenda-json-test.json
+
+une fois la stabilité confirmée.
+
+---
+
+## Priorité 3
+
+Fusion Git :
 
 integration-json
-
-Résultat :
-
-✅ succès
-
-Retour :
-
-```json
-{
-  "name":"agenda.json",
-  "path":"agenda.json",
-  "sha":"054e5438c52a461f078c666d481ed2c8c9bfd7b2"
-}
-```
-
----
-
-### Token GitHub
-
-Créé.
-
-Permissions :
-
-Repository contents
-
-Read and write
-
-Statut :
-
-✅ opérationnel
-
----
-
-# Sujet actuellement en cours
-
-Automatisation GitHub.
-
-Objectif :
-
-Power Automate
 ↓
-GitHub API
-↓
-agenda.json
-↓
-GitHub Pages
-
-sans :
-
-- VS Code
-- Git local
-- git add
-- git commit
-- git push
+v2-maquette
 
 ---
 
-# Prochaine étape
+## Priorité 4
 
-Créer dans le dépôt :
+Créer un tag Git :
 
-test.json
-
-Tester :
-
-Power Automate
-↓
-PUT GitHub API
-↓
-test.json
-
-Une fois validé :
-
-remplacer automatiquement agenda.json.
+v1-production
 
 ---
 
-# Dette technique
+# Conclusion
 
-## eventsSauvegarde
+Le projet est désormais fonctionnel de bout en bout.
 
-Toujours présent dans script.js.
-
-N'est plus utilisé comme source principale.
-
-À conserver temporairement.
-
----
-
-## Type "Autre"
-
-Pas de filtre dédié.
-
-Choix assumé.
-
-Utilisé comme catégorie de secours pour les événements exceptionnels.
-
----
-
-# Situation actuelle
-
-Le principal risque technique du projet est levé.
-
-La chaîne :
+Architecture validée :
 
 Microsoft Lists
 ↓
 Power Automate
 ↓
-agenda.json
+GitHub API
 ↓
 GitHub Pages
 ↓
 Widget
 
-est validée.
-
-Le projet est désormais dans sa phase finale d'industrialisation.
-
-## GitHub API
-
-✅ Token GitHub créé
-
-✅ Lecture agenda.json
-
-✅ Récupération du SHA
-
-✅ Premier PUT GitHub réussi
-
-✅ Modification automatique de test.json
-
-✅ Commit GitHub créé automatiquement
-
-La communication Power Automate ↔ GitHub est validée.
-
-Prochaine étape :
-
-Automatisation de la mise à jour de agenda.json.
-## GitHub API
-
-✅ Token GitHub créé
-
-✅ Action HTTP Power Automate validée
-
-✅ Lecture agenda.json validée
-
-✅ Récupération du SHA validée
-
-✅ Écriture dans GitHub validée
-
-✅ Commit GitHub automatique validé
-
-✅ Modification du fichier test.json validée
-
-Architecture validée :
-
-Power Automate
-↓
-GitHub API
-↓
-Commit automatique GitHub
-
-Étape suivante :
-
-Remplacer test.json par agenda.json.
+Aucune intervention Git n'est désormais nécessaire pour la publication de l'agenda.

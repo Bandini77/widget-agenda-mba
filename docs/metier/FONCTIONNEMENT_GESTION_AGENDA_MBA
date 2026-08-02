@@ -1,0 +1,292 @@
+# REGLE_METIER_GESTION_AGENDA_MBA
+
+Guide utilisateur
+
+Musée des Beaux-Arts de Pau
+
+---
+
+# Objectif
+
+Permettre la publication de l'agenda du musée sans intervention technique.
+
+Toute la gestion se fait depuis Microsoft Lists.
+
+---
+
+# Ajouter un événement
+
+## Étape 1
+
+Ouvrir :
+
+Microsoft Lists
+
+Liste :
+
+Agenda musee.pau.fr
+
+---
+
+## Étape 2
+
+Créer un nouvel élément.
+
+---
+
+## Étape 3
+
+Compléter les champs obligatoires.
+
+### Titre
+
+Exemple :
+
+Visite commentée de l'exposition
+
+---
+
+### Type d'événement
+
+Choisir une valeur existante :
+
+- Exposition
+- Visite atelier
+- Visite commentée
+- Visite contée
+- Visite flash
+- Conférence
+- etc.
+
+Ne jamais modifier les intitulés existants.
+
+---
+
+### Public
+
+Choisir :
+
+- Adulte
+- Jeune Public
+- Famille
+
+Pour un événement tout public :
+
+sélectionner :
+
+- Adulte
+- Jeune Public
+- Famille
+
+---
+
+### Date
+
+Date de début.
+
+---
+
+### Heure
+
+Heure de début.
+
+---
+
+### Description
+
+Texte de présentation.
+
+---
+
+### Image
+
+Indiquer le nom exact du fichier image.
+
+Exemple :
+
+atelier.jpg
+
+---
+
+### Tarif
+
+Exemple :
+
+Gratuit
+
+ou
+
+5 €
+
+---
+
+### Réservation
+
+Choisir :
+
+Oui
+
+ou
+
+Non
+
+---
+
+### Téléphone
+
+Coordonnées de réservation.
+
+---
+
+### Email
+
+Coordonnées de réservation.
+
+---
+
+### Lien
+
+Lien complémentaire éventuel.
+
+---
+
+# Modifier un événement
+
+Modifier directement la fiche correspondante dans Microsoft Lists.
+
+Enregistrer.
+
+---
+
+# Publication immédiate
+
+Utiliser :
+
+Génération agenda JSON (manuel) - GitHub
+
+Cette procédure est recommandée après :
+
+- correction urgente
+- changement de date
+- changement d'horaire
+- annulation
+- ajout d'événement
+
+---
+
+# Publication automatique
+
+Flux :
+
+Génération agenda JSON (automatique)
+
+Exécution quotidienne.
+
+Aucune action nécessaire.
+
+---
+
+# Procédure de publication manuelle
+
+## Étape 1
+
+Ouvrir :
+
+Power Automate
+
+---
+
+## Étape 2
+
+Lancer :
+
+Génération agenda JSON (manuel) - GitHub
+
+---
+
+## Étape 3
+
+Cliquer :
+
+Exécuter
+
+---
+
+## Étape 4
+
+Attendre la fin du flux.
+
+Résultat attendu :
+
+Toutes les étapes apparaissent en vert.
+
+---
+
+## Étape 5
+
+Vérifier :
+
+agenda.json
+
+dans GitHub.
+
+---
+
+# En cas de problème
+
+## Vérifier Microsoft Lists
+
+Les données sont-elles correctes ?
+
+---
+
+## Vérifier Power Automate
+
+Le flux s'est-il terminé sans erreur ?
+
+---
+
+## Vérifier GitHub
+
+Un commit automatique a-t-il été créé ?
+
+---
+
+# Règles importantes
+
+## Ne jamais modifier
+
+- agenda.json directement
+- script.js
+- index.html
+- agenda.html
+
+Les modifications métier doivent être réalisées uniquement dans Microsoft Lists.
+
+---
+
+## Ne jamais modifier
+
+Les valeurs des Types d'événement sans audit préalable du widget.
+
+---
+
+## Toujours utiliser
+
+Le flux manuel en cas de correction urgente.
+
+---
+
+# Architecture fonctionnelle
+
+Microsoft Lists
+↓
+Power Automate
+↓
+GitHub
+↓
+GitHub Pages
+↓
+Widget Agenda
+
+Le widget est entièrement alimenté par les données saisies dans Microsoft Lists.

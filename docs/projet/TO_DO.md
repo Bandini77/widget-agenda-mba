@@ -1,377 +1,191 @@
-# TO DO – Agenda MBA
+# TO_DO - Clôture du projet Widget Agenda MBA
 
-Dernière mise à jour : 31 juillet 2026
+## Statut général
 
----
+Le projet est fonctionnel de bout en bout.
 
-# Réalisé
+Architecture validée :
 
-## Widget
-
-✅ Migration complète vers agenda.json
-
-✅ Cartes événements
-
-✅ Modales
-
-✅ Recherche
-
-✅ Filtres publics
-
-✅ Filtres types
-
-✅ Filtres périodes
-
-✅ Gestion des expositions multi-dates
-
-✅ Export calendrier
-
-✅ Compteur de résultats
-
-✅ Bouton "Consulter tout l'agenda"
-
----
-
-## Architecture
-
-✅ Architecture JSON validée
-
-✅ Widget → agenda.json validé
-
-✅ Structure du fichier agenda.json validée
-
----
-
-## Power Automate
-
-✅ POC 1 : création de fichier
-
-✅ POC 2 : lecture Microsoft Lists
-
-✅ POC 3 : injection de données
-
-✅ POC 4 : génération JSON
-
-✅ POC 5 : génération événement JSON
-
-✅ POC 6 : tableau JSON
-
-✅ POC 7 : JSON multi-événements
-
----
-
-## Mapping terminé
-
-✅ title
-
-✅ type
-
-✅ description
-
-✅ ageMinimum
-
-✅ duree
-
-✅ tarif
-
-✅ telephone
-
-✅ email
-
-✅ lienComplementaire
-
-✅ statut
-
-✅ reservationObligatoire
-
-✅ accessibilitePMR
-
-✅ dateISO
-
-✅ dateFinISO
-
-✅ jour
-
-✅ mois
-
-✅ annee
-
-✅ date
-
-✅ jourFin
-
-✅ moisFin
-
-✅ anneeFin
-
-✅ dateFin
-
-✅ heure
-
----
-
-# En cours
-
-## Publics
-
-Implémenter :
-
-Publics
+Microsoft Lists
 ↓
-categorie
-
-Publics
+Power Automate
 ↓
-meta
-
-Règle métier :
-
-- Adulte → Adulte
-- Jeune Public → Jeune Public
-- Famille → Famille
-
-Si les trois publics sont sélectionnés :
-
-- Adulte
-- Jeune Public
-- Famille
-
-Alors :
-
-categorie = Tout public
-
-meta = Tout public
-
----
-
-## Images
-
-Étudier :
-
-Visuel SharePoint
+GitHub API
 ↓
-URL image
+agenda.json
 ↓
-champ image
-
----
-
-# À faire
-
-## Génération agenda.json final
-
-Produire une version complète du JSON compatible avec le widget.
-
----
-
-## Tests musée
-
-Validation :
-
-- page agenda
-- page accueil
-- iframe
-- mobile
-- responsive
-
----
-
-## Git
-
-Fusion :
-
-integration-json
+GitHub Pages
 ↓
-v2-maquette
+Widget Agenda
 
 ---
 
-## Nettoyage
+# Finalisation SharePoint
 
-Suppression des expérimentations Power Automate devenues inutiles.
+## Historique des publications
 
-Conserver :
+### Flux manuel
 
-Déclencheur manuel
-↓
-Obtenir les éléments
-↓
-Sélectionner
-↓
-Créer agenda.json
+- [x] Création de la liste "Historique publications Agenda"
+- [x] Alimentation de la liste depuis le flux manuel
 
----
+### Flux automatique
 
-# Plus tard
-
-## GitHub institutionnel
-
-Étudier le transfert depuis bandini77.
+- [x] Ajouter l'action "Créer un élément" dans le flux automatique
+- [x] Renseigner :
+  - TypePublication = Automatique
+  - Statut = Succès
+  - DatePublication = utcNow()
+  - Commentaire = Publication automatique exécutée avec succès
+- [x] Tester le fonctionnement
+- [x] Vérifier l'écriture dans la liste
 
 ---
 
-## Événements hors-les-murs
+## Page SharePoint
 
-Ajouter un champ Lieu si le besoin apparaît.
+### Publication
+
+- [x] Créer une vue "Dernière publication"
+- [x] Trier par DatePublication décroissante
+- [x] Limiter l'affichage à 1 élément
+- [x] Intégrer la vue dans la page SharePoint
+
+### Ergonomie
+
+- [ ] Finaliser les intitulés des liens rapides
+- [ ] Harmoniser les textes d'accompagnement
+- [ ] Vérifier l'affichage mobile
+
+### Bouton de publication (mis en pause)
+
+- [ ] Étudier l'intégration directe du flux manuel dans SharePoint
+- [ ] Tester les possibilités offertes par l'identifiant du flux
+- [ ] Évaluer un bouton "Publier les modifications"
+- [ ] Éviter l'ouverture manuelle de Power Automate si possible
 
 ---
 
-# État du projet
+# Validation métier
 
-Migration JSON :
-✅ Terminée
+## Contrôles fonctionnels
 
-Architecture cible :
-✅ Validée
+- [ ] Vérifier une exécution automatique complète
+- [ ] Vérifier la création automatique du commit GitHub
+- [ ] Vérifier la mise à jour de agenda.json
+- [ ] Vérifier le widget après exécution automatique
+- [ ] Vérifier la liste Historique publications Agenda
 
-Power Automate :
-✅ Validé
+## Vérifications finales
 
-Mapping :
-🟨 Quasi terminé
+- [ ] Vérifier les filtres
+- [ ] Vérifier les modales
+- [ ] Vérifier les liens complémentaires
+- [ ] Vérifier les images
+- [ ] Vérifier la recherche
 
-Production :
-🟨 En préparation
+---
 
-Mise en ligne finale :
-⬜ À venir
+# Nettoyage
 
-## Lien hypertexte SharePoint
+## GitHub
 
-Le champ SharePoint "Lien" (type Hyperlien)
-renvoie actuellement une chaîne HTML
-lors de l'utilisation dans Power Automate.
+- [x] Suppression de test.json
+- [ ] Suppression de agenda-json-test.json
 
-Action à réaliser :
+## Dépôt
 
-- identifier le format interne du champ ;
-- récupérer uniquement l'URL ;
-- alimenter lienComplementaire.
+- [ ] Vérifier qu'aucun fichier temporaire ne subsiste
+- [ ] Vérifier les branches
 
-✅ Premier agenda.json généré automatiquement
+---
 
-✅ Mapping métier terminé
+# Documentation
 
-✅ Génération Power Automate validée
+## Documentation métier
 
-## Amélioration future
+- [x] Guide utilisateur
+- [x] Procédure de gestion de l'agenda
+- [x] Reprise de projet technique
 
-Rendre les comparaisons de filtres insensibles à la casse.
+## Mise à jour finale
 
-Utiliser :
+- [ ] Ajouter la partie Historique des publications
+- [ ] Ajouter le portail SharePoint
+- [ ] Ajouter le flux automatique finalisé
+- [ ] Ajouter le bouton de publication (si retenu)
 
-trim().toLowerCase()
+---
 
-sur les types et catégories.
+# Git
+
+## Fusion
+
+- [ ] Fusionner integration-json vers v2-maquette
+- [ ] Vérifier la branche fusionnée
+- [ ] Publier la branche
+
+## Version
+
+- [ ] Créer le tag :
+
+v1-production
+
+Exemple :
+
+git tag -a v1-production -m "Premiere version industrialisee"
+git push origin v1-production
+
+---
+
+# Mise en production
+
+Le projet sera considéré comme officiellement opérationnel lorsque :
+
+- [x] Publication GitHub automatique validée
+- [x] Flux manuel validé
+- [x] Widget alimenté depuis Microsoft Lists
+- [ ] Flux automatique validé en condition réelle
+- [ ] Historique automatique validé
+- [ ] Dernière publication affichée sur SharePoint
+- [ ] agenda-json-test.json supprimé
+- [ ] Fusion Git réalisée
+
+---
+
+# Après clôture
+
+## Surveillance
+
+- [ ] Contrôler les premières publications automatiques
+- [ ] Vérifier l'absence d'erreurs GitHub
+- [ ] Vérifier l'affichage du widget après plusieurs jours
+
+## Évolutions futures (facultatives)
+
+- [ ] Bouton SharePoint de publication directe
+- [ ] Tableau de bord de suivi des publications
+- [ ] Notification Teams après publication
+- [ ] Notification d'échec de publication
+## Migration GitHub institutionnel
+
+- [ ] Créer le compte GitHub institutionnel
+- [ ] Transférer le dépôt widget-agenda-mba
+- [ ] Créer un nouveau token GitHub
+- [ ] Mettre à jour les flux Power Automate
+- [ ] Mettre à jour les liens GitHub Pages
+- [ ] Vérifier la publication automatique
+## V2 - Gestion des images Microsoft 365
 
 Objectif :
 
-éviter les incohérences entre :
+Permettre l'utilisation directe des images SharePoint
+sans dépôt GitHub.
 
-- Visite flash / Visite Flash
-- Jeune Public / Jeune public
-- Adulte / adulte
+Étapes :
 
-## Robustesse des filtres
-
-### Vérification de cohérence Lists ↔ Widget
-
-Objectif :
-
-Comparer systématiquement les valeurs des colonnes Choix de Microsoft Lists avec les valeurs utilisées dans les filtres du widget.
-
-Contrôler notamment :
-
-#### Publics
-
-- Adulte
-- Jeune Public
-- Famille
-- Tout public
-
-#### Types
-
-- Exposition
-- Visite atelier
-- Visite commentée
-- Visite contée
-- Visite flash
-- Conférence
-- Concert
-- Nocturne
-- Vernissage
-- Jeu de l'oie
-- Memory
-- Rencontre
-- Sieste musicale
-- Spectacle
-- Arrêt sur œuvre
-- Événement national
-
-But :
-
-Éviter les incohérences de casse ou de libellé :
-
-- Jeune Public / Jeune public
-- Visite flash / Visite Flash
-
-Statut :
-
-🟨 À auditer avant fusion vers v2-maquette
-
-## Audit filtres réalisé
-
-✅ Publics conformes à Lists
-
-✅ Types conformes à Lists
-
-⚠️ Vérifier cohérence de l'id :
-type-Visite-flash
-
-⚠️ Décider si le type "Autre"
-doit disposer d'un filtre dédié.
-01/08/2026
-
-Validation de la connexion Power Automate ↔ GitHub API.
-
-Récupération réussie du SHA du fichier agenda.json.
-
-Token GitHub opérationnel.
-
-Étape suivante :
-mise à jour automatique de agenda.json via API GitHub.
-
-## Automatisation GitHub
-
-✅ Token GitHub créé
-
-✅ HTTP Power Automate validé
-
-✅ Lecture agenda.json via GitHub API
-
-✅ SHA récupéré
-
-🟨 Tester écriture dans test.json
-
-🟨 Automatiser mise à jour agenda.json
-
-🟨 Supprimer git add / git commit / git push du processus
-
-## Fusion Git finale
-
-integration-json
-↓
-v2-maquette
-
-Conditions :
-- automatisation GitHub validée
-- tests finaux du widget validés
-- test iframe musée validé
-## Fusion finale
-
-✅ Widget validé
-✅ Microsoft Lists validé
-✅ Power Automate validé
-✅ GitHub API validé
-
-⬜ Fusion integration-json → v2-maquette
+- analyser la colonne Visuel
+- récupérer l'URL SharePoint
+- modifier le flux
+- modifier le widget
+- tester les droits d'accès externes
